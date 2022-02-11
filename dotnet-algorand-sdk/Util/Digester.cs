@@ -6,6 +6,8 @@ namespace Algorand
     {
         internal static byte[] Digest(byte[] data)
         {
+        
+          
             Sha512tDigest digest = new Sha512tDigest(256);
             digest.BlockUpdate(data, 0, data.Length);
             byte[] output = new byte[32];

@@ -16,13 +16,21 @@ namespace Algorand.Token
             if (tokenMetadata.IsValid()) throw new ArgumentException("Token metadata invalid.");
             if (metadataURI.Scheme.ToLower() == "http") throw new ArgumentException("Http is not permitted.");
             if (!metadataURI.IsAbsoluteUri) throw new ArgumentException("Relative metadataURI not permitted.");
+            try
+            {
+                byte[] testBytes = Convert.FromBase64String(tokenMetadata.ExtraMetadata);
+            }
+            catch
+            {
+                throw new ArgumentException("extra_metadata must be a base64 string");
+            }
 
             byte[] metadataHash;
-            if (tokenMetadata.Extra_metadata != null)
+            if (tokenMetadata.ExtraMetadata != null)
             {
                 var prefix = Encoding.UTF8.GetBytes($"arc0003/am");
-                var interimHash = Digester.Digest(Encoding.UTF8.GetBytes($"arc0003/amj{tokenMetadata}");
-                var extraMeta = Encoding.UTF8.GetBytes(tokenMetadata.Extra_metadata);
+                var interimHash = Digester.Digest(Encoding.UTF8.GetBytes($"arc0003/amj{tokenMetadata}"));
+                var extraMeta = Encoding.UTF8.GetBytes(tokenMetadata.ExtraMetadata);
 
                 var concatenated = prefix.Concat(interimHash).Concat(extraMeta).ToArray();
                 metadataHash = Digester.Digest(concatenated);
@@ -42,7 +50,6 @@ namespace Algorand.Token
                 Decimals = decimals,
                 Url = metadataURI.ToString(),
                 MetadataHash = metadataHash
-
             };
         }
 
@@ -56,26 +63,21 @@ namespace Algorand.Token
         }
 
     
-
-        public static AssetParams GenerateFractionalNonFungibleTokenParameters(TokenMetadata tokenMetadata, Uri metadataURI, Account creator, string unitName = null, string assetName = null)
+        
+        /// <param name="fraction">Multiplied by 10 to get number of fractions</param>
+        /// <param name="tokenMetadata">The Arc3 token metadata </param>
+        /// <param name="metadataURI">URI where the metadata is stored</param>
+        /// <param name="creator">Account to create the asset</param>
+        /// <param name="unitName">Unit name</param>
+        /// <param name="assetName">Asset name</param>
+        /// <returns></returns>
+        public static AssetParams GenerateFractionalNonFungibleTokenParameters(byte fractionMagnitude, TokenMetadata tokenMetadata, Uri metadataURI, Account creator, string unitName = null, string assetName = null)
         {
-            if (creator == null) throw new ArgumentNullException();
-            if (tokenMetadata == null) throw new ArgumentNullException();
-            if (tokenMetadata.IsValid()) throw new ArgumentException("Token metadata invalid.");
-            if (metadataURI.Scheme.ToLower() == "http") throw new ArgumentException("Http is not permitted.");
-            if (!metadataURI.IsAbsoluteUri) throw new ArgumentException("Relative metadataURI not permitted.");
+            if (fractionMagnitude == 0) throw new ArgumentException();
+            ulong total = (ulong)Math.Pow(10, fractionMagnitude);
+            ulong decimals = fractionMagnitude;
 
-            return new AssetParams()
-            {
-                Creator = creator.Address.ToString(),
-                Name = assetName ?? tokenMetadata.Name,
-                UnitName = unitName,
-                Total = 1,
-                Decimals = 0,
-                Url = metadataURI.ToString(),
-                MetadataHash = Encoding.ASCII.GetBytes("16efaa3924a6fd9d3a4880099a4ac65d")
-
-            };
+            return GenerateTokenParameters(tokenMetadata, metadataURI, creator, unitName, assetName, total, decimals);
 
         }
     }
