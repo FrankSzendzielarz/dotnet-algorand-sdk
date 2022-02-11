@@ -116,14 +116,26 @@ namespace Algorand.Token
         /// differently than if it is not specified.
         /// </summary>
         
-        public string ExtraMetadata { get; set; } = null;
+        public string ExtraMetadata { get; set; } = default(string);
 
         #endregion
 
         #region Utility Methods
 
+
+        
+
         public virtual bool IsValid()
         {
+            try
+            {
+                byte[] testBytes = Convert.FromBase64String(ExtraMetadata);
+            }
+            catch
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -148,4 +160,8 @@ namespace Algorand.Token
 
 
     }
+
+   
+
+
 }

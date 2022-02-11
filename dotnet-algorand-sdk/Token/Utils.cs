@@ -13,17 +13,11 @@ namespace Algorand.Token
         {
             if (creator == null) throw new ArgumentNullException();
             if (tokenMetadata == null) throw new ArgumentNullException();
-            if (tokenMetadata.IsValid()) throw new ArgumentException("Token metadata invalid.");
+            if (!tokenMetadata.IsValid()) throw new ArgumentException("Token metadata invalid.");
             if (metadataURI.Scheme.ToLower() == "http") throw new ArgumentException("Http is not permitted.");
             if (!metadataURI.IsAbsoluteUri) throw new ArgumentException("Relative metadataURI not permitted.");
-            try
-            {
-                byte[] testBytes = Convert.FromBase64String(tokenMetadata.ExtraMetadata);
-            }
-            catch
-            {
-                throw new ArgumentException("extra_metadata must be a base64 string");
-            }
+            
+           
 
             byte[] metadataHash;
             if (tokenMetadata.ExtraMetadata != null)
