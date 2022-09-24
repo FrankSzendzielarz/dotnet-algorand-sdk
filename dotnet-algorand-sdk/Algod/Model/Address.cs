@@ -190,7 +190,15 @@ namespace Algorand
             var buffer=Utils.Utils.CombineBytes(APP_ID_PREFIX, appID.ToBigEndianBytes());
             return new Address(Digester.Digest(buffer));
         }
-}
+        /// <summary>
+        /// Hex representation of the address usable in logic sig smart contracts
+        /// </summary>
+        /// <returns>Returns address in form of 0x41DEA6E53207AB5FC2A919D7B80A88118CF205E92036DF436DB973BAE0637CC0</returns>
+        public string ToHex()
+        {
+            return "0x"+BitConverter.ToString(this.Bytes).Replace("-", "");
+        }
+    }
     /// <summary>
     /// MultisigAddress is a convenience class for handling multisignature public identities.
     /// </summary>
