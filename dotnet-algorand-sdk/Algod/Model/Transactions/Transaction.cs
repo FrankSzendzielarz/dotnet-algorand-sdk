@@ -244,7 +244,7 @@ namespace Algorand.Algod.Model.Transactions
             var myEncoded = signingAccount.KeyPair.ClearTextPublicKey;
             int myI = -1;
             for (int i = 0; i < from.publicKeys.Count; i++)                                             //for each key in the 'from' of the transaction
-                if (Enumerable.SequenceEqual(myEncoded, from.publicKeys[i].GetEncoded()))               //check the signing account is there
+                if (Enumerable.SequenceEqual(myEncoded, from.publicKeys[i].Export(NSec.Cryptography.KeyBlobFormat.PkixPublicKey)))               //check the signing account is there
                 {
                     myI = i;
                     break;

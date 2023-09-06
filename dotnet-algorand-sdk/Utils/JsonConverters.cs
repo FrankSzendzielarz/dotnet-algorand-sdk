@@ -1,11 +1,11 @@
 ﻿using Algorand.Algod.Model;
+using Algorand.Algod.Model.Transactions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Org.BouncyCastle.Crypto.Parameters;
+using NSec.Cryptography;
 using System;
 using System.Linq;
 using System.Reflection;
-using Algorand.Algod.Model.Transactions;
 
 namespace Algorand.Utils
 {
@@ -20,7 +20,7 @@ namespace Algorand.Utils
         {
             return (typeof(Signature) == objectType || typeof(Digest) == objectType || typeof(Address) == objectType ||
                 typeof(VRFPublicKey) == objectType || typeof(ParticipationPublicKey) == objectType ||
-                typeof(Ed25519PublicKeyParameters) == objectType || typeof(TEALProgram) == objectType);
+                typeof(PublicKey) == objectType || typeof(TEALProgram) == objectType);
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
@@ -103,43 +103,47 @@ namespace Algorand.Utils
                 if (bytes != null && bytes.Length > 0) return new Digest(bytes);
                 else return new Digest();
             }
-            else 
-            return new object();
+            else
+                return new object();
 
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {            
+        {
             byte[] bytes = null;
             if (value is Address)
             {
                 var adr = value as Address;
                 bytes = adr.Bytes;
-            }else if (value is Signature)
+            }
+            else if (value is Signature)
             {
                 var sig = value as Signature;
-                if (sig.Bytes.Any(b=>b!=0))
+                if (sig.Bytes.Any(b => b != 0))
                     bytes = sig.Bytes;
-                
-                    
+
+
             }
             else if (value is Digest)
             {
                 var dig = value as Digest;
                 bytes = dig.Bytes;
-            }else if(value is VRFPublicKey)
+            }
+            else if (value is VRFPublicKey)
             {
                 var vrf = value as VRFPublicKey;
                 bytes = vrf.Bytes;
-            }else if(value is ParticipationPublicKey)
+            }
+            else if (value is ParticipationPublicKey)
             {
                 var ppk = value as ParticipationPublicKey;
                 bytes = ppk.Bytes;
-            }else if(value is Ed25519PublicKeyParameters)
+            }
+            else if (value is PublicKey key)
             {
-                var key = value as Ed25519PublicKeyParameters;
-                bytes = key.GetEncoded();
-            }else if(value is TEALProgram)
+                bytes = key.Export(KeyBlobFormat.RawPublicKey);
+            }
+            else if (value is TEALProgram)
             {
                 var program = value as TEALProgram;
                 bytes = program.Bytes;
@@ -176,7 +180,7 @@ namespace Algorand.Utils
             writer.WritePropertyName("publicKeys");
             writer.WriteStartArray();
             foreach (var item in mAddress.publicKeys)
-                writer.WriteValue(item.GetEncoded());
+                writer.WriteValue(item.Export(KeyBlobFormat.RawPublicKey));
             writer.WriteEnd();
             writer.WriteEndObject();
             //writer.WriteValue(mAddress.publicKeys);
@@ -192,7 +196,7 @@ namespace Algorand.Utils
 
         public override bool CanWrite => false;
 
-  
+
 
         /// <summary>Determines if this converter is designed to deserialization to objects of the specified type.</summary>
         /// <param name="objectType">The target type for deserialization.</param>
@@ -213,7 +217,7 @@ namespace Algorand.Utils
         /// <returns>Deserialized Object</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-         
+
 
             if (reader.TokenType == JsonToken.Null)
                 return null;
@@ -235,10 +239,10 @@ namespace Algorand.Utils
             serializer.Populate(jObjectReader, target);
 
             //now get any properties on the returned txn (which wraps the txn) and set them on the actual txn class
-            var returnedProps = target.GetType().GetProperties(BindingFlags.Public | BindingFlags.NonPublic |   BindingFlags.Instance);
+            var returnedProps = target.GetType().GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             var txnProps = target.Transaction.Tx.GetType().GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
-            foreach (var returnedProp in returnedProps.Where(p=>p.Name!="Transaction"))
+            foreach (var returnedProp in returnedProps.Where(p => p.Name != "Transaction"))
             {
                 foreach (var txnProp in txnProps)
                 {
@@ -261,5 +265,5 @@ namespace Algorand.Utils
             throw new NotImplementedException();
         }
     }
-  
+
 }

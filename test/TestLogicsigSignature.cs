@@ -1,7 +1,7 @@
 ﻿using Algorand;
 using Algorand.Algod.Model;
+using NSec.Cryptography;
 using NUnit.Framework;
-using Org.BouncyCastle.Crypto.Parameters;
 using System.Collections.Generic;
 using Encoder = Algorand.Utils.Encoder;
 
@@ -98,11 +98,11 @@ namespace test
             Address one = new Address("DN7MBMCL5JQ3PFUQS7TMX5AH4EEKOBJVDUF4TCV6WERATKFLQF4MQUPZTA");
             Address two = new Address("BFRTECKTOOE7A5LHCF3TTEOH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM");
             Address three = new Address("47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU");
-            MultisigAddress ma = new MultisigAddress(1, 2, new List<Ed25519PublicKeyParameters>
+            MultisigAddress ma = new MultisigAddress(1, 2, new List<PublicKey>
             {
-                new Ed25519PublicKeyParameters(one.Bytes, 0),
-                new Ed25519PublicKeyParameters(two.Bytes, 0),
-                new Ed25519PublicKeyParameters(three.Bytes, 0),
+                PublicKey.Import(SignatureAlgorithm.Ed25519,one.Bytes,KeyBlobFormat.RawPublicKey),
+                PublicKey.Import(SignatureAlgorithm.Ed25519,two.Bytes,KeyBlobFormat.RawPublicKey),
+                PublicKey.Import(SignatureAlgorithm.Ed25519,three.Bytes,KeyBlobFormat.RawPublicKey),
             });
 
             string mn1 = "auction inquiry lava second expand liberty glass involve ginger illness length room item discover ahead table doctor term tackle cement bonus profit right above catch";
@@ -123,14 +123,14 @@ namespace test
             Assert.IsFalse(verified);
 
             LogicsigSignature lsigLambda = lsig;
-            
+
             lsig.AppendToLogicsig(lsig, acc2);
             verified = lsig.Verify(ma.ToAddress());
             Assert.IsTrue(verified);
 
             // Add a single signature and ensure it fails
             LogicsigSignature lsig1 = new LogicsigSignature(program);
-            lsig1.SignLogicsig( account);
+            lsig1.SignLogicsig(account);
             lsig.Sig = lsig1.Sig;
             verified = lsig.Verify(ma.ToAddress());
             Assert.IsFalse(verified);

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using Algorand.Algod.Model.Transactions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Org.BouncyCastle.Crypto.Parameters;
-using System.IO;
 using Newtonsoft.Msgpack;
-using Algorand.Algod.Model;
-using Algorand.Algod.Model.Transactions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Algorand.Utils
 {
@@ -16,7 +13,7 @@ namespace Algorand.Utils
     /// Convenience class for serializing and deserializing arbitrary objects to json or msgpack.
     /// </summary>
     public static class Encoder
-    {        
+    {
         /// <summary>
         /// Convenience method for serializing arbitrary objects.
         /// </summary>
@@ -28,11 +25,11 @@ namespace Algorand.Utils
             JsonSerializer serializer = new JsonSerializer()
             {
                 DefaultValueHandling = DefaultValueHandling.Ignore,
-                ContractResolver= new OrderedContractResolver(),
+                ContractResolver = new OrderedContractResolver(),
                 Formatting = Formatting.None
             };
 
-            MessagePackWriter writer = new MessagePackWriter(memoryStream);            
+            MessagePackWriter writer = new MessagePackWriter(memoryStream);
             serializer.Serialize(writer, o);
             var bytes = memoryStream.ToArray();
             return bytes;
@@ -100,7 +97,7 @@ namespace Algorand.Utils
             return serializer.Deserialize<T>(reader);
             //return DecodeFromJson<T>(MessagePackSerializer.ConvertToJson(input));
         }
-        
+
         /// <summary>
         /// Encode an object as json.
         /// </summary>
@@ -156,7 +153,7 @@ namespace Algorand.Utils
             var bytes = BitConverter.GetBytes(val);
             if (BitConverter.IsLittleEndian) //depends on hardware
                 Array.Reverse(bytes);
-            
+
             return bytes;
         }
     }

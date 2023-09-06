@@ -3,9 +3,8 @@ using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
 using Algorand.Utils;
 using Newtonsoft.Json;
+using NSec.Cryptography;
 using NUnit.Framework;
-using Org.BouncyCastle.Crypto.Parameters;
-using System;
 using System.Collections.Generic;
 
 namespace test
@@ -22,10 +21,10 @@ namespace test
             string FROM_SK = "actress tongue harbor tray suspect odor load topple vocal avoid ignore apple lunch unknown tissue museum once switch captain place lemon sail outdoor absent creek";
             string TO_ADDR = "PU7ZTZJ5GSXET2ZPIWDWDT2TQQEP7WXOGXDQ3ARUCZW6PK7D4ULSE6NYCE";
 
-      
 
 
-            var tx = new PaymentTransaction(new Address(FROM_ADDR), new Address(TO_ADDR), 1234, null, 1000, 106575, "", "");  
+
+            var tx = new PaymentTransaction(new Address(FROM_ADDR), new Address(TO_ADDR), 1234, null, 1000, 106575, "", "");
 
             byte[] seed = Mnemonic.ToKey(FROM_SK);
             Account account = new Account(seed);
@@ -42,8 +41,8 @@ namespace test
             //debug
             var bytes = Encoder.HexStringToByteArray(REF_SIG_TXN);
             var txn = Encoder.DecodeFromMsgPack<SignedTransaction>(bytes);
-            var reft=JsonConvert.SerializeObject(txn, Formatting.Indented);
-            var sgnt=JsonConvert.SerializeObject(signedTx,Formatting.Indented);
+            var reft = JsonConvert.SerializeObject(txn, Formatting.Indented);
+            var sgnt = JsonConvert.SerializeObject(signedTx, Formatting.Indented);
 
 
             Assert.AreEqual(signedTxHex, REF_SIG_TXN);
@@ -117,12 +116,18 @@ namespace test
             Address one = new Address("DN7MBMCL5JQ3PFUQS7TMX5AH4EEKOBJVDUF4TCV6WERATKFLQF4MQUPZTA");
             Address two = new Address("BFRTECKTOOE7A5LHCF3TTEOH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM");
             Address three = new Address("47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU");
-            return new MultisigAddress(1, 2, new List<Ed25519PublicKeyParameters>
+            return new MultisigAddress(1, 2, new List<PublicKey>
                 {
-                    new Ed25519PublicKeyParameters(one.Bytes, 0),
-                    new Ed25519PublicKeyParameters(two.Bytes, 0),
-                    new Ed25519PublicKeyParameters(three.Bytes, 0),
+                    PublicKey.Import(SignatureAlgorithm.Ed25519, one.Bytes,KeyBlobFormat.RawPublicKey),
+                    PublicKey.Import(SignatureAlgorithm.Ed25519, two.Bytes,KeyBlobFormat.RawPublicKey),
+                    PublicKey.Import(SignatureAlgorithm.Ed25519, three.Bytes,KeyBlobFormat.RawPublicKey),
+
                 });
+
+
+
+
+
         }
 
         //[test]

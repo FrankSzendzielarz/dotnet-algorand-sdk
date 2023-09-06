@@ -1,40 +1,30 @@
-﻿using Org.BouncyCastle.Security;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using NSec.Cryptography;
 
 namespace Algorand.Utils.Crypto
 {
+    public class SecureRandom
+    {
+        protected RandomGenerator randomGenerator = RandomGenerator.Default;
+
+        public Key GenerateKey(Algorithm algorithm, in KeyCreationParameters creationParameters = default(KeyCreationParameters))
+        {
+            return randomGenerator.GenerateKey(algorithm, in creationParameters);
+        }
+
+    }
+
     public class FixedSecureRandom : SecureRandom
     {
-        private byte[] fixedValue;
-        private int index = 0;
-
-        public FixedSecureRandom(byte[] fixedValue)
+        private byte[] seed;
+        public FixedSecureRandom(byte[] seed)
         {
-            this.fixedValue = fixedValue;
+            this.seed = seed;
         }
-        public override void NextBytes(byte[] bytes)
+        public Key GenerateKey(Algorithm algorithm, in KeyCreationParameters creationParameters = default(KeyCreationParameters))
         {
-            if (this.index >= this.fixedValue.Length)
-            {
-                // no more data to copy
-                return;
-            }
-            int len = bytes.Length;
-            if (len > this.fixedValue.Length - this.index)
-            {
-                len = this.fixedValue.Length - this.index;
-            }
-            JavaHelper<byte>.SystemArrayCopy(this.fixedValue, this.index, bytes, 0, len);
-            this.index += bytes.Length;
+            return Key.Import(algorithm, seed, KeyBlobFormat.RawPrivateKey);
         }
 
-        public override byte[] GenerateSeed(int numBytes)
-        {
-            byte[] bytes = new byte[numBytes];
-            this.NextBytes(bytes);
-            return bytes;
-        }
+
     }
 }

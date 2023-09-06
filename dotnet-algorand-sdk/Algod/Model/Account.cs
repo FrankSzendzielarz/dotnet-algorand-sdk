@@ -7,12 +7,9 @@ namespace Algorand.Algod.Model
     using Algorand.Utils;
     using Algorand.Utils.Crypto;
     using Newtonsoft.Json;
-    using Org.BouncyCastle.Crypto;
-    using Org.BouncyCastle.Crypto.Generators;
-    using Org.BouncyCastle.Crypto.Parameters;
-    using Org.BouncyCastle.Crypto.Signers;
-    using Org.BouncyCastle.Security;
-    using System;
+    using NSec.Cryptography;
+    //using Org.BouncyCastle.Crypto.Signers;
+    // using Org.BouncyCastle.Security;
     using System.Collections.Generic;
     using System.Text;
 #if UNITY
@@ -36,7 +33,7 @@ namespace Algorand.Algod.Model
         public KeyPair KeyPair { get; private set; }
 
 
-  
+
 
 
         //TODO - omit this from the .generated codegen
@@ -74,16 +71,18 @@ namespace Algorand.Algod.Model
         /// <summary>
         /// Generate a new, random account.
         /// </summary>
-        public Account() : this(new SecureRandom()) {
-           
+        public Account() : this(new SecureRandom())
+        {
+
         }
 
         /// <summary>
         /// Generate a newc account with seed(master derivation key)
         /// </summary>
         /// <param name="seed">seed(master derivation key)</param>
-        public Account(byte[] seed)  : this(new FixedSecureRandom(seed))  {
-        
+        public Account(byte[] seed) : this(new FixedSecureRandom(seed))
+        {
+
         }
 
 
@@ -107,14 +106,11 @@ namespace Algorand.Algod.Model
 
         public Signature SignRawBytes(byte[] bytes)
         {
-            var signer = new Ed25519Signer();
-            signer.Init(true, KeyPair.Pair.Private);
-            signer.BlockUpdate(bytes, 0, bytes.Length);
-            byte[] signature = signer.GenerateSignature();
+            var signature = SignatureAlgorithm.Ed25519.Sign(KeyPair.Pair, bytes);
             return new Signature(signature);
         }
 
-        public Signature SignBytes(byte[] bytes) 
+        public Signature SignBytes(byte[] bytes)
         {
             List<byte> retByte = new List<byte>();
             retByte.AddRange(BYTES_SIGN_PREFIX);

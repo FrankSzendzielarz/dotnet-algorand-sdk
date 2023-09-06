@@ -1,4 +1,4 @@
-﻿using Org.BouncyCastle.Crypto.Digests;
+﻿using NSec.Cryptography;
 
 namespace Algorand.Utils
 {
@@ -6,11 +6,12 @@ namespace Algorand.Utils
     {
         public static byte[] Digest(byte[] data)
         {
-            Sha512tDigest digest = new Sha512tDigest(256);
-            digest.BlockUpdate(data, 0, data.Length);
-            byte[] output = new byte[32];
-            digest.DoFinal(output, 0);
-            return output;
+            var algorithm = HashAlgorithm.Sha256;
+
+            // compute the hash of the data
+            byte[] hash = algorithm.Hash(data);
+
+            return hash;
         }
     }
 }

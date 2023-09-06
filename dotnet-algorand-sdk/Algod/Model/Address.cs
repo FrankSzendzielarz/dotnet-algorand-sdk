@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Org.BouncyCastle.Crypto.Signers;
-using Org.BouncyCastle.Crypto.Parameters;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Algorand.Utils;
+using NSec.Cryptography;
 
 namespace Algorand
 {
@@ -150,17 +149,14 @@ namespace Algorand
         /// <returns>true if the signature is valid</returns>
         public bool VerifyBytes(byte[] message, Signature signature)
         {
-            var pk = new Ed25519PublicKeyParameters(this.Bytes, 0);
+            var pk = PublicKey.Import(SignatureAlgorithm.Ed25519, this.Bytes, KeyBlobFormat.RawPublicKey);
+
             // prepend the message prefix
             List<byte> prefixBytes = new List<byte>(BYTES_SIGN_PREFIX);
             prefixBytes.AddRange(message);
 
             // verify signature
-            // Generate new signature            
-            var signer = new Ed25519Signer();
-            signer.Init(false, pk);
-            signer.BlockUpdate(prefixBytes.ToArray(), 0, prefixBytes.ToArray().Length);
-            return signer.VerifySignature(signature.Bytes);
+            return SignatureAlgorithm.Ed25519.Verify(pk,prefixBytes.ToArray(), signature.Bytes);
         }
         public override string ToString()
         {
@@ -203,7 +199,7 @@ namespace Algorand
         [JsonProperty]
         public int threshold;
         [JsonProperty]
-        public List<Ed25519PublicKeyParameters> publicKeys = new List<Ed25519PublicKeyParameters>();
+        public List<PublicKey> publicKeys = new List<PublicKey>();
 
         private static readonly byte[] PREFIX = Encoding.UTF8.GetBytes("MultisigAddr");
         /// <summary>
@@ -212,8 +208,15 @@ namespace Algorand
         /// <param name="version"></param>
         /// <param name="threshold"></param>
         /// <param name="publicKeys"></param>
-        public MultisigAddress(int version, int threshold, List<Ed25519PublicKeyParameters> publicKeys)
+        public MultisigAddress(int version, int threshold, List<PublicKey> publicKeys)
         {
+
+            foreach(var key in publicKeys)
+            {
+                if (key.Algorithm != SignatureAlgorithm.Ed25519)
+                    throw new ArgumentException("Invalid key type");
+            }
+
             this.version = version;
             this.threshold = threshold;
             this.publicKeys.AddRange(publicKeys);
@@ -240,7 +243,7 @@ namespace Algorand
         /// <param name="publicKeys"></param>
         [JsonConstructor]
         public MultisigAddress(int version, int threshold, List<byte[]> publicKeys)
-            : this(version, threshold, publicKeys.ConvertAll(key => new Ed25519PublicKeyParameters(key, 0)))
+            : this(version, threshold, publicKeys.ConvertAll(key => PublicKey.Import(SignatureAlgorithm.Ed25519,key,KeyBlobFormat.RawPublicKey)))
         { }
         /// <summary>
         /// building an address object helps us generate string representations
@@ -254,7 +257,7 @@ namespace Algorand
                 Convert.ToByte(this.threshold)
             };
             foreach (var key in publicKeys)
-                hashable.AddRange(key.GetEncoded());
+                hashable.AddRange(key.Export(KeyBlobFormat.RawPublicKey));
 
             return new Address(Digester.Digest(hashable.ToArray()));
         }

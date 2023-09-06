@@ -1,6 +1,6 @@
 ﻿using Algorand;
+using NSec.Cryptography;
 using NUnit.Framework;
-using Org.BouncyCastle.Crypto.Parameters;
 using System.Collections.Generic;
 
 namespace test
@@ -15,11 +15,11 @@ namespace test
             Address two = new Address("HTNOX33OCQI2JCOLZ2IRM3BC2WZ6JUILSLEORBPFI6W7GU5Q4ZW6LINHLA");
             Address three = new Address("E6JSNTY4PVCY3IRZ6XEDHEO6VIHCQ5KGXCIQKFQCMB2N6HXRY4IB43VSHI");
 
-            MultisigAddress addr = new MultisigAddress(1, 2, new List<Ed25519PublicKeyParameters>
+            MultisigAddress addr = new MultisigAddress(1, 2, new List<PublicKey>
             {
-                new Ed25519PublicKeyParameters(one.Bytes, 0),
-                new Ed25519PublicKeyParameters(two.Bytes, 0),
-                new Ed25519PublicKeyParameters(three.Bytes, 0),
+                PublicKey.Import(SignatureAlgorithm.Ed25519, one.Bytes, KeyBlobFormat.RawPublicKey),
+                PublicKey.Import(SignatureAlgorithm.Ed25519, two.Bytes, KeyBlobFormat.RawPublicKey),
+                PublicKey.Import(SignatureAlgorithm.Ed25519, three.Bytes, KeyBlobFormat.RawPublicKey),
             });
 
             Assert.AreEqual(addr.ToAddress().ToString(), "UCE2U2JC4O4ZR6W763GUQCG57HQCDZEUJY4J5I6VYY4HQZUJDF7AKZO5GM");
