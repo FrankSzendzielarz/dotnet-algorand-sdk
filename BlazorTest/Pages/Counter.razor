@@ -1,4 +1,9 @@
 ﻿@page "/counter"
+@using Algorand.Algod.Model;
+@using Algorand;
+@using Algorand.Algod;
+@using Algorand.Algod.Model.Transactions;
+@using Algorand.Utils;
 @using BlazorSodium.Services;
 @using BlazorSodium.Sodium;
 @using System.Text;
@@ -23,9 +28,55 @@
         Sodium.PrintSodium();
     }
 
-    private void IncrementCount()
+    private async Task IncrementCount()
     {
         Sha512256.Compute(Encoding.UTF8.GetBytes("test"), out byte[] digest);
         currentCount++;
+
+        var ALGOD_API_ADDR = "http://localhost:4001/";
+        var ALGOD_API_TOKEN = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+
+        // This boilerplate creates an Account object with a private key represented by a mnemnonic.
+        //
+        //   If using Sandbox, please use the following commands to replace the below mnemonic:
+        //   ./sandbox goal account list
+        //   ./sandbox goal account export -a <address>
+        var src = new Account("arrive transfer silent pole congress loyal snap dirt dwarf relief easily plastic federal found siren point know polar quit very vanish ensure humor abstract broken");
+
+        var DEST_ADDR = "5KFWCRTIJUMDBXELQGMRBGD2OQ2L3ZQ2MB54KT2XOQ3UWPKUU4Y7TQ4X7U";
+
+
+        var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
+        DefaultApi algodApiInstance = new DefaultApi(httpClient);
+
+        var supply = await algodApiInstance.GetSupplyAsync();
+
+
+        var accountInfo = await algodApiInstance.AccountInformationAsync(src.Address.ToString(), null, null);
+
+
+
+        var transParams = await algodApiInstance.TransactionParamsAsync();
+
+        var amount = Utils.AlgosToMicroalgos(1);
+        var tx = PaymentTransaction.GetPaymentTransactionFromNetworkTransactionParameters(src.Address, new Address(DEST_ADDR), amount, "pay message", transParams);
+        var signedTx = tx.Sign(src);
+
+
+        try
+        {
+            // send the transaction to the network
+            var id = await Utils.SubmitTransaction(algodApiInstance, signedTx);
+            var resp = await Utils.WaitTransactionToComplete(algodApiInstance, id.Txid);
+        }
+        catch (Exception ex)
+        {
+            
+        }
+
+
+      
+
+
     }
 }
