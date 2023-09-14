@@ -70,7 +70,7 @@ namespace Algorand.Algod.Model.Transactions
                 {
                     MultisigSubsig myMsig = merged.MSig.Subsigs[j];
                     MultisigSubsig theirMsig = tx.MSig.Subsigs[j];
-                    if (!theirMsig.key.Equals(myMsig.key))
+                    if (!theirMsig.pubkey.Equals(myMsig.pubkey))
                     {
                         throw new ArgumentException("transaction msig public keys do not match");
                     }

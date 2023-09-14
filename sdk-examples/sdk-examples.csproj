@@ -5,7 +5,7 @@
 	<PropertyGroup>
 			
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Configurations>AccountExample;AssetExample;AtomicTransferExample;BasicExample;CompileTeal;DryrunDebuggingExample;IndexerExample;KMDExample;LogicSignatureContractAccountExample;LogicSignatureExample;MultisigExample;RekeyExample;SimpleBoxExample;StatefulContractExample</Configurations>
+		<Configurations>AccountExample;AssetExample;AtomicTransferExample;BasicExample;CompileTeal;DryrunDebuggingExample;IndexerExample;KMDExample;LogicSignatureContractAccountExample;LogicSignatureExample;MultisigExample;RekeyExample;SimpleBoxExample;StatefulContractExample;Blazor</Configurations>
 
 	</PropertyGroup>
 	
@@ -145,6 +145,16 @@
 		<DebugSymbols>true</DebugSymbols>
 		<DefineConstants>DEBUG;TRACE</DefineConstants>
 	
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Blazor|AnyCPU'">
+	  <OutputType>Exe</OutputType>
+	  <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <RootNamespace>sdk_examples</RootNamespace>
+	  <StartupObject>sdk_examples.RekeyExample</StartupObject>
+	  <DebugSymbols>true</DebugSymbols>
+	  <DefineConstants>DEBUG;TRACE</DefineConstants>
 	</PropertyGroup>
 
 

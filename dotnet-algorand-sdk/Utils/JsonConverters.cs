@@ -2,7 +2,7 @@
 using Algorand.Algod.Model.Transactions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NSec.Cryptography;
+
 using System;
 using System.Linq;
 using System.Reflection;
@@ -11,16 +11,16 @@ namespace Algorand.Utils
 {
     public class BytesConverter : JsonConverter
     {
-        //是否开启自定义反序列化，值为true时，反序列化时会走ReadJson方法，值为false时，不走ReadJson方法，而是默认的反序列化
+
         public override bool CanRead => true;
-        //是否开启自定义序列化，值为true时，序列化时会走WriteJson方法，值为false时，不走WriteJson方法，而是默认的序列化
+
         public override bool CanWrite => true;
 
         public override bool CanConvert(Type objectType)
         {
             return (typeof(Signature) == objectType || typeof(Digest) == objectType || typeof(Address) == objectType ||
                 typeof(VRFPublicKey) == objectType || typeof(ParticipationPublicKey) == objectType ||
-                typeof(PublicKey) == objectType || typeof(TEALProgram) == objectType);
+                  typeof(TEALProgram) == objectType);
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
@@ -139,10 +139,7 @@ namespace Algorand.Utils
                 var ppk = value as ParticipationPublicKey;
                 bytes = ppk.Bytes;
             }
-            else if (value is PublicKey key)
-            {
-                bytes = key.Export(KeyBlobFormat.RawPublicKey);
-            }
+
             else if (value is TEALProgram)
             {
                 var program = value as TEALProgram;
@@ -180,7 +177,7 @@ namespace Algorand.Utils
             writer.WritePropertyName("publicKeys");
             writer.WriteStartArray();
             foreach (var item in mAddress.publicKeys)
-                writer.WriteValue(item.Export(KeyBlobFormat.RawPublicKey));
+                writer.WriteValue(item);
             writer.WriteEnd();
             writer.WriteEndObject();
             //writer.WriteValue(mAddress.publicKeys);

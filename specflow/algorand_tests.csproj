@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-    <Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug</Configurations>
+    <Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug;Blazor</Configurations>
 	
   </PropertyGroup>
 

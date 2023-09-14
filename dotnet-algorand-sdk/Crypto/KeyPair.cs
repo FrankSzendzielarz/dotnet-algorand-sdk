@@ -1,9 +1,7 @@
 ﻿using Algorand.Utils;
 using Algorand.Utils.Crypto;
-using NSec.Cryptography;
+using BlazorSodium.Sodium.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Algorand.Crypto
 {
@@ -14,8 +12,8 @@ namespace Algorand.Crypto
         private const int PK_SIZE = 32;
         public byte[] ClearTextPrivateKey { get; private set; }
         public byte[] ClearTextPublicKey { get; private set; }
-      
-        public Key Pair { get; private set; }
+
+        public Ed25519KeyPair Pair { get; private set; }
 
 
         public KeyPair(byte[] privateKey)
@@ -23,27 +21,24 @@ namespace Algorand.Crypto
             if (privateKey.Length != SK_SIZE)
                 throw new ArgumentException("Incorrect private key length");
 
-
-            Pair = Key.Import(SignatureAlgorithm.Ed25519,privateKey,KeyBlobFormat.RawPrivateKey);
             ClearTextPrivateKey = privateKey;
-            ClearTextPublicKey = Pair.PublicKey.Export(KeyBlobFormat.PkixPublicKey); // X.509 ASN.1 prefix 
+            ClearTextPublicKey = BlazorSodium.Sodium.ScalarMultiplication.Crypto_ScalarMult_Ed25519_Base(privateKey);
 
+            Pair = new Ed25519KeyPair(ClearTextPrivateKey, ClearTextPublicKey);
         }
 
 
         public KeyPair(SecureRandom random)
         {
-            
-            var algorithm = SignatureAlgorithm.Ed25519;
 
             // create a new key pair
-            Pair = random.GenerateKey(algorithm);
+            Pair = random.GenerateKey();
 
             // get the private and public keys
-            ClearTextPrivateKey= Pair.Export(KeyBlobFormat.RawPrivateKey);
-            ClearTextPublicKey = Pair.PublicKey.Export(KeyBlobFormat.PkixPublicKey); // X.509 ASN.1 prefix 
+            ClearTextPrivateKey = Pair.PrivateKey;
+            ClearTextPublicKey = Pair.PublicKey;
 
-
+            
 
         }
 
@@ -51,21 +46,15 @@ namespace Algorand.Crypto
 
 
 
-        public PublicKey PublicKey { 
-            get
-            {
 
-                return Pair.PublicKey;
-            } 
-        }
 
-        
+
 
         public string ToMnemonic()
         {
-            
+
             return Mnemonic.FromKey(ClearTextPrivateKey);
         }
     }
-    
+
 }

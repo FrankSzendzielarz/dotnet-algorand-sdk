@@ -1,16 +1,16 @@
-﻿using NSec.Cryptography;
+﻿using BlazorSodium;
+using BlazorSodium.Services;
+using BlazorSodium.Sodium;
+using BlazorSodium.Sodium.Models;
 
 namespace Algorand.Utils.Crypto
 {
     public class SecureRandom
     {
-        protected RandomGenerator randomGenerator = RandomGenerator.Default;
-
-        public Key GenerateKey(Algorithm algorithm, in KeyCreationParameters creationParameters = default(KeyCreationParameters))
+        public Ed25519KeyPair GenerateKey()
         {
-            return randomGenerator.GenerateKey(algorithm, in creationParameters);
+            return PublicKeySignature.Crypto_Sign_KeyPair();
         }
-
     }
 
     public class FixedSecureRandom : SecureRandom
@@ -20,9 +20,9 @@ namespace Algorand.Utils.Crypto
         {
             this.seed = seed;
         }
-        public Key GenerateKey(Algorithm algorithm, in KeyCreationParameters creationParameters = default(KeyCreationParameters))
+        public Ed25519KeyPair GenerateKey()
         {
-            return Key.Import(algorithm, seed, KeyBlobFormat.RawPrivateKey);
+            return PublicKeySignature.Crypto_Sign_Seed_KeyPair(seed);
         }
 
 

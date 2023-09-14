@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Algorand.Utils;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using Algorand.Utils;
-using NSec.Cryptography;
+
 
 namespace Algorand
 {
@@ -98,27 +98,27 @@ namespace Algorand
         public static bool IsValid(string encodedAddress)
         {
             // interpret as base32
-            var checksumAddr = Base32.DecodeFromString(encodedAddress).ToList(); 
+            var checksumAddr = Base32.DecodeFromString(encodedAddress).ToList();
             if (checksumAddr.Count != LEN_BYTES + CHECKSUM_LEN_BYTES)
             {
                 return false;
             }
             // split into checksum
-            
-            byte[] checksum = checksumAddr.GetRange(LEN_BYTES, checksumAddr.Count - LEN_BYTES).ToArray();            
+
+            byte[] checksum = checksumAddr.GetRange(LEN_BYTES, checksumAddr.Count - LEN_BYTES).ToArray();
             byte[] addr = checksumAddr.GetRange(0, LEN_BYTES).ToArray();
 
             // compute expected checksum
-            var hashedAddr = Digester.Digest(addr).ToList();            
-            byte[] expectedChecksum = hashedAddr.GetRange(LEN_BYTES - CHECKSUM_LEN_BYTES, 
+            var hashedAddr = Digester.Digest(addr).ToList();
+            byte[] expectedChecksum = hashedAddr.GetRange(LEN_BYTES - CHECKSUM_LEN_BYTES,
                 hashedAddr.Count - LEN_BYTES + CHECKSUM_LEN_BYTES).ToArray();
 
             // compare
-            if (Enumerable.SequenceEqual(checksum, expectedChecksum))            
+            if (Enumerable.SequenceEqual(checksum, expectedChecksum))
                 return true;
-            
-            else            
-                return false;            
+
+            else
+                return false;
         }
         /// <summary>
         /// EncodeAsString converts the address to a human-readable representation, with
@@ -149,21 +149,18 @@ namespace Algorand
         /// <returns>true if the signature is valid</returns>
         public bool VerifyBytes(byte[] message, Signature signature)
         {
-            var pk = PublicKey.Import(SignatureAlgorithm.Ed25519, this.Bytes, KeyBlobFormat.RawPublicKey);
-
             // prepend the message prefix
             List<byte> prefixBytes = new List<byte>(BYTES_SIGN_PREFIX);
             prefixBytes.AddRange(message);
-
-            // verify signature
-            return SignatureAlgorithm.Ed25519.Verify(pk,prefixBytes.ToArray(), signature.Bytes);
+            
+            return BlazorSodium.Sodium.PublicKeySignature.Crypto_Sign_Verify_Detached(signature.Bytes, prefixBytes.ToArray(), this.Bytes);
         }
         public override string ToString()
         {
             return this.EncodeAsString();
         }
         public override bool Equals(object obj)
-        {            
+        {
             if (obj is Address && Enumerable.SequenceEqual(this.Bytes, (obj as Address).Bytes))
                 return true;
             else
@@ -183,10 +180,10 @@ namespace Algorand
         /// <returns>The address corresponding to that application's escrow account.</returns>
         public static Address ForApplication(ulong appID) //throws NoSuchAlgorithmException, IOException
         {
-            var buffer=Utils.Utils.CombineBytes(APP_ID_PREFIX, appID.ToBigEndianBytes());
+            var buffer = Utils.Utils.CombineBytes(APP_ID_PREFIX, appID.ToBigEndianBytes());
             return new Address(Digester.Digest(buffer));
         }
-}
+    }
     /// <summary>
     /// MultisigAddress is a convenience class for handling multisignature public identities.
     /// </summary>
@@ -199,7 +196,7 @@ namespace Algorand
         [JsonProperty]
         public int threshold;
         [JsonProperty]
-        public List<PublicKey> publicKeys = new List<PublicKey>();
+        public List<byte[]> publicKeys = new List<byte[]>();
 
         private static readonly byte[] PREFIX = Encoding.UTF8.GetBytes("MultisigAddr");
         /// <summary>
@@ -208,14 +205,10 @@ namespace Algorand
         /// <param name="version"></param>
         /// <param name="threshold"></param>
         /// <param name="publicKeys"></param>
-        public MultisigAddress(int version, int threshold, List<PublicKey> publicKeys)
+        public MultisigAddress(int version, int threshold, List<byte[]> publicKeys)
         {
 
-            foreach(var key in publicKeys)
-            {
-                if (key.Algorithm != SignatureAlgorithm.Ed25519)
-                    throw new ArgumentException("Invalid key type");
-            }
+            
 
             this.version = version;
             this.threshold = threshold;
@@ -235,16 +228,7 @@ namespace Algorand
                 throw new ArgumentException("Invalid threshold");
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="version"></param>
-        /// <param name="threshold"></param>
-        /// <param name="publicKeys"></param>
-        [JsonConstructor]
-        public MultisigAddress(int version, int threshold, List<byte[]> publicKeys)
-            : this(version, threshold, publicKeys.ConvertAll(key => PublicKey.Import(SignatureAlgorithm.Ed25519,key,KeyBlobFormat.RawPublicKey)))
-        { }
+      
         /// <summary>
         /// building an address object helps us generate string representations
         /// </summary>
@@ -257,7 +241,7 @@ namespace Algorand
                 Convert.ToByte(this.threshold)
             };
             foreach (var key in publicKeys)
-                hashable.AddRange(key.Export(KeyBlobFormat.RawPublicKey));
+                hashable.AddRange(key);
 
             return new Address(Digester.Digest(hashable.ToArray()));
         }
@@ -267,15 +251,15 @@ namespace Algorand
         }
         public override bool Equals(object obj)
         {
-            if(obj is MultisigAddress mAddress)
+            if (obj is MultisigAddress mAddress)
             {
-                if (publicKeys.Count == mAddress.publicKeys.Count) 
+                if (publicKeys.Count == mAddress.publicKeys.Count)
                 {
                     int keyCount = publicKeys.Count;
-                    if (keyCount != 0)                     
+                    if (keyCount != 0)
                     {
                         var publicKeyEqual = true;
-                        for(int i = 0; i < keyCount; i++)
+                        for (int i = 0; i < keyCount; i++)
                         {
                             publicKeyEqual &= publicKeys[i].Equals(mAddress.publicKeys[i]);
                             if (!publicKeyEqual) return false;
@@ -284,7 +268,7 @@ namespace Algorand
                     return version == mAddress.version && threshold == mAddress.threshold;
                 }
                 else return false;
-                    //return base.Equals(obj);
+                //return base.Equals(obj);
             }
             return false;
         }

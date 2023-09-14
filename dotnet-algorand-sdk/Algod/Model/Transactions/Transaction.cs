@@ -244,7 +244,7 @@ namespace Algorand.Algod.Model.Transactions
             var myEncoded = signingAccount.KeyPair.ClearTextPublicKey;
             int myI = -1;
             for (int i = 0; i < from.publicKeys.Count; i++)                                             //for each key in the 'from' of the transaction
-                if (Enumerable.SequenceEqual(myEncoded, from.publicKeys[i].Export(NSec.Cryptography.KeyBlobFormat.PkixPublicKey)))               //check the signing account is there
+                if (Enumerable.SequenceEqual(myEncoded, from.publicKeys[i]))               //check the signing account is there
                 {
                     myI = i;
                     break;
@@ -262,7 +262,7 @@ namespace Algorand.Algod.Model.Transactions
             {
                 if (i == myI)                                                                           //if it's our key
                 {
-                    mSig.Subsigs.Add(new MultisigSubsig(signingAccount.KeyPair.PublicKey, txSig.Sig));  //then add the new subsig
+                    mSig.Subsigs.Add(new MultisigSubsig(signingAccount.KeyPair.ClearTextPublicKey, txSig.Sig));  //then add the new subsig
                 }
                 else
                 {

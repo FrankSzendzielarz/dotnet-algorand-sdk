@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Configurations>Blazor</Configurations>
+	</PropertyGroup>
+	
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'!='Unity|AnyCPU'">
-		<TargetFramework>netstandard2.0</TargetFramework>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'!='Blazor|AnyCPU'">
+		<TargetFramework>net7.0</TargetFramework>
 		<LangVersion>8.0</LangVersion>
 		<RootNamespace>Algorand</RootNamespace>
 		<AssemblyName>Algorand</AssemblyName>
@@ -10,10 +14,10 @@
 		<Version>2.0.0.$([System.DateTime]::Now.ToString(yyyyMMddHH))</Version>
 		<Authors>Frank Szendzielarz</Authors>
 		<Company></Company>
-		<Product>Algorand .NET SDK 2</Product>
+		<Product>Algorand .NET SDK Blazor</Product>
 		<PackageProjectUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</PackageProjectUrl>
 		<PackageLicenseUrl></PackageLicenseUrl>
-		<Description>Algorand SDK for .Net 2</Description>
+		<Description>Algorand SDK for Blazor</Description>
 		<PackageReleaseNotes></PackageReleaseNotes>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -21,79 +25,29 @@
 		<Copyright></Copyright>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<RepositoryUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</RepositoryUrl>
-		<PackageId>Algorand2</PackageId>
+		<PackageId>AlgorandBlazor</PackageId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug</Configurations>
+		<Configurations>Blazor</Configurations>
 		<AssemblyOriginatorKeyFile>Algorand.snk</AssemblyOriginatorKeyFile>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)' == 'Unity' Or '$(Configuration)' == 'Unity_debug'">
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<LangVersion>8.0</LangVersion>
-		<RootNamespace>Algorand</RootNamespace>
-		<AssemblyName>Algorand</AssemblyName>
-		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-		<Version>1.0.0.16</Version>
-		<Authors>Frank Szendzielarz</Authors>
-		<Company></Company>
-		<Product>Algorand .NET SDK 2</Product>
-		<PackageProjectUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</PackageProjectUrl>
-		<PackageLicenseUrl></PackageLicenseUrl>
-		<Description>Algorand SDK for .Net 2</Description>
-		<PackageReleaseNotes></PackageReleaseNotes>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
-		<Copyright></Copyright>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<RepositoryUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</RepositoryUrl>
-		<PackageId>Algorand2</PackageId>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug</Configurations>
-		<AssemblyOriginatorKeyFile>Algorand.snk</AssemblyOriginatorKeyFile>
-	</PropertyGroup>
-
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
-			<PostBuildEvent>nuget pack Algorand2_Unity.nuspec -Properties version=2.0.0.$([System.DateTime]::UtcNow.ToString("yyyyMMddHH")) </PostBuildEvent>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
-	  <Optimize>True</Optimize>
-	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test_Debug|AnyCPU'">
-	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Integration_Test_Debug|AnyCPU'">
-	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity_debug|AnyCPU'">
-	  <DefineConstants>$(DefineConstants)TRACE;UNITY;DEBUG</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup>
-	  <TargetFramework>netstandard2.1</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>9.0.3</Version>
 	</PropertyGroup>
+	
+
+	
+	
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Blazor|AnyCPU'">
+	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
+	</PropertyGroup>
+
 
 	
 
-	<ItemGroup>
-	  <Compile Remove="Algod\CommonApi.old.cs" />
-	  <Compile Remove="Algod\DefaultApi.old.cs" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<None Remove="langspec.json" />
@@ -115,30 +69,24 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(Configuration)' == 'Unity'">
-		<PackageReference Include="ILRepack.Lib.MSBuild" Version="2.1.18" />
-	</ItemGroup>
 
-	<ItemGroup Condition="'$(Configuration)'=='Unity_debug'">
-	  <PackageReference Include="ILRepack.Lib.MSBuild">
-	    <Version>2.1.18</Version>
-	  </PackageReference>
-	</ItemGroup>
-	
 	<ItemGroup>
+		<PackageReference Include="BlazorSodium" Version="1.2.8" />
 		<PackageReference Include="docfx.console" Version="2.59.4">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		  <ExcludeAssets>buildtransitive</ExcludeAssets>
 		</PackageReference>
 		<PackageReference Include="JsonSubTypes" Version="1.9.0" />
+		
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 		<PackageReference Include="MsgPack.Cli" Version="1.0.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="Newtonsoft.Msgpack" Version="0.1.11" />
-		<PackageReference Include="NSec.Cryptography" Version="22.4.0" />
 		<PackageReference Include="RestSharp" Version="106.12.0" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.9" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.9" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>

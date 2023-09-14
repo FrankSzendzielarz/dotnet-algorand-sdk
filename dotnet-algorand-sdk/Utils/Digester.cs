@@ -1,4 +1,5 @@
-﻿using NSec.Cryptography;
+﻿using BlazorSodium.Sodium;
+
 
 namespace Algorand.Utils
 {
@@ -6,11 +7,7 @@ namespace Algorand.Utils
     {
         public static byte[] Digest(byte[] data)
         {
-            var algorithm = HashAlgorithm.Sha256;
-
-            // compute the hash of the data
-            byte[] hash = algorithm.Hash(data);
-
+            Sha512256.Compute(data, out byte[] hash);
             return hash;
         }
     }

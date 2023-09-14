@@ -1,7 +1,10 @@
 ﻿using Algorand.Algod.Model;
 using Algorand.Utils;
 using Newtonsoft.Json;
-using NSec.Cryptography;
+using BlazorSodium;
+using BlazorSodium.Services;
+using BlazorSodium.Sodium;
+using BlazorSodium.Sodium.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -195,10 +198,9 @@ namespace Algorand
                     try
                     {
                         return 
-                            SignatureAlgorithm.Ed25519.Verify(
-                                PublicKey.Import(SignatureAlgorithm.Ed25519, address.Bytes,KeyBlobFormat.RawPublicKey),
-                                this.BytesToSign(),
-                                this.Sig.Bytes);
+                            PublicKeySignature.Crypto_Sign_Verify_Detached(this.BytesToSign(),
+                                this.Sig.Bytes,
+                                address.Bytes);
                         
                     }
                     catch (Exception err)
@@ -247,7 +249,7 @@ namespace Algorand
             int pkIndex = -1;
             for (int i = 0; i < ma.publicKeys.Count; i++)
             {
-                if (Enumerable.SequenceEqual(pk, ma.publicKeys[i].Export(KeyBlobFormat.PkixPublicKey)))
+                if (Enumerable.SequenceEqual(pk, ma.publicKeys[i]))
                 {
                     pkIndex = i;
                     break;
@@ -266,7 +268,7 @@ namespace Algorand
             {
                 if (i == pkIndex)
                 {
-                    mSig.Subsigs.Add(new MultisigSubsig(signingAccount.KeyPair.PublicKey, sig));
+                    mSig.Subsigs.Add(new MultisigSubsig(signingAccount.KeyPair.ClearTextPublicKey, sig.Bytes));
                 }
                 else
                 {
@@ -289,7 +291,7 @@ namespace Algorand
             for (int i = 0; i < lsig.Msig.Subsigs.Count; i++)
             {
                 MultisigSubsig subsig = lsig.Msig.Subsigs[i];
-                if (Enumerable.SequenceEqual(subsig.key.Export(KeyBlobFormat.PkixPublicKey), pk))
+                if (Enumerable.SequenceEqual(subsig.pubkey, pk))
                 {
                     pkIndex = i;
                 }
@@ -301,7 +303,7 @@ namespace Algorand
             // now, create the multisignature
             byte[] bytesToSign = lsig.BytesToSign();
             Signature sig = signingAccount.SignRawBytes(bytesToSign);
-            lsig.Msig.Subsigs[pkIndex] = new MultisigSubsig(signingAccount.KeyPair.PublicKey, sig);
+            lsig.Msig.Subsigs[pkIndex] = new MultisigSubsig(signingAccount.KeyPair.ClearTextPublicKey, sig);
 
         }
 
@@ -425,10 +427,10 @@ namespace Algorand
                         {
                             try
                             {
-                                var algorithm = SignatureAlgorithm.Ed25519;
-                                var pk = subsig.key;
+                             
+                                var pk = subsig.pubkey;
 
-                                bool verified = algorithm.Verify(pk, message, subsig.sig.Bytes);
+                                bool verified = BlazorSodium.Sodium.PublicKeySignature.Crypto_Sign_Verify_Detached(subsig.sig.Bytes, message, pk);
                                 if (verified)
                                 {
                                     ++verifiedCount;
@@ -479,7 +481,7 @@ namespace Algorand
     {
         [JsonProperty(PropertyName = "pk")]
         [JsonConverter(typeof(BytesConverter))]
-        public PublicKey key;
+        public byte[] pubkey;
 
         [JsonProperty(PropertyName = "s")]
         public Signature sig;
@@ -496,9 +498,9 @@ namespace Algorand
         public MultisigSubsig([JsonProperty("pk")] byte[] key = null, [JsonProperty("s")] byte[] sig = null)
         {
             if (key != null)
-                this.key = PublicKey.Import(SignatureAlgorithm.Ed25519, key, KeyBlobFormat.RawPublicKey);
+                this.pubkey =key;
             else
-                this.key = null;
+                this.pubkey = null;
 
             if (sig != null)
                 this.sig = new Signature(sig);
@@ -506,9 +508,9 @@ namespace Algorand
                 this.sig = new Signature();
         }
 
-        public MultisigSubsig(PublicKey key, Signature sig = null)
+        public MultisigSubsig(byte[] key, Signature sig)
         {
-            if (key == null || key.Algorithm != SignatureAlgorithm.Ed25519) throw new ArgumentException("Null or non ed25519 key.");
+            this.pubkey = key;
             if (sig is null)
                 this.sig = new Signature();
             else
@@ -520,7 +522,7 @@ namespace Algorand
             if ((obj is MultisigSubsig actual))
             {
 
-                return Enumerable.SequenceEqual(this.key.Export(KeyBlobFormat.RawPublicKey), actual.key.Export(KeyBlobFormat.RawPublicKey)) && this.sig.Equals(actual.sig);
+                return Enumerable.SequenceEqual(this.pubkey, actual.pubkey) && this.sig.Equals(actual.sig);
             }
             else
             {
@@ -529,7 +531,7 @@ namespace Algorand
         }
         public override int GetHashCode()
         {
-            return key.GetHashCode() + sig.GetHashCode();
+            return pubkey.GetHashCode() + sig.GetHashCode();
         }
     }
 }

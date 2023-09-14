@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -7,7 +7,7 @@
 
     <PlatformTarget>x64</PlatformTarget>
 
-    <Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug</Configurations>
+    <Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug;Blazor</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

@@ -7,9 +7,7 @@ namespace Algorand.Algod.Model
     using Algorand.Utils;
     using Algorand.Utils.Crypto;
     using Newtonsoft.Json;
-    using NSec.Cryptography;
-    //using Org.BouncyCastle.Crypto.Signers;
-    // using Org.BouncyCastle.Security;
+    
     using System.Collections.Generic;
     using System.Text;
 #if UNITY
@@ -106,7 +104,7 @@ namespace Algorand.Algod.Model
 
         public Signature SignRawBytes(byte[] bytes)
         {
-            var signature = SignatureAlgorithm.Ed25519.Sign(KeyPair.Pair, bytes);
+            var signature = BlazorSodium.Sodium.PublicKeySignature.Crypto_Sign_Detached(bytes,KeyPair.ClearTextPrivateKey);
             return new Signature(signature);
         }
 
