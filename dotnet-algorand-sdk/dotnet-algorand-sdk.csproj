@@ -29,6 +29,7 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Configurations>Blazor</Configurations>
 		<AssemblyOriginatorKeyFile>Algorand.snk</AssemblyOriginatorKeyFile>
+	
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -36,13 +37,16 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Version>9.0.3</Version>
 	</PropertyGroup>
-	
 
+	<PropertyGroup>
+		<DebugSymbols>true</DebugSymbols>
+		<Optimize>false</Optimize>
+	</PropertyGroup>
 	
 	
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Blazor|AnyCPU'">
-	  <DefineConstants>$(DefineConstants)TRACE;</DefineConstants>
+	  <DefineConstants>$(DefineConstants)TRACE;DEBUG</DefineConstants>
 	</PropertyGroup>
 
 
@@ -335,35 +339,9 @@
 	  <Folder Include="Indexer\Model\" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Reference Include="UnityEditor" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
-	    <HintPath>Libs\UnityEditor.dll</HintPath>
-	  </Reference>
-	  <Reference Include="UnityEditor" Condition="'$(Configuration)|$(Platform)'=='Unity_debug|AnyCPU'">
-	    <HintPath>Libs\UnityEditor.dll</HintPath>
-	  </Reference>
-	  <Reference Include="UnityEngine" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
-	    <HintPath>Libs\UnityEngine.dll</HintPath>
-	  </Reference>
-	  <Reference Include="UnityEngine" Condition="'$(Configuration)|$(Platform)'=='Unity_debug|AnyCPU'">
-	    <HintPath>Libs\UnityEngine.dll</HintPath>
-	  </Reference>
-		<Reference Include="UnityEngine.CoreModul" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
-			<HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine.CoreModul" Condition="'$(Configuration)|$(Platform)'=='Unity_debug|AnyCPU'">
-		  <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
-		</Reference>
-	</ItemGroup>
+	
+	
 
-	<ItemGroup>
-	  <None Update="Algorand2_Unity.nuspec">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <Exec Command="docfx ../docfx/docfx.json" />
-	</Target>
 	
 </Project>

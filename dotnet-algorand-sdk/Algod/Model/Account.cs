@@ -28,7 +28,10 @@ namespace Algorand.Algod.Model
         private static readonly byte[] BYTES_SIGN_PREFIX = Encoding.UTF8.GetBytes("MX");
         private static readonly byte[] PROGDATA_SIGN_PREFIX = Encoding.UTF8.GetBytes("ProgData");
         [JsonIgnore]
-        public KeyPair KeyPair { get; private set; }
+        public KeyPair KeyPair 
+        { get; 
+            private set; 
+        }
 
 
 
@@ -78,9 +81,9 @@ namespace Algorand.Algod.Model
         /// Generate a newc account with seed(master derivation key)
         /// </summary>
         /// <param name="seed">seed(master derivation key)</param>
-        public Account(byte[] seed) : this(new FixedSecureRandom(seed))
-        {
-
+        public Account(byte[] seed) :this(new FixedSecureRandom(seed))
+        {   
+            
         }
 
 
@@ -88,7 +91,13 @@ namespace Algorand.Algod.Model
         /// Create a new account with mnemonic
         /// </summary>
         /// <param name="mnemonic">the mnemonic</param>
-        public Account(string mnemonic) : this(Mnemonic.ToKey(mnemonic)) { }
+        public Account(string mnemonic) //: this(Mnemonic.ToKey(mnemonic)) 
+        {
+            var srandom = new FixedSecureRandom(Mnemonic.ToKey(mnemonic));
+            KeyPair = new KeyPair(srandom);
+            Address = new Address(KeyPair.ClearTextPublicKey);
+
+        }
 
         private Account(SecureRandom srandom)
         {
