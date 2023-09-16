@@ -3,7 +3,9 @@
 @using Algorand;
 @using Algorand.Algod;
 @using Algorand.Algod.Model.Transactions;
+@using Algorand.Crypto;
 @using Algorand.Utils;
+@using Algorand.Utils.Crypto;
 @using BlazorSodium.Services;
 @using BlazorSodium.Sodium;
 @using System.Text;
@@ -41,7 +43,15 @@
         //   If using Sandbox, please use the following commands to replace the below mnemonic:
         //   ./sandbox goal account list
         //   ./sandbox goal account export -a <address>
-        var src = new Account("arrive transfer silent pole congress loyal snap dirt dwarf relief easily plastic federal found siren point know polar quit very vanish ensure humor abstract broken");
+        
+        string mnemonic="legend discover buffalo execute forest spend cable focus any birth width flee beef soul atom weather stock update derive remind outdoor melody web abandon barely";
+        var srandom = new FixedSecureRandom(Mnemonic.ToKey(mnemonic));
+        var KeyPair = new KeyPair(srandom);
+        var Address = new Address(KeyPair.ClearTextPublicKey);
+        var src = new Account("legend discover buffalo execute forest spend cable focus any birth width flee beef soul atom weather stock update derive remind outdoor melody web abandon barely");
+
+
+
 
         var DEST_ADDR = "5KFWCRTIJUMDBXELQGMRBGD2OQ2L3ZQ2MB54KT2XOQ3UWPKUU4Y7TQ4X7U";
 

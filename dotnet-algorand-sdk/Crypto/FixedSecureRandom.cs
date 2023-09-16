@@ -7,7 +7,7 @@ namespace Algorand.Utils.Crypto
 {
     public class SecureRandom
     {
-        public Ed25519KeyPair GenerateKey()
+        public virtual Ed25519KeyPair GenerateKey()
         {
             return PublicKeySignature.Crypto_Sign_KeyPair();
         }
@@ -20,7 +20,7 @@ namespace Algorand.Utils.Crypto
         {
             this.seed = seed;
         }
-        public Ed25519KeyPair GenerateKey()
+        public override Ed25519KeyPair GenerateKey()
         {
             return PublicKeySignature.Crypto_Sign_Seed_KeyPair(seed);
         }

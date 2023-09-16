@@ -61,7 +61,7 @@ namespace Algorand.Algod.Model
         /// <summary>
         /// Create an account from a private key
         /// </summary>
-        /// <param name="privateKey">Private Key</param>
+        /// <param name="keypair">Private Key</param>
         /// <returns>the account</returns>
         public Account(KeyPair keyPair)
         {
@@ -72,18 +72,22 @@ namespace Algorand.Algod.Model
         /// <summary>
         /// Generate a new, random account.
         /// </summary>
-        public Account() : this(new SecureRandom())
+        public Account() // : this(new SecureRandom())
         {
-
+            var srandom = new SecureRandom();
+            KeyPair = new KeyPair(srandom);
+            Address = new Address(KeyPair.ClearTextPublicKey);
         }
 
         /// <summary>
         /// Generate a newc account with seed(master derivation key)
         /// </summary>
         /// <param name="seed">seed(master derivation key)</param>
-        public Account(byte[] seed) :this(new FixedSecureRandom(seed))
-        {   
-            
+        public Account(byte[] seed) //:this(new FixedSecureRandom(seed))
+        {
+            var srandom = new FixedSecureRandom(seed);
+            KeyPair = new KeyPair(srandom);
+            Address = new Address(KeyPair.ClearTextPublicKey);
         }
 
 
@@ -93,10 +97,19 @@ namespace Algorand.Algod.Model
         /// <param name="mnemonic">the mnemonic</param>
         public Account(string mnemonic) //: this(Mnemonic.ToKey(mnemonic)) 
         {
+            //var srandom = new FixedSecureRandom(Mnemonic.ToKey(mnemonic));
+            //KeyPair = new KeyPair(srandom);
+            //Address = new Address(KeyPair.ClearTextPublicKey);
+            newKeyPair(mnemonic);
+
+        }
+
+
+        public void newKeyPair(string mnemonic)
+        {
             var srandom = new FixedSecureRandom(Mnemonic.ToKey(mnemonic));
             KeyPair = new KeyPair(srandom);
             Address = new Address(KeyPair.ClearTextPublicKey);
-
         }
 
         private Account(SecureRandom srandom)
@@ -113,7 +126,10 @@ namespace Algorand.Algod.Model
 
         public Signature SignRawBytes(byte[] bytes)
         {
+            //test
+
             var signature = BlazorSodium.Sodium.PublicKeySignature.Crypto_Sign_Detached(bytes,KeyPair.ClearTextPrivateKey);
+             
             return new Signature(signature);
         }
 
