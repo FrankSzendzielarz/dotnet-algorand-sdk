@@ -198,7 +198,10 @@
         {
             Model.ErrorMessage = ex.Result.Message;
         }
-
+        catch (Exception ex)
+        {
+            Model.ErrorMessage = ex.Message;
+        }
 
 
 
