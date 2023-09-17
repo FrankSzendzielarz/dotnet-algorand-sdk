@@ -1,0 +1,133 @@
+﻿@page "/counter"
+@using Algorand.Algod.Model;
+@using Algorand;
+@using Algorand.Algod;
+@using Algorand.Algod.Model.Transactions;
+@using Algorand.Crypto;
+@using Algorand.Utils;
+@using Algorand.Utils.Crypto;
+@using BlazorSodium.Services;
+@using BlazorSodium.Sodium;
+@using System.Text;
+
+<PageTitle>Payment Transaction</PageTitle>
+
+<h1>Payment Transaction</h1>
+
+<EditForm Model="@Model" OnSubmit="@Submit">
+    <div class="border border-info border-4 rounded-3 p-3 ">
+        <div class="row m-2">
+            <div class="col-md-3 fw-bold">
+                    Algod URI:
+            </div>
+            <div class="col-md-9">
+                <InputText class="form-control" @bind-Value="Model!.Connection.ALGOD_API_ADDR" />
+            </div>
+        </div>
+
+            <div class="row m-2">
+            <div class="col-md-3 fw-bold">
+                    Algod API Token:
+            </div>
+            <div class="col-md-9">
+                <InputText class="form-control" @bind-Value="Model!.Connection.ALGOD_API_TOKEN" />
+            </div>
+        </div>
+
+            <div class="row m-2">
+            <div class="col-md-3 fw-bold">
+                    Source Mnemonic:
+            </div>
+            <div class="col-md-9">
+                <InputText class="form-control" @bind-Value="Model!.SourceAccountMmnemonic" />
+            </div>
+        </div>
+
+        <div class="row m-2">
+            <div class="col-md-3 fw-bold">
+                    Destination Address (Base64):
+            </div>
+            <div class="col-md-9">
+                <InputText class="form-control" @bind-Value="Model!.DestinationAddress" />
+            </div>
+        </div>
+
+   
+        <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</EditForm>
+
+
+@code
+{
+    [Inject]
+    IBlazorSodiumService? BlazorSodiumService { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await BlazorSodiumService!.InitializeAsync();
+        Sodium.PrintSodium();
+    }
+
+    protected override void OnInitialized()
+    {
+        Model ??= new SimplePaymentModel();
+    }
+
+    public class Connection
+    {
+        public string ALGOD_API_TOKEN { get; set; } = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        public string ALGOD_API_ADDR { get; set; } = "http://localhost:4001/";
+    }
+
+    public class SimplePaymentModel
+    {
+        public Connection Connection { get; set; } = new Connection();
+        public string SourceAccountMmnemonic { get; set; } = "legend discover buffalo execute forest spend cable focus any birth width flee beef soul atom weather stock update derive remind outdoor melody web abandon barely";
+        public string DestinationAddress { get; set; } = "5KFWCRTIJUMDBXELQGMRBGD2OQ2L3ZQ2MB54KT2XOQ3UWPKUU4Y7TQ4X7U";
+    }
+
+    public SimplePaymentModel Model { get; set; }
+
+    private async Task Submit()
+    {
+        var src = new Account(Model.SourceAccountMmnemonic);
+        
+
+
+        var httpClient = HttpClientConfigurator.ConfigureHttpClient(Model.Connection.ALGOD_API_ADDR, Model.Connection.ALGOD_API_TOKEN);
+        DefaultApi algodApiInstance = new(httpClient);
+
+        var supply = await algodApiInstance.GetSupplyAsync();
+
+
+        var accountInfo = await algodApiInstance.AccountInformationAsync(src.Address.ToString(), null, null);
+
+
+
+        var transParams = await algodApiInstance.TransactionParamsAsync();
+
+        var amount = Utils.AlgosToMicroalgos(1);
+        var tx = PaymentTransaction.GetPaymentTransactionFromNetworkTransactionParameters(src.Address, new Address(Model.DestinationAddress), amount, "pay message", transParams);
+        var signedTx = tx.Sign(src);
+
+
+        try
+        {
+            // send the transaction to the network
+            var id = await Utils.SubmitTransaction(algodApiInstance, signedTx);
+            var resp = await Utils.WaitTransactionToComplete(algodApiInstance, id.Txid);
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+
+
+
+
+
+    }
+}
