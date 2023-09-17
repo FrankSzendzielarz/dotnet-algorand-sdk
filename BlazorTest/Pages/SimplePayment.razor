@@ -15,7 +15,7 @@
 <h1>Payment Transaction</h1>
 
 <EditForm Model="@Model" OnSubmit="@Submit">
-    <div class="border border-info border-4 rounded-3 p-3 ">
+    <div class="border border-secondary border-4 rounded-3 p-3 mb-3">
         <div class="row m-2">
             <div class="col-md-3 fw-bold">
                     Algod URI:
@@ -33,7 +33,6 @@
                 <InputText class="form-control" @bind-Value="Model!.Connection.ALGOD_API_TOKEN" />
             </div>
         </div>
-
             <div class="row m-2">
             <div class="col-md-3 fw-bold">
                     Source Mnemonic:
@@ -52,12 +51,77 @@
             </div>
         </div>
 
+        <div class="row m-2">
+            <div class="col-md-3 fw-bold">
+                Amount to pay (microAlgos):
+            </div>
+            <div class="col-md-9">
+                <InputNumber class="form-control" @bind-Value="Model!.Amount" />
+            </div>
+        </div>
    
         <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Pay</button>
         </div>
     </div>
 </EditForm>
+
+
+<div class="border border-success border-4 rounded-3 p-3 mb-3">
+    <div class="row m-2">
+        <div class="col-md-3 fw-bold">
+            Balance Source Account (Prior):
+        </div>
+        <div class="col-md-9">
+            <p class="form-control">@Model.BalancePriorSource</p>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col-md-3 fw-bold">
+            Balance Destination Account (Prior):
+        </div>
+        <div class="col-md-9">
+            <p class="form-control">@Model.BalancePriorDestination</p>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col-md-3 fw-bold">
+            Balance Source Account (Post):
+        </div>
+        <div class="col-md-9">
+            <p class="form-control">@Model.BalancePostSource</p>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col-md-3 fw-bold">
+            Balance Destination Account (Post):
+        </div>
+        <div class="col-md-9">
+            <p class="form-control">@Model.BalancePostDestination</p>
+        </div>
+    </div>
+
+
+  
+</div>
+
+@if(!String.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="border border-danger border-4 rounded-3 p-3 ">
+        <div class="row m-2">
+            <div class="col-md-3 fw-bold">
+                Error:
+            </div>
+            <div class="col-md-9">
+                <p class="form-control">@Model.ErrorMessage</p>
+            </div>
+        </div>
+    </div>
+}
+  
 
 
 @code
@@ -86,43 +150,53 @@
         public Connection Connection { get; set; } = new Connection();
         public string SourceAccountMmnemonic { get; set; } = "legend discover buffalo execute forest spend cable focus any birth width flee beef soul atom weather stock update derive remind outdoor melody web abandon barely";
         public string DestinationAddress { get; set; } = "5KFWCRTIJUMDBXELQGMRBGD2OQ2L3ZQ2MB54KT2XOQ3UWPKUU4Y7TQ4X7U";
+        public long Amount { get; set; } = 1000;
+        public ulong BalancePriorSource { get; set; } 
+        public ulong BalancePriorDestination { get; set; }
+        public ulong BalancePostSource { get; set; }
+        public ulong BalancePostDestination { get; set; }
+        public string ErrorMessage = String.Empty;
+
     }
 
     public SimplePaymentModel Model { get; set; }
 
     private async Task Submit()
     {
-        var src = new Account(Model.SourceAccountMmnemonic);
-        
-
-
-        var httpClient = HttpClientConfigurator.ConfigureHttpClient(Model.Connection.ALGOD_API_ADDR, Model.Connection.ALGOD_API_TOKEN);
-        DefaultApi algodApiInstance = new(httpClient);
-
-        var supply = await algodApiInstance.GetSupplyAsync();
-
-
-        var accountInfo = await algodApiInstance.AccountInformationAsync(src.Address.ToString(), null, null);
-
-
-
-        var transParams = await algodApiInstance.TransactionParamsAsync();
-
-        var amount = Utils.AlgosToMicroalgos(1);
-        var tx = PaymentTransaction.GetPaymentTransactionFromNetworkTransactionParameters(src.Address, new Address(Model.DestinationAddress), amount, "pay message", transParams);
-        var signedTx = tx.Sign(src);
-
-
+        Model.ErrorMessage = String.Empty;
         try
         {
+            var httpClient = HttpClientConfigurator.ConfigureHttpClient(Model.Connection.ALGOD_API_ADDR, Model.Connection.ALGOD_API_TOKEN);
+            DefaultApi algodApiInstance = new(httpClient);
+
+            var src = new Account(Model.SourceAccountMmnemonic);
+
+            var srcAccountInfo = await algodApiInstance.AccountInformationAsync(src.Address.ToString(), null, null);
+            var destAccountInfo = await algodApiInstance.AccountInformationAsync(Model.DestinationAddress, null, null);
+            Model.BalancePriorSource = srcAccountInfo.Amount;
+            Model.BalancePriorDestination = destAccountInfo.Amount;
+
+            var transParams = await algodApiInstance.TransactionParamsAsync();
+
+  
+            var tx = PaymentTransaction.GetPaymentTransactionFromNetworkTransactionParameters(src.Address, new Address(Model.DestinationAddress), (ulong)Model.Amount, "pay message", transParams);
+            var signedTx = tx.Sign(src);
+
+
+
             // send the transaction to the network
             var id = await Utils.SubmitTransaction(algodApiInstance, signedTx);
             var resp = await Utils.WaitTransactionToComplete(algodApiInstance, id.Txid);
 
-        }
-        catch (Exception ex)
-        {
+            srcAccountInfo = await algodApiInstance.AccountInformationAsync(src.Address.ToString(), null, null);
+            destAccountInfo = await algodApiInstance.AccountInformationAsync(Model.DestinationAddress, null, null);
+            Model.BalancePostSource = srcAccountInfo.Amount;
+            Model.BalancePostDestination = destAccountInfo.Amount;
 
+        }
+        catch (ApiException<ErrorResponse> ex)
+        {
+            Model.ErrorMessage = ex.Result.Message;
         }
 
 
