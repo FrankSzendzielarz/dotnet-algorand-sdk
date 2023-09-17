@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "algorand_tests", "specflow\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTest", "BlazorTest\BlazorTest.csproj", "{230A445A-ECF7-4494-A4AB-C51D86505E1A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSodium", "..\BlazorSodium\BlazorSodium\BlazorSodium.csproj", "{092BC1DB-4C17-4F13-8C7A-50CB343CA303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AccountExample|Any CPU = AccountExample|Any CPU
@@ -284,6 +286,48 @@ Global
 		{230A445A-ECF7-4494-A4AB-C51D86505E1A}.Unity_debug|Any CPU.Build.0 = Debug|Any CPU
 		{230A445A-ECF7-4494-A4AB-C51D86505E1A}.Unity|Any CPU.ActiveCfg = Debug|Any CPU
 		{230A445A-ECF7-4494-A4AB-C51D86505E1A}.Unity|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.AccountExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.AccountExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.AssetExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.AssetExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.AtomicTransferExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.AtomicTransferExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.BasicExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.BasicExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Blazor|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Blazor|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.CompileTeal|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.CompileTeal|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.DryrunDebuggingExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.DryrunDebuggingExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.IndexerExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.IndexerExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Integration_Test_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Integration_Test_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.KMDExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.KMDExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.LogicSignatureContractAccountExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.LogicSignatureContractAccountExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.LogicSignatureExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.LogicSignatureExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.MultisigExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.MultisigExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.RekeyExample|Any CPU.ActiveCfg = Release|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.RekeyExample|Any CPU.Build.0 = Release|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.SimpleBoxExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.SimpleBoxExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.StatefulContractExample|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.StatefulContractExample|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Test_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Test_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Unity_debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Unity_debug|Any CPU.Build.0 = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Unity|Any CPU.ActiveCfg = Debug|Any CPU
+		{092BC1DB-4C17-4F13-8C7A-50CB343CA303}.Unity|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

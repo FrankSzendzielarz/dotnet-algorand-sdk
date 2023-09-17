@@ -73,9 +73,7 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
-
 	<ItemGroup>
-		<PackageReference Include="BlazorSodium" Version="1.2.8" />
 		<PackageReference Include="docfx.console" Version="2.59.4">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -336,6 +334,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Indexer\Model\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\BlazorSodium\BlazorSodium\BlazorSodium.csproj" />
 	</ItemGroup>
 
 	
