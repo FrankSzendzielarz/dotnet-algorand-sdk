@@ -14,10 +14,10 @@
 		<Version>2.0.0.$([System.DateTime]::Now.ToString(yyyyMMddHH))</Version>
 		<Authors>Frank Szendzielarz</Authors>
 		<Company></Company>
-		<Product>Algorand .NET SDK Blazor</Product>
+		<Product>Algorand .NET SDK Blazor (Experimental)</Product>
 		<PackageProjectUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</PackageProjectUrl>
 		<PackageLicenseUrl></PackageLicenseUrl>
-		<Description>Algorand SDK for Blazor</Description>
+		<Description>Algorand SDK for Blazor (Experimental)</Description>
 		<PackageReleaseNotes></PackageReleaseNotes>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -25,7 +25,7 @@
 		<Copyright></Copyright>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<RepositoryUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</RepositoryUrl>
-		<PackageId>AlgorandBlazor</PackageId>
+		<PackageId>AlgorandBlazor_Experimental</PackageId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Configurations>Blazor</Configurations>
 		<AssemblyOriginatorKeyFile>Algorand.snk</AssemblyOriginatorKeyFile>
@@ -35,12 +35,13 @@
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>9.0.3</Version>
+		<Version>9.0.5</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<DebugSymbols>true</DebugSymbols>
 		<Optimize>false</Optimize>
+
 	</PropertyGroup>
 	
 	

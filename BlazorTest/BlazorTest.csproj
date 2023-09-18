@@ -12,12 +12,9 @@
 	</PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AlgorandBlazor_Experimental" Version="9.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.11" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\dotnet-algorand-sdk\dotnet-algorand-sdk.csproj" />
   </ItemGroup>
 
 </Project>
