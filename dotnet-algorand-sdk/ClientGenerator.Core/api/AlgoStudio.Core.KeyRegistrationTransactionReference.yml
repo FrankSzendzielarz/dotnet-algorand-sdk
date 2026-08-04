@@ -1,0 +1,770 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  commentId: T:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  id: KeyRegistrationTransactionReference
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.Nonparticipation
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.SelectionPK
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.StateProofPK
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteFirst
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteKeyDilution
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteLast
+  - AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VotePK
+  langs:
+  - csharp
+  - vb
+  name: KeyRegistrationTransactionReference
+  nameWithType: KeyRegistrationTransactionReference
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: KeyRegistrationTransactionReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public class KeyRegistrationTransactionReference : TransactionReference'
+    content.vb: >-
+      Public Class KeyRegistrationTransactionReference
+
+          Inherits TransactionReference
+  inheritance:
+  - System.Object
+  - AVM.ClientGenerator.Core.TransactionReference
+  inheritedMembers:
+  - AVM.ClientGenerator.Core.TransactionReference.Fee
+  - AVM.ClientGenerator.Core.TransactionReference.FirstValid
+  - AVM.ClientGenerator.Core.TransactionReference.LastValid
+  - AVM.ClientGenerator.Core.TransactionReference.Sender
+  - AVM.ClientGenerator.Core.TransactionReference.TxType
+  - AVM.ClientGenerator.Core.TransactionReference.Lease
+  - AVM.ClientGenerator.Core.TransactionReference.Note
+  - AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+  - AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+  - AVM.ClientGenerator.Core.TransactionReference.TxID
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VotePK
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VotePK
+  id: VotePK
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: VotePK
+  nameWithType: KeyRegistrationTransactionReference.VotePK
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VotePK
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: VotePK
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] VotePK
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public VotePK As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.SelectionPK
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.SelectionPK
+  id: SelectionPK
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: SelectionPK
+  nameWithType: KeyRegistrationTransactionReference.SelectionPK
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.SelectionPK
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: SelectionPK
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] SelectionPK
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public SelectionPK As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.StateProofPK
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.StateProofPK
+  id: StateProofPK
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: StateProofPK
+  nameWithType: KeyRegistrationTransactionReference.StateProofPK
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.StateProofPK
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: StateProofPK
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 16
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] StateProofPK
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public StateProofPK As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteFirst
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteFirst
+  id: VoteFirst
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: VoteFirst
+  nameWithType: KeyRegistrationTransactionReference.VoteFirst
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteFirst
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: VoteFirst
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 19
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong VoteFirst
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public VoteFirst As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteLast
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteLast
+  id: VoteLast
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: VoteLast
+  nameWithType: KeyRegistrationTransactionReference.VoteLast
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteLast
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: VoteLast
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 22
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong VoteLast
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public VoteLast As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteKeyDilution
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteKeyDilution
+  id: VoteKeyDilution
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: VoteKeyDilution
+  nameWithType: KeyRegistrationTransactionReference.VoteKeyDilution
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.VoteKeyDilution
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: VoteKeyDilution
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 25
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong VoteKeyDilution
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public VoteKeyDilution As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.Nonparticipation
+  commentId: F:AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.Nonparticipation
+  id: Nonparticipation
+  parent: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: Nonparticipation
+  nameWithType: KeyRegistrationTransactionReference.Nonparticipation
+  fullName: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference.Nonparticipation
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Nonparticipation
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/KeyRegistrationTransactionReference.cs
+    startLine: 28
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public bool Nonparticipation
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Nonparticipation As Boolean
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: AVM.ClientGenerator.Core.TransactionReference
+  commentId: T:AVM.ClientGenerator.Core.TransactionReference
+  parent: AVM.ClientGenerator.Core
+  name: TransactionReference
+  nameWithType: TransactionReference
+  fullName: AVM.ClientGenerator.Core.TransactionReference
+- uid: AVM.ClientGenerator.Core.TransactionReference.Fee
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Fee
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Fee
+  nameWithType: TransactionReference.Fee
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Fee
+- uid: AVM.ClientGenerator.Core.TransactionReference.FirstValid
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.FirstValid
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: FirstValid
+  nameWithType: TransactionReference.FirstValid
+  fullName: AVM.ClientGenerator.Core.TransactionReference.FirstValid
+- uid: AVM.ClientGenerator.Core.TransactionReference.LastValid
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.LastValid
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: LastValid
+  nameWithType: TransactionReference.LastValid
+  fullName: AVM.ClientGenerator.Core.TransactionReference.LastValid
+- uid: AVM.ClientGenerator.Core.TransactionReference.Sender
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Sender
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Sender
+  nameWithType: TransactionReference.Sender
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Sender
+- uid: AVM.ClientGenerator.Core.TransactionReference.TxType
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.TxType
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: TxType
+  nameWithType: TransactionReference.TxType
+  fullName: AVM.ClientGenerator.Core.TransactionReference.TxType
+- uid: AVM.ClientGenerator.Core.TransactionReference.Lease
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Lease
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Lease
+  nameWithType: TransactionReference.Lease
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Lease
+- uid: AVM.ClientGenerator.Core.TransactionReference.Note
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Note
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Note
+  nameWithType: TransactionReference.Note
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Note
+- uid: AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: RekeyTo
+  nameWithType: TransactionReference.RekeyTo
+  fullName: AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+- uid: AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: GroupIndex
+  nameWithType: TransactionReference.GroupIndex
+  fullName: AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+- uid: AVM.ClientGenerator.Core.TransactionReference.TxID
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.TxID
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: TxID
+  nameWithType: TransactionReference.TxID
+  fullName: AVM.ClientGenerator.Core.TransactionReference.TxID
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

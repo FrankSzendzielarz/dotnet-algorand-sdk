@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.StorageType
+  commentId: T:AVM.ClientGenerator.Core.StorageType
+  id: StorageType
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.StorageType.Global
+  - AVM.ClientGenerator.Core.StorageType.Local
+  - AVM.ClientGenerator.Core.StorageType.Protocol
+  - AVM.ClientGenerator.Core.StorageType.Scratch
+  langs:
+  - csharp
+  - vb
+  name: StorageType
+  nameWithType: StorageType
+  fullName: AVM.ClientGenerator.Core.StorageType
+  type: Enum
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/StorageType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: StorageType
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/StorageType.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public enum StorageType
+    content.vb: Public Enum StorageType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: AVM.ClientGenerator.Core.StorageType.Global
+  commentId: F:AVM.ClientGenerator.Core.StorageType.Global
+  id: Global
+  parent: AVM.ClientGenerator.Core.StorageType
+  langs:
+  - csharp
+  - vb
+  name: Global
+  nameWithType: StorageType.Global
+  fullName: AVM.ClientGenerator.Core.StorageType.Global
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/StorageType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Global
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/StorageType.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: Global = 0
+    return:
+      type: AVM.ClientGenerator.Core.StorageType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.StorageType.Local
+  commentId: F:AVM.ClientGenerator.Core.StorageType.Local
+  id: Local
+  parent: AVM.ClientGenerator.Core.StorageType
+  langs:
+  - csharp
+  - vb
+  name: Local
+  nameWithType: StorageType.Local
+  fullName: AVM.ClientGenerator.Core.StorageType.Local
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/StorageType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Local
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/StorageType.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: Local = 1
+    return:
+      type: AVM.ClientGenerator.Core.StorageType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.StorageType.Scratch
+  commentId: F:AVM.ClientGenerator.Core.StorageType.Scratch
+  id: Scratch
+  parent: AVM.ClientGenerator.Core.StorageType
+  langs:
+  - csharp
+  - vb
+  name: Scratch
+  nameWithType: StorageType.Scratch
+  fullName: AVM.ClientGenerator.Core.StorageType.Scratch
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/StorageType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Scratch
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/StorageType.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: Scratch = 2
+    return:
+      type: AVM.ClientGenerator.Core.StorageType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.StorageType.Protocol
+  commentId: F:AVM.ClientGenerator.Core.StorageType.Protocol
+  id: Protocol
+  parent: AVM.ClientGenerator.Core.StorageType
+  langs:
+  - csharp
+  - vb
+  name: Protocol
+  nameWithType: StorageType.Protocol
+  fullName: AVM.ClientGenerator.Core.StorageType.Protocol
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/StorageType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Protocol
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/StorageType.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: Protocol = 3
+    return:
+      type: AVM.ClientGenerator.Core.StorageType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: AVM.ClientGenerator.Core.StorageType
+  commentId: T:AVM.ClientGenerator.Core.StorageType
+  parent: AVM.ClientGenerator.Core
+  name: StorageType
+  nameWithType: StorageType
+  fullName: AVM.ClientGenerator.Core.StorageType

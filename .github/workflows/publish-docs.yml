@@ -1,0 +1,63 @@
+name: Publish Documentation
+
+# Builds the API reference + articles under docfx/ with DocFX (https://dotnet.github.io/docfx/)
+# and publishes the static site to GitHub Pages via the native Pages deployment actions.
+#
+# One-time repo setup (already done): Settings -> Pages -> Build and deployment -> Source ->
+# "GitHub Actions". No secrets required - actions/deploy-pages authenticates via the
+# `id-token: write` permission below.
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "dotnet-algorand-sdk/**.cs"
+      - "dotnet-algorand-sdk/dotnet-algorand-sdk.csproj"
+      - "docfx/**"
+      - ".github/workflows/publish-docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            10.0.x
+
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Build documentation site
+        run: docfx docfx/docfx.json
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docfx/_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

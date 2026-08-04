@@ -1,11 +1,7 @@
 
 namespace Algorand.Algod.Model
 {
-
-using System = global::System;
-
-
-public partial class BlockHashResponse{
+    public partial class BlockHashResponse{
 
   
 

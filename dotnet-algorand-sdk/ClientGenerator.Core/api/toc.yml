@@ -1,0 +1,95 @@
+### YamlMime:TableOfContent
+- uid: AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  items:
+  - uid: AVM.ClientGenerator.Core.AccountReference
+    name: AccountReference
+  - uid: AVM.ClientGenerator.Core.AppCall
+    name: AppCall
+  - uid: AVM.ClientGenerator.Core.AppCallTransactionReference
+    name: AppCallTransactionReference
+  - uid: AVM.ClientGenerator.Core.AssetAccept
+    name: AssetAccept
+  - uid: AVM.ClientGenerator.Core.AssetClawback
+    name: AssetClawback
+  - uid: AVM.ClientGenerator.Core.AssetClawbackTransactionReference
+    name: AssetClawbackTransactionReference
+  - uid: AVM.ClientGenerator.Core.AssetConfiguration
+    name: AssetConfiguration
+  - uid: AVM.ClientGenerator.Core.AssetConfigurationTransactionReference
+    name: AssetConfigurationTransactionReference
+  - uid: AVM.ClientGenerator.Core.AssetFreeze
+    name: AssetFreeze
+  - uid: AVM.ClientGenerator.Core.AssetFreezeTransactionReference
+    name: AssetFreezeTransactionReference
+  - uid: AVM.ClientGenerator.Core.AssetReference
+    name: AssetReference
+  - uid: AVM.ClientGenerator.Core.AssetTransfer
+    name: AssetTransfer
+  - uid: AVM.ClientGenerator.Core.AssetTransferTransactionReference
+    name: AssetTransferTransactionReference
+  - uid: AVM.ClientGenerator.Core.BigIntegerExtensions
+    name: BigIntegerExtensions
+  - uid: AVM.ClientGenerator.Core.ByteArrayExtensions
+    name: ByteArrayExtensions
+  - uid: AVM.ClientGenerator.Core.Constants
+    name: Constants
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+    name: IAlgorandCommonPredefineds
+  - uid: AVM.ClientGenerator.Core.ICompiledContract
+    name: ICompiledContract
+  - uid: AVM.ClientGenerator.Core.ICompiledSignature
+    name: ICompiledSignature
+  - uid: AVM.ClientGenerator.Core.InnerTransaction
+    name: InnerTransaction
+  - uid: AVM.ClientGenerator.Core.IntegerExtensions
+    name: IntegerExtensions
+  - uid: AVM.ClientGenerator.Core.IntentionallyNotImplementedException
+    name: IntentionallyNotImplementedException
+  - uid: AVM.ClientGenerator.Core.ISmartContractPredefineds
+    name: ISmartContractPredefineds
+  - uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+    name: ISmartSignaturePredefineds
+  - uid: AVM.ClientGenerator.Core.KeyRegistration
+    name: KeyRegistration
+  - uid: AVM.ClientGenerator.Core.KeyRegistrationTransactionReference
+    name: KeyRegistrationTransactionReference
+  - uid: AVM.ClientGenerator.Core.OnCompleteType
+    name: OnCompleteType
+  - uid: AVM.ClientGenerator.Core.Payment
+    name: Payment
+  - uid: AVM.ClientGenerator.Core.PaymentTransactionReference
+    name: PaymentTransactionReference
+  - uid: AVM.ClientGenerator.Core.SmartContract
+    name: SmartContract
+  - uid: AVM.ClientGenerator.Core.SmartContractLibrary
+    name: SmartContractLibrary
+  - uid: AVM.ClientGenerator.Core.SmartContractReference
+    name: SmartContractReference
+  - uid: AVM.ClientGenerator.Core.SmartSignature
+    name: SmartSignature
+  - uid: AVM.ClientGenerator.Core.StorageType
+    name: StorageType
+  - uid: AVM.ClientGenerator.Core.StringExtensions
+    name: StringExtensions
+  - uid: AVM.ClientGenerator.Core.TransactionReference
+    name: TransactionReference
+  - uid: AVM.ClientGenerator.Core.VariableType
+    name: VariableType
+- uid: AVM.ClientGenerator.Core.Attributes
+  name: AVM.ClientGenerator.Core.Attributes
+  items:
+  - uid: AVM.ClientGenerator.Core.Attributes.ABIFixedSizeAttribute
+    name: ABIFixedSizeAttribute
+  - uid: AVM.ClientGenerator.Core.Attributes.ABIStructAttribute
+    name: ABIStructAttribute
+  - uid: AVM.ClientGenerator.Core.Attributes.ABITypeDecoratorAttribute
+    name: ABITypeDecoratorAttribute
+  - uid: AVM.ClientGenerator.Core.Attributes.InnerTransactionCallAttribute
+    name: InnerTransactionCallAttribute
+  - uid: AVM.ClientGenerator.Core.Attributes.SmartContractMethodAttribute
+    name: SmartContractMethodAttribute
+  - uid: AVM.ClientGenerator.Core.Attributes.SmartSignatureMethodAttribute
+    name: SmartSignatureMethodAttribute
+  - uid: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    name: StorageAttribute

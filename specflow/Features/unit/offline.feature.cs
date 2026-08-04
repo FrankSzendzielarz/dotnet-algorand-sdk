@@ -27,7 +27,7 @@ namespace algorand_tests.Features.Unit
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private string[] _featureTags = new string[] {
+        private static string[] featureTags = new string[] {
                 "unit",
                 "unit.offline"};
         
@@ -50,9 +50,7 @@ namespace algorand_tests.Features.Unit
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Offline", null, ProgrammingLanguage.CSharp, new string[] {
-                        "unit",
-                        "unit.offline"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Offline", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,7 +62,7 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Offline")))
@@ -74,23 +72,23 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -100,25 +98,15 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
-        public virtual void EncodeAndDecodeAddresses()
+        public void EncodeAndDecodeAddresses()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Encode and decode addresses", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Encode and decode addresses", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -146,21 +134,11 @@ namespace algorand_tests.Features.Unit
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("mn", mn);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mnemonic to and from private key", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mnemonic to and from private key", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 10
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -193,7 +171,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mn", "advice pudding treat near rule blouse same whisper inner electric quit surface su" +
             "nny dismiss leader blood seat clown cost exist hospital century reform able spon" +
             "sor")]
-        public virtual void MnemonicToAndFromPrivateKey_AdvicePuddingTreatNearRuleBlouseSameWhisperInnerElectricQuitSurfaceSunnyDismissLeaderBloodSeatClownCostExistHospitalCenturyReformAbleSponsor()
+        public void MnemonicToAndFromPrivateKey_AdvicePuddingTreatNearRuleBlouseSameWhisperInnerElectricQuitSurfaceSunnyDismissLeaderBloodSeatClownCostExistHospitalCenturyReformAbleSponsor()
         {
 #line 10
   this.MnemonicToAndFromPrivateKey("advice pudding treat near rule blouse same whisper inner electric quit surface su" +
@@ -207,21 +185,11 @@ namespace algorand_tests.Features.Unit
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("mn", mn);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mnemonic to and from master derivation key", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mnemonic to and from master derivation key", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 19
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -254,7 +222,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mn", "advice pudding treat near rule blouse same whisper inner electric quit surface su" +
             "nny dismiss leader blood seat clown cost exist hospital century reform able spon" +
             "sor")]
-        public virtual void MnemonicToAndFromMasterDerivationKey_AdvicePuddingTreatNearRuleBlouseSameWhisperInnerElectricQuitSurfaceSunnyDismissLeaderBloodSeatClownCostExistHospitalCenturyReformAbleSponsor()
+        public void MnemonicToAndFromMasterDerivationKey_AdvicePuddingTreatNearRuleBlouseSameWhisperInnerElectricQuitSurfaceSunnyDismissLeaderBloodSeatClownCostExistHospitalCenturyReformAbleSponsor()
         {
 #line 19
   this.MnemonicToAndFromMasterDerivationKey("advice pudding treat near rule blouse same whisper inner electric quit surface su" +
@@ -278,21 +246,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("note", note);
             argumentsOfScenario.Add("mn", mn);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign transaction with flat fee", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign transaction with flat fee", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 28
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -337,7 +295,7 @@ namespace algorand_tests.Features.Unit
             "nny dismiss leader blood seat clown cost exist hospital century reform able spon" +
             "sor")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQPhUAZ3xkDDcc8FvOVo6UinzmKBCqs0woYSfodlmBMfQvGbeUx3Srxy3dyJDzv7rLm26BRv9FnL2/AuT7NYfiAWjdHhui6NhbXTNA+ilY2xvc2XEIEDpNJKIJWTLzpxZpptnVCaJ6aHDoqnqW2Wm6KRCH/xXo2ZlZc0EmKJmds0wsqNnZW6sZGV2bmV0LXYzMy4womdoxCAmCyAJoJOohot5WHIvpeVG7eftF+TYXEx4r7BFJpDt0qJsds00mqRub3RlxAjqABVHQ2y/lqNyY3bEIHts4k/rW6zAsWTinCIsV/X2PcOH1DkEglhBHF/hD3wCo3NuZMQg5/D4TQaBHfnzHI2HixFV9GcdUaGFwgCQhmf0SVhwaKGkdHlwZaNwYXk=")]
-        public virtual void SignTransactionWithFlatFee_1176()
+        public void SignTransactionWithFlatFee_1176()
         {
 #line 28
   this.SignTransactionWithFlatFee("1176", "12466", "13466", "JgsgCaCTqIaLeVhyL6XlRu3n7Rfk2FxMeK+wRSaQ7dI=", "PNWOET7LLOWMBMLE4KOCELCX6X3D3Q4H2Q4QJASYIEOF7YIPPQBG3YQ5YI", "IDUTJEUIEVSMXTU4LGTJWZ2UE2E6TIODUKU6UW3FU3UKIQQ77RLUBBBFLA", "1000", "devnet-v33.0", "6gAVR0Nsv5Y=", "advice pudding treat near rule blouse same whisper inner electric quit surface su" +
@@ -352,21 +310,11 @@ namespace algorand_tests.Features.Unit
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("addresses", addresses);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisig address", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisig address", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 39
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -397,7 +345,7 @@ namespace algorand_tests.Features.Unit
             "OH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM 47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72" +
             "ESWDQNCQ52OPASU")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", "RWJLJCMQAFZ2ATP2INM2GZTKNL6OULCCUBO5TQPXH3V2KR4AG7U5UA5JNM")]
-        public virtual void MultisigAddress_DN7MBMCL5JQ3PFUQS7TMX5AH4EEKOBJVDUF4TCV6WERATKFLQF4MQUPZTABFRTECKTOOE7A5LHCF3TTEOH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU()
+        public void MultisigAddress_DN7MBMCL5JQ3PFUQS7TMX5AH4EEKOBJVDUF4TCV6WERATKFLQF4MQUPZTABFRTECKTOOE7A5LHCF3TTEOH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU()
         {
 #line 39
   this.MultisigAddress("DN7MBMCL5JQ3PFUQS7TMX5AH4EEKOBJVDUF4TCV6WERATKFLQF4MQUPZTA BFRTECKTOOE7A5LHCF3TTE" +
@@ -422,21 +370,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("mn", mn);
             argumentsOfScenario.Add("addresses", addresses);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign multisig", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign multisig", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 47
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -487,7 +425,7 @@ namespace algorand_tests.Features.Unit
             "OH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM 47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72" +
             "ESWDQNCQ52OPASU")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqRtc2lng6ZzdWJzaWeTgaJwa8QgG37AsEvqYbeWkJfmy/QH4QinBTUdC8mKvrEiCairgXiBonBrxCAJYzIJU3OJ8HVnEXc5kcfQPhtzyMT1K/av8BqiXPnCcYKicGvEIOfw+E0GgR358xyNh4sRVfRnHVGhhcIAkIZn9ElYcGihoXPEQF6nXZ7CgInd1h7NVspIPFZNhkPL+vGFpTNwH3Eh9gwPM8pf1EPTHfPvjf14sS7xN7mTK+wrz7Odhp4rdWBNUASjdGhyAqF2AaN0eG6Lo2FtdM0D6KVjbG9zZcQgQOk0koglZMvOnFmmm2dUJonpocOiqepbZabopEIf/FejZmVlzQSYomZ2zTCyo2dlbqxkZXZuZXQtdjMzLjCiZ2jEICYLIAmgk6iGi3lYci+l5Ubt5+0X5NhcTHivsEUmkO3Somx2zTSapG5vdGXECF+AZeMEPawqo3JjdsQge2ziT+tbrMCxZOKcIixX9fY9w4fUOQSCWEEcX+EPfAKjc25kxCCNkrSJkAFzoE36Q1mjZmpq/OosQqBd2cH3PuulR4A36aR0eXBlo3BheQ==")]
-        public virtual void SignMultisig_4()
+        public void SignMultisig_4()
         {
 #line 47
   this.SignMultisig("4", "12466", "13466", "JgsgCaCTqIaLeVhyL6XlRu3n7Rfk2FxMeK+wRSaQ7dI=", "PNWOET7LLOWMBMLE4KOCELCX6X3D3Q4H2Q4QJASYIEOF7YIPPQBG3YQ5YI", "IDUTJEUIEVSMXTU4LGTJWZ2UE2E6TIODUKU6UW3FU3UKIQQ77RLUBBBFLA", "1000", "devnet-v33.0", "X4Bl4wQ9rCo=", "advice pudding treat near rule blouse same whisper inner electric quit surface su" +
@@ -505,21 +443,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("mtx", mtx);
             argumentsOfScenario.Add("mn", mn);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Append multisig", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Append multisig", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 59
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -553,7 +481,7 @@ namespace algorand_tests.Features.Unit
             "forum theory winter park twenty ball kangaroo cram burst board host ability left" +
             "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqRtc2lng6ZzdWJzaWeTgqJwa8QgG37AsEvqYbeWkJfmy/QH4QinBTUdC8mKvrEiCairgXihc8RAuLAFE0oma0skOoAmOzEwfPuLYpEWl4LINtsiLrUqWQkDxh4WHb29//YCpj4MFbiSgD2jKYt0XKRD86zKCF4RDYKicGvEIAljMglTc4nwdWcRdzmRx9A+G3PIxPUr9q/wGqJc+cJxoXPEQBAhuyRjsOrnHp3s/xI+iMKiL7QPsh8iJZ22YOJJP0aFUwedMr+a6wfdBXk1OefyrAN1wqJ9rq6O+DrWV1fH0ASBonBrxCDn8PhNBoEd+fMcjYeLEVX0Zx1RoYXCAJCGZ/RJWHBooaN0aHICoXYBo3R4boujYW10zQPopWNsb3NlxCBA6TSSiCVky86cWaabZ1Qmiemhw6Kp6ltlpuikQh/8V6NmZWXNA+iiZnbN8xWjZ2VurGRldm5ldC12MzguMKJnaMQg/rNsORAUOQDD2lVCyhg2sA/S+BlZElfNI/YEL5jINp2ibHbN9v2kbm90ZcQIRSYiABhShvujcmN2xCB7bOJP61uswLFk4pwiLFf19j3Dh9Q5BIJYQRxf4Q98AqNzbmTEII2StImQAXOgTfpDWaNmamr86ixCoF3Zwfc+66VHgDfppHR5cGWjcGF5")]
-        public virtual void AppendMultisig_GqRtc2Lng6ZzdWJzaWeTgqJwa8QgG37AsEvqYbeWkJfmyQH4QinBTUdC8MKvrEiCairgXihc8RAuLAFE0Oma0SkOoAmOzEwfPuLYpEWl4LINtsiLrUqWQkDxh4WHb29YCpj4MFbiSgD2JKYt0XKRD86ZKCF4RDYGicGvEIAljMglTc4NwdWcRdzmRx9AG3PIxPUr9QWGqJcCJxgaJwa8Qg5D4TQaBHfnzHI2HixFV9GcdUaGFwgCQhmf0SVhwaKGjdGhyAqF2AaN0EG6Lo2FtdM0D6KVjbG9ZZcQgQOk0KoglZMvOnFmmm2DUJonpocOiqepbZabopEIfFejZmVlzQPoomZ2ZfMVo2DlbqxkZXZuZXQtdjM4LjCiZ2JEIP6ZbDkQFDkAw9PVQsoYNrAP0VgZWRJXzSP2BCYyDadomx2Zfb9PG5VdGXECEUmIgAYUob7O3JjdsQge2ZiTTbrMCxZOKcIixX9FY9W4FUOQSCWEEcXEPfAKjc25KxCCNkrSJkAFzoE36Q1MjZmpqOosQqBd2CH3PuulR4A36AR0EXBlo3BheQ()
+        public void AppendMultisig_GqRtc2Lng6ZzdWJzaWeTgqJwa8QgG37AsEvqYbeWkJfmyQH4QinBTUdC8MKvrEiCairgXihc8RAuLAFE0Oma0SkOoAmOzEwfPuLYpEWl4LINtsiLrUqWQkDxh4WHb29YCpj4MFbiSgD2JKYt0XKRD86ZKCF4RDYGicGvEIAljMglTc4NwdWcRdzmRx9AG3PIxPUr9QWGqJcCJxgaJwa8Qg5D4TQaBHfnzHI2HixFV9GcdUaGFwgCQhmf0SVhwaKGjdGhyAqF2AaN0EG6Lo2FtdM0D6KVjbG9ZZcQgQOk0KoglZMvOnFmmm2DUJonpocOiqepbZabopEIfFejZmVlzQPoomZ2ZfMVo2DlbqxkZXZuZXQtdjM4LjCiZ2JEIP6ZbDkQFDkAw9PVQsoYNrAP0VgZWRJXzSP2BCYyDadomx2Zfb9PG5VdGXECEUmIgAYUob7O3JjdsQge2ZiTTbrMCxZOKcIixX9FY9W4FUOQSCWEEcXEPfAKjc25KxCCNkrSJkAFzoE36Q1MjZmpqOosQqBd2CH3PuulR4A36AR0EXBlo3BheQ()
         {
 #line 59
   this.AppendMultisig(@"gqRtc2lng6ZzdWJzaWeTgqJwa8QgG37AsEvqYbeWkJfmy/QH4QinBTUdC8mKvrEiCairgXihc8RAuLAFE0oma0skOoAmOzEwfPuLYpEWl4LINtsiLrUqWQkDxh4WHb29//YCpj4MFbiSgD2jKYt0XKRD86zKCF4RDYGicGvEIAljMglTc4nwdWcRdzmRx9A+G3PIxPUr9q/wGqJc+cJxgaJwa8Qg5/D4TQaBHfnzHI2HixFV9GcdUaGFwgCQhmf0SVhwaKGjdGhyAqF2AaN0eG6Lo2FtdM0D6KVjbG9zZcQgQOk0koglZMvOnFmmm2dUJonpocOiqepbZabopEIf/FejZmVlzQPoomZ2zfMVo2dlbqxkZXZuZXQtdjM4LjCiZ2jEIP6zbDkQFDkAw9pVQsoYNrAP0vgZWRJXzSP2BC+YyDadomx2zfb9pG5vdGXECEUmIgAYUob7o3JjdsQge2ziT+tbrMCxZOKcIixX9fY9w4fUOQSCWEEcX+EPfAKjc25kxCCNkrSJkAFzoE36Q1mjZmpq/OosQqBd2cH3PuulR4A36aR0eXBlo3BheQ==", "since during average anxiety protect cherry club long lawsuit loan expand embark " +
@@ -568,21 +496,11 @@ namespace algorand_tests.Features.Unit
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("msigtxns", msigtxns);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Merge multisig", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Merge multisig", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 69
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -610,7 +528,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", @"gqRtc2lng6ZzdWJzaWeTgqJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKhc8RA+f+fqZgjzOKV1Y8RlHxk0R5InGx5jsnF1gbKXVq+pAxwqSvtSTjTM7mRY0zH7tbv0dJtcuturoLbmX3lRWZCD4GicGvEIM9tutXmHvqZsk/Hk65YFjn348EccLQrgf9Kp0bzsvnUgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0eG6Io2FtdM0D6KNmZWXNA+iiZnYBomdoxCD+s2w5EBQ5AMPaVULKGDawD9L4GVkSV80j9gQvmMg2naJsds0D6KNyY3bEII4yNZs+IAqmxwEyX1cl45jSec8y0gubN5/lTYQPr95eo3NuZMQgkC7TLOEydGApKJoTita0Z+7jHVqj74oYHwVgXX1YjSKkdHlwZaNwYXk= gqRtc2lng6ZzdWJzaWeTgaJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKConBrxCDPbbrV5h76mbJPx5OuWBY59+PBHHC0K4H/SqdG87L51KFzxEBfG9erywuPXY/DsgOsadIqou7676GhGH4oSX5K2iSLDCf8L0pFoS3Hmepjsy8FcY62AFIL3Vg5lQLxTdlF670NgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0eG6Io2FtdM0D6KNmZWXNA+iiZnYBomdoxCD+s2w5EBQ5AMPaVULKGDawD9L4GVkSV80j9gQvmMg2naJsds0D6KNyY3bEII4yNZs+IAqmxwEyX1cl45jSec8y0gubN5/lTYQPr95eo3NuZMQgkC7TLOEydGApKJoTita0Z+7jHVqj74oYHwVgXX1YjSKkdHlwZaNwYXk=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:msigtxns", @"gqRtc2lng6ZzdWJzaWeTgqJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKhc8RA+f+fqZgjzOKV1Y8RlHxk0R5InGx5jsnF1gbKXVq+pAxwqSvtSTjTM7mRY0zH7tbv0dJtcuturoLbmX3lRWZCD4GicGvEIM9tutXmHvqZsk/Hk65YFjn348EccLQrgf9Kp0bzsvnUgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0eG6Io2FtdM0D6KNmZWXNA+iiZnYBomdoxCD+s2w5EBQ5AMPaVULKGDawD9L4GVkSV80j9gQvmMg2naJsds0D6KNyY3bEII4yNZs+IAqmxwEyX1cl45jSec8y0gubN5/lTYQPr95eo3NuZMQgkC7TLOEydGApKJoTita0Z+7jHVqj74oYHwVgXX1YjSKkdHlwZaNwYXk= gqRtc2lng6ZzdWJzaWeTgaJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKConBrxCDPbbrV5h76mbJPx5OuWBY59+PBHHC0K4H/SqdG87L51KFzxEBfG9erywuPXY/DsgOsadIqou7676GhGH4oSX5K2iSLDCf8L0pFoS3Hmepjsy8FcY62AFIL3Vg5lQLxTdlF670NgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0eG6Io2FtdM0D6KNmZWXNA+iiZnYBomdoxCD+s2w5EBQ5AMPaVULKGDawD9L4GVkSV80j9gQvmMg2naJsds0D6KNyY3bEII4yNZs+IAqmxwEyX1cl45jSec8y0gubN5/lTYQPr95eo3NuZMQgkC7TLOEydGApKJoTita0Z+7jHVqj74oYHwVgXX1YjSKkdHlwZaNwYXk=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqRtc2lng6ZzdWJzaWeTgqJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKhc8RA+f+fqZgjzOKV1Y8RlHxk0R5InGx5jsnF1gbKXVq+pAxwqSvtSTjTM7mRY0zH7tbv0dJtcuturoLbmX3lRWZCD4KicGvEIM9tutXmHvqZsk/Hk65YFjn348EccLQrgf9Kp0bzsvnUoXPEQF8b16vLC49dj8OyA6xp0iqi7vrvoaEYfihJfkraJIsMJ/wvSkWhLceZ6mOzLwVxjrYAUgvdWDmVAvFN2UXrvQ2BonBrxCB6ApGY6C9LPrsi0Os1Cq7IN7XtROBaJy0y+2ph+lgYKKN0aHICoXYBo3R4boijYW10zQPoo2ZlZc0D6KJmdgGiZ2jEIP6zbDkQFDkAw9pVQsoYNrAP0vgZWRJXzSP2BC+YyDadomx2zQPoo3JjdsQgjjI1mz4gCqbHATJfVyXjmNJ5zzLSC5s3n+VNhA+v3l6jc25kxCCQLtMs4TJ0YCkomhOK1rRn7uMdWqPvihgfBWBdfViNIqR0eXBlo3BheQ==")]
-        public virtual void MergeMultisig_GqRtc2Lng6ZzdWJzaWeTgqJwa8QgphunEajorKYj00FDOcOo1TXKQMvhe6FrJxwipP1YiKhc8RAFFqZgjzOKV1Y8RlHxk0R5InGx5JsnF1GbKXVqPAxwqSvtSTjTM7MRY0ZH7Tbv0DJtcuturoLbmX3LRWZCD4GicGvEIM9TutXmHvqZskHk65YFjn348EccLQrgf9Kp0BzsvnUgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0EG6Io2FtdM0D6KNmZWXNAIiZnYBomdoxCDS2W5EBQ5AMPaVULKGDawD9L4GVkSV80J9GQvmMg2NaJsds0D6KNyY3BEII4YNZsIAqmxwEyX1Cl45JSec8Y0GubN5LTYQPr95Eo3NuZMQgkC7TLOEydGApKJoTita0Z7JHVqj74OYHwVgXX1YjSKkdHlwZaNwYXkGqRtc2Lng6ZzdWJzaWeTgaJwa8QgphunEajorKYj00FDOcOo1TXKQMvhe6FrJxwipP1YiKConBrxCDPbbrV5H76MbJPx5OuWBY59PBHHC0K4HSqdG87L51KFzxEBfG9ErywuPXYDsgOsadIqou7676GhGH4OSX5K2ISLDCf8L0PFoS3Hmepjsy8FcY62AFIL3Vg5LQLxTdlF670NgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0EG6Io2FtdM0D6KNmZWXNAIiZnYBomdoxCDS2W5EBQ5AMPaVULKGDawD9L4GVkSV80J9GQvmMg2NaJsds0D6KNyY3BEII4YNZsIAqmxwEyX1Cl45JSec8Y0GubN5LTYQPr95Eo3NuZMQgkC7TLOEydGApKJoTita0Z7JHVqj74OYHwVgXX1YjSKkdHlwZaNwYXk()
+        public void MergeMultisig_GqRtc2Lng6ZzdWJzaWeTgqJwa8QgphunEajorKYj00FDOcOo1TXKQMvhe6FrJxwipP1YiKhc8RAFFqZgjzOKV1Y8RlHxk0R5InGx5JsnF1GbKXVqPAxwqSvtSTjTM7MRY0ZH7Tbv0DJtcuturoLbmX3LRWZCD4GicGvEIM9TutXmHvqZskHk65YFjn348EccLQrgf9Kp0BzsvnUgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0EG6Io2FtdM0D6KNmZWXNAIiZnYBomdoxCDS2W5EBQ5AMPaVULKGDawD9L4GVkSV80J9GQvmMg2NaJsds0D6KNyY3BEII4YNZsIAqmxwEyX1Cl45JSec8Y0GubN5LTYQPr95Eo3NuZMQgkC7TLOEydGApKJoTita0Z7JHVqj74OYHwVgXX1YjSKkdHlwZaNwYXkGqRtc2Lng6ZzdWJzaWeTgaJwa8QgphunEajorKYj00FDOcOo1TXKQMvhe6FrJxwipP1YiKConBrxCDPbbrV5H76MbJPx5OuWBY59PBHHC0K4HSqdG87L51KFzxEBfG9ErywuPXYDsgOsadIqou7676GhGH4OSX5K2ISLDCf8L0PFoS3Hmepjsy8FcY62AFIL3Vg5LQLxTdlF670NgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0EG6Io2FtdM0D6KNmZWXNAIiZnYBomdoxCDS2W5EBQ5AMPaVULKGDawD9L4GVkSV80J9GQvmMg2NaJsds0D6KNyY3BEII4YNZsIAqmxwEyX1Cl45JSec8Y0GubN5LTYQPr95Eo3NuZMQgkC7TLOEydGApKJoTita0Z7JHVqj74OYHwVgXX1YjSKkdHlwZaNwYXk()
         {
 #line 69
   this.MergeMultisig(@"gqRtc2lng6ZzdWJzaWeTgqJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKhc8RA+f+fqZgjzOKV1Y8RlHxk0R5InGx5jsnF1gbKXVq+pAxwqSvtSTjTM7mRY0zH7tbv0dJtcuturoLbmX3lRWZCD4GicGvEIM9tutXmHvqZsk/Hk65YFjn348EccLQrgf9Kp0bzsvnUgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0eG6Io2FtdM0D6KNmZWXNA+iiZnYBomdoxCD+s2w5EBQ5AMPaVULKGDawD9L4GVkSV80j9gQvmMg2naJsds0D6KNyY3bEII4yNZs+IAqmxwEyX1cl45jSec8y0gubN5/lTYQPr95eo3NuZMQgkC7TLOEydGApKJoTita0Z+7jHVqj74oYHwVgXX1YjSKkdHlwZaNwYXk= gqRtc2lng6ZzdWJzaWeTgaJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKConBrxCDPbbrV5h76mbJPx5OuWBY59+PBHHC0K4H/SqdG87L51KFzxEBfG9erywuPXY/DsgOsadIqou7676GhGH4oSX5K2iSLDCf8L0pFoS3Hmepjsy8FcY62AFIL3Vg5lQLxTdlF670NgaJwa8QgegKRmOgvSz67ItDrNQquyDe17UTgWictMvtqYfpYGCijdGhyAqF2AaN0eG6Io2FtdM0D6KNmZWXNA+iiZnYBomdoxCD+s2w5EBQ5AMPaVULKGDawD9L4GVkSV80j9gQvmMg2naJsds0D6KNyY3bEII4yNZs+IAqmxwEyX1cl45jSec8y0gubN5/lTYQPr95eo3NuZMQgkC7TLOEydGApKJoTita0Z+7jHVqj74oYHwVgXX1YjSKkdHlwZaNwYXk=", @"gqRtc2lng6ZzdWJzaWeTgqJwa8QgphunEajorK/Yj00fDOcOo1TXKQMvhe6frJxwipP1yiKhc8RA+f+fqZgjzOKV1Y8RlHxk0R5InGx5jsnF1gbKXVq+pAxwqSvtSTjTM7mRY0zH7tbv0dJtcuturoLbmX3lRWZCD4KicGvEIM9tutXmHvqZsk/Hk65YFjn348EccLQrgf9Kp0bzsvnUoXPEQF8b16vLC49dj8OyA6xp0iqi7vrvoaEYfihJfkraJIsMJ/wvSkWhLceZ6mOzLwVxjrYAUgvdWDmVAvFN2UXrvQ2BonBrxCB6ApGY6C9LPrsi0Os1Cq7IN7XtROBaJy0y+2ph+lgYKKN0aHICoXYBo3R4boijYW10zQPoo2ZlZc0D6KJmdgGiZ2jEIP6zbDkQFDkAw9pVQsoYNrAP0vgZWRJXzSP2BC+YyDadomx2zQPoo3JjdsQgjjI1mz4gCqbHATJfVyXjmNJ5zzLSC5s3n+VNhA+v3l6jc25kxCCQLtMs4TJ0YCkomhOK1rRn7uMdWqPvihgfBWBdfViNIqR0eXBlo3BheQ==", ((string[])(null)));
@@ -622,21 +540,11 @@ namespace algorand_tests.Features.Unit
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("microalgos", microalgos);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Microalgos to algos", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Microalgos to algos", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 78
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -660,7 +568,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "123456789012")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:microalgos", "123456789012")]
-        public virtual void MicroalgosToAlgos_123456789012()
+        public void MicroalgosToAlgos_123456789012()
         {
 #line 78
   this.MicroalgosToAlgos("123456789012", ((string[])(null)));
@@ -674,7 +582,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "123456789013")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:microalgos", "123456789013")]
-        public virtual void MicroalgosToAlgos_123456789013()
+        public void MicroalgosToAlgos_123456789013()
         {
 #line 78
   this.MicroalgosToAlgos("123456789013", ((string[])(null)));
@@ -688,7 +596,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "123456789014")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:microalgos", "123456789014")]
-        public virtual void MicroalgosToAlgos_123456789014()
+        public void MicroalgosToAlgos_123456789014()
         {
 #line 78
   this.MicroalgosToAlgos("123456789014", ((string[])(null)));
@@ -702,7 +610,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "123456789015")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:microalgos", "123456789015")]
-        public virtual void MicroalgosToAlgos_123456789015()
+        public void MicroalgosToAlgos_123456789015()
         {
 #line 78
   this.MicroalgosToAlgos("123456789015", ((string[])(null)));
@@ -716,7 +624,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "123456789016")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:microalgos", "123456789016")]
-        public virtual void MicroalgosToAlgos_123456789016()
+        public void MicroalgosToAlgos_123456789016()
         {
 #line 78
   this.MicroalgosToAlgos("123456789016", ((string[])(null)));
@@ -730,7 +638,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("unit.offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "123456789017")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:microalgos", "123456789017")]
-        public virtual void MicroalgosToAlgos_123456789017()
+        public void MicroalgosToAlgos_123456789017()
         {
 #line 78
   this.MicroalgosToAlgos("123456789017", ((string[])(null)));

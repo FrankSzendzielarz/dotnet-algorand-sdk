@@ -1,4 +1,4 @@
-﻿using Algorand;
+using Algorand;
 using Algorand.Algod;
 using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
@@ -13,6 +13,11 @@ namespace sdk_examples
     {
         public static async Task Main(params string[] args)
         {
+            // If you want to use this mnemonic, fund this account 6IYAJY3KRIK5GZ326RDAY7ZATAOBY36BGUTYDDXAW44JPIGAY5GQZWY6NE using algokit first.
+            // Find your account first `algokit goal account list`
+            // If your account is `S2Z6G7MMDIIHXTYA4T63RLAZKVTTT4P2Q6VYDSE746YKGGMAVG5KWGQGJI`, then run:
+            //   `algokit goal clerk send -t 6IYAJY3KRIK5GZ326RDAY7ZATAOBY36BGUTYDDXAW44JPIGAY5GQZWY6NE -a 100000000 -f S2Z6G7MMDIIHXTYA4T63RLAZKVTTT4P2Q6VYDSE746YKGGMAVG5KWGQGJI`
+
             var ALGOD_API_ADDR = "http://localhost:4001/";
             var ALGOD_API_TOKEN = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
@@ -28,7 +33,7 @@ namespace sdk_examples
 
             // Create a connection to our sandbox node
             var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
-            DefaultApi algodApiInstance = new DefaultApi(httpClient);
+            var algod = new AlgodClient(httpClient);
 
             // PART 1: CREATE ASSET
             var ap = new AssetParams()
@@ -42,10 +47,10 @@ namespace sdk_examples
             {
                 AssetParams = ap
             };
-            var tx = await MakeTransaction(assetCreateTx, acct1, algodApiInstance) as AssetCreateTransaction;
+            var tx = await MakeTransaction(assetCreateTx, acct1, algod) as AssetCreateTransaction;
             var assetId = (ulong)tx.AssetIndex;
             Console.WriteLine($"Asset id is {assetId}\n");
-            var ast = await algodApiInstance.GetAssetByIDAsync(assetId);
+            var ast = await algod.GetAssetByIDAsync(assetId);
 
             // PART 2: UPDATE ASSET PARAMETERS
             // Now that we have a reference to our asset, we can update its parameters
@@ -57,9 +62,9 @@ namespace sdk_examples
             {
                 AssetParams = ast.Params
             };
-            await MakeTransaction(assetUpdateTx, acct1, algodApiInstance); 
+            await MakeTransaction(assetUpdateTx, acct1, algod); 
 
-            ast = await algodApiInstance.GetAssetByIDAsync(assetId);
+            ast = await algod.GetAssetByIDAsync(assetId);
             Console.WriteLine($"Current manager: {ast.Params.Manager}\n");
 
             // PART 3: OPT INTO RECEIVING THE ASSET
@@ -68,7 +73,7 @@ namespace sdk_examples
                 XferAsset = assetId,
                 AssetReceiver = acct3.Address
             };
-            await MakeTransaction(assetOptInTx, acct3, algodApiInstance);
+            await MakeTransaction(assetOptInTx, acct3, algod);
 
             // PART 4: TRANSFER ASSET
             var assetTransferTx = new AssetTransferTransaction()
@@ -77,7 +82,7 @@ namespace sdk_examples
                 AssetReceiver = acct3.Address,
                 AssetAmount = 100
             };
-            await MakeTransaction(assetTransferTx, acct1, algodApiInstance);
+            await MakeTransaction(assetTransferTx, acct1, algod);
 
             // PART 5: FREEZE ASSET
             var assetFreezeTx = new AssetFreezeTransaction()
@@ -86,7 +91,7 @@ namespace sdk_examples
                 FreezeState = true,
                 FreezeTarget = acct3.Address,
             };
-            await MakeTransaction(assetFreezeTx, acct2, algodApiInstance);
+            await MakeTransaction(assetFreezeTx, acct2, algod);
 
             // PART 6: ASSET CLAWBACK
             var artx = new AssetClawbackTransaction()
@@ -96,14 +101,14 @@ namespace sdk_examples
                 AssetReceiver = acct1.Address,
                 AssetAmount = 10
             };
-            await MakeTransaction(artx, acct2, algodApiInstance);
+            await MakeTransaction(artx, acct2, algod);
 
             // PART 7: DESTROY ASSET
             var assetDestroyTx = new AssetDestroyTransaction()
             {
                 AssetIndex = assetId,
             };
-            await MakeTransaction(assetDestroyTx, acct2, algodApiInstance);
+            await MakeTransaction(assetDestroyTx, acct2, algod);
         }
 
         static async Task<Transaction> MakeTransaction(Transaction tx, Account sender, DefaultApi apiInstance)
@@ -155,3 +160,4 @@ namespace sdk_examples
         }
     }
 }
+

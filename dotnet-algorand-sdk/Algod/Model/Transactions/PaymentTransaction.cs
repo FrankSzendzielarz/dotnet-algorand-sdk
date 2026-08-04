@@ -2,18 +2,19 @@
 
 using Newtonsoft.Json;
 using System;
-using System.ComponentModel;
 using System.Text;
-using System.Runtime.CompilerServices;
+using MessagePack;
 #if UNITY
 using UnityEngine;
 #endif
 
 namespace Algorand.Algod.Model.Transactions
 {
+    [MessagePackObject(AllowPrivate = true)]
     public partial class PaymentTransaction : Transaction
     {
         [JsonProperty(PropertyName = "type")]
+        [MessagePack.Key("type")]
         public string type => "pay";
 
      
@@ -94,16 +95,16 @@ namespace Algorand.Algod.Model.Transactions
         [Tooltip(@"")]
         [field: InspectorName(@"ClosingAmount")]
         [JsonIgnore]
+        [IgnoreMember]
         public ulong? ClosingAmount { get; internal set; }
 #else
 
         [JsonIgnore]
+        [IgnoreMember]
         public ulong? ClosingAmount { get; internal set; }
 #endif
         [JsonProperty(PropertyName = "amount")]
+        [IgnoreMember]
         internal ulong? amount { set { Amount = value ?? 0; } }
-
-
-
     }
 }

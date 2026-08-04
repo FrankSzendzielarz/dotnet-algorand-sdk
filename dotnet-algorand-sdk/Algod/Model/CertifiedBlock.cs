@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorand.Algod.Model
+﻿namespace Algorand.Algod.Model
 {
     using System = global::System;
 

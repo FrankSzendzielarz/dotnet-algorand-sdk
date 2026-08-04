@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "**.csproj"
+            "dotnet-algorand-sdk.csproj"
           ],
           "src": "../dotnet-algorand-sdk"
         }

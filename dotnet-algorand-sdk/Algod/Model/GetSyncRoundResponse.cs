@@ -1,15 +1,13 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class GetSyncRoundResponse
+    {
 
-using System = global::System;
 
 
-public partial class GetSyncRoundResponse{
-
-  
-    
-}
+    }
 
 
 }

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Standalone MSBuild task, built on demand by ILRepack.Targets (see the <MSBuild> call in
+       the ILRepacker target). It exists because ILRepack.Lib.MSBuild's own <ILRepack> task
+       always serializes a repack-list resource via BinaryFormatter, whose (de)serialization
+       APIs were removed in .NET 9+ - see the comment in ILRepack.Targets for the full story.
+       This task drives the same ILRepacking.ILRepack engine directly with NoRepackRes=true,
+       which the packaged task never exposes. Built as an ordinary SDK project (rather than a
+       RoslynCodeTaskFactory inline task) so normal implicit framework references apply - an
+       inline task's manually-specified <Reference> list replaces the compiler's implicit
+       corlib/netstandard references entirely, which made a hand-rolled reference list
+       impractical to get right. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.14.28" />
+    <PackageReference Include="ILRepack.Lib.MSBuild" Version="2.1.18" GeneratePathProperty="true" ExcludeAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- ILRepack.Lib.MSBuild ships its DLLs under tools/ (task-tool convention), not lib/, so
+         PackageReference alone adds no compile-time reference - HintPath it explicitly via the
+         GeneratePathProperty-created $(PkgILRepack_Lib_MSBuild) package-root property, so this
+         keeps working if the pinned version ever changes. -->
+    <Reference Include="ILRepack">
+      <HintPath>$(PkgILRepack_Lib_MSBuild)\tools\netcoreapp3.1\ILRepack.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

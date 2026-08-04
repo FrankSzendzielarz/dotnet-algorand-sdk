@@ -1,4 +1,5 @@
 ﻿using JsonSubTypes;
+using MessagePack;
 using Newtonsoft.Json;
 
 namespace Algorand.Algod.Model.Transactions
@@ -11,13 +12,13 @@ namespace Algorand.Algod.Model.Transactions
     [JsonSubtypes.KnownSubTypeWithProperty(typeof(KeyRegisterOnlineTransaction), "votelst")]
     [JsonSubtypes.KnownSubTypeWithProperty(typeof(KeyRegisterOnlineTransaction), "votekd")]
     [JsonSubtypes.KnownSubTypeWithProperty(typeof(KeyRegisterOnlineTransaction), "nonpart")]
+    [MessagePackObject]
+    [Union(0, typeof(KeyRegisterOnlineTransaction))]
+    [Union(1, typeof(KeyRegisterOfflineTransaction))]
     public abstract partial class KeyRegistrationTransaction : Transaction
     {
         [JsonProperty(PropertyName = "type", Required = Required.Always)]
+        [MessagePack.Key("type")]
         public string type => "keyreg";
-
-
-
-
     }
 }

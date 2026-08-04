@@ -3,7 +3,6 @@ using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,7 +39,7 @@ namespace Algorand.Utils
 
                 if (pendingInfo != null)
                 {
-                    if (pendingInfo.ConfirmedRound != null && pendingInfo.ConfirmedRound > 0)
+                    if (pendingInfo.ConfirmedRound > 0)
                     {
                         // Got the completed Transaction
                         return pendingInfo;
@@ -87,10 +86,8 @@ namespace Algorand.Utils
         /// <returns>a 32 bytes string</returns>
         public static string GetRandomAssetMetaHash()
         {
-            Random rd = new Random();
             byte[] bts = new byte[32];
-            rd.NextBytes(bts);
-            //var base64 = Convert.ToBase64String(bts);
+            System.Security.Cryptography.RandomNumberGenerator.Fill(bts);
             return Convert.ToBase64String(bts);
         }
        
@@ -138,6 +135,21 @@ namespace Algorand.Utils
             Buffer.BlockCopy(b1, 0, ret, 0, b1.Length);
             Buffer.BlockCopy(b2, 0, ret, b1.Length, b2.Length);
             return ret;
+        }
+
+
+        /// <summary>
+        /// Converts gossip delta state value string to byte array
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static byte[] DeltaValueStringToBytes(string data)
+        {
+            //return data.Select(c => (byte)c).ToArray();  // returns 83f77166d10 instead of 8a677166d10 
+            //return Encoding.ASCII.GetBytes(data); // returns 83f77166d10 instead of 8a677166d10 
+            //return Encoding.Latin1.GetBytes(data); // returns 83f77166d10 instead of 8a677166d10 
+
+            return Encoding.ASCII.GetBytes(data);
         }
     }
 }

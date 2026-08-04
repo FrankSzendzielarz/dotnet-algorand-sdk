@@ -1,4 +1,4 @@
-﻿using Algorand;
+using Algorand;
 using Algorand.Algod;
 using Algorand.Algod.Model;
 using Algorand.Utils;
@@ -18,13 +18,13 @@ namespace sdk_examples
             var ALGOD_API_TOKEN = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
             var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
-            DefaultApi algodApiInstance = new DefaultApi(httpClient);
+            var algod = new AlgodClient(httpClient);
 
             byte[] data = Encoding.ASCII.GetBytes(TEALContractsForExamples.HelloWorld());
 
             using (var datams = new MemoryStream(data))
             {
-                CompileResponse response = await algodApiInstance.TealCompileAsync(datams,true);
+                CompileResponse response = await algod.TealCompileAsync(datams,true);
                 Console.WriteLine("response: " + response);
                 Console.WriteLine("Hash: " + response.Hash);
                 Console.WriteLine("Result: " + response.Result);
@@ -40,3 +40,4 @@ namespace sdk_examples
         }
     }
 }
+

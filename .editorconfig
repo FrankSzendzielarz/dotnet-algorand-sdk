@@ -1,0 +1,6 @@
+root = true
+
+[*.cs]
+# IDE0005: Unnecessary using directives. Enforced as a build warning (see Directory.Build.props'
+# EnforceCodeStyleInBuild) so unused imports are caught by `dotnet build`/CI, not just by IDEs.
+dotnet_diagnostic.IDE0005.severity = warning

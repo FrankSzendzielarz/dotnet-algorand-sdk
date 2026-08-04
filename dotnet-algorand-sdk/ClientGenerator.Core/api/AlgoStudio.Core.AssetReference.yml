@@ -1,0 +1,1044 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.AssetReference
+  commentId: T:AVM.ClientGenerator.Core.AssetReference
+  id: AssetReference
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.AssetReference.Clawback
+  - AVM.ClientGenerator.Core.AssetReference.Creator
+  - AVM.ClientGenerator.Core.AssetReference.Decimals
+  - AVM.ClientGenerator.Core.AssetReference.DefaultFrozen
+  - AVM.ClientGenerator.Core.AssetReference.Freeze
+  - AVM.ClientGenerator.Core.AssetReference.Id
+  - AVM.ClientGenerator.Core.AssetReference.Manager
+  - AVM.ClientGenerator.Core.AssetReference.MetadataHash
+  - AVM.ClientGenerator.Core.AssetReference.Name
+  - AVM.ClientGenerator.Core.AssetReference.Reserve
+  - AVM.ClientGenerator.Core.AssetReference.Total
+  - AVM.ClientGenerator.Core.AssetReference.Transfer(AVM.ClientGenerator.Core.AccountReference,System.UInt64)
+  - AVM.ClientGenerator.Core.AssetReference.UnitName
+  - AVM.ClientGenerator.Core.AssetReference.Update(System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.AssetReference.URL
+  langs:
+  - csharp
+  - vb
+  name: AssetReference
+  nameWithType: AssetReference
+  fullName: AVM.ClientGenerator.Core.AssetReference
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AssetReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public sealed class AssetReference
+    content.vb: Public NotInheritable Class AssetReference
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: AVM.ClientGenerator.Core.AssetReference.Id
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Id
+  id: Id
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: AssetReference.Id
+  fullName: AVM.ClientGenerator.Core.AssetReference.Id
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Id
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong Id
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Id As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Total
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Total
+  id: Total
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Total
+  nameWithType: AssetReference.Total
+  fullName: AVM.ClientGenerator.Core.AssetReference.Total
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Total
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong Total
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Total As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Decimals
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Decimals
+  id: Decimals
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Decimals
+  nameWithType: AssetReference.Decimals
+  fullName: AVM.ClientGenerator.Core.AssetReference.Decimals
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Decimals
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 15
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong Decimals
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Decimals As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.DefaultFrozen
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.DefaultFrozen
+  id: DefaultFrozen
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: DefaultFrozen
+  nameWithType: AssetReference.DefaultFrozen
+  fullName: AVM.ClientGenerator.Core.AssetReference.DefaultFrozen
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: DefaultFrozen
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 17
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong DefaultFrozen
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public DefaultFrozen As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.UnitName
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.UnitName
+  id: UnitName
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: UnitName
+  nameWithType: AssetReference.UnitName
+  fullName: AVM.ClientGenerator.Core.AssetReference.UnitName
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: UnitName
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 19
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] UnitName
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public UnitName As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Name
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Name
+  id: Name
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AssetReference.Name
+  fullName: AVM.ClientGenerator.Core.AssetReference.Name
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Name
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 21
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Name
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Name As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.URL
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.URL
+  id: URL
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: URL
+  nameWithType: AssetReference.URL
+  fullName: AVM.ClientGenerator.Core.AssetReference.URL
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: URL
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 23
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] URL
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public URL As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.MetadataHash
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.MetadataHash
+  id: MetadataHash
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: MetadataHash
+  nameWithType: AssetReference.MetadataHash
+  fullName: AVM.ClientGenerator.Core.AssetReference.MetadataHash
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: MetadataHash
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 25
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] MetadataHash
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public MetadataHash As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Manager
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Manager
+  id: Manager
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Manager
+  nameWithType: AssetReference.Manager
+  fullName: AVM.ClientGenerator.Core.AssetReference.Manager
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Manager
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 27
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Manager
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Manager As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Reserve
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Reserve
+  id: Reserve
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Reserve
+  nameWithType: AssetReference.Reserve
+  fullName: AVM.ClientGenerator.Core.AssetReference.Reserve
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Reserve
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 29
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Reserve
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Reserve As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Freeze
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Freeze
+  id: Freeze
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Freeze
+  nameWithType: AssetReference.Freeze
+  fullName: AVM.ClientGenerator.Core.AssetReference.Freeze
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Freeze
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 31
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Freeze
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Freeze As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Clawback
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Clawback
+  id: Clawback
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Clawback
+  nameWithType: AssetReference.Clawback
+  fullName: AVM.ClientGenerator.Core.AssetReference.Clawback
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Clawback
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 33
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Clawback
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Clawback As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Creator
+  commentId: F:AVM.ClientGenerator.Core.AssetReference.Creator
+  id: Creator
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Creator
+  nameWithType: AssetReference.Creator
+  fullName: AVM.ClientGenerator.Core.AssetReference.Creator
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Creator
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 35
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Creator
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Creator As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Transfer(AVM.ClientGenerator.Core.AccountReference,System.UInt64)
+  commentId: M:AVM.ClientGenerator.Core.AssetReference.Transfer(AVM.ClientGenerator.Core.AccountReference,System.UInt64)
+  id: Transfer(AVM.ClientGenerator.Core.AccountReference,System.UInt64)
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Transfer(AccountReference, UInt64)
+  nameWithType: AssetReference.Transfer(AccountReference, UInt64)
+  fullName: AVM.ClientGenerator.Core.AssetReference.Transfer(AVM.ClientGenerator.Core.AccountReference, System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Transfer
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 38
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void Transfer(AccountReference recipientAddress, ulong amount)
+    parameters:
+    - id: recipientAddress
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: amount
+      type: System.UInt64
+    content.vb: Public Sub Transfer(recipientAddress As AccountReference, amount As ULong)
+  overload: AVM.ClientGenerator.Core.AssetReference.Transfer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AssetReference.Update(System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.AssetReference.Update(System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  id: Update(System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.AssetReference
+  langs:
+  - csharp
+  - vb
+  name: Update(Byte[], Byte[], Byte[], Byte[])
+  nameWithType: AssetReference.Update(Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.AssetReference.Update(System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AssetReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Update
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AssetReference.cs
+    startLine: 40
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void Update(byte[] Manager = null, byte[] Reserve = null, byte[] Freeze = null, byte[] Clawback = null)
+    parameters:
+    - id: Manager
+      type: System.Byte[]
+    - id: Reserve
+      type: System.Byte[]
+    - id: Freeze
+      type: System.Byte[]
+    - id: Clawback
+      type: System.Byte[]
+    content.vb: Public Sub Update(Manager As Byte() = Nothing, Reserve As Byte() = Nothing, Freeze As Byte() = Nothing, Clawback As Byte() = Nothing)
+  overload: AVM.ClientGenerator.Core.AssetReference.Update*
+  nameWithType.vb: AssetReference.Update(Byte(), Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.AssetReference.Update(System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Update(Byte(), Byte(), Byte(), Byte())
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.AssetReference.Transfer*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetReference.Transfer
+  name: Transfer
+  nameWithType: AssetReference.Transfer
+  fullName: AVM.ClientGenerator.Core.AssetReference.Transfer
+- uid: AVM.ClientGenerator.Core.AccountReference
+  commentId: T:AVM.ClientGenerator.Core.AccountReference
+  parent: AVM.ClientGenerator.Core
+  name: AccountReference
+  nameWithType: AccountReference
+  fullName: AVM.ClientGenerator.Core.AccountReference
+- uid: AVM.ClientGenerator.Core.AssetReference.Update*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetReference.Update
+  name: Update
+  nameWithType: AssetReference.Update
+  fullName: AVM.ClientGenerator.Core.AssetReference.Update

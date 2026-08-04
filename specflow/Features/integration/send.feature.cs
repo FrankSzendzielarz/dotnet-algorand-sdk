@@ -27,7 +27,7 @@ namespace algorand_tests.Features.Integration
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private string[] _featureTags = ((string[])(null));
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "send.feature"
 #line hidden
@@ -48,7 +48,7 @@ namespace algorand_tests.Features.Integration
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/integration", "Sending transactions", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/integration", "Sending transactions", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -60,7 +60,7 @@ namespace algorand_tests.Features.Integration
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Sending transactions")))
@@ -70,23 +70,23 @@ namespace algorand_tests.Features.Integration
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -118,21 +118,11 @@ namespace algorand_tests.Features.Integration
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("amt", amt);
             argumentsOfScenario.Add("note", note);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sending transactions", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sending transactions", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -168,7 +158,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amt", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:note", "X4Bl4wQ9rCo=")]
-        public virtual void SendingTransactions_0()
+        public void SendingTransactions_0()
         {
 #line 8
   this.SendingTransactions("0", "X4Bl4wQ9rCo=", ((string[])(null)));
@@ -182,7 +172,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "1234523")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amt", "1234523")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:note", "X4Bl4wQ9rCo=")]
-        public virtual void SendingTransactions_1234523()
+        public void SendingTransactions_1234523()
         {
 #line 8
   this.SendingTransactions("1234523", "X4Bl4wQ9rCo=", ((string[])(null)));
@@ -201,21 +191,11 @@ namespace algorand_tests.Features.Integration
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("amt", amt);
             argumentsOfScenario.Add("note", note);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sending multisig transactions", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sending multisig transactions", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 21
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -251,7 +231,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amt", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:note", "X4Bl4wQ9rCo=")]
-        public virtual void SendingMultisigTransactions_0()
+        public void SendingMultisigTransactions_0()
         {
 #line 21
   this.SendingMultisigTransactions("0", "X4Bl4wQ9rCo=", ((string[])(null)));
@@ -265,7 +245,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "1234523")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amt", "1234523")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:note", "X4Bl4wQ9rCo=")]
-        public virtual void SendingMultisigTransactions_1234523()
+        public void SendingMultisigTransactions_1234523()
         {
 #line 21
   this.SendingMultisigTransactions("1234523", "X4Bl4wQ9rCo=", ((string[])(null)));
@@ -283,21 +263,11 @@ namespace algorand_tests.Features.Integration
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("type", type);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sending key registration transactions", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sending key registration transactions", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 34
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -332,7 +302,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("send.keyregtxn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "online")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:type", "online")]
-        public virtual void SendingKeyRegistrationTransactions_Online()
+        public void SendingKeyRegistrationTransactions_Online()
         {
 #line 34
   this.SendingKeyRegistrationTransactions("online", ((string[])(null)));
@@ -345,7 +315,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("send.keyregtxn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "offline")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:type", "offline")]
-        public virtual void SendingKeyRegistrationTransactions_Offline()
+        public void SendingKeyRegistrationTransactions_Offline()
         {
 #line 34
   this.SendingKeyRegistrationTransactions("offline", ((string[])(null)));
@@ -358,7 +328,7 @@ namespace algorand_tests.Features.Integration
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("send.keyregtxn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "nonparticipation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:type", "nonparticipation")]
-        public virtual void SendingKeyRegistrationTransactions_Nonparticipation()
+        public void SendingKeyRegistrationTransactions_Nonparticipation()
         {
 #line 34
   this.SendingKeyRegistrationTransactions("nonparticipation", ((string[])(null)));

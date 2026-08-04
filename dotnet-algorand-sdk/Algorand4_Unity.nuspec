@@ -1,26 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>Algorand2_Unity</id>
+    <id>Algorand4_Unity</id>
     <version>$version$</version>
-    <authors>Frank Szendzielarz</authors>
+    <authors>Ludovit Scholtz, Frank Szendzielarz</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="file">LICENSE</license>
     <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
     <readme>README.md</readme>
-    <projectUrl>https://github.com/FrankSzendzielarz/dotnet-algorand-sdk</projectUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/scholtz/dotnet-algorand-sdk</projectUrl>
     <description>Algorand SDK for .Net 2</description>
-    <repository url="https://github.com/FrankSzendzielarz/dotnet-algorand-sdk" />
+    <repository url="https://github.com/scholtz/dotnet-algorand-sdk" />
     <dependencies>
-      <group targetFramework=".NETStandard2.0">
+      <group targetFramework=".NETStandard2.1">
         <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
         <dependency id="System.ComponentModel.Annotations" version="5.0.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
+    <!-- MessagePack and MessagePack.Annotations are ILRepack-merged into Algorand.dll for the
+         Unity build (see ILRepack.Targets), so they are intentionally not listed as separate
+         nuspec dependencies. -->
   </metadata>
   <files>
-    <file src="Algorand.dll" target="lib\netstandard2.0\Algorand.dll" />
+    <file src="Algorand.dll" target="lib\netstandard2.1\Algorand.dll" />
     <file src="LICENSE" target="LICENSE" />
     <file src="README.md" target="\README.md" />
+    <file src="icon.png" target="\icon.png" />
   </files>
 </package>

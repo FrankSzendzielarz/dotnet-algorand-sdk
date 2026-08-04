@@ -1,4 +1,6 @@
-﻿using Algorand.Utils;
+﻿using Algorand.Algod.Model.Converters.MsgPack;
+using Algorand.Utils;
+using MessagePack;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
@@ -9,9 +11,13 @@ namespace Algorand
     /// A serializable class representing a SHA512-256 Digest
     /// </summary>
     [JsonConverter(typeof(BytesConverter))]
+
+    [MessagePackObject]
+    [MessagePackFormatter(typeof(DigestFormatterMsgPack))]
     public class Digest
     {
         private static int DIG_LEN_BYTES = 32;
+        [IgnoreMember]
         public byte[] Bytes { get; private set; }
         /// <summary>
         /// Create a new digest.
@@ -43,7 +49,7 @@ namespace Algorand
         /// </summary>
         /// <param name="base64String">base64 encoded string</param>
         public Digest(string base64String) : this(Convert.FromBase64String(base64String)) { }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is Digest && Enumerable.SequenceEqual(this.Bytes, ((Digest)obj).Bytes)) {
                 return true;

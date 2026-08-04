@@ -1,0 +1,979 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.InnerTransaction
+  commentId: T:AVM.ClientGenerator.Core.InnerTransaction
+  id: InnerTransaction
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.InnerTransaction.#ctor
+  - AVM.ClientGenerator.Core.InnerTransaction.#ctor(System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.InnerTransaction.Fee
+  - AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  - AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  - AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  - AVM.ClientGenerator.Core.InnerTransaction.Lease
+  - AVM.ClientGenerator.Core.InnerTransaction.Note
+  - AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  - AVM.ClientGenerator.Core.InnerTransaction.Sender
+  - AVM.ClientGenerator.Core.InnerTransaction.TxID
+  - AVM.ClientGenerator.Core.InnerTransaction.TxType
+  langs:
+  - csharp
+  - vb
+  name: InnerTransaction
+  nameWithType: InnerTransaction
+  fullName: AVM.ClientGenerator.Core.InnerTransaction
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: InnerTransaction
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public abstract class InnerTransaction
+    content.vb: Public MustInherit Class InnerTransaction
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - AVM.ClientGenerator.Core.AppCall
+  - AVM.ClientGenerator.Core.AssetAccept
+  - AVM.ClientGenerator.Core.AssetClawback
+  - AVM.ClientGenerator.Core.AssetConfiguration
+  - AVM.ClientGenerator.Core.AssetFreeze
+  - AVM.ClientGenerator.Core.AssetTransfer
+  - AVM.ClientGenerator.Core.KeyRegistration
+  - AVM.ClientGenerator.Core.Payment
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Fee
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Fee
+  id: Fee
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: Fee
+  nameWithType: InnerTransaction.Fee
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Fee
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Fee
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong Fee { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property Fee As ULong
+  overload: AVM.ClientGenerator.Core.InnerTransaction.Fee*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  id: FirstValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: FirstValid
+  nameWithType: InnerTransaction.FirstValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: FirstValid
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong FirstValid { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property FirstValid As ULong
+  overload: AVM.ClientGenerator.Core.InnerTransaction.FirstValid*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  id: LastValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: LastValid
+  nameWithType: InnerTransaction.LastValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LastValid
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong LastValid { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property LastValid As ULong
+  overload: AVM.ClientGenerator.Core.InnerTransaction.LastValid*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Sender
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Sender
+  id: Sender
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: Sender
+  nameWithType: InnerTransaction.Sender
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Sender
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Sender
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Sender { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property Sender As Byte()
+  overload: AVM.ClientGenerator.Core.InnerTransaction.Sender*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxType
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxType
+  id: TxType
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: TxType
+  nameWithType: InnerTransaction.TxType
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxType
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: TxType
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public string TxType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property TxType As String
+  overload: AVM.ClientGenerator.Core.InnerTransaction.TxType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Lease
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Lease
+  id: Lease
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: Lease
+  nameWithType: InnerTransaction.Lease
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Lease
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Lease
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Lease { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property Lease As Byte()
+  overload: AVM.ClientGenerator.Core.InnerTransaction.Lease*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Note
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Note
+  id: Note
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: Note
+  nameWithType: InnerTransaction.Note
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Note
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Note
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 15
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Note { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property Note As Byte()
+  overload: AVM.ClientGenerator.Core.InnerTransaction.Note*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  id: RekeyTo
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: RekeyTo
+  nameWithType: InnerTransaction.RekeyTo
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: RekeyTo
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 16
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] RekeyTo { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property RekeyTo As Byte()
+  overload: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  id: GroupIndex
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: GroupIndex
+  nameWithType: InnerTransaction.GroupIndex
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GroupIndex
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 17
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong GroupIndex { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property GroupIndex As ULong
+  overload: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxID
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxID
+  id: TxID
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: TxID
+  nameWithType: InnerTransaction.TxID
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxID
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: TxID
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 18
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] TxID { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property TxID As Byte()
+  overload: AVM.ClientGenerator.Core.InnerTransaction.TxID*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.InnerTransaction.#ctor
+  commentId: M:AVM.ClientGenerator.Core.InnerTransaction.#ctor
+  id: '#ctor'
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: InnerTransaction()
+  nameWithType: InnerTransaction.InnerTransaction()
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.InnerTransaction()
+  type: Constructor
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: .ctor
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 19
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: protected InnerTransaction()
+    content.vb: Protected Sub New
+  overload: AVM.ClientGenerator.Core.InnerTransaction.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: AVM.ClientGenerator.Core.InnerTransaction.#ctor(System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.InnerTransaction.#ctor(System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Byte[],System.Byte[],System.Byte[])
+  id: '#ctor(System.String,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Byte[],System.Byte[],System.Byte[])'
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  langs:
+  - csharp
+  - vb
+  name: InnerTransaction(String, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, AccountReference, Byte[], Byte[], Byte[])
+  nameWithType: InnerTransaction.InnerTransaction(String, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, AccountReference, Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.InnerTransaction(System.String, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, AVM.ClientGenerator.Core.AccountReference, System.Byte[], System.Byte[], System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: .ctor
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/InnerTransaction.cs
+    startLine: 20
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public InnerTransaction(string txType, ulong? fee = 0UL, ulong? firstValid = 0UL, ulong? lastValid = 0UL, AccountReference sender = null, byte[] lease = null, byte[] note = null, byte[] rekeyTo = null)
+    parameters:
+    - id: txType
+      type: System.String
+    - id: fee
+      type: System.Nullable{System.UInt64}
+    - id: firstValid
+      type: System.Nullable{System.UInt64}
+    - id: lastValid
+      type: System.Nullable{System.UInt64}
+    - id: sender
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: lease
+      type: System.Byte[]
+    - id: note
+      type: System.Byte[]
+    - id: rekeyTo
+      type: System.Byte[]
+    content.vb: Public Sub New(txType As String, fee As ULong? = 0UL, firstValid As ULong? = 0UL, lastValid As ULong? = 0UL, sender As AccountReference = Nothing, lease As Byte() = Nothing, note As Byte() = Nothing, rekeyTo As Byte() = Nothing)
+  overload: AVM.ClientGenerator.Core.InnerTransaction.#ctor*
+  nameWithType.vb: InnerTransaction.InnerTransaction(String, Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), AccountReference, Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.InnerTransaction.InnerTransaction(System.String, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), AVM.ClientGenerator.Core.AccountReference, System.Byte(), System.Byte(), System.Byte())
+  name.vb: InnerTransaction(String, Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), AccountReference, Byte(), Byte(), Byte())
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Fee*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.Fee
+  name: Fee
+  nameWithType: InnerTransaction.Fee
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Fee
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: AVM.ClientGenerator.Core.InnerTransaction.FirstValid*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  name: FirstValid
+  nameWithType: InnerTransaction.FirstValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.LastValid*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  name: LastValid
+  nameWithType: InnerTransaction.LastValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Sender*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.Sender
+  name: Sender
+  nameWithType: InnerTransaction.Sender
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Sender
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxType*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.TxType
+  name: TxType
+  nameWithType: InnerTransaction.TxType
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Lease*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.Lease
+  name: Lease
+  nameWithType: InnerTransaction.Lease
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Lease
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Note*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.Note
+  name: Note
+  nameWithType: InnerTransaction.Note
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Note
+- uid: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  name: RekeyTo
+  nameWithType: InnerTransaction.RekeyTo
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+- uid: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  name: GroupIndex
+  nameWithType: InnerTransaction.GroupIndex
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxID*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.TxID
+  name: TxID
+  nameWithType: InnerTransaction.TxID
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxID
+- uid: AVM.ClientGenerator.Core.InnerTransaction.#ctor*
+  commentId: Overload:AVM.ClientGenerator.Core.InnerTransaction.#ctor
+  name: InnerTransaction
+  nameWithType: InnerTransaction.InnerTransaction
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.InnerTransaction
+- uid: System.Nullable{System.UInt64}
+  commentId: T:System.Nullable{System.UInt64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<UInt64>
+  nameWithType: Nullable<UInt64>
+  fullName: System.Nullable<System.UInt64>
+  nameWithType.vb: Nullable(Of UInt64)
+  fullName.vb: System.Nullable(Of System.UInt64)
+  name.vb: Nullable(Of UInt64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.AccountReference
+  commentId: T:AVM.ClientGenerator.Core.AccountReference
+  parent: AVM.ClientGenerator.Core
+  name: AccountReference
+  nameWithType: AccountReference
+  fullName: AVM.ClientGenerator.Core.AccountReference
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

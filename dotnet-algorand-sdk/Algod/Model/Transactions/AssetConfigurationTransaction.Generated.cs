@@ -2,7 +2,7 @@
 namespace Algorand.Algod.Model.Transactions
 {
 
-using System = global::System;
+    using System = global::System;
 #if UNITY
 using UnityEngine;
 #endif
@@ -10,9 +10,10 @@ using UnityEngine;
 #if UNITY
 [System.Serializable]
 #endif
-public partial class AssetConfigurationTransaction : Transaction{
-    
-}
+    public partial class AssetConfigurationTransaction : Transaction
+    {
+
+    }
 
 
 }

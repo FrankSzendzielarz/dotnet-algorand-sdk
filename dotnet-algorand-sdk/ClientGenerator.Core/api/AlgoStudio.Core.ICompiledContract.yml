@@ -1,0 +1,294 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.ICompiledContract
+  commentId: T:AVM.ClientGenerator.Core.ICompiledContract
+  id: ICompiledContract
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram
+  - AVM.ClientGenerator.Core.ICompiledContract.ClearState
+  - AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices
+  - AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts
+  - AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices
+  - AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts
+  langs:
+  - csharp
+  - vb
+  name: ICompiledContract
+  nameWithType: ICompiledContract
+  fullName: AVM.ClientGenerator.Core.ICompiledContract
+  type: Interface
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ICompiledContract
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 6
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public interface ICompiledContract
+    content.vb: Public Interface ICompiledContract
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices
+  commentId: P:AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices
+  id: NumberOfLocalByteSlices
+  parent: AVM.ClientGenerator.Core.ICompiledContract
+  langs:
+  - csharp
+  - vb
+  name: NumberOfLocalByteSlices
+  nameWithType: ICompiledContract.NumberOfLocalByteSlices
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumberOfLocalByteSlices
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 8
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: int NumberOfLocalByteSlices { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property NumberOfLocalByteSlices As Integer
+  overload: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts
+  commentId: P:AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts
+  id: NumberOfLocalUInts
+  parent: AVM.ClientGenerator.Core.ICompiledContract
+  langs:
+  - csharp
+  - vb
+  name: NumberOfLocalUInts
+  nameWithType: ICompiledContract.NumberOfLocalUInts
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumberOfLocalUInts
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: int NumberOfLocalUInts { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property NumberOfLocalUInts As Integer
+  overload: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices
+  commentId: P:AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices
+  id: NumberOfGlobalByteSlices
+  parent: AVM.ClientGenerator.Core.ICompiledContract
+  langs:
+  - csharp
+  - vb
+  name: NumberOfGlobalByteSlices
+  nameWithType: ICompiledContract.NumberOfGlobalByteSlices
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumberOfGlobalByteSlices
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: int NumberOfGlobalByteSlices { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property NumberOfGlobalByteSlices As Integer
+  overload: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts
+  commentId: P:AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts
+  id: NumberOfGlobalUInts
+  parent: AVM.ClientGenerator.Core.ICompiledContract
+  langs:
+  - csharp
+  - vb
+  name: NumberOfGlobalUInts
+  nameWithType: ICompiledContract.NumberOfGlobalUInts
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumberOfGlobalUInts
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: int NumberOfGlobalUInts { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property NumberOfGlobalUInts As Integer
+  overload: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram
+  commentId: P:AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram
+  id: ApprovalProgram
+  parent: AVM.ClientGenerator.Core.ICompiledContract
+  langs:
+  - csharp
+  - vb
+  name: ApprovalProgram
+  nameWithType: ICompiledContract.ApprovalProgram
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ApprovalProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: string ApprovalProgram { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ApprovalProgram As String
+  overload: AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.ICompiledContract.ClearState
+  commentId: P:AVM.ClientGenerator.Core.ICompiledContract.ClearState
+  id: ClearState
+  parent: AVM.ClientGenerator.Core.ICompiledContract
+  langs:
+  - csharp
+  - vb
+  name: ClearState
+  nameWithType: ICompiledContract.ClearState
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.ClearState
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledContract.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ClearState
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledContract.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: string ClearState { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ClearState As String
+  overload: AVM.ClientGenerator.Core.ICompiledContract.ClearState*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices
+  name: NumberOfLocalByteSlices
+  nameWithType: ICompiledContract.NumberOfLocalByteSlices
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalByteSlices
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts
+  name: NumberOfLocalUInts
+  nameWithType: ICompiledContract.NumberOfLocalUInts
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfLocalUInts
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices
+  name: NumberOfGlobalByteSlices
+  nameWithType: ICompiledContract.NumberOfGlobalByteSlices
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalByteSlices
+- uid: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts
+  name: NumberOfGlobalUInts
+  nameWithType: ICompiledContract.NumberOfGlobalUInts
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.NumberOfGlobalUInts
+- uid: AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram
+  name: ApprovalProgram
+  nameWithType: ICompiledContract.ApprovalProgram
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.ApprovalProgram
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: AVM.ClientGenerator.Core.ICompiledContract.ClearState*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledContract.ClearState
+  name: ClearState
+  nameWithType: ICompiledContract.ClearState
+  fullName: AVM.ClientGenerator.Core.ICompiledContract.ClearState

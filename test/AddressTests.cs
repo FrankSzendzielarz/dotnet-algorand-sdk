@@ -19,7 +19,7 @@ namespace test
                 Address addr = new Address(randKey);
                 string addrStr = addr.EncodeAsString();
                 Address reencAddr = new Address(addrStr);
-                Assert.AreEqual(reencAddr, addr);
+                Assert.That(reencAddr, Is.EqualTo(addr));
             }
         }
 
@@ -32,7 +32,7 @@ namespace test
             {
                 bytes[i] = (byte)0xff; // careful with signedness
             }
-            Assert.AreEqual(new Address(bytes).ToString(), golden);
+            Assert.That(new Address(bytes).ToString(), Is.EqualTo(golden));
         }
 
         [Test]
@@ -41,8 +41,8 @@ namespace test
             Address a = new Address("VKM6KSCTDHEM6KGEAMSYCNEGIPFJMHDSEMIRAQLK76CJDIRMMDHKAIRMFQ");
             byte[] outBytes = Encoder.EncodeToMsgPackOrdered(a);
             Address o = Encoder.DecodeFromMsgPack<Address>(outBytes);//把内存流反序列成对象            
-            Assert.AreEqual(o, a);
-            Assert.AreEqual("VKM6KSCTDHEM6KGEAMSYCNEGIPFJMHDSEMIRAQLK76CJDIRMMDHKAIRMFQ", o.EncodeAsString());
+            Assert.That(o, Is.EqualTo(a));
+            Assert.That(o.EncodeAsString(), Is.EqualTo("VKM6KSCTDHEM6KGEAMSYCNEGIPFJMHDSEMIRAQLK76CJDIRMMDHKAIRMFQ"));
         }
 
         [Test]
@@ -51,11 +51,7 @@ namespace test
             ulong appID = 77;
             Address expected = new Address("PCYUFPA2ZTOYWTP43MX2MOX2OWAIAXUDNC2WFCXAGMRUZ3DYD6BWFDL5YM");
             Address actual = Address.ForApplication(appID);
-            Assert.AreEqual(actual,expected);
-
-
-
-  
+            Assert.That(actual, Is.EqualTo(expected));
         }
     }
 }

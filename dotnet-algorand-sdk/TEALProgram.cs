@@ -1,5 +1,7 @@
-﻿using Algorand.Utils;
-using Algorand.Algod.Model;
+﻿using Algorand.Algod.Model;
+using Algorand.Algod.Model.Converters.MsgPack;
+using Algorand.Utils;
+using MessagePack;
 using Newtonsoft.Json;
 using System;
 
@@ -9,9 +11,13 @@ namespace Algorand
     /// TEALProgram
     /// </summary>
     [JsonConverter(typeof(BytesConverter))]
+
+    [MessagePackObject]
+    [MessagePackFormatter(typeof(TEALProgramFormatterMsgPack))]
     public class TEALProgram
     {
         private byte[] program = null;
+        [IgnoreMember]
         public byte[] Bytes
         {
             get

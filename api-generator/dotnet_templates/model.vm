@@ -1,12 +1,9 @@
-
+#nullable enable annotations
 namespace $propFile.namespace
 {
 #if($propFile.indexer)
 #else
     using Algorand.Algod.Model.Transactions;
-\#if UNITY
-    using UnityEngine;
-#[[#endif]]#
 #end
 
 using System = global::System;

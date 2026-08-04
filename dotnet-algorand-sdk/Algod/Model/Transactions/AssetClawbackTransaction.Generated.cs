@@ -2,7 +2,7 @@
 namespace Algorand.Algod.Model.Transactions
 {
 
-using System = global::System;
+    using System = global::System;
 #if UNITY
 using UnityEngine;
 #endif
@@ -10,48 +10,20 @@ using UnityEngine;
 #if UNITY
 [System.Serializable]
 #endif
-public partial class AssetClawbackTransaction : AssetMovementsTransaction{
+    [MessagePack.MessagePackObject(AllowPrivate = true)]
+    public partial class AssetClawbackTransaction : AssetTransferTransaction
+    {
 
-    [Newtonsoft.Json.JsonProperty("aamt", Required = Newtonsoft.Json.Required.Always)]
-    [System.ComponentModel.DataAnnotations.Required]
-#if UNITY
-    [field:SerializeField]
-    [Tooltip(@"")]
-    [field:InspectorName(@"AssetAmount")]
-    public ulong AssetAmount {get;set;}
-#else
-    public ulong AssetAmount {get;set;}
-#endif
-
-
-
-    [Newtonsoft.Json.JsonProperty("arcv", Required = Newtonsoft.Json.Required.Always)]
-    [System.ComponentModel.DataAnnotations.Required]
-#if UNITY
-    [field:SerializeField]
-    [Tooltip(@"")]
-    [field:InspectorName(@"AssetReceiver")]
-    public Algorand.Address AssetReceiver {get;set;}
-#else
-    public Algorand.Address AssetReceiver {get;set;}
-#endif
-
-
-
-    [Newtonsoft.Json.JsonProperty("asnd", Required = Newtonsoft.Json.Required.Always)]
-    [System.ComponentModel.DataAnnotations.Required]
+        [Newtonsoft.Json.JsonProperty("asnd", Required = Newtonsoft.Json.Required.Always)]
+        [MessagePack.Key("asnd")]
+        [System.ComponentModel.DataAnnotations.Required]
 #if UNITY
     [field:SerializeField]
     [Tooltip(@"")]
     [field:InspectorName(@"AssetSender")]
     public Algorand.Address AssetSender {get;set;}
 #else
-    public Algorand.Address AssetSender {get;set;}
+        public Algorand.Address AssetSender { get; set; }
 #endif
-
-
-    
-}
-
-
+    }
 }

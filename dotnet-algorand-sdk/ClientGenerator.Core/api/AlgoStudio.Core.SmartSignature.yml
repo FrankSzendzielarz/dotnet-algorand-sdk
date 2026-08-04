@@ -1,0 +1,2230 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.SmartSignature
+  commentId: T:AVM.ClientGenerator.Core.SmartSignature
+  id: SmartSignature
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray(System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral(System.Int64)
+  - AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray(System.Numerics.BigInteger)
+  - AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  - AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  - AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.GetArgument(System.Int32)
+  - AVM.ClientGenerator.Core.SmartSignature.GroupId
+  - AVM.ClientGenerator.Core.SmartSignature.GroupSize
+  - AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod
+  - AVM.ClientGenerator.Core.SmartSignature.Keccak256(System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion
+  - AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife
+  - AVM.ClientGenerator.Core.SmartSignature.MinBalance
+  - AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee
+  - AVM.ClientGenerator.Core.SmartSignature.Program
+  - AVM.ClientGenerator.Core.SmartSignature.Sha256(System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.Sha512_256(System.Byte[])
+  - AVM.ClientGenerator.Core.SmartSignature.ZeroAddress
+  langs:
+  - csharp
+  - vb
+  name: SmartSignature
+  nameWithType: SmartSignature
+  fullName: AVM.ClientGenerator.Core.SmartSignature
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: SmartSignature
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public abstract class SmartSignature : ISmartSignaturePredefineds, IAlgorandCommonPredefineds'
+    content.vb: >-
+      Public MustInherit Class SmartSignature
+
+          Implements ISmartSignaturePredefineds, IAlgorandCommonPredefineds
+  inheritance:
+  - System.Object
+  implements:
+  - AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee
+  id: MinTransactionFee
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: MinTransactionFee
+  nameWithType: SmartSignature.MinTransactionFee
+  fullName: AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: MinTransactionFee
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong MinTransactionFee { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property MinTransactionFee As ULong
+  overload: AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.MinBalance
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.MinBalance
+  id: MinBalance
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: MinBalance
+  nameWithType: SmartSignature.MinBalance
+  fullName: AVM.ClientGenerator.Core.SmartSignature.MinBalance
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: MinBalance
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong MinBalance { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property MinBalance As ULong
+  overload: AVM.ClientGenerator.Core.SmartSignature.MinBalance*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife
+  id: MaxTransactionLife
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: MaxTransactionLife
+  nameWithType: SmartSignature.MaxTransactionLife
+  fullName: AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: MaxTransactionLife
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong MaxTransactionLife { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property MaxTransactionLife As ULong
+  overload: AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.ZeroAddress
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.ZeroAddress
+  id: ZeroAddress
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: ZeroAddress
+  nameWithType: SmartSignature.ZeroAddress
+  fullName: AVM.ClientGenerator.Core.SmartSignature.ZeroAddress
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ZeroAddress
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 15
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ZeroAddress { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ZeroAddress As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.ZeroAddress*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.GroupSize
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.GroupSize
+  id: GroupSize
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: GroupSize
+  nameWithType: SmartSignature.GroupSize
+  fullName: AVM.ClientGenerator.Core.SmartSignature.GroupSize
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GroupSize
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 17
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong GroupSize { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property GroupSize As ULong
+  overload: AVM.ClientGenerator.Core.SmartSignature.GroupSize*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion
+  id: LogicSigVersion
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: LogicSigVersion
+  nameWithType: SmartSignature.LogicSigVersion
+  fullName: AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LogicSigVersion
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 19
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong LogicSigVersion { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property LogicSigVersion As ULong
+  overload: AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.GroupId
+  commentId: P:AVM.ClientGenerator.Core.SmartSignature.GroupId
+  id: GroupId
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: GroupId
+  nameWithType: SmartSignature.GroupId
+  fullName: AVM.ClientGenerator.Core.SmartSignature.GroupId
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GroupId
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 21
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] GroupId { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property GroupId As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.GroupId*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray(System.Byte[])
+  id: BigIntegerFromByteArray(System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: BigIntegerFromByteArray(Byte[])
+  nameWithType: SmartSignature.BigIntegerFromByteArray(Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: BigIntegerFromByteArray
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 23
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public BigInteger BigIntegerFromByteArray(byte[] bytes)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+    return:
+      type: System.Numerics.BigInteger
+    content.vb: Public Function BigIntegerFromByteArray(bytes As Byte()) As BigInteger
+  overload: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  nameWithType.vb: SmartSignature.BigIntegerFromByteArray(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray(System.Byte())
+  name.vb: BigIntegerFromByteArray(Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral(System.Int64)
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral(System.Int64)
+  id: BigIntegerFromIntegral(System.Int64)
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: BigIntegerFromIntegral(Int64)
+  nameWithType: SmartSignature.BigIntegerFromIntegral(Int64)
+  fullName: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: BigIntegerFromIntegral
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 28
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public BigInteger BigIntegerFromIntegral(long integral)
+    parameters:
+    - id: integral
+      type: System.Int64
+    return:
+      type: System.Numerics.BigInteger
+    content.vb: Public Function BigIntegerFromIntegral(integral As Long) As BigInteger
+  overload: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray(System.Numerics.BigInteger)
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray(System.Numerics.BigInteger)
+  id: BigIntegerToByteArray(System.Numerics.BigInteger)
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: BigIntegerToByteArray(BigInteger)
+  nameWithType: SmartSignature.BigIntegerToByteArray(BigInteger)
+  fullName: AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray(System.Numerics.BigInteger)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: BigIntegerToByteArray
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 33
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] BigIntegerToByteArray(BigInteger b)
+    parameters:
+    - id: b
+      type: System.Numerics.BigInteger
+    return:
+      type: System.Byte[]
+    content.vb: Public Function BigIntegerToByteArray(b As BigInteger) As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  id: Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Ecdsa_pk_decompress_secp256k1(Byte[], out Byte[], out Byte[])
+  nameWithType: SmartSignature.Ecdsa_pk_decompress_secp256k1(Byte[], out Byte[], out Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1(System.Byte[], out System.Byte[], out System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Ecdsa_pk_decompress_secp256k1
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 38
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void Ecdsa_pk_decompress_secp256k1(byte[] pk, out byte[] pubkey_X, out byte[] pubkey_Y)
+    parameters:
+    - id: pk
+      type: System.Byte[]
+    - id: pubkey_X
+      type: System.Byte[]
+    - id: pubkey_Y
+      type: System.Byte[]
+    content.vb: Public Sub Ecdsa_pk_decompress_secp256k1(pk As Byte(), ByRef pubkey_X As Byte(), ByRef pubkey_Y As Byte())
+  overload: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  nameWithType.vb: SmartSignature.Ecdsa_pk_decompress_secp256k1(Byte(), ByRef Byte(), ByRef Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1(System.Byte(), ByRef System.Byte(), ByRef System.Byte())
+  name.vb: Ecdsa_pk_decompress_secp256k1(Byte(), ByRef Byte(), ByRef Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  id: Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Ecdsa_pk_recover_secp256k1(Byte[], UInt64, Byte[], Byte[], out Byte[], out Byte[])
+  nameWithType: SmartSignature.Ecdsa_pk_recover_secp256k1(Byte[], UInt64, Byte[], Byte[], out Byte[], out Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1(System.Byte[], System.UInt64, System.Byte[], System.Byte[], out System.Byte[], out System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Ecdsa_pk_recover_secp256k1
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 45
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void Ecdsa_pk_recover_secp256k1(byte[] data, ulong recover_id, byte[] signature_R, byte[] signature_S, out byte[] pubkey_X, out byte[] pubkey_Y)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: recover_id
+      type: System.UInt64
+    - id: signature_R
+      type: System.Byte[]
+    - id: signature_S
+      type: System.Byte[]
+    - id: pubkey_X
+      type: System.Byte[]
+    - id: pubkey_Y
+      type: System.Byte[]
+    content.vb: Public Sub Ecdsa_pk_recover_secp256k1(data As Byte(), recover_id As ULong, signature_R As Byte(), signature_S As Byte(), ByRef pubkey_X As Byte(), ByRef pubkey_Y As Byte())
+  overload: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  nameWithType.vb: SmartSignature.Ecdsa_pk_recover_secp256k1(Byte(), UInt64, Byte(), Byte(), ByRef Byte(), ByRef Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1(System.Byte(), System.UInt64, System.Byte(), System.Byte(), ByRef System.Byte(), ByRef System.Byte())
+  name.vb: Ecdsa_pk_recover_secp256k1(Byte(), UInt64, Byte(), Byte(), ByRef Byte(), ByRef Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  id: Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Ecdsa_verify_secp256k1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  nameWithType: SmartSignature.Ecdsa_verify_secp256k1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1(System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Ecdsa_verify_secp256k1
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 50
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public bool Ecdsa_verify_secp256k1(byte[] data, byte[] signature_R, byte[] signature_S, byte[] pubkey_X, byte[] pubkey_Y)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: signature_R
+      type: System.Byte[]
+    - id: signature_S
+      type: System.Byte[]
+    - id: pubkey_X
+      type: System.Byte[]
+    - id: pubkey_Y
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function Ecdsa_verify_secp256k1(data As Byte(), signature_R As Byte(), signature_S As Byte(), pubkey_X As Byte(), pubkey_Y As Byte()) As Boolean
+  overload: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  nameWithType.vb: SmartSignature.Ecdsa_verify_secp256k1(Byte(), Byte(), Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1(System.Byte(), System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_verify_secp256k1(Byte(), Byte(), Byte(), Byte(), Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  id: Ecdsa_verify_secp256r1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Ecdsa_verify_secp256r1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  nameWithType: SmartSignature.Ecdsa_verify_secp256r1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1(System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Ecdsa_verify_secp256r1
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 55
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public bool Ecdsa_verify_secp256r1(byte[] data, byte[] signature_R, byte[] signature_S, byte[] pubkey_X, byte[] pubkey_Y)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: signature_R
+      type: System.Byte[]
+    - id: signature_S
+      type: System.Byte[]
+    - id: pubkey_X
+      type: System.Byte[]
+    - id: pubkey_Y
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function Ecdsa_verify_secp256r1(data As Byte(), signature_R As Byte(), signature_S As Byte(), pubkey_X As Byte(), pubkey_Y As Byte()) As Boolean
+  overload: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1*
+  nameWithType.vb: SmartSignature.Ecdsa_verify_secp256r1(Byte(), Byte(), Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1(System.Byte(), System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_verify_secp256r1(Byte(), Byte(), Byte(), Byte(), Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  id: Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Ed25519verify(Byte[], Byte[], Byte[])
+  nameWithType: SmartSignature.Ed25519verify(Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ed25519verify(System.Byte[], System.Byte[], System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Ed25519verify
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 60
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public bool Ed25519verify(byte[] data, byte[] signature, byte[] publicKey)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: signature
+      type: System.Byte[]
+    - id: publicKey
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function Ed25519verify(data As Byte(), signature As Byte(), publicKey As Byte()) As Boolean
+  overload: AVM.ClientGenerator.Core.SmartSignature.Ed25519verify*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  nameWithType.vb: SmartSignature.Ed25519verify(Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Ed25519verify(System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ed25519verify(Byte(), Byte(), Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.GetArgument(System.Int32)
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.GetArgument(System.Int32)
+  id: GetArgument(System.Int32)
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: GetArgument(Int32)
+  nameWithType: SmartSignature.GetArgument(Int32)
+  fullName: AVM.ClientGenerator.Core.SmartSignature.GetArgument(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GetArgument
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 65
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] GetArgument(int n)
+    parameters:
+    - id: n
+      type: System.Int32
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetArgument(n As Integer) As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.GetArgument*
+  implements:
+  - AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartSignature.Keccak256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Keccak256(System.Byte[])
+  id: Keccak256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Keccak256(Byte[])
+  nameWithType: SmartSignature.Keccak256(Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Keccak256(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Keccak256
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 70
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Keccak256(byte[] toHash)
+    parameters:
+    - id: toHash
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Function Keccak256(toHash As Byte()) As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.Keccak256*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  nameWithType.vb: SmartSignature.Keccak256(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Keccak256(System.Byte())
+  name.vb: Keccak256(Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.Sha256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Sha256(System.Byte[])
+  id: Sha256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Sha256(Byte[])
+  nameWithType: SmartSignature.Sha256(Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Sha256(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Sha256
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 75
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Sha256(byte[] toHash)
+    parameters:
+    - id: toHash
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Function Sha256(toHash As Byte()) As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.Sha256*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  nameWithType.vb: SmartSignature.Sha256(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Sha256(System.Byte())
+  name.vb: Sha256(Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.Sha512_256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Sha512_256(System.Byte[])
+  id: Sha512_256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Sha512_256(Byte[])
+  nameWithType: SmartSignature.Sha512_256(Byte[])
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Sha512_256(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Sha512_256
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 80
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Sha512_256(byte[] toHash)
+    parameters:
+    - id: toHash
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Function Sha512_256(toHash As Byte()) As Byte()
+  overload: AVM.ClientGenerator.Core.SmartSignature.Sha512_256*
+  implements:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  nameWithType.vb: SmartSignature.Sha512_256(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.SmartSignature.Sha512_256(System.Byte())
+  name.vb: Sha512_256(Byte())
+- uid: AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod
+  id: InvokeSmartSignatureMethod
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: InvokeSmartSignatureMethod()
+  nameWithType: SmartSignature.InvokeSmartSignatureMethod()
+  fullName: AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod()
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: InvokeSmartSignatureMethod
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 88
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void InvokeSmartSignatureMethod()
+    content.vb: Public Sub InvokeSmartSignatureMethod
+  overload: AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod*
+  implements:
+  - AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartSignature.Program
+  commentId: M:AVM.ClientGenerator.Core.SmartSignature.Program
+  id: Program
+  parent: AVM.ClientGenerator.Core.SmartSignature
+  langs:
+  - csharp
+  - vb
+  name: Program()
+  nameWithType: SmartSignature.Program()
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Program()
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Program
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartSignature.cs
+    startLine: 93
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public abstract int Program()
+    return:
+      type: System.Int32
+    content.vb: Public MustOverride Function Program As Integer
+  overload: AVM.ClientGenerator.Core.SmartSignature.Program*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  commentId: T:AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  parent: AVM.ClientGenerator.Core
+  name: ISmartSignaturePredefineds
+  nameWithType: ISmartSignaturePredefineds
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  commentId: T:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  parent: AVM.ClientGenerator.Core
+  name: IAlgorandCommonPredefineds
+  nameWithType: IAlgorandCommonPredefineds
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee
+  name: MinTransactionFee
+  nameWithType: SmartSignature.MinTransactionFee
+  fullName: AVM.ClientGenerator.Core.SmartSignature.MinTransactionFee
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: MinTransactionFee
+  nameWithType: IAlgorandCommonPredefineds.MinTransactionFee
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: AVM.ClientGenerator.Core.SmartSignature.MinBalance*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.MinBalance
+  name: MinBalance
+  nameWithType: SmartSignature.MinBalance
+  fullName: AVM.ClientGenerator.Core.SmartSignature.MinBalance
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: MinBalance
+  nameWithType: IAlgorandCommonPredefineds.MinBalance
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+- uid: AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife
+  name: MaxTransactionLife
+  nameWithType: SmartSignature.MaxTransactionLife
+  fullName: AVM.ClientGenerator.Core.SmartSignature.MaxTransactionLife
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: MaxTransactionLife
+  nameWithType: IAlgorandCommonPredefineds.MaxTransactionLife
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+- uid: AVM.ClientGenerator.Core.SmartSignature.ZeroAddress*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.ZeroAddress
+  name: ZeroAddress
+  nameWithType: SmartSignature.ZeroAddress
+  fullName: AVM.ClientGenerator.Core.SmartSignature.ZeroAddress
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: ZeroAddress
+  nameWithType: IAlgorandCommonPredefineds.ZeroAddress
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.SmartSignature.GroupSize*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.GroupSize
+  name: GroupSize
+  nameWithType: SmartSignature.GroupSize
+  fullName: AVM.ClientGenerator.Core.SmartSignature.GroupSize
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: GroupSize
+  nameWithType: IAlgorandCommonPredefineds.GroupSize
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+- uid: AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion
+  name: LogicSigVersion
+  nameWithType: SmartSignature.LogicSigVersion
+  fullName: AVM.ClientGenerator.Core.SmartSignature.LogicSigVersion
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: LogicSigVersion
+  nameWithType: IAlgorandCommonPredefineds.LogicSigVersion
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+- uid: AVM.ClientGenerator.Core.SmartSignature.GroupId*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.GroupId
+  name: GroupId
+  nameWithType: SmartSignature.GroupId
+  fullName: AVM.ClientGenerator.Core.SmartSignature.GroupId
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: GroupId
+  nameWithType: IAlgorandCommonPredefineds.GroupId
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+- uid: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray
+  name: BigIntegerFromByteArray
+  nameWithType: SmartSignature.BigIntegerFromByteArray
+  fullName: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromByteArray
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: BigIntegerFromByteArray(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.BigIntegerFromByteArray(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.BigIntegerFromByteArray(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte())
+  name.vb: BigIntegerFromByteArray(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+    name: BigIntegerFromByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+    name: BigIntegerFromByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Numerics.BigInteger
+  commentId: T:System.Numerics.BigInteger
+  parent: System.Numerics
+  isExternal: true
+  name: BigInteger
+  nameWithType: BigInteger
+  fullName: System.Numerics.BigInteger
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+- uid: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral
+  name: BigIntegerFromIntegral
+  nameWithType: SmartSignature.BigIntegerFromIntegral
+  fullName: AVM.ClientGenerator.Core.SmartSignature.BigIntegerFromIntegral
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: BigIntegerFromIntegral(Int64)
+  nameWithType: IAlgorandCommonPredefineds.BigIntegerFromIntegral(Int64)
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+    name: BigIntegerFromIntegral
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromIntegral
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+    name: BigIntegerFromIntegral
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromIntegral
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray
+  name: BigIntegerToByteArray
+  nameWithType: SmartSignature.BigIntegerToByteArray
+  fullName: AVM.ClientGenerator.Core.SmartSignature.BigIntegerToByteArray
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: BigIntegerToByteArray(BigInteger)
+  nameWithType: IAlgorandCommonPredefineds.BigIntegerToByteArray(BigInteger)
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+    name: BigIntegerToByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerToByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Numerics.BigInteger
+    name: BigInteger
+    nameWithType: BigInteger
+    fullName: System.Numerics.BigInteger
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+    name: BigIntegerToByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerToByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Numerics.BigInteger
+    name: BigInteger
+    nameWithType: BigInteger
+    fullName: System.Numerics.BigInteger
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1
+  name: Ecdsa_pk_decompress_secp256k1
+  nameWithType: SmartSignature.Ecdsa_pk_decompress_secp256k1
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_decompress_secp256k1
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ecdsa_pk_decompress_secp256k1(Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_pk_decompress_secp256k1(Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_decompress_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_decompress_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1
+  name: Ecdsa_pk_recover_secp256k1
+  nameWithType: SmartSignature.Ecdsa_pk_recover_secp256k1
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_pk_recover_secp256k1
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ecdsa_pk_recover_secp256k1(Byte[], UInt64, Byte[], Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(Byte[], UInt64, Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[], System.UInt64, System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(Byte(), UInt64, Byte(), Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte(), System.UInt64, System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_pk_recover_secp256k1(Byte(), UInt64, Byte(), Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_recover_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_recover_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1
+  name: Ecdsa_verify_secp256k1
+  nameWithType: SmartSignature.Ecdsa_verify_secp256k1
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256k1
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ecdsa_verify_secp256k1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(Byte(), Byte(), Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte(), System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_verify_secp256k1(Byte(), Byte(), Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+    name: Ecdsa_verify_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+    name: Ecdsa_verify_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1
+  name: Ecdsa_verify_secp256r1
+  nameWithType: SmartSignature.Ecdsa_verify_secp256r1
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ecdsa_verify_secp256r1
+- uid: AVM.ClientGenerator.Core.SmartSignature.Ed25519verify*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Ed25519verify
+  name: Ed25519verify
+  nameWithType: SmartSignature.Ed25519verify
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Ed25519verify
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ed25519verify(Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ed25519verify(Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ed25519verify(Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ed25519verify(Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+    name: Ed25519verify
+    nameWithType: IAlgorandCommonPredefineds.Ed25519verify
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+    name: Ed25519verify
+    nameWithType: IAlgorandCommonPredefineds.Ed25519verify
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.GetArgument*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.GetArgument
+  name: GetArgument
+  nameWithType: SmartSignature.GetArgument
+  fullName: AVM.ClientGenerator.Core.SmartSignature.GetArgument
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  commentId: M:AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  parent: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  isExternal: true
+  name: GetArgument(Int32)
+  nameWithType: ISmartSignaturePredefineds.GetArgument(Int32)
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+    name: GetArgument
+    nameWithType: ISmartSignaturePredefineds.GetArgument
+    fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+    name: GetArgument
+    nameWithType: ISmartSignaturePredefineds.GetArgument
+    fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: AVM.ClientGenerator.Core.SmartSignature.Keccak256*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Keccak256
+  name: Keccak256
+  nameWithType: SmartSignature.Keccak256
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Keccak256
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Keccak256(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Keccak256(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Keccak256(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte())
+  name.vb: Keccak256(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+    name: Keccak256
+    nameWithType: IAlgorandCommonPredefineds.Keccak256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+    name: Keccak256
+    nameWithType: IAlgorandCommonPredefineds.Keccak256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.Sha256*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Sha256
+  name: Sha256
+  nameWithType: SmartSignature.Sha256
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Sha256
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Sha256(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Sha256(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Sha256(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte())
+  name.vb: Sha256(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+    name: Sha256
+    nameWithType: IAlgorandCommonPredefineds.Sha256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+    name: Sha256
+    nameWithType: IAlgorandCommonPredefineds.Sha256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.Sha512_256*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Sha512_256
+  name: Sha512_256
+  nameWithType: SmartSignature.Sha512_256
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Sha512_256
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Sha512_256(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Sha512_256(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Sha512_256(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte())
+  name.vb: Sha512_256(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+    name: Sha512_256
+    nameWithType: IAlgorandCommonPredefineds.Sha512_256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+    name: Sha512_256
+    nameWithType: IAlgorandCommonPredefineds.Sha512_256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod
+  name: InvokeSmartSignatureMethod
+  nameWithType: SmartSignature.InvokeSmartSignatureMethod
+  fullName: AVM.ClientGenerator.Core.SmartSignature.InvokeSmartSignatureMethod
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  commentId: M:AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  parent: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  name: InvokeSmartSignatureMethod()
+  nameWithType: ISmartSignaturePredefineds.InvokeSmartSignatureMethod()
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod()
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+    name: InvokeSmartSignatureMethod
+    nameWithType: ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+    fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+    name: InvokeSmartSignatureMethod
+    nameWithType: ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+    fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.SmartSignature.Program*
+  commentId: Overload:AVM.ClientGenerator.Core.SmartSignature.Program
+  name: Program
+  nameWithType: SmartSignature.Program
+  fullName: AVM.ClientGenerator.Core.SmartSignature.Program

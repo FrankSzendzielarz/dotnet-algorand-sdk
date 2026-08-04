@@ -1,17 +1,22 @@
-﻿using System;
-using System.Linq;
-using Algorand.Utils;
+﻿using Algorand.Algod.Model.Converters.Json;
+using Algorand.Algod.Model.Converters.MsgPack;
+using MessagePack;
 using Newtonsoft.Json;
+using System;
+using System.Linq;
 
 namespace Algorand
 {
     /// <summary>
     /// A serializable class representing a participation key.
     /// </summary>
-    [JsonConverter(typeof(BytesConverter))]
+    [JsonConverter(typeof(ParticipationPublicKeyConverterJson))]
+    [MessagePack.MessagePackObject]
+    [MessagePackFormatter(typeof(ParticipationPublicKeyFormatterMsgPack))]
     public class ParticipationPublicKey
     {
         private const int KEY_LEN_BYTES = 32;
+        [IgnoreMember]
         public byte[] Bytes { get; private set; }
         /// <summary>
         /// Create a new participation key
@@ -41,7 +46,7 @@ namespace Algorand
             this.Bytes = new byte[KEY_LEN_BYTES];
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ParticipationPublicKey && Enumerable.SequenceEqual(this.Bytes, ((ParticipationPublicKey)obj).Bytes);
         }
@@ -51,10 +56,13 @@ namespace Algorand
         }
     }
 
-    [JsonConverter(typeof(BytesConverter))]
+    [JsonConverter(typeof(VRFPublicKeyConverterJson))]
+    [MessagePack.MessagePackObject]
+    [MessagePackFormatter(typeof(VRFPublicKeyFormatterMsgPack))]
     public class VRFPublicKey
     {
         private const int KEY_LEN_BYTES = 32;
+        [IgnoreMember]
         public byte[] Bytes { get; private set; }
 
         [JsonConstructor]

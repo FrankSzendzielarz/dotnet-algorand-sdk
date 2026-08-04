@@ -1,0 +1,959 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  commentId: T:AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  id: ISmartSignaturePredefineds
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  - AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  langs:
+  - csharp
+  - vb
+  name: ISmartSignaturePredefineds
+  nameWithType: ISmartSignaturePredefineds
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  type: Interface
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/IAlgorandCommonPredefineds.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ISmartSignaturePredefineds
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/IAlgorandCommonPredefineds.cs
+    startLine: 55
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public interface ISmartSignaturePredefineds : IAlgorandCommonPredefineds'
+    content.vb: >-
+      Public Interface ISmartSignaturePredefineds
+
+          Inherits IAlgorandCommonPredefineds
+  inheritedMembers:
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+  - AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  commentId: M:AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  id: GetArgument(System.Int32)
+  parent: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  langs:
+  - csharp
+  - vb
+  name: GetArgument(Int32)
+  nameWithType: ISmartSignaturePredefineds.GetArgument(Int32)
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/IAlgorandCommonPredefineds.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GetArgument
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/IAlgorandCommonPredefineds.cs
+    startLine: 57
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: byte[] GetArgument(int n)
+    parameters:
+    - id: n
+      type: System.Int32
+    return:
+      type: System.Byte[]
+    content.vb: Function GetArgument(n As Integer) As Byte()
+  overload: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument*
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  commentId: M:AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  id: InvokeSmartSignatureMethod
+  parent: AVM.ClientGenerator.Core.ISmartSignaturePredefineds
+  langs:
+  - csharp
+  - vb
+  name: InvokeSmartSignatureMethod()
+  nameWithType: ISmartSignaturePredefineds.InvokeSmartSignatureMethod()
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod()
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/IAlgorandCommonPredefineds.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: InvokeSmartSignatureMethod
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/IAlgorandCommonPredefineds.cs
+    startLine: 59
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: void InvokeSmartSignatureMethod()
+    content.vb: Sub InvokeSmartSignatureMethod
+  overload: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod*
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Sha256(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Sha256(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Sha256(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte())
+  name.vb: Sha256(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+    name: Sha256
+    nameWithType: IAlgorandCommonPredefineds.Sha256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256(System.Byte[])
+    name: Sha256
+    nameWithType: IAlgorandCommonPredefineds.Sha256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Keccak256(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Keccak256(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Keccak256(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte())
+  name.vb: Keccak256(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+    name: Keccak256
+    nameWithType: IAlgorandCommonPredefineds.Keccak256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256(System.Byte[])
+    name: Keccak256
+    nameWithType: IAlgorandCommonPredefineds.Keccak256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Keccak256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Sha512_256(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Sha512_256(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Sha512_256(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte())
+  name.vb: Sha512_256(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+    name: Sha512_256
+    nameWithType: IAlgorandCommonPredefineds.Sha512_256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256(System.Byte[])
+    name: Sha512_256
+    nameWithType: IAlgorandCommonPredefineds.Sha512_256
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Sha512_256
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ed25519verify(Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ed25519verify(Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ed25519verify(Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ed25519verify(Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+    name: Ed25519verify
+    nameWithType: IAlgorandCommonPredefineds.Ed25519verify
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify(System.Byte[],System.Byte[],System.Byte[])
+    name: Ed25519verify
+    nameWithType: IAlgorandCommonPredefineds.Ed25519verify
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ed25519verify
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ecdsa_verify_secp256k1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(Byte[], Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(Byte(), Byte(), Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte(), System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_verify_secp256k1(Byte(), Byte(), Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+    name: Ecdsa_verify_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+    name: Ecdsa_verify_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_verify_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ecdsa_pk_decompress_secp256k1(Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_pk_decompress_secp256k1(Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_decompress_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1(System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_decompress_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_decompress_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: Ecdsa_pk_recover_secp256k1(Byte[], UInt64, Byte[], Byte[], Byte[], Byte[])
+  nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(Byte[], UInt64, Byte[], Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[], System.UInt64, System.Byte[], System.Byte[], System.Byte[], System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(Byte(), UInt64, Byte(), Byte(), Byte(), Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte(), System.UInt64, System.Byte(), System.Byte(), System.Byte(), System.Byte())
+  name.vb: Ecdsa_pk_recover_secp256k1(Byte(), UInt64, Byte(), Byte(), Byte(), Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_recover_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1(System.Byte[],System.UInt64,System.Byte[],System.Byte[],System.Byte[]@,System.Byte[]@)
+    name: Ecdsa_pk_recover_secp256k1
+    nameWithType: IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.Ecdsa_pk_recover_secp256k1
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: BigIntegerFromByteArray(Byte[])
+  nameWithType: IAlgorandCommonPredefineds.BigIntegerFromByteArray(Byte[])
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+  nameWithType.vb: IAlgorandCommonPredefineds.BigIntegerFromByteArray(Byte())
+  fullName.vb: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte())
+  name.vb: BigIntegerFromByteArray(Byte())
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+    name: BigIntegerFromByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray(System.Byte[])
+    name: BigIntegerFromByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: BigIntegerToByteArray(BigInteger)
+  nameWithType: IAlgorandCommonPredefineds.BigIntegerToByteArray(BigInteger)
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+    name: BigIntegerToByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerToByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Numerics.BigInteger
+    name: BigInteger
+    nameWithType: BigInteger
+    fullName: System.Numerics.BigInteger
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray(System.Numerics.BigInteger)
+    name: BigIntegerToByteArray
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerToByteArray
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Numerics.BigInteger
+    name: BigInteger
+    nameWithType: BigInteger
+    fullName: System.Numerics.BigInteger
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  commentId: M:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  isExternal: true
+  name: BigIntegerFromIntegral(Int64)
+  nameWithType: IAlgorandCommonPredefineds.BigIntegerFromIntegral(Int64)
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+  spec.csharp:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+    name: BigIntegerFromIntegral
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromIntegral
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral(System.Int64)
+    name: BigIntegerFromIntegral
+    nameWithType: IAlgorandCommonPredefineds.BigIntegerFromIntegral
+    fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.BigIntegerFromIntegral
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: MinTransactionFee
+  nameWithType: IAlgorandCommonPredefineds.MinTransactionFee
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinTransactionFee
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: MinBalance
+  nameWithType: IAlgorandCommonPredefineds.MinBalance
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MinBalance
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: MaxTransactionLife
+  nameWithType: IAlgorandCommonPredefineds.MaxTransactionLife
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.MaxTransactionLife
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: ZeroAddress
+  nameWithType: IAlgorandCommonPredefineds.ZeroAddress
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.ZeroAddress
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: GroupSize
+  nameWithType: IAlgorandCommonPredefineds.GroupSize
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupSize
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: LogicSigVersion
+  nameWithType: IAlgorandCommonPredefineds.LogicSigVersion
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.LogicSigVersion
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+  commentId: P:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+  parent: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  name: GroupId
+  nameWithType: IAlgorandCommonPredefineds.GroupId
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds.GroupId
+- uid: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  commentId: T:AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+  parent: AVM.ClientGenerator.Core
+  name: IAlgorandCommonPredefineds
+  nameWithType: IAlgorandCommonPredefineds
+  fullName: AVM.ClientGenerator.Core.IAlgorandCommonPredefineds
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument*
+  commentId: Overload:AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument
+  name: GetArgument
+  nameWithType: ISmartSignaturePredefineds.GetArgument
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.GetArgument
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod*
+  commentId: Overload:AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  name: InvokeSmartSignatureMethod
+  nameWithType: ISmartSignaturePredefineds.InvokeSmartSignatureMethod
+  fullName: AVM.ClientGenerator.Core.ISmartSignaturePredefineds.InvokeSmartSignatureMethod

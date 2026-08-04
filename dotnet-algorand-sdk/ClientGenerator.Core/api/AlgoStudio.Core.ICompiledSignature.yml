@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.ICompiledSignature
+  commentId: T:AVM.ClientGenerator.Core.ICompiledSignature
+  id: ICompiledSignature
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.ICompiledSignature.Program
+  langs:
+  - csharp
+  - vb
+  name: ICompiledSignature
+  nameWithType: ICompiledSignature
+  fullName: AVM.ClientGenerator.Core.ICompiledSignature
+  type: Interface
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ICompiledSignature
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledSignature.cs
+    startLine: 6
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public interface ICompiledSignature
+    content.vb: Public Interface ICompiledSignature
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: AVM.ClientGenerator.Core.ICompiledSignature.Program
+  commentId: P:AVM.ClientGenerator.Core.ICompiledSignature.Program
+  id: Program
+  parent: AVM.ClientGenerator.Core.ICompiledSignature
+  langs:
+  - csharp
+  - vb
+  name: Program
+  nameWithType: ICompiledSignature.Program
+  fullName: AVM.ClientGenerator.Core.ICompiledSignature.Program
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/ICompiledSignature.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Program
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/ICompiledSignature.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: string Program { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Program As String
+  overload: AVM.ClientGenerator.Core.ICompiledSignature.Program*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: AVM.ClientGenerator.Core.ICompiledSignature.Program*
+  commentId: Overload:AVM.ClientGenerator.Core.ICompiledSignature.Program
+  name: Program
+  nameWithType: ICompiledSignature.Program
+  fullName: AVM.ClientGenerator.Core.ICompiledSignature.Program
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

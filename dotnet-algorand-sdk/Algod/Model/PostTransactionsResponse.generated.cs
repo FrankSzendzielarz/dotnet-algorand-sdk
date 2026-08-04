@@ -2,11 +2,8 @@
 namespace Algorand.Algod.Model
 {
     using Algorand.Algod.Model.Transactions;
-#if UNITY
-    using UnityEngine;
-#endif
 
-using System = global::System;
+    using System = global::System;
 #if UNITY
 using UnityEngine;
 #endif
@@ -14,22 +11,24 @@ using UnityEngine;
 #if UNITY
 [System.Serializable]
 #endif
-public partial class PostTransactionsResponse{
+    public partial class PostTransactionsResponse
+    {
 
-    [Newtonsoft.Json.JsonProperty("txId", Required = Newtonsoft.Json.Required.Always)]
-    [System.ComponentModel.DataAnnotations.Required]
+        [Newtonsoft.Json.JsonProperty("txId", Required = Newtonsoft.Json.Required.Always)]
+        [MessagePack.Key("txId")]
+        [System.ComponentModel.DataAnnotations.Required]
 #if UNITY
     [field:SerializeField]
     [Tooltip(@"encoding of the transaction hash.")]
     [field:InspectorName(@"Txid")]
     public string Txid {get;set;}
 #else
-    public string Txid {get;set;}
+        public string Txid { get; set; }
 #endif
 
 
-    
-}
+
+    }
 
 
 }

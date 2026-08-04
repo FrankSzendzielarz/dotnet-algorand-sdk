@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Algorand.Algod.Model.Converters.MsgPack;
+using Algorand.Utils;
+using MessagePack;
+using Newtonsoft.Json;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Crypto.Signers;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Org.BouncyCastle.Crypto.Signers;
-using Org.BouncyCastle.Crypto.Parameters;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using Algorand.Utils;
 
 namespace Algorand
 {
@@ -13,6 +15,8 @@ namespace Algorand
     /// Address represents a serializable 32-byte length Algorand address.
     /// </summary>
     [JsonConverter(typeof(BytesConverter))]
+    [MessagePackObject]
+    [MessagePackFormatter(typeof(AddressFormatterMsgPack))]
     public class Address
     {
         /// <summary>
@@ -23,6 +27,7 @@ namespace Algorand
         /// <summary>
         /// the underlying bytes
         /// </summary>
+        [IgnoreMember]
         public byte[] Bytes { get; private set; }
         // the length of checksum to append
         private const int CHECKSUM_LEN_BYTES = 4;
@@ -32,6 +37,8 @@ namespace Algorand
         private static readonly byte[] BYTES_SIGN_PREFIX = Encoding.UTF8.GetBytes("MX");
         // prefix for hashing application ID
         private static readonly byte[] APP_ID_PREFIX = Encoding.UTF8.GetBytes("appID");
+
+        public static readonly Address ZERO_ADDRESS = new Address(new byte[LEN_BYTES]);
 
         /// <summary>
         /// Create a new address from a byte array.
@@ -166,7 +173,7 @@ namespace Algorand
         {
             return this.EncodeAsString();
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {            
             if (obj is Address && Enumerable.SequenceEqual(this.Bytes, (obj as Address).Bytes))
                 return true;
@@ -190,7 +197,28 @@ namespace Algorand
             var buffer=Utils.Utils.CombineBytes(APP_ID_PREFIX, appID.ToBigEndianBytes());
             return new Address(Digester.Digest(buffer));
         }
-}
+        /// <summary>
+        /// For == equality
+        /// </summary>
+        /// <param name="a1"></param>
+        /// <param name="a2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Address a1, Address a2)
+        {
+            if (a1 is null) return a2 is null;
+            return a1.Equals(a2);
+        }
+        /// <summary>
+        /// For != equality
+        /// </summary>
+        /// <param name="a1"></param>
+        /// <param name="a2"></param>
+        /// <returns></returns>
+        public static bool operator !=(Address a1, Address a2)
+        {
+            return !(a1 == a2);
+        }
+    }
     /// <summary>
     /// MultisigAddress is a convenience class for handling multisignature public identities.
     /// </summary>
@@ -262,7 +290,7 @@ namespace Algorand
         {
             return this.ToAddress().ToString();
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if(obj is MultisigAddress mAddress)
             {
@@ -284,6 +312,15 @@ namespace Algorand
                     //return base.Equals(obj);
             }
             return false;
+        }
+        public override int GetHashCode()
+        {
+            var hash = new HashCode();
+            hash.Add(version);
+            hash.Add(threshold);
+            foreach (var key in publicKeys)
+                hash.Add(key);
+            return hash.ToHashCode();
         }
     }
 }

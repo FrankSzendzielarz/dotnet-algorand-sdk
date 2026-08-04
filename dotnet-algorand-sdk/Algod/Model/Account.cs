@@ -6,10 +6,8 @@ namespace Algorand.Algod.Model
     using Algorand.Crypto;
     using Algorand.Utils;
     using Algorand.Utils.Crypto;
+    using MessagePack;
     using Newtonsoft.Json;
-    using Org.BouncyCastle.Crypto;
-    using Org.BouncyCastle.Crypto.Generators;
-    using Org.BouncyCastle.Crypto.Parameters;
     using Org.BouncyCastle.Crypto.Signers;
     using Org.BouncyCastle.Security;
     using System;
@@ -26,17 +24,19 @@ namespace Algorand.Algod.Model
     /// <br/>data/basics/userBalance.go : AccountData
     /// <br/></summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
-    public partial class Account
+    [MessagePack.MessagePackObject]
+    public partial class Account : IDisposable
     {
 
 
         private static readonly byte[] BYTES_SIGN_PREFIX = Encoding.UTF8.GetBytes("MX");
         private static readonly byte[] PROGDATA_SIGN_PREFIX = Encoding.UTF8.GetBytes("ProgData");
         [JsonIgnore]
+        [IgnoreMember]
         public KeyPair KeyPair { get; private set; }
 
 
-  
+
 
 
         //TODO - omit this from the .generated codegen
@@ -46,6 +46,7 @@ namespace Algorand.Algod.Model
         /// <br/>* msig
         /// <br/>* lsig</summary>
         [Newtonsoft.Json.JsonProperty("sig-type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("sig-type")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 #if UNITY
         [field: SerializeField]
@@ -74,16 +75,18 @@ namespace Algorand.Algod.Model
         /// <summary>
         /// Generate a new, random account.
         /// </summary>
-        public Account() : this(new SecureRandom()) {
-           
+        public Account() : this(new SecureRandom())
+        {
+
         }
 
         /// <summary>
         /// Generate a newc account with seed(master derivation key)
         /// </summary>
         /// <param name="seed">seed(master derivation key)</param>
-        public Account(byte[] seed)  : this(new FixedSecureRandom(seed))  {
-        
+        public Account(byte[] seed) : this(new FixedSecureRandom(seed))
+        {
+
         }
 
 
@@ -114,7 +117,7 @@ namespace Algorand.Algod.Model
             return new Signature(signature);
         }
 
-        public Signature SignBytes(byte[] bytes) 
+        public Signature SignBytes(byte[] bytes)
         {
             List<byte> retByte = new List<byte>();
             retByte.AddRange(BYTES_SIGN_PREFIX);
@@ -136,6 +139,25 @@ namespace Algorand.Algod.Model
             baos.AddRange(rawAddress);
             baos.AddRange(data);
             return SignRawBytes(baos.ToArray());
+        }
+
+        public override string ToString()
+        {
+            var str = this.Address.EncodeAsString();
+            if (string.IsNullOrEmpty(str))
+            {
+                return "?Address?";
+            }
+            return $"{str.Substring(0, 4)}..{str.Substring(str.Length-4)}";
+        }
+
+        /// <summary>
+        /// Best-effort wipe of this account's private key material. See
+        /// <see cref="KeyPair.Dispose"/> for what this can and cannot guarantee.
+        /// </summary>
+        public void Dispose()
+        {
+            KeyPair?.Dispose();
         }
     }
 }

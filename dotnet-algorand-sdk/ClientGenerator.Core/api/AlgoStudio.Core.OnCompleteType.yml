@@ -1,0 +1,244 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.OnCompleteType
+  commentId: T:AVM.ClientGenerator.Core.OnCompleteType
+  id: OnCompleteType
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.OnCompleteType.ClearState
+  - AVM.ClientGenerator.Core.OnCompleteType.CloseOut
+  - AVM.ClientGenerator.Core.OnCompleteType.DeleteApplication
+  - AVM.ClientGenerator.Core.OnCompleteType.NoOp
+  - AVM.ClientGenerator.Core.OnCompleteType.OptIn
+  - AVM.ClientGenerator.Core.OnCompleteType.UpdateApplication
+  langs:
+  - csharp
+  - vb
+  name: OnCompleteType
+  nameWithType: OnCompleteType
+  fullName: AVM.ClientGenerator.Core.OnCompleteType
+  type: Enum
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: OnCompleteType
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 6
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public enum OnCompleteType
+    content.vb: Public Enum OnCompleteType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: AVM.ClientGenerator.Core.OnCompleteType.NoOp
+  commentId: F:AVM.ClientGenerator.Core.OnCompleteType.NoOp
+  id: NoOp
+  parent: AVM.ClientGenerator.Core.OnCompleteType
+  langs:
+  - csharp
+  - vb
+  name: NoOp
+  nameWithType: OnCompleteType.NoOp
+  fullName: AVM.ClientGenerator.Core.OnCompleteType.NoOp
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NoOp
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 8
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: NoOp = 0
+    return:
+      type: AVM.ClientGenerator.Core.OnCompleteType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.OnCompleteType.OptIn
+  commentId: F:AVM.ClientGenerator.Core.OnCompleteType.OptIn
+  id: OptIn
+  parent: AVM.ClientGenerator.Core.OnCompleteType
+  langs:
+  - csharp
+  - vb
+  name: OptIn
+  nameWithType: OnCompleteType.OptIn
+  fullName: AVM.ClientGenerator.Core.OnCompleteType.OptIn
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: OptIn
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: OptIn = 1
+    return:
+      type: AVM.ClientGenerator.Core.OnCompleteType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.OnCompleteType.CloseOut
+  commentId: F:AVM.ClientGenerator.Core.OnCompleteType.CloseOut
+  id: CloseOut
+  parent: AVM.ClientGenerator.Core.OnCompleteType
+  langs:
+  - csharp
+  - vb
+  name: CloseOut
+  nameWithType: OnCompleteType.CloseOut
+  fullName: AVM.ClientGenerator.Core.OnCompleteType.CloseOut
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: CloseOut
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: CloseOut = 2
+    return:
+      type: AVM.ClientGenerator.Core.OnCompleteType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.OnCompleteType.ClearState
+  commentId: F:AVM.ClientGenerator.Core.OnCompleteType.ClearState
+  id: ClearState
+  parent: AVM.ClientGenerator.Core.OnCompleteType
+  langs:
+  - csharp
+  - vb
+  name: ClearState
+  nameWithType: OnCompleteType.ClearState
+  fullName: AVM.ClientGenerator.Core.OnCompleteType.ClearState
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ClearState
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: ClearState = 3
+    return:
+      type: AVM.ClientGenerator.Core.OnCompleteType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.OnCompleteType.UpdateApplication
+  commentId: F:AVM.ClientGenerator.Core.OnCompleteType.UpdateApplication
+  id: UpdateApplication
+  parent: AVM.ClientGenerator.Core.OnCompleteType
+  langs:
+  - csharp
+  - vb
+  name: UpdateApplication
+  nameWithType: OnCompleteType.UpdateApplication
+  fullName: AVM.ClientGenerator.Core.OnCompleteType.UpdateApplication
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: UpdateApplication
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: UpdateApplication = 4
+    return:
+      type: AVM.ClientGenerator.Core.OnCompleteType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.OnCompleteType.DeleteApplication
+  commentId: F:AVM.ClientGenerator.Core.OnCompleteType.DeleteApplication
+  id: DeleteApplication
+  parent: AVM.ClientGenerator.Core.OnCompleteType
+  langs:
+  - csharp
+  - vb
+  name: DeleteApplication
+  nameWithType: OnCompleteType.DeleteApplication
+  fullName: AVM.ClientGenerator.Core.OnCompleteType.DeleteApplication
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/OnCompleteType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: DeleteApplication
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/OnCompleteType.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: DeleteApplication = 5
+    return:
+      type: AVM.ClientGenerator.Core.OnCompleteType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: AVM.ClientGenerator.Core.OnCompleteType
+  commentId: T:AVM.ClientGenerator.Core.OnCompleteType
+  parent: AVM.ClientGenerator.Core
+  name: OnCompleteType
+  nameWithType: OnCompleteType
+  fullName: AVM.ClientGenerator.Core.OnCompleteType

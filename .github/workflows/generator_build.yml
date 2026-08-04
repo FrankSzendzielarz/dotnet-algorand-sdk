@@ -35,19 +35,19 @@ jobs:
         # Check out the algod oas json
         - name: Download oas2.json file
           #run: TEMP DEFER AS LATEST JSON GENERATES ERRORS curl -L https://raw.githubusercontent.com/algorand/go-algorand/rel/stable/daemon/algod/api/algod.oas2.json -o api-generator/dotnet_templates/algod.oas2.json
-          run: curl -L https://raw.githubusercontent.com/algorand/go-algorand/edbc577636e8c75c454818d463daa1aecf5ebdff/daemon/algod/api/algod.oas2.json -o api-generator/dotnet_templates/algod.oas2.json
+          run: curl -L https://raw.githubusercontent.com/algorand/go-algorand/088f89dd02487a06497a79518c549aae8a3134ee/daemon/algod/api/algod.oas2.json -o api-generator/dotnet_templates/algod.oas2.json
 
         # Generate the transactions model 
         - name: Generate transactions model
-          run: java -jar api-generator\generator-1.0.0-jar-with-dependencies.jar template -s api-generator\dotnet_templates\Transactions.json -t api-generator\dotnet_templates\ -m dotnet-algorand-sdk\Algod\Model\Transactions  -p "api-generator\dotnet_templates\transactions_model_config.properties"
+          run: java -jar api-generator/generator-1.0.0-jar-with-dependencies.jar template -s api-generator/dotnet_templates/Transactions.json -t api-generator/dotnet_templates/ -m dotnet-algorand-sdk/Algod/Model/Transactions  -p "api-generator/dotnet_templates/transactions_model_config.properties"
 
         # Generate the algod model
         - name: Generate  model
-          run:  java -jar api-generator\generator-1.0.0-jar-with-dependencies.jar template -s api-generator\dotnet_templates\algod.oas2.json -t api-generator\dotnet_templates -m dotnet-algorand-sdk\Algod\Model\  -p "api-generator\dotnet_templates\algod_model_config.properties"
+          run:  java -jar api-generator/generator-1.0.0-jar-with-dependencies.jar template -s api-generator/dotnet_templates/algod.oas2.json -t api-generator/dotnet_templates -m dotnet-algorand-sdk/Algod/Model/  -p "api-generator/dotnet_templates/algod_model_config.properties"
       
         # Generate the algod client
         - name: Generate algod client
-          run:  java -jar api-generator\generator-1.0.0-jar-with-dependencies.jar template -s api-generator\dotnet_templates\algod.oas2.json -t api-generator\dotnet_templates -c dotnet-algorand-sdk\Algod\  -p "api-generator\dotnet_templates\algod_default_config.properties"
+          run:  java -jar api-generator/generator-1.0.0-jar-with-dependencies.jar template -s api-generator/dotnet_templates/algod.oas2.json -t api-generator/dotnet_templates -c dotnet-algorand-sdk/Algod/  -p "api-generator/dotnet_templates/algod_default_config.properties"
         
         # Get .NET Core
         - name: Setup .NET Core

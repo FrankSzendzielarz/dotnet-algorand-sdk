@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>annotations</Nullable>
 
     <IsPackable>false</IsPackable>
 
@@ -11,13 +12,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="nunit" Version="3.13.2" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.1.0" />
+    <PackageReference Include="nunit" Version="4.6.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="6.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\dotnet-algorand-sdk\dotnet-algorand-sdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Arc56\GasStation.arc56.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

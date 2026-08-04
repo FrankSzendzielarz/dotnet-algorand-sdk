@@ -1,11 +1,8 @@
 
 namespace Algorand.Algod.Model
 {
-
-using System = global::System;
-
-
-public partial class DryrunResponse{
+    [MessagePack.MessagePackObject]
+    public partial class DryrunResponse{
 
         public string ToJson()
         {

@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MessagePack;
+using Newtonsoft.Json;
 
 namespace Algorand.Algod.Model.Transactions
 {
-    public  class StateProofTransaction : Transaction
+    [MessagePackObject(AllowPrivate = true)]
+    public class StateProofTransaction : Transaction
     {
         [JsonProperty(PropertyName = "type")]
+        [MessagePack.Key("type")]
         public string type => "stpf";
     }
 }

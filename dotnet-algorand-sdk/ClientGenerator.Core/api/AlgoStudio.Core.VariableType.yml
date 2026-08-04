@@ -1,0 +1,310 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.VariableType
+  commentId: T:AVM.ClientGenerator.Core.VariableType
+  id: VariableType
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.VariableType.ABIStruct
+  - AVM.ClientGenerator.Core.VariableType.ByteArrayReference
+  - AVM.ClientGenerator.Core.VariableType.ByteSlice
+  - AVM.ClientGenerator.Core.VariableType.InnerTransaction
+  - AVM.ClientGenerator.Core.VariableType.UInt64
+  - AVM.ClientGenerator.Core.VariableType.UlongReference
+  - AVM.ClientGenerator.Core.VariableType.Unsupported
+  - AVM.ClientGenerator.Core.VariableType.ValueTuple
+  langs:
+  - csharp
+  - vb
+  name: VariableType
+  nameWithType: VariableType
+  fullName: AVM.ClientGenerator.Core.VariableType
+  type: Enum
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: VariableType
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 6
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public enum VariableType
+    content.vb: Public Enum VariableType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: AVM.ClientGenerator.Core.VariableType.UInt64
+  commentId: F:AVM.ClientGenerator.Core.VariableType.UInt64
+  id: UInt64
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: UInt64
+  nameWithType: VariableType.UInt64
+  fullName: AVM.ClientGenerator.Core.VariableType.UInt64
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: UInt64
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 8
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: UInt64 = 0
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.ByteSlice
+  commentId: F:AVM.ClientGenerator.Core.VariableType.ByteSlice
+  id: ByteSlice
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: ByteSlice
+  nameWithType: VariableType.ByteSlice
+  fullName: AVM.ClientGenerator.Core.VariableType.ByteSlice
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: ByteSlice = 1
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.ValueTuple
+  commentId: F:AVM.ClientGenerator.Core.VariableType.ValueTuple
+  id: ValueTuple
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: ValueTuple
+  nameWithType: VariableType.ValueTuple
+  fullName: AVM.ClientGenerator.Core.VariableType.ValueTuple
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ValueTuple
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: ValueTuple = 2
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.Unsupported
+  commentId: F:AVM.ClientGenerator.Core.VariableType.Unsupported
+  id: Unsupported
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: Unsupported
+  nameWithType: VariableType.Unsupported
+  fullName: AVM.ClientGenerator.Core.VariableType.Unsupported
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Unsupported
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: Unsupported = 3
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.InnerTransaction
+  commentId: F:AVM.ClientGenerator.Core.VariableType.InnerTransaction
+  id: InnerTransaction
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: InnerTransaction
+  nameWithType: VariableType.InnerTransaction
+  fullName: AVM.ClientGenerator.Core.VariableType.InnerTransaction
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: InnerTransaction
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: InnerTransaction = 4
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.UlongReference
+  commentId: F:AVM.ClientGenerator.Core.VariableType.UlongReference
+  id: UlongReference
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: UlongReference
+  nameWithType: VariableType.UlongReference
+  fullName: AVM.ClientGenerator.Core.VariableType.UlongReference
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: UlongReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: UlongReference = 5
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.ByteArrayReference
+  commentId: F:AVM.ClientGenerator.Core.VariableType.ByteArrayReference
+  id: ByteArrayReference
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: ByteArrayReference
+  nameWithType: VariableType.ByteArrayReference
+  fullName: AVM.ClientGenerator.Core.VariableType.ByteArrayReference
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ByteArrayReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: ByteArrayReference = 6
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: AVM.ClientGenerator.Core.VariableType.ABIStruct
+  commentId: F:AVM.ClientGenerator.Core.VariableType.ABIStruct
+  id: ABIStruct
+  parent: AVM.ClientGenerator.Core.VariableType
+  langs:
+  - csharp
+  - vb
+  name: ABIStruct
+  nameWithType: VariableType.ABIStruct
+  fullName: AVM.ClientGenerator.Core.VariableType.ABIStruct
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/VariableType.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ABIStruct
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/VariableType.cs
+    startLine: 15
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: ABIStruct = 7
+    return:
+      type: AVM.ClientGenerator.Core.VariableType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: AVM.ClientGenerator.Core.VariableType
+  commentId: T:AVM.ClientGenerator.Core.VariableType
+  parent: AVM.ClientGenerator.Core
+  name: VariableType
+  nameWithType: VariableType
+  fullName: AVM.ClientGenerator.Core.VariableType

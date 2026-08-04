@@ -1,183 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	
-
 	<PropertyGroup>
-			
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>sdk_examples</RootNamespace>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Configurations>AccountExample;AssetExample;AtomicTransferExample;BasicExample;CompileTeal;DryrunDebuggingExample;IndexerExample;KMDExample;LogicSignatureContractAccountExample;LogicSignatureExample;MultisigExample;RekeyExample;SimpleBoxExample;StatefulContractExample</Configurations>
-
+		<StartupObject>sdk_examples.Program</StartupObject>
 	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AccountExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.AccountExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	
-		
-	</PropertyGroup>
-
-
-
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='AssetExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.AssetExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='AtomicTransferExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.AtomicTransferExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BasicExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.BasicExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='CompileTeal|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.CompileTeal</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DryrunDebuggingExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.DryrunDebuggingExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='IndexerExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.IndexerExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='KMDExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.KMDExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LogicSignatureContractAccountExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.LogicSignatureContractAccountExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LogicSignatureExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.LogicSignatureExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MultisigExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.MultisigExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RekeyExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.RekeyExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	
-	</PropertyGroup>
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StatefulContractExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.StatefulContractExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-	
-	</PropertyGroup>
-
-
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SimpleBoxExample|AnyCPU'">
-		<OutputType>Exe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<RootNamespace>sdk_examples</RootNamespace>
-		<StartupObject>sdk_examples.SimpleBoxExample</StartupObject>
-		<DebugSymbols>true</DebugSymbols>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		
-	</PropertyGroup>
-
-	
-
-
 
 	<ItemGroup>
-		<PackageReference Include="Algorand2" Version="2.0.0.2024051911" />
-		<PackageReference Include="MessagePack" Version="2.2.113" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<ProjectReference Include="..\dotnet-algorand-sdk\dotnet-algorand-sdk.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MessagePack" Version="3.1.8" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.9" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>

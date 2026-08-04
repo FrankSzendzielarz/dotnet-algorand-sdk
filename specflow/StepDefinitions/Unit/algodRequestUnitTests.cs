@@ -1,13 +1,3 @@
-using Algorand.Algod.Model;
-using Algorand.Algod.Test;
-using System.Net.Http;
-using System.Net;
-using FluentAssertions;
-using System;
-using TechTalk.SpecFlow;
-
-using algorand_tests;
-using System.IO;
 #if TEST_DEBUG
 namespace specflow.StepDefinitions
 {

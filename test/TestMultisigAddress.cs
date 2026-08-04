@@ -22,7 +22,7 @@ namespace test
                 new Ed25519PublicKeyParameters(three.Bytes, 0),
             });
 
-            Assert.AreEqual(addr.ToAddress().ToString(), "UCE2U2JC4O4ZR6W763GUQCG57HQCDZEUJY4J5I6VYY4HQZUJDF7AKZO5GM");
+            Assert.That(addr.ToAddress().ToString(), Is.EqualTo("UCE2U2JC4O4ZR6W763GUQCG57HQCDZEUJY4J5I6VYY4HQZUJDF7AKZO5GM"));
             TestUtil.SerializeDeserializeCheck(addr);
         }
     }

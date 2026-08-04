@@ -1,16 +1,14 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class SupplyResponse
+    {
 
-using System = global::System;
 
 
-public partial class SupplyResponse{
 
-   
-
-    
-}
+    }
 
 
 }

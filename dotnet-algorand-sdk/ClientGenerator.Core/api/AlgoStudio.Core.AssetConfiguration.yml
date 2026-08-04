@@ -1,0 +1,1220 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.AssetConfiguration
+  commentId: T:AVM.ClientGenerator.Core.AssetConfiguration
+  id: AssetConfiguration
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.AssetConfiguration.#ctor(System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Byte[],System.Byte[],System.Byte[],System.Byte[],AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName
+  - AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL
+  langs:
+  - csharp
+  - vb
+  name: AssetConfiguration
+  nameWithType: AssetConfiguration
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AssetConfiguration
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public sealed class AssetConfiguration : InnerTransaction'
+    content.vb: >-
+      Public NotInheritable Class AssetConfiguration
+
+          Inherits InnerTransaction
+  inheritance:
+  - System.Object
+  - AVM.ClientGenerator.Core.InnerTransaction
+  inheritedMembers:
+  - AVM.ClientGenerator.Core.InnerTransaction.Fee
+  - AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  - AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  - AVM.ClientGenerator.Core.InnerTransaction.Sender
+  - AVM.ClientGenerator.Core.InnerTransaction.TxType
+  - AVM.ClientGenerator.Core.InnerTransaction.Lease
+  - AVM.ClientGenerator.Core.InnerTransaction.Note
+  - AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  - AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  - AVM.ClientGenerator.Core.InnerTransaction.TxID
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset
+  id: ConfigAsset
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAsset
+  nameWithType: AssetConfiguration.ConfigAsset
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAsset
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong ConfigAsset { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property ConfigAsset As ULong
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal
+  id: ConfigAssetTotal
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetTotal
+  nameWithType: AssetConfiguration.ConfigAssetTotal
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetTotal
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong ConfigAssetTotal { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property ConfigAssetTotal As ULong
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals
+  id: ConfigAssetDecimals
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetDecimals
+  nameWithType: AssetConfiguration.ConfigAssetDecimals
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetDecimals
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public uint ConfigAssetDecimals { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property ConfigAssetDecimals As UInteger
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen
+  id: ConfigAssetDefaultFrozen
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetDefaultFrozen
+  nameWithType: AssetConfiguration.ConfigAssetDefaultFrozen
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetDefaultFrozen
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public bool ConfigAssetDefaultFrozen { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property ConfigAssetDefaultFrozen As Boolean
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName
+  id: ConfigAssetUnitName
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetUnitName
+  nameWithType: AssetConfiguration.ConfigAssetUnitName
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetUnitName
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetUnitName { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetUnitName As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName
+  id: ConfigAssetName
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetName
+  nameWithType: AssetConfiguration.ConfigAssetName
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetName
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 15
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetName { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetName As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL
+  id: ConfigAssetURL
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetURL
+  nameWithType: AssetConfiguration.ConfigAssetURL
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetURL
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 16
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetURL { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetURL As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash
+  id: ConfigAssetMetadataHash
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetMetadataHash
+  nameWithType: AssetConfiguration.ConfigAssetMetadataHash
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetMetadataHash
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 17
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetMetadataHash { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetMetadataHash As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager
+  id: ConfigAssetManager
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetManager
+  nameWithType: AssetConfiguration.ConfigAssetManager
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetManager
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 18
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetManager { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetManager As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve
+  id: ConfigAssetReserve
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetReserve
+  nameWithType: AssetConfiguration.ConfigAssetReserve
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetReserve
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 19
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetReserve { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetReserve As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze
+  id: ConfigAssetFreeze
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetFreeze
+  nameWithType: AssetConfiguration.ConfigAssetFreeze
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetFreeze
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 20
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetFreeze { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetFreeze As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback
+  commentId: P:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback
+  id: ConfigAssetClawback
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigAssetClawback
+  nameWithType: AssetConfiguration.ConfigAssetClawback
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ConfigAssetClawback
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 21
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ConfigAssetClawback { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ConfigAssetClawback As Byte()
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.#ctor(System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Byte[],System.Byte[],System.Byte[],System.Byte[],AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.AssetConfiguration.#ctor(System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Byte[],System.Byte[],System.Byte[],System.Byte[],AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  id: '#ctor(System.UInt64,System.Nullable{System.UInt64},System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Byte[],System.Byte[],System.Byte[],System.Byte[],AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])'
+  parent: AVM.ClientGenerator.Core.AssetConfiguration
+  langs:
+  - csharp
+  - vb
+  name: AssetConfiguration(UInt64, Nullable<UInt64>, Nullable<UInt32>, Nullable<Boolean>, Byte[], Byte[], Byte[], Byte[], AccountReference, AccountReference, AccountReference, AccountReference, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, AccountReference, Nullable<UInt64>, Byte[], Byte[], Byte[])
+  nameWithType: AssetConfiguration.AssetConfiguration(UInt64, Nullable<UInt64>, Nullable<UInt32>, Nullable<Boolean>, Byte[], Byte[], Byte[], Byte[], AccountReference, AccountReference, AccountReference, AccountReference, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, AccountReference, Nullable<UInt64>, Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.AssetConfiguration(System.UInt64, System.Nullable<System.UInt64>, System.Nullable<System.UInt32>, System.Nullable<System.Boolean>, System.Byte[], System.Byte[], System.Byte[], System.Byte[], AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, AVM.ClientGenerator.Core.AccountReference, System.Nullable<System.UInt64>, System.Byte[], System.Byte[], System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: .ctor
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetConfiguration.cs
+    startLine: 24
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public AssetConfiguration(ulong configAsset, ulong? configAssetTotal = 0UL, uint? configAssetDecimals = 0U, bool? configAssetDefaultFrozen = null, byte[] configAssetUnitName = null, byte[] configAssetName = null, byte[] configAssetURL = null, byte[] configAssetMetadataHash = null, AccountReference configAssetManager = null, AccountReference configAssetReserve = null, AccountReference configAssetFreeze = null, AccountReference configAssetClawback = null, ulong? fee = 0UL, ulong? firstValid = 0UL, ulong? lastValid = 0UL, AccountReference sender = null, ulong? txType = 0UL, byte[] lease = null, byte[] note = null, byte[] rekeyTo = null)
+    parameters:
+    - id: configAsset
+      type: System.UInt64
+    - id: configAssetTotal
+      type: System.Nullable{System.UInt64}
+    - id: configAssetDecimals
+      type: System.Nullable{System.UInt32}
+    - id: configAssetDefaultFrozen
+      type: System.Nullable{System.Boolean}
+    - id: configAssetUnitName
+      type: System.Byte[]
+    - id: configAssetName
+      type: System.Byte[]
+    - id: configAssetURL
+      type: System.Byte[]
+    - id: configAssetMetadataHash
+      type: System.Byte[]
+    - id: configAssetManager
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: configAssetReserve
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: configAssetFreeze
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: configAssetClawback
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: fee
+      type: System.Nullable{System.UInt64}
+    - id: firstValid
+      type: System.Nullable{System.UInt64}
+    - id: lastValid
+      type: System.Nullable{System.UInt64}
+    - id: sender
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: txType
+      type: System.Nullable{System.UInt64}
+    - id: lease
+      type: System.Byte[]
+    - id: note
+      type: System.Byte[]
+    - id: rekeyTo
+      type: System.Byte[]
+    content.vb: Public Sub New(configAsset As ULong, configAssetTotal As ULong? = 0UL, configAssetDecimals As UInteger? = 0UI, configAssetDefaultFrozen As Boolean? = Nothing, configAssetUnitName As Byte() = Nothing, configAssetName As Byte() = Nothing, configAssetURL As Byte() = Nothing, configAssetMetadataHash As Byte() = Nothing, configAssetManager As AccountReference = Nothing, configAssetReserve As AccountReference = Nothing, configAssetFreeze As AccountReference = Nothing, configAssetClawback As AccountReference = Nothing, fee As ULong? = 0UL, firstValid As ULong? = 0UL, lastValid As ULong? = 0UL, sender As AccountReference = Nothing, txType As ULong? = 0UL, lease As Byte() = Nothing, note As Byte() = Nothing, rekeyTo As Byte() = Nothing)
+  overload: AVM.ClientGenerator.Core.AssetConfiguration.#ctor*
+  nameWithType.vb: AssetConfiguration.AssetConfiguration(UInt64, Nullable(Of UInt64), Nullable(Of UInt32), Nullable(Of Boolean), Byte(), Byte(), Byte(), Byte(), AccountReference, AccountReference, AccountReference, AccountReference, Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), AccountReference, Nullable(Of UInt64), Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.AssetConfiguration.AssetConfiguration(System.UInt64, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt32), System.Nullable(Of System.Boolean), System.Byte(), System.Byte(), System.Byte(), System.Byte(), AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), AVM.ClientGenerator.Core.AccountReference, System.Nullable(Of System.UInt64), System.Byte(), System.Byte(), System.Byte())
+  name.vb: AssetConfiguration(UInt64, Nullable(Of UInt64), Nullable(Of UInt32), Nullable(Of Boolean), Byte(), Byte(), Byte(), Byte(), AccountReference, AccountReference, AccountReference, AccountReference, Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), AccountReference, Nullable(Of UInt64), Byte(), Byte(), Byte())
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: AVM.ClientGenerator.Core.InnerTransaction
+  commentId: T:AVM.ClientGenerator.Core.InnerTransaction
+  parent: AVM.ClientGenerator.Core
+  name: InnerTransaction
+  nameWithType: InnerTransaction
+  fullName: AVM.ClientGenerator.Core.InnerTransaction
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Fee
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Fee
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Fee
+  nameWithType: InnerTransaction.Fee
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Fee
+- uid: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: FirstValid
+  nameWithType: InnerTransaction.FirstValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: LastValid
+  nameWithType: InnerTransaction.LastValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Sender
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Sender
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Sender
+  nameWithType: InnerTransaction.Sender
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Sender
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxType
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxType
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: TxType
+  nameWithType: InnerTransaction.TxType
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxType
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Lease
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Lease
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Lease
+  nameWithType: InnerTransaction.Lease
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Lease
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Note
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Note
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Note
+  nameWithType: InnerTransaction.Note
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Note
+- uid: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: RekeyTo
+  nameWithType: InnerTransaction.RekeyTo
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+- uid: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: GroupIndex
+  nameWithType: InnerTransaction.GroupIndex
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxID
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxID
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: TxID
+  nameWithType: InnerTransaction.TxID
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxID
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset
+  name: ConfigAsset
+  nameWithType: AssetConfiguration.ConfigAsset
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAsset
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal
+  name: ConfigAssetTotal
+  nameWithType: AssetConfiguration.ConfigAssetTotal
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetTotal
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals
+  name: ConfigAssetDecimals
+  nameWithType: AssetConfiguration.ConfigAssetDecimals
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDecimals
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen
+  name: ConfigAssetDefaultFrozen
+  nameWithType: AssetConfiguration.ConfigAssetDefaultFrozen
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetDefaultFrozen
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName
+  name: ConfigAssetUnitName
+  nameWithType: AssetConfiguration.ConfigAssetUnitName
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetUnitName
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName
+  name: ConfigAssetName
+  nameWithType: AssetConfiguration.ConfigAssetName
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetName
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL
+  name: ConfigAssetURL
+  nameWithType: AssetConfiguration.ConfigAssetURL
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetURL
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash
+  name: ConfigAssetMetadataHash
+  nameWithType: AssetConfiguration.ConfigAssetMetadataHash
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetMetadataHash
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager
+  name: ConfigAssetManager
+  nameWithType: AssetConfiguration.ConfigAssetManager
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetManager
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve
+  name: ConfigAssetReserve
+  nameWithType: AssetConfiguration.ConfigAssetReserve
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetReserve
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze
+  name: ConfigAssetFreeze
+  nameWithType: AssetConfiguration.ConfigAssetFreeze
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetFreeze
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback
+  name: ConfigAssetClawback
+  nameWithType: AssetConfiguration.ConfigAssetClawback
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.ConfigAssetClawback
+- uid: AVM.ClientGenerator.Core.AssetConfiguration.#ctor*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetConfiguration.#ctor
+  name: AssetConfiguration
+  nameWithType: AssetConfiguration.AssetConfiguration
+  fullName: AVM.ClientGenerator.Core.AssetConfiguration.AssetConfiguration
+- uid: System.Nullable{System.UInt64}
+  commentId: T:System.Nullable{System.UInt64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<UInt64>
+  nameWithType: Nullable<UInt64>
+  fullName: System.Nullable<System.UInt64>
+  nameWithType.vb: Nullable(Of UInt64)
+  fullName.vb: System.Nullable(Of System.UInt64)
+  name.vb: Nullable(Of UInt64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{System.UInt32}
+  commentId: T:System.Nullable{System.UInt32}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<UInt32>
+  nameWithType: Nullable<UInt32>
+  fullName: System.Nullable<System.UInt32>
+  nameWithType.vb: Nullable(Of UInt32)
+  fullName.vb: System.Nullable(Of System.UInt32)
+  name.vb: Nullable(Of UInt32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
+  fullName: System.Nullable<System.Boolean>
+  nameWithType.vb: Nullable(Of Boolean)
+  fullName.vb: System.Nullable(Of System.Boolean)
+  name.vb: Nullable(Of Boolean)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.AccountReference
+  commentId: T:AVM.ClientGenerator.Core.AccountReference
+  parent: AVM.ClientGenerator.Core
+  name: AccountReference
+  nameWithType: AccountReference
+  fullName: AVM.ClientGenerator.Core.AccountReference
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,9 +1,8 @@
-﻿using Algorand;
+using Algorand;
 using Algorand.Algod;
 using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
 using Algorand.Utils;
-using Org.BouncyCastle.Crypto.Paddings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,7 +23,7 @@ namespace sdk_examples
             Account user = new Account("pole pudding actor purpose spend agree erode account discover chapter adapt supreme excite lamp gospel guilt helmet wrestle meat sustain orphan certain mixture able disease");
 
             var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
-            DefaultApi algodApiInstance = new DefaultApi(httpClient);
+            var algod = new AlgodClient(httpClient);
 
             // declare application state storage (immutable)
             ulong localInts = 0;
@@ -40,39 +39,38 @@ namespace sdk_examples
 
             CompileResponse approvalProgram;
             CompileResponse clearProgram;
-            CompileResponse approvalProgramRefactored;
 
             using (var datams = new MemoryStream(Encoding.UTF8.GetBytes(approvalProgramSource)))
             {
-                approvalProgram = await algodApiInstance.TealCompileAsync(datams);
+                approvalProgram = await algod.TealCompileAsync(datams);
             }
             using (var datams = new MemoryStream(Encoding.UTF8.GetBytes(clearProgramSource)))
             {
-                clearProgram = await algodApiInstance.TealCompileAsync(datams);
+                clearProgram = await algod.TealCompileAsync(datams);
             }
 
 
             try
             {
                 // create new application
-                var appid = await CreateApp(algodApiInstance, creator, new TEALProgram(approvalProgram.Result),
+                var appid = await CreateApp(algod, creator, new TEALProgram(approvalProgram.Result),
                     new TEALProgram(clearProgram.Result), globalInts, globalBytes, localInts, localBytes);
 
                 // fund its MBR
-                var transParams = await algodApiInstance.TransactionParamsAsync();
+                var transParams = await algod.TransactionParamsAsync();
                 var amount = Utils.AlgosToMicroalgos(1);
                 var tx = PaymentTransaction.GetPaymentTransactionFromNetworkTransactionParameters(creator.Address, Address.ForApplication(appid.Value), amount, "pay message", transParams);
                 var signedTx = tx.Sign(creator);
-                var id = await Utils.SubmitTransaction(algodApiInstance, signedTx);
-                var resp = await Utils.WaitTransactionToComplete(algodApiInstance, id.Txid);
+                var id = await Utils.SubmitTransaction(algod, signedTx);
+                var resp = await Utils.WaitTransactionToComplete(algod, id.Txid);
                 Console.WriteLine("Successfully funded app with tx id: " + id.Txid+ " at round " + resp.ConfirmedRound);
 
 
                 // call application without arguments
-                await CallApp(algodApiInstance, user, appid, null, new List<BoxRef>() {  new BoxRef() {  App= 0, Name=Encoding.UTF8.GetBytes("boxtest") } });
+                await CallApp(algod, user, appid, null, new List<BoxRef>() {  new BoxRef() {  App= 0, Name=Encoding.UTF8.GetBytes("boxtest") } });
 
                 // read box state of application 
-                byte[] boxContents = await ReadBoxState(algodApiInstance, appid.Value);
+                byte[] boxContents = await ReadBoxState(algod, appid.Value);
 
                 string test = Encoding.UTF8.GetString(boxContents);
 
@@ -172,3 +170,5 @@ namespace sdk_examples
 
     }
 }
+
+

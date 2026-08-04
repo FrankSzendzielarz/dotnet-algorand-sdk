@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Algorand.Utils;
 using System.Linq;
+using NUnit.Framework.Legacy;
 
 namespace test
 {
@@ -15,8 +15,8 @@ namespace test
         {
             byte[] data = { 0x01 };
             VarintResult result = Logic.GetUVarint(data, 0);
-            Assert.AreEqual(result.length, 1);
-            Assert.AreEqual(result.value, 1);
+            Assert.That(result.length, Is.EqualTo(1));
+            Assert.That(result.value, Is.EqualTo(1));
         }
 
         [Test]
@@ -25,8 +25,8 @@ namespace test
             byte[]
             data = { 0x02 };
             VarintResult result = Logic.GetUVarint(data, 0);
-            Assert.AreEqual(result.length, 1);
-            Assert.AreEqual(result.value, 2);
+            Assert.That(result.length, Is.EqualTo(1));
+            Assert.That(result.value, Is.EqualTo(2));
         }
 
         [Test]
@@ -35,8 +35,8 @@ namespace test
             byte[]
             data = { 0x7b };
             VarintResult result = Logic.GetUVarint(data, 0);
-            Assert.AreEqual(result.length, 1);
-            Assert.AreEqual(result.value, 123);
+            Assert.That(result.length, Is.EqualTo(1));
+            Assert.That(result.value, Is.EqualTo(123));
         }
 
         [Test]
@@ -45,8 +45,8 @@ namespace test
             byte[]
             data = { (byte)0xc8, 0x03 };
             VarintResult result = Logic.GetUVarint(data, 0);
-            Assert.AreEqual(result.length, 2);
-            Assert.AreEqual(result.value, 456);
+            Assert.That(result.length, Is.EqualTo(2));
+            Assert.That(result.value, Is.EqualTo(456));
         }
 
         [Test]
@@ -55,8 +55,8 @@ namespace test
             byte[]
             data = { 0x0, 0x0, (byte)0xc8, 0x03 };
             VarintResult result = Logic.GetUVarint(data, 2);
-            Assert.AreEqual(result.length, 2);
-            Assert.AreEqual(result.value, 456);
+            Assert.That(result.length, Is.EqualTo(2));
+            Assert.That(result.value, Is.EqualTo(456));
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace test
             byte[] data = { 0x20, 0x05, 0x00, 0x01, (byte)0xc8, 0x03, 0x7b, 0x02 };
 
             IntConstBlock results = Logic.ReadIntConstBlock(data, 0);
-            Assert.AreEqual(results.size, data.Length);
+            Assert.That(results.size, Is.EqualTo(data.Length));
             TestUtil.ContainsExactlyElementsOf(results.results, new List<int>(new int[] { 0, 1, 456, 123, 2 }));
         }
 
@@ -78,7 +78,7 @@ namespace test
                     new byte[] { 0x1, 0x2 } };
 
             var results = Logic.ReadByteConstBlock(data, 0);
-            Assert.AreEqual(results.size, data.Length);
+            Assert.That(results.size, Is.EqualTo(data.Length));
             CollectionAssert.AreEqual(results.results, values);
             TestUtil.ContainsExactlyElementsOf(results.results, values);
         }
@@ -91,25 +91,25 @@ namespace test
 
             // Null argument
             ProgramData programData = Logic.ReadProgram(program, null);
-            Assert.IsTrue(programData.good);
+            Assert.That(programData.good, Is.True);
             TestUtil.ContainsExactlyElementsOf(programData.intBlock, new List<int>(new int[] { 1 }));
-            Assert.IsEmpty(programData.byteBlock);
+            Assert.That(programData.byteBlock.Count, Is.EqualTo(0));
 
             // No argument
             List<byte[]> args = new List<byte[]>();
             programData = Logic.ReadProgram(program, args);
-            Assert.IsTrue(programData.good);
+            Assert.That(programData.good, Is.True);
             TestUtil.ContainsExactlyElementsOf(programData.intBlock, new List<int>(new int[] { 1 }));
-            Assert.IsEmpty(programData.byteBlock);
+            Assert.That(programData.byteBlock.Count, Is.EqualTo(0));
 
             // Unused argument
             byte[] arg = Enumerable.Repeat((byte)0x31, 10).ToArray();
             args.Add(arg);
 
             programData = Logic.ReadProgram(program, args);
-            Assert.IsTrue(programData.good);
+            Assert.That(programData.good, Is.True);
             TestUtil.ContainsExactlyElementsOf(programData.intBlock, new List<int>(new int[] { 1 }));
-            Assert.IsEmpty(programData.byteBlock);
+            Assert.That(programData.byteBlock.Count, Is.EqualTo(0));
 
             // Repeated int constants parsing
             byte[] int1 = Enumerable.Repeat((byte)0x22, 10).ToArray();
@@ -122,9 +122,9 @@ namespace test
             //JavaHelper<byte>.SyatemArrayCopy(program, 0, program2, 0, program.Length);
             //JavaHelper<byte>.SyatemArrayCopy(int1, 0, program2, program.Length, int1.Length);
             programData = Logic.ReadProgram(program2.ToArray(), args);
-            Assert.IsTrue(programData.good);
+            Assert.That(programData.good, Is.True);
             TestUtil.ContainsExactlyElementsOf(programData.intBlock, new List<int>(new int[] { 1 }));
-            Assert.IsEmpty(programData.byteBlock);
+            Assert.That(programData.byteBlock.Count, Is.EqualTo(0));
         }
 
         //[Test]
@@ -164,20 +164,20 @@ namespace test
             List<byte[]> args = new List<byte[]>();
 
             var ex = Assert.Throws<ArgumentException>(() => { Logic.CheckProgram(program, args); });
-            Assert.AreEqual("invalid instruction: 255", ex.Message);
+            Assert.That(ex.Message, Is.EqualTo("invalid instruction: 255"));
         }
 
         [Test]
         public void testCheckProgramTealV2()
         {
-            Assert.GreaterOrEqual(Logic.GetEvalMaxVersion(), 2);
-            Assert.GreaterOrEqual(Logic.GetLogicSigVersion(), 2);
+            Assert.That(Logic.GetEvalMaxVersion(), Is.GreaterThanOrEqualTo(2));
+            Assert.That(Logic.GetLogicSigVersion(), Is.GreaterThanOrEqualTo(2));
             {
                 // balance
                 byte[] program = { 0x02, 0x20, 0x01, 0x00, 0x22, 0x60  // int 0; balance
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
 
             // app_opted_in
@@ -185,7 +185,7 @@ namespace test
                 byte[] program = { 0x02, 0x20, 0x01, 0x00, 0x22, 0x22, 0x61  // int 0; int 0; app_opted_in
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
 
             {
@@ -193,15 +193,15 @@ namespace test
                 byte[] program = { 0x02, 0x20, 0x01, 0x00, 0x22, 0x70, 0x00  // int 0; int 0; asset_holding_get Balance
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
         }
 
         [Test]
         public void testCheckProgramTealV3()
         {
-            Assert.GreaterOrEqual(Logic.GetEvalMaxVersion(), 3);
-            Assert.GreaterOrEqual(Logic.GetLogicSigVersion(), 3);
+            Assert.That(Logic.GetEvalMaxVersion(), Is.GreaterThanOrEqualTo(3));
+            Assert.That(Logic.GetLogicSigVersion(), Is.GreaterThanOrEqualTo(3));
 
             // min_balance
             {
@@ -210,7 +210,7 @@ namespace test
                 0x03, 0x20, 0x01, 0x00, 0x22, 0x78  // int 0; min_balance
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // pushbytes
             {
@@ -218,7 +218,7 @@ namespace test
                     0x03, 0x20, 0x01, 0x00, 0x22, (byte)0x80, 0x02, 0x68, 0x69, 0x48  // int 0; pushbytes "hi"; pop
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // pushint
             {
@@ -226,7 +226,7 @@ namespace test
                     0x03, 0x20, 0x01, 0x00, 0x22, (byte)0x81, 0x01, 0x48  // int 0; pushint 1; pop
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
 
             // swap
@@ -235,14 +235,14 @@ namespace test
                     0x03, 0x20, 0x02, 0x00, 0x01, 0x22, 0x23, 0x4c, 0x48  // int 0; int 1; swap; pop
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
         }
 
         [Test]
         public void testCheckProgramTealV4()
         {
-            Assert.GreaterOrEqual(Logic.GetEvalMaxVersion(), 4);
+            Assert.That(Logic.GetEvalMaxVersion(), Is.GreaterThanOrEqualTo(4));
 
             // divmodw
             {
@@ -250,7 +250,7 @@ namespace test
                     0x04, 0x20, 0x03, 0x01, 0x00, 0x02, 0x22,  0x81,  0xd0,  0x0f, 0x23, 0x24, 0x1f  // int 1; pushint 2000; int 0; int 2; divmodw
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // gloads i
             {
@@ -258,7 +258,7 @@ namespace test
                     0x04, 0x20, 0x01, 0x00, 0x22, 0x3b, 0x00  // int 0; gloads 0
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // callsub
             {
@@ -266,7 +266,7 @@ namespace test
                     0x04, 0x20, 0x02, 0x01, 0x02, 0x22,  0x88, 0x00, 0x02, 0x23, 0x12, 0x49  // int 1; callsub double; int 2; ==; double: dup;
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // b>=
             {
@@ -274,7 +274,7 @@ namespace test
                     0x04, 0x26, 0x02, 0x01, 0x11, 0x01, 0x10, 0x28, 0x29,  0xa7  // byte 0x11; byte 0x10; b>=
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // b^
             {
@@ -282,7 +282,7 @@ namespace test
                     0x04, 0x26, 0x02, 0x01, 0x11, 0x01, 0x10, 0x28, 0x29,  0xa7  // byte 0x11; byte 0x10; b^; byte 0x01; ==
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // callsub, retsub.
             {
@@ -290,7 +290,7 @@ namespace test
                     0x04, 0x20, 0x02, 0x01, 0x02, 0x22,  0x88, 0x00, 0x03, 0x23, 0x12, 0x43, 0x49, 0x08,  0x89  // int 1; callsub double; int 2; ==; return; double: dup; +; retsub;
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
             // loop
             {
@@ -298,15 +298,15 @@ namespace test
                     0x04, 0x20, 0x04, 0x01, 0x02, 0x0a, 0x10, 0x22, 0x23, 0x0b, 0x49, 0x24, 0x0c, 0x40,  0xff,  0xf8, 0x25, 0x12  // int 1; loop: int 2; *; dup; int 10; <; bnz loop; int 16; ==
                 };
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
         }
 
         [Test]
         public void testCheckProgramTealV5()
         {
-            Assert.GreaterOrEqual(Logic.GetEvalMaxVersion(), 5);
-            
+            Assert.That(Logic.GetEvalMaxVersion(), Is.GreaterThanOrEqualTo(5));
+
             // itxn ops
             {
                 byte[] program = {
@@ -314,7 +314,7 @@ namespace test
                 };
                 // itxn_begin; int pay; itxn_field TypeEnum; int 1000000; itxn_field Amount; txn Sender; itxn_field Receiver; itxn_submit; itxn Amount; int 1000000; ==
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
 
             // ECDSA ops
@@ -324,7 +324,7 @@ namespace test
                 };
                 // byte "testdata"; sha512_256; byte 0x79bfa8245aeac0e714b7bd2b3252d03979e5e7a43cb039715a5f8109a7dd9ba1; byte 0x0753d317e54350d1d102289afbde3002add4529f10b9f7d3d223843985de62e0; byte 0x03abfb5e6e331fb871e423f354e2bd78a384ef7cb07ac8bbf27d2dd1eca00e73c1; ecdsa_pk_decompress Secp256k1; ecdsa_verify Secp256k1
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
 
             // cover, uncover, log
@@ -334,9 +334,8 @@ namespace test
                 };
                 // byte "a"; byte "b"; byte "c"; cover 2; uncover 2; concat; concat; log; int 1
                 bool valid = Logic.CheckProgram(program, null);
-                Assert.IsTrue(valid);
+                Assert.That(valid, Is.True);
             }
         }
-
     }
 }

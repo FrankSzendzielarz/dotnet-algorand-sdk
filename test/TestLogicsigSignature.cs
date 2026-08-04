@@ -23,13 +23,13 @@ namespace test
             Address sender = new Address(programHash);
 
             LogicsigSignature lsig = new LogicsigSignature(program);
-            Assert.AreEqual(lsig.Logic, program);
-            Assert.IsNull(lsig.Args);
-            Assert.IsNull(lsig.Sig);
-            Assert.IsNull(lsig.Msig);
+            Assert.That(lsig.Logic, Is.EqualTo(program));
+            Assert.That(lsig.Args, Is.Null);
+            Assert.That(lsig.Sig, Is.Null);
+            Assert.That(lsig.Msig, Is.Null);
             bool verified = lsig.Verify(sender);
-            Assert.IsTrue(verified);
-            Assert.AreEqual(lsig.ToAddress(), sender);
+            Assert.That(verified, Is.True);
+            Assert.That(lsig.ToAddress(),Is.EqualTo(sender));
 
             byte[] arg1 = { 1, 2, 3 };
             byte[] arg2 = { 4, 5, 6 };
@@ -37,30 +37,30 @@ namespace test
             args.Add(arg2);
 
             lsig = new LogicsigSignature(program, args);
-            Assert.AreEqual(lsig.Logic, program);
-            Assert.AreEqual(lsig.Args, args);
-            Assert.IsNull(lsig.Sig);
-            Assert.IsNull(lsig.Msig);
+            Assert.That(lsig.Logic, Is.EqualTo(program));
+            Assert.That(lsig.Args, Is.EqualTo(args));
+            Assert.That(lsig.Sig, Is.Null);
+            Assert.That(lsig.Msig, Is.Null);
             verified = lsig.Verify(sender);
-            Assert.IsTrue(verified);
-            Assert.AreEqual(lsig.ToAddress(), sender);
+            Assert.That(verified, Is.True);
+            Assert.That(lsig.ToAddress(), Is.EqualTo(sender));
 
             // check serialization
             byte[] outBytes = Encoder.EncodeToMsgPackOrdered(lsig);
             LogicsigSignature lsig1 = Encoder.DecodeFromMsgPack<LogicsigSignature>(outBytes);
-            Assert.AreEqual(lsig, lsig1);
+            Assert.That(lsig, Is.EqualTo(lsig1));
 
             // check serialization with null args
             lsig = new LogicsigSignature(program);
             outBytes = Encoder.EncodeToMsgPackOrdered(lsig);
             lsig1 = Encoder.DecodeFromMsgPack<LogicsigSignature>(outBytes);
-            Assert.AreEqual(lsig, lsig1);
+            Assert.That(lsig, Is.EqualTo(lsig1));
 
             // check modified program fails on verification
             program[3] = 2;
             lsig = new LogicsigSignature(program);
             verified = lsig.Verify(sender);
-            Assert.IsFalse(verified);
+            Assert.That(verified, Is.False);
             TestUtil.SerializeDeserializeCheck(lsig);
         }
 
@@ -74,19 +74,19 @@ namespace test
             LogicsigSignature lsig = new LogicsigSignature(program);
             Account account = new Account();
             lsig.SignLogicsig(account);
-            Assert.AreEqual(lsig.Logic, program);
-            Assert.IsNull(lsig.Args);
-            Assert.AreNotEqual(lsig.Sig, new Signature());
-            Assert.IsNotNull(lsig.Sig);
+            Assert.That(lsig.Logic, Is.EqualTo(program));
+            Assert.That(lsig.Args, Is.Null);
+            Assert.That(lsig.Sig, Is.Not.EqualTo(new Signature()));
+            Assert.That(lsig.Sig, Is.Not.Null);
 
-            Assert.IsNull(lsig.Msig);
+            Assert.That(lsig.Msig, Is.Null);
             bool verified = lsig.Verify(account.Address);
-            Assert.IsTrue(verified);
+            Assert.That(verified, Is.True);
 
             // check serialization
             byte[] outBytes = Encoder.EncodeToMsgPackOrdered(lsig);
             LogicsigSignature lsig1 = Encoder.DecodeFromMsgPack<LogicsigSignature>(outBytes);
-            Assert.AreEqual(lsig1, lsig);
+            Assert.That(lsig1, Is.EqualTo(lsig));
             TestUtil.SerializeDeserializeCheck(lsig);
         }
 
@@ -113,41 +113,41 @@ namespace test
 
             LogicsigSignature lsig = new LogicsigSignature(program);
             lsig.SignLogicsig(acc1, ma);
-            Assert.AreEqual(lsig.Logic, program);
-            Assert.IsNull(lsig.Args);
-            Assert.IsNull(lsig.Sig);
-            Assert.AreNotEqual(lsig.Msig, new MultisigSignature());
-            Assert.IsNotNull(lsig.Msig);
+            Assert.That(lsig.Logic, Is.EqualTo(program));
+            Assert.That(lsig.Args, Is.Null);
+            Assert.That(lsig.Sig, Is.Null);
+            Assert.That(lsig.Msig, Is.Not.EqualTo(new MultisigSignature()));
+            Assert.That(lsig.Msig, Is.Not.Null);
 
             var verified = lsig.Verify(ma.ToAddress());
-            Assert.IsFalse(verified);
+            Assert.That(verified, Is.False);
 
             LogicsigSignature lsigLambda = lsig;
             
             lsig.AppendToLogicsig(lsig, acc2);
             verified = lsig.Verify(ma.ToAddress());
-            Assert.IsTrue(verified);
+            Assert.That(verified, Is.True);
 
             // Add a single signature and ensure it fails
             LogicsigSignature lsig1 = new LogicsigSignature(program);
             lsig1.SignLogicsig( account);
             lsig.Sig = lsig1.Sig;
             verified = lsig.Verify(ma.ToAddress());
-            Assert.IsFalse(verified);
+            Assert.That(verified, Is.False);
             verified = lsig.Verify(account.Address);
-            Assert.IsFalse(verified);
+            Assert.That(verified, Is.False);
 
             // Remove and ensure it still works
             lsig.Sig = null;
             verified = lsig.Verify(ma.ToAddress());
-            Assert.IsTrue(verified);
+            Assert.That(verified, Is.True);
 
             // check serialization
             byte[] outBytes = Encoder.EncodeToMsgPackOrdered(lsig);
             LogicsigSignature lsig2 = Encoder.DecodeFromMsgPack<LogicsigSignature>(outBytes);
-            Assert.AreEqual(lsig2, lsig);
+            Assert.That(lsig2, Is.EqualTo(lsig));
             verified = lsig2.Verify(ma.ToAddress());
-            Assert.IsTrue(verified);
+            Assert.That(verified, Is.True);
             TestUtil.SerializeDeserializeCheck(lsig2);
         }
     }

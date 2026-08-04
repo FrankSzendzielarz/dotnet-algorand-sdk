@@ -1,4 +1,4 @@
-﻿using Algorand;
+using Algorand;
 using Algorand.Algod;
 using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
@@ -25,7 +25,7 @@ namespace sdk_examples
 
             // Create a connection to our sandbox node
             var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
-            DefaultApi algodApiInstance = new DefaultApi(httpClient);
+            var algod = new AlgodClient(httpClient);
 
             // The byte code of a very simple teal program. The TEAL
             // disassembly will appear in the dryrun call.
@@ -38,7 +38,7 @@ namespace sdk_examples
             try
             {
                 // Get a payment transaction based on current network parameters
-                TransactionParametersResponse transParams = await algodApiInstance.TransactionParamsAsync();
+                TransactionParametersResponse transParams = await algod.TransactionParamsAsync();
                 var tx = PaymentTransaction.GetPaymentTransactionFromNetworkTransactionParameters(acct1.Address, acct2.Address, 1000000, "tx using in dryrun", transParams);
 
                 // Sign the transaction using a logic signature
@@ -46,7 +46,7 @@ namespace sdk_examples
 
                 // "Dry run" the transaction and show what would have happened during logic sig evalution.
                 // The output also includes the TEAL disassembly.
-                var dryrunResponse2 = await Utils.GetDryrunResponse(algodApiInstance, signedTx);
+                var dryrunResponse2 = await Utils.GetDryrunResponse(algod, signedTx);
                 Console.WriteLine("Dryrun source response : " + dryrunResponse2.ToJson());
 
             }
@@ -64,3 +64,5 @@ namespace sdk_examples
         }
     }
 }
+
+

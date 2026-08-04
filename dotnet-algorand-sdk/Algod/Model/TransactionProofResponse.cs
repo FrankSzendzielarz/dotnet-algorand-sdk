@@ -1,14 +1,12 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class TransactionProofResponse
+    {
 
-using System = global::System;
 
-
-public partial class TransactionProofResponse{
-   
-    
-}
+    }
 
 
 }

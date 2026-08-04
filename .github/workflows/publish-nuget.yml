@@ -1,0 +1,120 @@
+name: Publish NuGet
+
+# Publishes the Algorand4 NuGet package using NuGet.org Trusted Publishing (OIDC) -
+# no long-lived NUGET_API_KEY secret is stored in this repo.
+#
+# One-time setup on nuget.org (required before this workflow can push):
+#   1. Log into nuget.org -> username -> Trusted Publishing -> Add policy
+#   2. Repository Owner:  scholtz
+#      Repository:        dotnet-algorand-sdk
+#      Workflow File:     publish-nuget.yml   (file name only, no path)
+#      Environment:        nuget-publish       (must match the `environment:` below)
+#   3. Do this once for each package id you own: Algorand4 and Algorand4_Unity.
+#
+# The Unity-specific Algorand4_Unity package (an ILRepacked single-assembly build - see
+# dotnet-algorand-sdk/ILRepack.Targets) is built and published alongside Algorand4 from the same
+# commit, so both packages always carry the same version (dotnet-algorand-sdk.csproj's
+# $(AlgorandSdkVersion) is the single source of truth for both).
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Actually push to nuget.org (leave unchecked for a dry run that only builds)"
+        type: boolean
+        default: false
+
+jobs:
+  build-and-test:
+    # ubuntu-latest (not windows-latest) so Docker runs Linux containers natively -
+    # AlgoKit LocalNet's algod/indexer/conduit images are Linux-only.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            10.0.x
+
+      - name: Install AlgoKit
+        run: pipx install algokit
+
+      - name: Start AlgoKit LocalNet
+        # test/Arc4Tests.cs and test/Arc56Tests.cs deploy against http://localhost:4001 (algod)
+        # and http://localhost:4002 (kmd), so LocalNet must be up before `dotnet test`.
+        run: algokit localnet start
+
+      - name: Restore
+        run: dotnet restore dotnet-algorand-sdk.sln
+
+      - name: Build Release
+        run: dotnet build dotnet-algorand-sdk.sln --configuration Release --no-restore
+
+      - name: Build Unity package
+        # A dedicated restore first: the Unity configuration's ILRepack.Lib.MSBuild
+        # PackageReference is conditioned on Configuration=='Unity', and the plain solution-wide
+        # restore above isn't guaranteed to evaluate that condition as true.
+        run: |
+          dotnet restore dotnet-algorand-sdk/dotnet-algorand-sdk.csproj -p:Configuration=Unity
+          dotnet build dotnet-algorand-sdk/dotnet-algorand-sdk.csproj --configuration Unity --no-restore
+
+      - name: Run unit tests
+        # test.Gossip.BlockFetcherTests dials a hardcoded list of MainNet relay hostnames
+        # (GossipHttpConfiguration.MainNetArchival) that rotate over time - some no longer
+        # resolve via public DNS, so they fail from any runner regardless of network access.
+        # Excluded from the CI gate; run manually against a known-good relay list.
+        run: dotnet test test/test.csproj --configuration Release --no-build --filter "FullyQualifiedName!~test.Gossip.BlockFetcherTests"
+
+      - name: Run serialisation tests
+        run: dotnet test SerialisationTests/serialisation-tests.csproj --configuration Release --no-build
+
+      - name: Stop AlgoKit LocalNet
+        if: always()
+        run: algokit localnet stop
+
+      - name: Upload nupkg artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nupkg
+          # Algorand4 (Release) and Algorand4_Unity (Unity - see ILRepack.Targets, lands directly
+          # under bin/Unity/ rather than a TFM subfolder, since it's packed via NuspecFile).
+          path: |
+            dotnet-algorand-sdk/bin/Release/*.nupkg
+            dotnet-algorand-sdk/bin/Unity/*.nupkg
+
+  publish:
+    needs: build-and-test
+    if: github.event_name == 'push' || inputs.publish
+    runs-on: ubuntu-latest
+    environment: nuget-publish
+    permissions:
+      id-token: write # required to request the OIDC token for Trusted Publishing
+      contents: read
+    steps:
+      - name: Download nupkg artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nupkg
+          path: nupkg
+
+      - name: NuGet login (OIDC -> temporary API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }} # nuget.org profile name, not an API key or email
+
+      - name: Push to nuget.org
+        shell: pwsh
+        run: |
+          # -Recurse: actions/upload-artifact preserves each glob's directory structure (Release/
+          # and Unity/ subfolders here), so both Algorand4 and Algorand4_Unity packages need a
+          # recursive search to be found under the downloaded nupkg/ root.
+          Get-ChildItem nupkg -Filter *.nupkg -Recurse | ForEach-Object {
+            dotnet nuget push $_.FullName --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          }

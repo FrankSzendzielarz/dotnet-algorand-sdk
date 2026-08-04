@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.ComponentModel;
+﻿using MessagePack;
 
 namespace Algorand.Algod.Model.Transactions
 {
+    [MessagePackObject]
     public partial class StateSchema
     {
         public bool ShouldSerializeNumByteSlice()

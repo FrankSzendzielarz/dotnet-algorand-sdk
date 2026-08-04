@@ -1,42 +1,76 @@
 ﻿
 
 
+using Algorand.Algod.Model.Converters.MsgPack;
 using Algorand.Utils;
+using MessagePack;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 
 
 namespace Algorand.Algod.Model.Transactions
 {
-  
+    [MessagePack.MessagePackObject]
+    [MessagePackFormatter(typeof(ValueDeltaFormatterMsgPack))]
+    public partial class ValueDelta
+    {
+        [Newtonsoft.Json.JsonProperty("at", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("at")]
+        public ulong DeltaAction { get; set; }
+        [Newtonsoft.Json.JsonProperty("bs", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonConverter(typeof(Algorand.Algod.Model.Converters.Json.ValueDeltaBytesConverterJson))]
+        [MessagePack.Key("bs")]
+        public string? Bytes { get; set; }
+        [Newtonsoft.Json.JsonProperty("ui", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("ui")]
+        public ulong? Uint64 { get; set; }
+    }
+
+    [MessagePack.MessagePackObject]
+    public partial class SignedTransactionDetail
+    {
+        [Newtonsoft.Json.JsonProperty("gd", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("gd")]
+        public Dictionary<object, ValueDelta>? GlobalDelta { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("ld", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("ld")]
+        public Dictionary<ulong, Dictionary<object, ValueDelta>>? LocalDelta { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("itx", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("itx")]
+        public ICollection<SignedTransaction>? InnerTxns { get; set; }
+    }
+
     public partial class SignedTransaction
     {
+        [Newtonsoft.Json.JsonProperty("dt", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("dt")]
+        public SignedTransactionDetail Detail { get; set; }
+
         //TODO hgi & hgh flags
-     
+
         public void SetAuthAddr(byte[] sigAddr)
         {
             AuthAddr = new Address(sigAddr);
         }
 
-
-    
-
-    
         public SignedTransaction() { }
 
         [JsonConstructor]
-        public SignedTransaction(Transaction txn, byte[] sig, MultisigSignature msig, LogicsigSignature lsig,Address sgnr)
+        public SignedTransaction(Transaction txn, byte[] sig, MultisigSignature msig, LogicsigSignature lsig, Address sgnr)
         {
             if (txn != null) Tx = txn;
             if (sig != null) Sig = new Signature(sig);
             if (msig != null) MSig = msig;
             if (lsig != null) LSig = lsig;
             if (sgnr != null) AuthAddr = sgnr;
-      
+
         }
 
-        public SignedTransaction(Transaction txn,Signature sig)
+        public SignedTransaction(Transaction txn, Signature sig)
         {
             if (txn != null) Tx = txn;
             if (sig != null) Sig = sig;
@@ -112,14 +146,14 @@ namespace Algorand.Algod.Model.Transactions
         /// <param name="from">the multisig public identity we are signing for</param>
         /// <param name="signedTx">the partially signed msig tx to which to append signature</param>
         /// <returns>merged multisig transaction</returns>
-        public SignedTransaction AppendMultisigTransaction(MultisigAddress from,Account signingAccount)
+        public SignedTransaction AppendMultisigTransaction(MultisigAddress from, Account signingAccount)
         {
-            SignedTransaction sTx = Tx.Sign(from,signingAccount);
+            SignedTransaction sTx = Tx.Sign(from, signingAccount);
             return MergeMultisigTransactions(sTx);
         }
 
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is SignedTransaction actual)
             {
@@ -136,6 +170,6 @@ namespace Algorand.Algod.Model.Transactions
             return base.GetHashCode();
         }
 
-     
+
     }
 }

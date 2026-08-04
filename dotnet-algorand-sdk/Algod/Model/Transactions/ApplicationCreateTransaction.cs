@@ -1,28 +1,24 @@
-﻿
-
-
-using Algorand.Utils;
+﻿using MessagePack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System.ComponentModel;
 using System.Runtime.Serialization;
 #if UNITY
 using UnityEngine;
 #endif
 namespace Algorand.Algod.Model.Transactions
 {
-
+    [MessagePack.MessagePackObject(AllowPrivate = true)]
     public partial class ApplicationCreateTransaction : ApplicationNoopTransaction
     {
 
         public bool ShouldSerializeGlobalStateSchema()
         {
-            return GlobalStateSchema.NumByteSlice != 0 || GlobalStateSchema.NumUint != 0;
+            return GlobalStateSchema != null && (GlobalStateSchema.NumByteSlice != 0 || GlobalStateSchema.NumUint != 0);
         }
 
         public bool ShouldSerializeLocalStateSchema()
         {
-            return LocalStateSchema.NumByteSlice != 0 || LocalStateSchema.NumUint != 0;
+            return LocalStateSchema != null && (LocalStateSchema.NumByteSlice != 0 || LocalStateSchema.NumUint != 0);
         }
 
         public bool ShouldSerializeExtraProgramPages()
@@ -39,9 +35,11 @@ namespace Algorand.Algod.Model.Transactions
         [Tooltip(@"")]
         [field: InspectorName(@"ApplicationIndex")]
         [JsonIgnore]
+        [IgnoreMember]
         public ulong ApplicationIndex { get; internal set; }
 #else
         [JsonIgnore]
+        [IgnoreMember]
         public ulong? ApplicationIndex { get; internal set; }
 #endif
 

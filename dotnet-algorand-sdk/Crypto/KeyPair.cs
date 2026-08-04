@@ -7,12 +7,10 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Algorand.Crypto
 {
-    public class KeyPair
+    public class KeyPair : IDisposable
     {
         internal const int SK_SIZE = 32;
         internal const int SK_SIZE_BITS = SK_SIZE * 8;
@@ -83,6 +81,25 @@ namespace Algorand.Crypto
             byte[] res = Asn1OctetString.GetInstance(keyOcts).GetOctets();
             return Mnemonic.FromKey(res);
         }
+
+        /// <summary>
+        /// Best-effort wipe of the private key material held by this instance: zeroes
+        /// <see cref="ClearTextPrivateKey"/> and drops the references to the BouncyCastle
+        /// key objects so they become eligible for garbage collection. This cannot guarantee
+        /// no copy of the key remains elsewhere in process memory (e.g. from prior GC
+        /// compaction), but it removes the one copy this SDK keeps a live, reachable
+        /// reference to.
+        /// </summary>
+        public void Dispose()
+        {
+            if (ClearTextPrivateKey != null)
+            {
+                Array.Clear(ClearTextPrivateKey, 0, ClearTextPrivateKey.Length);
+            }
+            ed25519PrivateKey = null;
+            ed25519PublicKey = null;
+            Pair = null;
+        }
     }
-    
+
 }

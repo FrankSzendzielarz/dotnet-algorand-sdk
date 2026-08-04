@@ -6,9 +6,10 @@ namespace Algorand.Algod.Model
 
     /// <summary>algod version information.</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.5.2.0 (Newtonsoft.Json v12.0.0.0)")]
+    [MessagePack.MessagePackObject]
     public partial class Version
     {
-     
+
 
     }
 }

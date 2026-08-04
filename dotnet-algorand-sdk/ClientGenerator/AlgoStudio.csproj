@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IsPackable>true</IsPackable>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+
+		<!-- Avoid ID conflicts with the package project. -->
+		<PackageId>AVM.ClientGenerator</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.5.0</Version>
+		<DebugType>embedded</DebugType>
+		<Authors>Frank Szendzielarz</Authors>
+		<Company>Frank Szendzielarz</Company>
+		<Product>AVM.ClientGenerator</Product>
+		<Description>Code analyzers and compilers to be used with the AVM.ClientGenerator VSIX Visual Studio extensions for Algorand development in C#</Description>
+		<PackageProjectUrl>https://github.com/FrankSzendzielarz/AlgorandVisualStudio</PackageProjectUrl>
+		<PackageTags>Algorand</PackageTags>
+		<SignAssembly>True</SignAssembly>
+		<DelaySign>False</DelaySign>
+		<AssemblyOriginatorKeyFile>AVM.ClientGenerator.snk</AssemblyOriginatorKeyFile>
+		
+	</PropertyGroup>
+	<PropertyGroup>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+	
+
+	<ItemGroup>
+		<EmbeddedResource Include="langspec.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Algorand2" Version="2.0.0.2024051911" GeneratePathProperty="true" />
+		
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.2.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.2.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Shared.VSCodeDebugProtocol" Version="17.2.60629.1" />
+		<PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.6.2164">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" GeneratePathProperty="true" PrivateAssets="all">
+
+		</PackageReference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+	</PropertyGroup>
+
+	<Target Name="GetDependencyTargetPaths">
+		<ItemGroup>
+			
+			<TargetPathWithTargetPlatformMoniker Include="$(PKGNewtonsoft_Json)\lib\netstandard2.0\Newtonsoft.Json.dll" IncludeRuntimeDependency="false" />
+		</ItemGroup>
+	</Target>
+
+	<ItemGroup>
+		<Compile Update="Resources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="Resources.resx" />
+		<EmbeddedResource Update="Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Package the generator in the analyzer directory of the nuget package -->
+		<None Include="$(OutputPath)\AVM.ClientGenerator.Core.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(PKGAlgorand2)\lib\netstandard2.0\Algorand.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(PKGAlgorand2)\lib\netstandard2.0\BouncyCastle.Crypto.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+		<None Include="$(OutputPath)\AVM.ClientGenerator.Core.dll" Pack="true" PackagePath="lib/netstandard2.0" />
+		<None Include="$(PKGAlgorand2)\lib\netstandard2.0\Algorand.dll" Pack="true" PackagePath="lib/netstandard2.0" Visible="false" />
+		<None Include="$(PKGAlgorand2)\lib\netstandard2.0\BouncyCastle.Crypto.dll" Pack="true" PackagePath="lib/netstandard2.0" Visible="false" />
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="lib/netstandard2.0" />
+		<None Include="$(PKGNewtonsoft_Json)\lib\netstandard2.0\Newtonsoft.Json.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<UserSecretsId>9d43a4bf-0c5c-4d31-a31d-4358bcf3cd28</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="public.pk">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="TealDebugger\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AVM.ClientGenerator.Core\AVM.ClientGenerator.Core.csproj" />
+	</ItemGroup>
+
+
+</Project>

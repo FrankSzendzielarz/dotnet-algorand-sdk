@@ -1,25 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Target Name="ILRepacker" AfterTargets="CopyFilesToOutputDirectory" Condition="'$(Configuration)' == 'Unity' Or '$(Configuration)' == 'Unity_debug'">
+
+	<!-- ILRepack.Lib.MSBuild's own <ILRepack> task always calls ILRepacking's
+	     ResourcesRepackStep.GenerateRepackListResource(), which serializes an assembly-name
+	     list via System.Runtime.Serialization.Formatters.Binary.BinaryFormatter - a type whose
+	     (de)serialization APIs were removed outright starting with .NET 9, so the task throws
+	     "BinaryFormatter serialization and deserialization have been removed" under any current
+	     .NET SDK. The underlying ILRepacking.ILRepack engine (in the same package's ILRepack.dll)
+	     exposes a NoRepackRes option that skips that step entirely, but ILRepack.Lib.MSBuild
+	     2.1.18's <ILRepack> task wrapper never surfaces it and hasn't been updated since 2022.
+	     BuildTasks/IlRepackMergeTask drives ILRepacking.ILRepack directly with NoRepackRes=true
+	     instead. It's a real compiled MSBuild task project (not a RoslynCodeTaskFactory inline
+	     task): an inline task's manually-specified <Reference> list replaces the compiler's
+	     implicit corlib/netstandard references entirely, which made a hand-rolled reference list
+	     impractical to get working. Built on demand below so it doesn't need its own entry in
+	     the main solution/build order. -->
+	<PropertyGroup>
+		<_ILRepackMergeTaskDir>$(MSBuildThisFileDirectory)..\BuildTasks\IlRepackMergeTask\</_ILRepackMergeTaskDir>
+		<_ILRepackMergeTaskAssembly>$(_ILRepackMergeTaskDir)bin\Release\net8.0\IlRepackMergeTask.dll</_ILRepackMergeTaskAssembly>
+	</PropertyGroup>
+
+	<UsingTask TaskName="IlRepackMergeTask.ILRepackMerge" AssemblyFile="$(_ILRepackMergeTaskAssembly)" />
+
+	<Target Name="ILRepacker" AfterTargets="CopyFilesToOutputDirectory" BeforeTargets="Pack;GenerateNuspec" Condition="'$(Configuration)' == 'Unity' Or '$(Configuration)' == 'Unity_debug'">
+		<!-- Built via a plain out-of-process `dotnet build`, not the in-process <MSBuild> task:
+		     the current MSBuild engine/node caches this project's evaluation, so even a separate
+		     Targets="Restore" call first still leaves a later Targets="Build" call seeing
+		     pre-restore property state (e.g. the missing GeneratePathProperty-derived
+		     $(PkgILRepack_Lib_MSBuild)). A fresh `dotnet build` process has no such cache. -->
+		<Exec Command="dotnet build &quot;$(_ILRepackMergeTaskDir)IlRepackMergeTask.csproj&quot; --configuration Release" />
+
+		<!-- $(TargetPath) (Algorand.dll) must be listed LAST: ILRepack/Mono.Cecil reads
+		     InputAssemblies in order and resolves a type's custom-attribute arguments (e.g.
+		     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]) against whichever
+		     assemblies it has already read. Algorand.dll uses types from every merged
+		     dependency below, so if it were read first (before those dependencies are known
+		     to the resolver) the merge fails with "Failed to resolve assembly" for whichever
+		     dependency the first-encountered attribute happens to reference. -->
 		<ItemGroup>
-			<InputAssemblies Include="$(TargetPath)" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'Newtonsoft.Json'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'JsonSubTypes'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'Newtonsoft.Msgpack'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'MsgPack'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.CodeDom'" />
-			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'BouncyCastle.Crypto'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'BouncyCastle.Cryptography'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'RestSharp'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'MessagePack'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'MessagePack.Annotations'" />
+			<InputAssemblies Include="$(TargetPath)" />
 		</ItemGroup>
 
-		<ILRepack AllowDuplicateResources="false"
-				  DebugInfo="true"
-				  Union="true"
-				  Internalize="true"
-				  InputAssemblies="@(InputAssemblies)"
-				  OutputFile="$(TargetPath)"
-				  Parallel="true"
-				  TargetKind="SameAsPrimaryAssembly" />
-		
+		<!-- Every directory that holds a *non*-merged compile-time reference (e.g. the
+		     Microsoft.Bcl.AsyncInterfaces the RestSharp merge depends on), so ILRepack can still
+		     resolve type references pointing outside the merged assembly set. -->
+		<ItemGroup>
+			<_ILRepackSearchDirectory Include="@(ReferencePath -> '%(RootDir)%(Directory)')" />
+		</ItemGroup>
+
+		<IlRepackMergeTask.ILRepackMerge InputAssemblies="@(InputAssemblies)" OutputFile="$(TargetPath)" SearchDirectories="@(_ILRepackSearchDirectory)" />
+
 	</Target>
 </Project>

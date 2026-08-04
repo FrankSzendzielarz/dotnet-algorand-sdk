@@ -1,0 +1,6 @@
+# This folder holds ARC56/ARC4 client-generator output checked in by test/GeneratedClientCompiler.cs
+# (see Arc56Tests.cs) - it gets overwritten wholesale by the generator every time those tests run, so
+# it isn't hand-maintained source and lint fixes here wouldn't stick.
+[*.cs]
+generated_code = true
+dotnet_diagnostic.IDE0005.severity = none

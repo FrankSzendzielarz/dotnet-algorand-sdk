@@ -1,10 +1,5 @@
-﻿using Algorand;
-using Algorand.Algod;
-using Algorand.Algod.Model;
-using Algorand.Algod.Model.Transactions;
+﻿using Algorand.Algod.Model;
 using Algorand.KMD;
-using Algorand.Utils;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;

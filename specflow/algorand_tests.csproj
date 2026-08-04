@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <Configurations>Debug;Release;Test_Debug;Integration_Test_Debug;Unity;Unity_debug</Configurations>
@@ -13,14 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentAssertions.Json" Version="6.1.0" />
-    <PackageReference Include="MessagePack" Version="2.4.59" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="FluentAssertions.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
-    <PackageReference Include="SpecFlow.MsTest" Version="3.9.40" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
-    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="SpecFlow.MsTest" Version="3.9.74" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.8.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.8.2" />
+    <PackageReference Include="FluentAssertions" Version="8.10.0" />
   </ItemGroup>
 
   <ItemGroup>

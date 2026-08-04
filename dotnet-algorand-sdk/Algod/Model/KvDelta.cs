@@ -1,13 +1,11 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class KvDelta
+    {
 
-using System = global::System;
-
-
-public partial class KvDelta{
-   
-}
+    }
 
 
 }

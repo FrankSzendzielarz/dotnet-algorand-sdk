@@ -1,13 +1,12 @@
 ﻿
 using Algorand.Utils;
 using JsonSubTypes;
+using MessagePack;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Xml.Linq;
 #if UNITY
 using UnityEngine;
 #endif
@@ -17,6 +16,7 @@ namespace Algorand.Algod.Model.Transactions
 
 
     [JsonConverter(typeof(ReturnedTransactionConverter))]
+    [Union(0, typeof(Transaction))]
     public interface IReturnableTransaction { }
 
     [JsonConverter(typeof(JsonSubtypes), "type")]
@@ -27,6 +27,17 @@ namespace Algorand.Algod.Model.Transactions
     [JsonSubtypes.KnownSubType(typeof(AssetMovementsTransaction), "axfer")]
     [JsonSubtypes.KnownSubType(typeof(AssetConfigurationTransaction), "acfg")]
     [JsonSubtypes.KnownSubType(typeof(StateProofTransaction), "stpf")]
+    [JsonSubtypes.KnownSubType(typeof(HeartBeatTransaction), "hb")]
+
+    [MessagePack.MessagePackObject]
+    [Union(0, typeof(ApplicationCallTransaction))]
+    [Union(1, typeof(KeyRegistrationTransaction))]
+    [Union(2, typeof(PaymentTransaction))]
+    [Union(3, typeof(AssetFreezeTransaction))]
+    [Union(4, typeof(AssetMovementsTransaction))]
+    [Union(5, typeof(AssetConfigurationTransaction))]
+    [Union(6, typeof(StateProofTransaction))]
+    [Union(7, typeof(HeartBeatTransaction))]
 
     public abstract partial class Transaction : IReturnableTransaction
     {
@@ -44,16 +55,18 @@ namespace Algorand.Algod.Model.Transactions
         public bool ShouldSerializeGenesisId() { return GenesisId?.Length > 0; }
         public bool ShouldSerializeFirstValid() { return FirstValid!= 0; }
         public bool ShouldSerializeLastValid() { return LastValid != 0; }
-
-        private byte[] _lease { get; set; }
+        [IgnoreMember]
 #if UNITY
     [field:SerializeField]
-    [Tooltip(@"")]
+    [field:Tooltip(@"")]
     [field:InspectorName(@"Lease")]
+#endif
+        private byte[] _lease { get; set; }
+#if UNITY
         [Newtonsoft.Json.JsonIgnore]
-       
 #endif
         [Newtonsoft.Json.JsonProperty("lx", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("lx")]
         public byte[] Lease
         {
             get
@@ -66,19 +79,18 @@ namespace Algorand.Algod.Model.Transactions
                     _lease = value;
             }
         }
-
-
-
-
-        private byte[] _note { get; set; }
+        [IgnoreMember]
 #if UNITY
     [field:SerializeField]
-    [Tooltip(@"")]
+    [field:Tooltip(@"")]
     [field:InspectorName(@"Note")]
-    [Newtonsoft.Json.JsonIgnore]
-  
+#endif
+        private byte[] _note { get; set; }
+#if UNITY
+        [Newtonsoft.Json.JsonIgnore]
 #endif
         [Newtonsoft.Json.JsonProperty("note", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("note")]
         public byte[] Note
         {
             get
@@ -100,50 +112,61 @@ namespace Algorand.Algod.Model.Transactions
         [Tooltip(@"")]
         [field: InspectorName(@"ConfirmedRound")]
         [JsonIgnore]
+        [IgnoreMember]
         public ulong ConfirmedRound { get; internal set; }
 
-       
+
         [JsonIgnore]
+        [IgnoreMember]
         public bool Committed => ConfirmedRound > 0;
 
         [field: SerializeField]
         [Tooltip(@"")]
         [field: InspectorName(@"ReceiverRewards")]
         [JsonIgnore]
+        [IgnoreMember]
         public ulong ReceiverRewards { get; internal set; }
 
         [field: SerializeField]
         [Tooltip(@"")]
         [field: InspectorName(@"SenderRewards")]
         [JsonIgnore]
+        [IgnoreMember]
         public ulong SenderRewards { get; internal set; }
 
         [field: SerializeField]
         [Tooltip(@"")]
         [field: InspectorName(@"CloseRewards")]
         [JsonIgnore]
+        [IgnoreMember]
         public ulong CloseRewards { get; internal set; }
 #else
         [JsonIgnore]
+        [IgnoreMember]
         public ulong? ConfirmedRound { get; internal set; }
 
          [JsonIgnore]
+        [IgnoreMember]
         public bool Committed => (ConfirmedRound ?? 0) > 0;
 
           [JsonIgnore]
+        [IgnoreMember]
         public ulong? ReceiverRewards { get; internal set; }
 
         
         [JsonIgnore]
+        [IgnoreMember]
         public ulong? SenderRewards { get; internal set; }
 
         
         [JsonIgnore]
+        [IgnoreMember]
         public ulong? CloseRewards { get; internal set; }
 #endif
 
 
         [JsonIgnore]
+        [IgnoreMember]
         public string PoolError { get; internal set; }
 
       
@@ -178,8 +201,6 @@ namespace Algorand.Algod.Model.Transactions
             retList.AddRange(encodedTx);
             return retList.ToArray();
         }
-
-
         /// <summary>
         /// Return transaction ID as Digest
         /// </summary>
@@ -210,8 +231,8 @@ namespace Algorand.Algod.Model.Transactions
             byte[] prefixEncodedTx = BytesToSign();
             Signature txSig = signingAccount.SignRawBytes(prefixEncodedTx);
             var stx = new SignedTransaction(this, txSig);
-            if (!Sender.Equals(signingAccount.Address))
-                stx.AuthAddr = signingAccount.Address;
+            if (!Sender.Equals(signingAccount.OriginalAddress ?? signingAccount.Address))
+                stx.AuthAddr = signingAccount.OriginalAddress ?? signingAccount.Address;
             
             return stx;
         }

@@ -1,0 +1,727 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.AssetAccept
+  commentId: T:AVM.ClientGenerator.Core.AssetAccept
+  id: AssetAccept
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.AssetAccept.#ctor(System.UInt64,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.AssetAccept.AssetReceiver
+  - AVM.ClientGenerator.Core.AssetAccept.AssetSender
+  - AVM.ClientGenerator.Core.AssetAccept.XferAsset
+  langs:
+  - csharp
+  - vb
+  name: AssetAccept
+  nameWithType: AssetAccept
+  fullName: AVM.ClientGenerator.Core.AssetAccept
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AssetAccept
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public sealed class AssetAccept : InnerTransaction'
+    content.vb: >-
+      Public NotInheritable Class AssetAccept
+
+          Inherits InnerTransaction
+  inheritance:
+  - System.Object
+  - AVM.ClientGenerator.Core.InnerTransaction
+  inheritedMembers:
+  - AVM.ClientGenerator.Core.InnerTransaction.Fee
+  - AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  - AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  - AVM.ClientGenerator.Core.InnerTransaction.Sender
+  - AVM.ClientGenerator.Core.InnerTransaction.TxType
+  - AVM.ClientGenerator.Core.InnerTransaction.Lease
+  - AVM.ClientGenerator.Core.InnerTransaction.Note
+  - AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  - AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  - AVM.ClientGenerator.Core.InnerTransaction.TxID
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: AVM.ClientGenerator.Core.AssetAccept.XferAsset
+  commentId: P:AVM.ClientGenerator.Core.AssetAccept.XferAsset
+  id: XferAsset
+  parent: AVM.ClientGenerator.Core.AssetAccept
+  langs:
+  - csharp
+  - vb
+  name: XferAsset
+  nameWithType: AssetAccept.XferAsset
+  fullName: AVM.ClientGenerator.Core.AssetAccept.XferAsset
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: XferAsset
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong XferAsset { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property XferAsset As ULong
+  overload: AVM.ClientGenerator.Core.AssetAccept.XferAsset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetAccept.AssetSender
+  commentId: P:AVM.ClientGenerator.Core.AssetAccept.AssetSender
+  id: AssetSender
+  parent: AVM.ClientGenerator.Core.AssetAccept
+  langs:
+  - csharp
+  - vb
+  name: AssetSender
+  nameWithType: AssetAccept.AssetSender
+  fullName: AVM.ClientGenerator.Core.AssetAccept.AssetSender
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AssetSender
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] AssetSender { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property AssetSender As Byte()
+  overload: AVM.ClientGenerator.Core.AssetAccept.AssetSender*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetAccept.AssetReceiver
+  commentId: P:AVM.ClientGenerator.Core.AssetAccept.AssetReceiver
+  id: AssetReceiver
+  parent: AVM.ClientGenerator.Core.AssetAccept
+  langs:
+  - csharp
+  - vb
+  name: AssetReceiver
+  nameWithType: AssetAccept.AssetReceiver
+  fullName: AVM.ClientGenerator.Core.AssetAccept.AssetReceiver
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AssetReceiver
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] AssetReceiver { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property AssetReceiver As Byte()
+  overload: AVM.ClientGenerator.Core.AssetAccept.AssetReceiver*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AssetAccept.#ctor(System.UInt64,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.AssetAccept.#ctor(System.UInt64,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  id: '#ctor(System.UInt64,AVM.ClientGenerator.Core.AccountReference,AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])'
+  parent: AVM.ClientGenerator.Core.AssetAccept
+  langs:
+  - csharp
+  - vb
+  name: AssetAccept(UInt64, AccountReference, AccountReference, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, Byte[], Byte[], Byte[])
+  nameWithType: AssetAccept.AssetAccept(UInt64, AccountReference, AccountReference, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.AssetAccept.AssetAccept(System.UInt64, AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Byte[], System.Byte[], System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: .ctor
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AssetAccept.cs
+    startLine: 16
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public AssetAccept(ulong xferAsset, AccountReference sender, AccountReference assetReceiver, ulong? fee = 0UL, ulong? firstValid = 0UL, ulong? lastValid = 0UL, byte[] lease = null, byte[] note = null, byte[] rekeyTo = null)
+    parameters:
+    - id: xferAsset
+      type: System.UInt64
+    - id: sender
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: assetReceiver
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: fee
+      type: System.Nullable{System.UInt64}
+    - id: firstValid
+      type: System.Nullable{System.UInt64}
+    - id: lastValid
+      type: System.Nullable{System.UInt64}
+    - id: lease
+      type: System.Byte[]
+    - id: note
+      type: System.Byte[]
+    - id: rekeyTo
+      type: System.Byte[]
+    content.vb: Public Sub New(xferAsset As ULong, sender As AccountReference, assetReceiver As AccountReference, fee As ULong? = 0UL, firstValid As ULong? = 0UL, lastValid As ULong? = 0UL, lease As Byte() = Nothing, note As Byte() = Nothing, rekeyTo As Byte() = Nothing)
+  overload: AVM.ClientGenerator.Core.AssetAccept.#ctor*
+  nameWithType.vb: AssetAccept.AssetAccept(UInt64, AccountReference, AccountReference, Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.AssetAccept.AssetAccept(System.UInt64, AVM.ClientGenerator.Core.AccountReference, AVM.ClientGenerator.Core.AccountReference, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Byte(), System.Byte(), System.Byte())
+  name.vb: AssetAccept(UInt64, AccountReference, AccountReference, Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), Byte(), Byte(), Byte())
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: AVM.ClientGenerator.Core.InnerTransaction
+  commentId: T:AVM.ClientGenerator.Core.InnerTransaction
+  parent: AVM.ClientGenerator.Core
+  name: InnerTransaction
+  nameWithType: InnerTransaction
+  fullName: AVM.ClientGenerator.Core.InnerTransaction
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Fee
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Fee
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Fee
+  nameWithType: InnerTransaction.Fee
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Fee
+- uid: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: FirstValid
+  nameWithType: InnerTransaction.FirstValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: LastValid
+  nameWithType: InnerTransaction.LastValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Sender
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Sender
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Sender
+  nameWithType: InnerTransaction.Sender
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Sender
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxType
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxType
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: TxType
+  nameWithType: InnerTransaction.TxType
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxType
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Lease
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Lease
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Lease
+  nameWithType: InnerTransaction.Lease
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Lease
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Note
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Note
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Note
+  nameWithType: InnerTransaction.Note
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Note
+- uid: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: RekeyTo
+  nameWithType: InnerTransaction.RekeyTo
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+- uid: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: GroupIndex
+  nameWithType: InnerTransaction.GroupIndex
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxID
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxID
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: TxID
+  nameWithType: InnerTransaction.TxID
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxID
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.AssetAccept.XferAsset*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetAccept.XferAsset
+  name: XferAsset
+  nameWithType: AssetAccept.XferAsset
+  fullName: AVM.ClientGenerator.Core.AssetAccept.XferAsset
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: AVM.ClientGenerator.Core.AssetAccept.AssetSender*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetAccept.AssetSender
+  name: AssetSender
+  nameWithType: AssetAccept.AssetSender
+  fullName: AVM.ClientGenerator.Core.AssetAccept.AssetSender
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.AssetAccept.AssetReceiver*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetAccept.AssetReceiver
+  name: AssetReceiver
+  nameWithType: AssetAccept.AssetReceiver
+  fullName: AVM.ClientGenerator.Core.AssetAccept.AssetReceiver
+- uid: AVM.ClientGenerator.Core.AssetAccept.#ctor*
+  commentId: Overload:AVM.ClientGenerator.Core.AssetAccept.#ctor
+  name: AssetAccept
+  nameWithType: AssetAccept.AssetAccept
+  fullName: AVM.ClientGenerator.Core.AssetAccept.AssetAccept
+- uid: AVM.ClientGenerator.Core.AccountReference
+  commentId: T:AVM.ClientGenerator.Core.AccountReference
+  parent: AVM.ClientGenerator.Core
+  name: AccountReference
+  nameWithType: AccountReference
+  fullName: AVM.ClientGenerator.Core.AccountReference
+- uid: System.Nullable{System.UInt64}
+  commentId: T:System.Nullable{System.UInt64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<UInt64>
+  nameWithType: Nullable<UInt64>
+  fullName: System.Nullable<System.UInt64>
+  nameWithType.vb: Nullable(Of UInt64)
+  fullName.vb: System.Nullable(Of System.UInt64)
+  name.vb: Nullable(Of UInt64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

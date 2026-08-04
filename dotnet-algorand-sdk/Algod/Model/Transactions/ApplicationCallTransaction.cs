@@ -1,4 +1,5 @@
 ﻿using JsonSubTypes;
+using MessagePack;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 #if UNITY
@@ -14,9 +15,18 @@ namespace Algorand.Algod.Model.Transactions
     [JsonSubtypes.KnownSubType(typeof(ApplicationCloseOutTransaction), OnCompletion.Closeout)]
     [JsonSubtypes.KnownSubType(typeof(ApplicationDeleteTransaction), OnCompletion.Delete)]
     [JsonSubtypes.FallBackSubType(typeof(ApplicationNoopTransaction))]
+
+    [MessagePack.MessagePackObject]
+    [Union(0, typeof(ApplicationClearStateTransaction))]
+    [Union(1, typeof(ApplicationOptInTransaction))]
+    [Union(2, typeof(ApplicationUpdateTransaction))]
+    [Union(3, typeof(ApplicationCloseOutTransaction))]
+    [Union(4, typeof(ApplicationDeleteTransaction))]
+    [Union(5, typeof(ApplicationNoopTransaction))]
     public abstract partial class ApplicationCallTransaction : Transaction
     {
         [JsonProperty(PropertyName = "type")]
+        [MessagePack.Key("type")]
         public string type => "appl";
 
         public bool ShouldSerializeAccounts() { return Accounts?.Count > 0; }
@@ -26,20 +36,22 @@ namespace Algorand.Algod.Model.Transactions
 
         public bool ShouldSerializeBoxes() { return Boxes?.Count > 0; }
 
-        [JsonIgnore]
-        public ICollection<IReturnableTransaction> InnerTxns { get; internal set; }
 
         [JsonIgnore]
+        [IgnoreMember]
         public ICollection<byte[]> Logs { get; internal set; }
 
         [JsonIgnore]
+        [IgnoreMember]
         public StateDelta GlobalStateDelta { get; internal set; }
         [JsonIgnore]
+        [IgnoreMember]
         public ICollection<AccountStateDelta> LocalStateDelta { get; internal set; }
 
         //TEMP: Modify the JSON in the Api-generator folder instead
 
         [Newtonsoft.Json.JsonProperty("apbx", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [MessagePack.Key("apbx")]
 #if UNITY
     [field:SerializeField]
     [Tooltip(@"")]

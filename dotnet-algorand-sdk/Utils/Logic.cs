@@ -3,7 +3,6 @@ using System;
 using Newtonsoft.Json;
 using System.IO;
 using System.Reflection;
-using Algorand.Utils;
 
 namespace Algorand.Utils
 {
@@ -48,25 +47,27 @@ namespace Algorand.Utils
             }
         }
 
+        // Fields are populated by Newtonsoft.Json deserialization (see GetFromResources), not by
+        // hand-written code, so give them default initializers to avoid CS0649 "never assigned" warnings.
         private class Operation
         {
-            public int Opcode;
-            public string Name;
-            public int Cost;
-            public int Size;
-            public string Returns;
-            public string[] ArgEnum;
-            public string ArgEnumTypes;
-            public string Doc;
-            public string ImmediateNote;
-            public string[] Group;
+            public int Opcode = 0;
+            public string Name = string.Empty;
+            public int Cost = 0;
+            public int Size = 0;
+            public string Returns = string.Empty;
+            public string[] ArgEnum = Array.Empty<string>();
+            public string ArgEnumTypes = string.Empty;
+            public string Doc = string.Empty;
+            public string ImmediateNote = string.Empty;
+            public string[] Group = Array.Empty<string>();
         }
 
         private class LangSpec
         {
-            public int EvalMaxVersion;
-            public int LogicSigVersion;
-            public Operation[] Ops;
+            public int EvalMaxVersion = 0;
+            public int LogicSigVersion = 0;
+            public Operation[] Ops = Array.Empty<Operation>();
         }
 
         /// <summary>

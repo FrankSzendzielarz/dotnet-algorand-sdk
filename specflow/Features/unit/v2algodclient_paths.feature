@@ -18,7 +18,7 @@ Feature: Algod REST API v2 Paths
     Then expect the path used to be "<path>"
     Examples:
       | path                                          | max | format  |
-      | /v2/transactions/pending?format=msgpack       | 0   | msgpack |
+      | /v2/transactions/pending?format=msgpack&max=0 | 0   | msgpack |
       | /v2/transactions/pending?format=msgpack&max=1 | 1   | msgpack |
 
   @unit.algod
@@ -27,7 +27,7 @@ Feature: Algod REST API v2 Paths
     Then expect the path used to be "<path>"
     Examples:
       | path                                                                                                              | account                                                    | max | format  |
-      | /v2/accounts/7ZUECA7HFLZTXENRV24SHLU4AVPUTMTTDUFUBNBD64C73F3UHRTHAIOF6Q/transactions/pending?format=msgpack       | 7ZUECA7HFLZTXENRV24SHLU4AVPUTMTTDUFUBNBD64C73F3UHRTHAIOF6Q | 0   | msgpack |
+      | /v2/accounts/7ZUECA7HFLZTXENRV24SHLU4AVPUTMTTDUFUBNBD64C73F3UHRTHAIOF6Q/transactions/pending?format=msgpack&max=0 | 7ZUECA7HFLZTXENRV24SHLU4AVPUTMTTDUFUBNBD64C73F3UHRTHAIOF6Q | 0   | msgpack |
       | /v2/accounts/7ZUECA7HFLZTXENRV24SHLU4AVPUTMTTDUFUBNBD64C73F3UHRTHAIOF6Q/transactions/pending?format=msgpack&max=1 | 7ZUECA7HFLZTXENRV24SHLU4AVPUTMTTDUFUBNBD64C73F3UHRTHAIOF6Q | 1   | msgpack |
 
   @unit.algod
@@ -76,7 +76,7 @@ Feature: Algod REST API v2 Paths
     Then expect the path used to be "<path>"
     Examples:
       | path                         | account | exclude |
-      | /v2/accounts/47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU             | 47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU     |         |
+      | /v2/accounts/47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU?exclude=     | 47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU     |         |
       | /v2/accounts/47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU?exclude=all | 47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72ESWDQNCQ52OPASU     | all     |
 
   @unit.algod.ledger_refactoring

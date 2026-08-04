@@ -27,7 +27,7 @@ namespace algorand_tests.Features.Unit
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private string[] _featureTags = new string[] {
+        private static string[] featureTags = new string[] {
                 "unit"};
         
 #line 1 "v2algodclient_responses.feature"
@@ -49,8 +49,7 @@ namespace algorand_tests.Features.Unit
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Algod REST API v2 Responses", null, ProgrammingLanguage.CSharp, new string[] {
-                        "unit"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Algod REST API v2 Responses", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -62,7 +61,7 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Algod REST API v2 Responses")))
@@ -72,23 +71,23 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -107,21 +106,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("sender", sender);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pending Transaction Information response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pending Transaction Information response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -154,7 +143,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:sender", "MUDNR6GODUNBSJDHTSB2L6MRZLYEKMO2ZDBJRE3BALB6YSM55UU6KFGKYQ")]
-        public virtual void PendingTransactionInformationResponse_PendingTransactionsByTxid_Base64()
+        public void PendingTransactionInformationResponse_PendingTransactionsByTxid_Base64()
         {
 #line 5
   this.PendingTransactionInformationResponse("pendingTransactionsByTxid.base64", "v2algodclient_responsejsons", "", "MUDNR6GODUNBSJDHTSB2L6MRZLYEKMO2ZDBJRE3BALB6YSM55UU6KFGKYQ", ((string[])(null)));
@@ -177,21 +166,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("len", len);
             argumentsOfScenario.Add("idx", idx);
             argumentsOfScenario.Add("sender", sender);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pending Transactions Information response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pending Transactions Information response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -227,7 +206,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:len", "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:idx", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:sender", "MUDNR6GODUNBSJDHTSB2L6MRZLYEKMO2ZDBJRE3BALB6YSM55UU6KFGKYQ")]
-        public virtual void PendingTransactionsInformationResponse_PendingTransactions_Base64()
+        public void PendingTransactionsInformationResponse_PendingTransactions_Base64()
         {
 #line 15
   this.PendingTransactionsInformationResponse("pendingTransactions.base64", "v2algodclient_responsejsons", "", "3", "0", "MUDNR6GODUNBSJDHTSB2L6MRZLYEKMO2ZDBJRE3BALB6YSM55UU6KFGKYQ", ((string[])(null)));
@@ -248,21 +227,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("txid", txid);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send Raw Transaction response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send Raw Transaction response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 25
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -295,7 +264,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:txid", "ITRPGGAIHEAADRU2W535P5UUEJHYHRN6LZRBJ7E56XSUKJRMZRSQ")]
-        public virtual void SendRawTransactionResponse_SendTx_Json()
+        public void SendRawTransactionResponse_SendTx_Json()
         {
 #line 25
   this.SendRawTransactionResponse("sendTx.json", "v2algodclient_responsejsons", "", "ITRPGGAIHEAADRU2W535P5UUEJHYHRN6LZRBJ7E56XSUKJRMZRSQ", ((string[])(null)));
@@ -318,21 +287,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("len", len);
             argumentsOfScenario.Add("idx", idx);
             argumentsOfScenario.Add("sender", sender);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pending Transactions By Address response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pending Transactions By Address response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 35
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -368,7 +327,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:len", "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:idx", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:sender", "MUDNR6GODUNBSJDHTSB2L6MRZLYEKMO2ZDBJRE3BALB6YSM55UU6KFGKYQ")]
-        public virtual void PendingTransactionsByAddressResponse_PendingTransactionsByAddr_Base64()
+        public void PendingTransactionsByAddressResponse_PendingTransactionsByAddr_Base64()
         {
 #line 35
   this.PendingTransactionsByAddressResponse("pendingTransactionsByAddr.base64", "v2algodclient_responsejsons", "", "3", "0", "MUDNR6GODUNBSJDHTSB2L6MRZLYEKMO2ZDBJRE3BALB6YSM55UU6KFGKYQ", ((string[])(null)));
@@ -389,21 +348,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("roundNum", roundNum);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Node Status response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Node Status response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 45
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -436,7 +385,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:roundNum", "6222190")]
-        public virtual void NodeStatusResponse_Status_Json()
+        public void NodeStatusResponse_Status_Json()
         {
 #line 45
   this.NodeStatusResponse("status.json", "v2algodclient_responsejsons", "", "6222190", ((string[])(null)));
@@ -459,21 +408,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("tot", tot);
             argumentsOfScenario.Add("online", online);
             argumentsOfScenario.Add("roundNum", roundNum);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ledger Supply response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ledger Supply response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 55
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -509,7 +448,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tot", "3093025985939942")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:online", "2189181532333805")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:roundNum", "6222141")]
-        public virtual void LedgerSupplyResponse_LedgerSupply_Json()
+        public void LedgerSupplyResponse_LedgerSupply_Json()
         {
 #line 55
   this.LedgerSupplyResponse("ledgerSupply.json", "v2algodclient_responsejsons", "", "3093025985939942", "2189181532333805", "6222141", ((string[])(null)));
@@ -530,21 +469,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("roundNum", roundNum);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Status After Block response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Status After Block response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 65
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -577,7 +506,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:roundNum", "6222190")]
-        public virtual void StatusAfterBlockResponse_Status_Json()
+        public void StatusAfterBlockResponse_Status_Json()
         {
 #line 65
   this.StatusAfterBlockResponse("status.json", "v2algodclient_responsejsons", "", "6222190", ((string[])(null)));
@@ -598,21 +527,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("address", address);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account Information response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account Information response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 75
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -645,7 +564,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:address", "ALGORANDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIN5DNAU")]
-        public virtual void AccountInformationResponse_AccountInformation_Json()
+        public void AccountInformationResponse_AccountInformation_Json()
         {
 #line 75
   this.AccountInformationResponse("accountInformation.json", "v2algodclient_responsejsons", "", "ALGORANDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIN5DNAU", ((string[])(null)));
@@ -666,21 +585,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("pool", pool);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Block response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Block response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 85
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -713,7 +622,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pool", "//////////////////////////////////////////8=")]
-        public virtual void GetBlockResponse_Block_Base64()
+        public void GetBlockResponse_Block_Base64()
         {
 #line 85
   this.GetBlockResponse("block.base64", "v2algodclient_responsejsons", "", "//////////////////////////////////////////8=", ((string[])(null)));
@@ -734,21 +643,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("err", err);
             argumentsOfScenario.Add("roundNum", roundNum);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Suggested Transaction Parameters response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Suggested Transaction Parameters response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 95
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -782,7 +681,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:err", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:roundNum", "6222155")]
-        public virtual void SuggestedTransactionParametersResponse_SuggestedParams_Json()
+        public void SuggestedTransactionParametersResponse_SuggestedParams_Json()
         {
 #line 95
   this.SuggestedTransactionParametersResponse("suggestedParams.json", "v2algodclient_responsejsons", "", "6222155", ((string[])(null)));
@@ -803,21 +702,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("directory", directory);
             argumentsOfScenario.Add("key", key);
             argumentsOfScenario.Add("action", action);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dryrun response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dryrun response", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 105
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -847,7 +736,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:directory", "v2algodclient_responsejsons")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:key", "\"Creator\"")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:action", "2")]
-        public virtual void DryrunResponse_DryrunResponse_Json()
+        public void DryrunResponse_DryrunResponse_Json()
         {
 #line 105
   this.DryrunResponse("dryrunResponse.json", "v2algodclient_responsejsons", "\"Creator\"", "2", ((string[])(null)));

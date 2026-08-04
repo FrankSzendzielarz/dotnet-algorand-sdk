@@ -1,16 +1,14 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class ModifiedAsset
+    {
 
-using System = global::System;
 
 
-public partial class ModifiedAsset{
 
-  
-
-    
-}
+    }
 
 
 }

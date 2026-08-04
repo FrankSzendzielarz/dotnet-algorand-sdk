@@ -1,0 +1,1165 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.AppCall
+  commentId: T:AVM.ClientGenerator.Core.AppCall
+  id: AppCall
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.AppCall.#ctor(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,AVM.ClientGenerator.Core.OnCompleteType,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  - AVM.ClientGenerator.Core.AppCall.ApplicationID
+  - AVM.ClientGenerator.Core.AppCall.ApprovalProgram
+  - AVM.ClientGenerator.Core.AppCall.ClearStateProgram
+  - AVM.ClientGenerator.Core.AppCall.ExtraProgramPages
+  - AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice
+  - AVM.ClientGenerator.Core.AppCall.GlobalNumUint
+  - AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice
+  - AVM.ClientGenerator.Core.AppCall.LocalNumUint
+  - AVM.ClientGenerator.Core.AppCall.NumAccounts
+  - AVM.ClientGenerator.Core.AppCall.NumAppArgs
+  - AVM.ClientGenerator.Core.AppCall.NumApplications
+  - AVM.ClientGenerator.Core.AppCall.NumAssets
+  - AVM.ClientGenerator.Core.AppCall.OnCompletion
+  langs:
+  - csharp
+  - vb
+  name: AppCall
+  nameWithType: AppCall
+  fullName: AVM.ClientGenerator.Core.AppCall
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AppCall
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public sealed class AppCall : InnerTransaction'
+    content.vb: >-
+      Public NotInheritable Class AppCall
+
+          Inherits InnerTransaction
+  inheritance:
+  - System.Object
+  - AVM.ClientGenerator.Core.InnerTransaction
+  inheritedMembers:
+  - AVM.ClientGenerator.Core.InnerTransaction.Fee
+  - AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  - AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  - AVM.ClientGenerator.Core.InnerTransaction.Sender
+  - AVM.ClientGenerator.Core.InnerTransaction.TxType
+  - AVM.ClientGenerator.Core.InnerTransaction.Lease
+  - AVM.ClientGenerator.Core.InnerTransaction.Note
+  - AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  - AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  - AVM.ClientGenerator.Core.InnerTransaction.TxID
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: AVM.ClientGenerator.Core.AppCall.NumAppArgs
+  commentId: P:AVM.ClientGenerator.Core.AppCall.NumAppArgs
+  id: NumAppArgs
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: NumAppArgs
+  nameWithType: AppCall.NumAppArgs
+  fullName: AVM.ClientGenerator.Core.AppCall.NumAppArgs
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumAppArgs
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong NumAppArgs { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property NumAppArgs As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.NumAppArgs*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.NumAccounts
+  commentId: P:AVM.ClientGenerator.Core.AppCall.NumAccounts
+  id: NumAccounts
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: NumAccounts
+  nameWithType: AppCall.NumAccounts
+  fullName: AVM.ClientGenerator.Core.AppCall.NumAccounts
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumAccounts
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 12
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong NumAccounts { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property NumAccounts As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.NumAccounts*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.NumAssets
+  commentId: P:AVM.ClientGenerator.Core.AppCall.NumAssets
+  id: NumAssets
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: NumAssets
+  nameWithType: AppCall.NumAssets
+  fullName: AVM.ClientGenerator.Core.AppCall.NumAssets
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumAssets
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong NumAssets { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property NumAssets As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.NumAssets*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.NumApplications
+  commentId: P:AVM.ClientGenerator.Core.AppCall.NumApplications
+  id: NumApplications
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: NumApplications
+  nameWithType: AppCall.NumApplications
+  fullName: AVM.ClientGenerator.Core.AppCall.NumApplications
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumApplications
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 16
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong NumApplications { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property NumApplications As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.NumApplications*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.GlobalNumUint
+  commentId: P:AVM.ClientGenerator.Core.AppCall.GlobalNumUint
+  id: GlobalNumUint
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: GlobalNumUint
+  nameWithType: AppCall.GlobalNumUint
+  fullName: AVM.ClientGenerator.Core.AppCall.GlobalNumUint
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GlobalNumUint
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 18
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong GlobalNumUint { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property GlobalNumUint As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.GlobalNumUint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice
+  commentId: P:AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice
+  id: GlobalNumByteSlice
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: GlobalNumByteSlice
+  nameWithType: AppCall.GlobalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GlobalNumByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 20
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong GlobalNumByteSlice { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property GlobalNumByteSlice As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.LocalNumUint
+  commentId: P:AVM.ClientGenerator.Core.AppCall.LocalNumUint
+  id: LocalNumUint
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: LocalNumUint
+  nameWithType: AppCall.LocalNumUint
+  fullName: AVM.ClientGenerator.Core.AppCall.LocalNumUint
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LocalNumUint
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 22
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong LocalNumUint { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property LocalNumUint As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.LocalNumUint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice
+  commentId: P:AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice
+  id: LocalNumByteSlice
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: LocalNumByteSlice
+  nameWithType: AppCall.LocalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LocalNumByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 24
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong LocalNumByteSlice { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property LocalNumByteSlice As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.ApplicationID
+  commentId: P:AVM.ClientGenerator.Core.AppCall.ApplicationID
+  id: ApplicationID
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: ApplicationID
+  nameWithType: AppCall.ApplicationID
+  fullName: AVM.ClientGenerator.Core.AppCall.ApplicationID
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ApplicationID
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 26
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong ApplicationID { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property ApplicationID As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.ApplicationID*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.OnCompletion
+  commentId: P:AVM.ClientGenerator.Core.AppCall.OnCompletion
+  id: OnCompletion
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: OnCompletion
+  nameWithType: AppCall.OnCompletion
+  fullName: AVM.ClientGenerator.Core.AppCall.OnCompletion
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: OnCompletion
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 28
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong OnCompletion { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property OnCompletion As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.OnCompletion*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.ApprovalProgram
+  commentId: P:AVM.ClientGenerator.Core.AppCall.ApprovalProgram
+  id: ApprovalProgram
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: ApprovalProgram
+  nameWithType: AppCall.ApprovalProgram
+  fullName: AVM.ClientGenerator.Core.AppCall.ApprovalProgram
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ApprovalProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 30
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ApprovalProgram { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ApprovalProgram As Byte()
+  overload: AVM.ClientGenerator.Core.AppCall.ApprovalProgram*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.ClearStateProgram
+  commentId: P:AVM.ClientGenerator.Core.AppCall.ClearStateProgram
+  id: ClearStateProgram
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: ClearStateProgram
+  nameWithType: AppCall.ClearStateProgram
+  fullName: AVM.ClientGenerator.Core.AppCall.ClearStateProgram
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ClearStateProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 32
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] ClearStateProgram { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property ClearStateProgram As Byte()
+  overload: AVM.ClientGenerator.Core.AppCall.ClearStateProgram*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.ExtraProgramPages
+  commentId: P:AVM.ClientGenerator.Core.AppCall.ExtraProgramPages
+  id: ExtraProgramPages
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: ExtraProgramPages
+  nameWithType: AppCall.ExtraProgramPages
+  fullName: AVM.ClientGenerator.Core.AppCall.ExtraProgramPages
+  type: Property
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ExtraProgramPages
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 34
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong ExtraProgramPages { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property ExtraProgramPages As ULong
+  overload: AVM.ClientGenerator.Core.AppCall.ExtraProgramPages*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: AVM.ClientGenerator.Core.AppCall.#ctor(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,AVM.ClientGenerator.Core.OnCompleteType,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:AVM.ClientGenerator.Core.AppCall.#ctor(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,AVM.ClientGenerator.Core.OnCompleteType,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])
+  id: '#ctor(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,AVM.ClientGenerator.Core.OnCompleteType,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.UInt64},AVM.ClientGenerator.Core.AccountReference,System.Nullable{System.UInt64},System.Byte[],System.Byte[],System.Byte[])'
+  parent: AVM.ClientGenerator.Core.AppCall
+  langs:
+  - csharp
+  - vb
+  name: AppCall(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64, OnCompleteType, Nullable<UInt64>, Nullable<UInt64>, Byte[], Byte[], Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, AccountReference, Nullable<UInt64>, Byte[], Byte[], Byte[])
+  nameWithType: AppCall.AppCall(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64, OnCompleteType, Nullable<UInt64>, Nullable<UInt64>, Byte[], Byte[], Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, Nullable<UInt64>, AccountReference, Nullable<UInt64>, Byte[], Byte[], Byte[])
+  fullName: AVM.ClientGenerator.Core.AppCall.AppCall(System.UInt64, System.UInt64, System.UInt64, System.UInt64, System.UInt64, System.UInt64, AVM.ClientGenerator.Core.OnCompleteType, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Byte[], System.Byte[], System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, System.Nullable<System.UInt64>, AVM.ClientGenerator.Core.AccountReference, System.Nullable<System.UInt64>, System.Byte[], System.Byte[], System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: .ctor
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/InnerTransactions/AppCall.cs
+    startLine: 39
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public AppCall(ulong numAppArgs, ulong numAccounts, ulong numAssets, ulong numApplications, ulong localNumUint, ulong localNumByteSlice, OnCompleteType onCompletion, ulong? globalNumUint = 0UL, ulong? globalNumByteSlice = 0UL, byte[] approvalProgram = null, byte[] clearStateProgram = null, ulong? extraProgramPages = 0UL, ulong? fee = 0UL, ulong? firstValid = 0UL, ulong? lastValid = 0UL, AccountReference sender = null, ulong? txType = 0UL, byte[] lease = null, byte[] note = null, byte[] rekeyTo = null)
+    parameters:
+    - id: numAppArgs
+      type: System.UInt64
+    - id: numAccounts
+      type: System.UInt64
+    - id: numAssets
+      type: System.UInt64
+    - id: numApplications
+      type: System.UInt64
+    - id: localNumUint
+      type: System.UInt64
+    - id: localNumByteSlice
+      type: System.UInt64
+    - id: onCompletion
+      type: AVM.ClientGenerator.Core.OnCompleteType
+    - id: globalNumUint
+      type: System.Nullable{System.UInt64}
+    - id: globalNumByteSlice
+      type: System.Nullable{System.UInt64}
+    - id: approvalProgram
+      type: System.Byte[]
+    - id: clearStateProgram
+      type: System.Byte[]
+    - id: extraProgramPages
+      type: System.Nullable{System.UInt64}
+    - id: fee
+      type: System.Nullable{System.UInt64}
+    - id: firstValid
+      type: System.Nullable{System.UInt64}
+    - id: lastValid
+      type: System.Nullable{System.UInt64}
+    - id: sender
+      type: AVM.ClientGenerator.Core.AccountReference
+    - id: txType
+      type: System.Nullable{System.UInt64}
+    - id: lease
+      type: System.Byte[]
+    - id: note
+      type: System.Byte[]
+    - id: rekeyTo
+      type: System.Byte[]
+    content.vb: Public Sub New(numAppArgs As ULong, numAccounts As ULong, numAssets As ULong, numApplications As ULong, localNumUint As ULong, localNumByteSlice As ULong, onCompletion As OnCompleteType, globalNumUint As ULong? = 0UL, globalNumByteSlice As ULong? = 0UL, approvalProgram As Byte() = Nothing, clearStateProgram As Byte() = Nothing, extraProgramPages As ULong? = 0UL, fee As ULong? = 0UL, firstValid As ULong? = 0UL, lastValid As ULong? = 0UL, sender As AccountReference = Nothing, txType As ULong? = 0UL, lease As Byte() = Nothing, note As Byte() = Nothing, rekeyTo As Byte() = Nothing)
+  overload: AVM.ClientGenerator.Core.AppCall.#ctor*
+  nameWithType.vb: AppCall.AppCall(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64, OnCompleteType, Nullable(Of UInt64), Nullable(Of UInt64), Byte(), Byte(), Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), AccountReference, Nullable(Of UInt64), Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: AVM.ClientGenerator.Core.AppCall.AppCall(System.UInt64, System.UInt64, System.UInt64, System.UInt64, System.UInt64, System.UInt64, AVM.ClientGenerator.Core.OnCompleteType, System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Byte(), System.Byte(), System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), System.Nullable(Of System.UInt64), AVM.ClientGenerator.Core.AccountReference, System.Nullable(Of System.UInt64), System.Byte(), System.Byte(), System.Byte())
+  name.vb: AppCall(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64, OnCompleteType, Nullable(Of UInt64), Nullable(Of UInt64), Byte(), Byte(), Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), Nullable(Of UInt64), AccountReference, Nullable(Of UInt64), Byte(), Byte(), Byte())
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: AVM.ClientGenerator.Core.InnerTransaction
+  commentId: T:AVM.ClientGenerator.Core.InnerTransaction
+  parent: AVM.ClientGenerator.Core
+  name: InnerTransaction
+  nameWithType: InnerTransaction
+  fullName: AVM.ClientGenerator.Core.InnerTransaction
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Fee
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Fee
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Fee
+  nameWithType: InnerTransaction.Fee
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Fee
+- uid: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: FirstValid
+  nameWithType: InnerTransaction.FirstValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.FirstValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.LastValid
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: LastValid
+  nameWithType: InnerTransaction.LastValid
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.LastValid
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Sender
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Sender
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Sender
+  nameWithType: InnerTransaction.Sender
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Sender
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxType
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxType
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: TxType
+  nameWithType: InnerTransaction.TxType
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxType
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Lease
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Lease
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Lease
+  nameWithType: InnerTransaction.Lease
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Lease
+- uid: AVM.ClientGenerator.Core.InnerTransaction.Note
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.Note
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: Note
+  nameWithType: InnerTransaction.Note
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.Note
+- uid: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: RekeyTo
+  nameWithType: InnerTransaction.RekeyTo
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.RekeyTo
+- uid: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: GroupIndex
+  nameWithType: InnerTransaction.GroupIndex
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.GroupIndex
+- uid: AVM.ClientGenerator.Core.InnerTransaction.TxID
+  commentId: P:AVM.ClientGenerator.Core.InnerTransaction.TxID
+  parent: AVM.ClientGenerator.Core.InnerTransaction
+  name: TxID
+  nameWithType: InnerTransaction.TxID
+  fullName: AVM.ClientGenerator.Core.InnerTransaction.TxID
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.AppCall.NumAppArgs*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.NumAppArgs
+  name: NumAppArgs
+  nameWithType: AppCall.NumAppArgs
+  fullName: AVM.ClientGenerator.Core.AppCall.NumAppArgs
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: AVM.ClientGenerator.Core.AppCall.NumAccounts*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.NumAccounts
+  name: NumAccounts
+  nameWithType: AppCall.NumAccounts
+  fullName: AVM.ClientGenerator.Core.AppCall.NumAccounts
+- uid: AVM.ClientGenerator.Core.AppCall.NumAssets*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.NumAssets
+  name: NumAssets
+  nameWithType: AppCall.NumAssets
+  fullName: AVM.ClientGenerator.Core.AppCall.NumAssets
+- uid: AVM.ClientGenerator.Core.AppCall.NumApplications*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.NumApplications
+  name: NumApplications
+  nameWithType: AppCall.NumApplications
+  fullName: AVM.ClientGenerator.Core.AppCall.NumApplications
+- uid: AVM.ClientGenerator.Core.AppCall.GlobalNumUint*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.GlobalNumUint
+  name: GlobalNumUint
+  nameWithType: AppCall.GlobalNumUint
+  fullName: AVM.ClientGenerator.Core.AppCall.GlobalNumUint
+- uid: AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice
+  name: GlobalNumByteSlice
+  nameWithType: AppCall.GlobalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.AppCall.GlobalNumByteSlice
+- uid: AVM.ClientGenerator.Core.AppCall.LocalNumUint*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.LocalNumUint
+  name: LocalNumUint
+  nameWithType: AppCall.LocalNumUint
+  fullName: AVM.ClientGenerator.Core.AppCall.LocalNumUint
+- uid: AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice
+  name: LocalNumByteSlice
+  nameWithType: AppCall.LocalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.AppCall.LocalNumByteSlice
+- uid: AVM.ClientGenerator.Core.AppCall.ApplicationID*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.ApplicationID
+  name: ApplicationID
+  nameWithType: AppCall.ApplicationID
+  fullName: AVM.ClientGenerator.Core.AppCall.ApplicationID
+- uid: AVM.ClientGenerator.Core.AppCall.OnCompletion*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.OnCompletion
+  name: OnCompletion
+  nameWithType: AppCall.OnCompletion
+  fullName: AVM.ClientGenerator.Core.AppCall.OnCompletion
+- uid: AVM.ClientGenerator.Core.AppCall.ApprovalProgram*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.ApprovalProgram
+  name: ApprovalProgram
+  nameWithType: AppCall.ApprovalProgram
+  fullName: AVM.ClientGenerator.Core.AppCall.ApprovalProgram
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.AppCall.ClearStateProgram*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.ClearStateProgram
+  name: ClearStateProgram
+  nameWithType: AppCall.ClearStateProgram
+  fullName: AVM.ClientGenerator.Core.AppCall.ClearStateProgram
+- uid: AVM.ClientGenerator.Core.AppCall.ExtraProgramPages*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.ExtraProgramPages
+  name: ExtraProgramPages
+  nameWithType: AppCall.ExtraProgramPages
+  fullName: AVM.ClientGenerator.Core.AppCall.ExtraProgramPages
+- uid: AVM.ClientGenerator.Core.AppCall.#ctor*
+  commentId: Overload:AVM.ClientGenerator.Core.AppCall.#ctor
+  name: AppCall
+  nameWithType: AppCall.AppCall
+  fullName: AVM.ClientGenerator.Core.AppCall.AppCall
+- uid: AVM.ClientGenerator.Core.OnCompleteType
+  commentId: T:AVM.ClientGenerator.Core.OnCompleteType
+  parent: AVM.ClientGenerator.Core
+  name: OnCompleteType
+  nameWithType: OnCompleteType
+  fullName: AVM.ClientGenerator.Core.OnCompleteType
+- uid: System.Nullable{System.UInt64}
+  commentId: T:System.Nullable{System.UInt64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<UInt64>
+  nameWithType: Nullable<UInt64>
+  fullName: System.Nullable<System.UInt64>
+  nameWithType.vb: Nullable(Of UInt64)
+  fullName.vb: System.Nullable(Of System.UInt64)
+  name.vb: Nullable(Of UInt64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: AVM.ClientGenerator.Core.AccountReference
+  commentId: T:AVM.ClientGenerator.Core.AccountReference
+  parent: AVM.ClientGenerator.Core
+  name: AccountReference
+  nameWithType: AccountReference
+  fullName: AVM.ClientGenerator.Core.AccountReference
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

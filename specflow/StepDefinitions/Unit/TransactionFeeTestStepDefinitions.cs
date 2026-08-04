@@ -1,23 +1,13 @@
-using Algorand;
-using Algorand.Algod.Model;
-using Algorand.Algod.Model.Transactions;
-using Algorand.Utils;
-using FluentAssertions;
-using Newtonsoft.Json;
-using SpecFlow.Internal.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using TechTalk.SpecFlow;
-
 #if TEST_DEBUG
 namespace algorand_tests.StepDefinitions
 {
     
+    // Scoped to @unit scenarios: WhenISignTheMultisigTransactionWithThePrivateKey() has an identically-worded
+    // (but differently-implemented, context-key-incompatible) counterpart in
+    // Integration.SendingTransactionsStepDefinitions. Without scoping, SpecFlow can't disambiguate which
+    // binding to use for a matching step text and throws BindingException: Ambiguous step definitions found.
     [Binding]
+    [Scope(Tag = "unit")]
     public class TransactionFeeTestStepDefinitions
     {
         ScenarioContext _scenarioContext;
@@ -309,7 +299,7 @@ namespace algorand_tests.StepDefinitions
                 Receiver = new Address(to),
                 CloseRemainderTo = new Address(close),
                 Amount = amt,
-                GenesisID = gen,
+                GenesisId = gen,
                 Note = Convert.FromBase64String(note)
             };
 
@@ -358,7 +348,7 @@ namespace algorand_tests.StepDefinitions
                 Receiver = new Address(to),
                 CloseRemainderTo = new Address(close),
                 Amount = amt,
-                GenesisID = gen,
+                GenesisId = gen,
                 Note = Convert.FromBase64String(note)
             };
 

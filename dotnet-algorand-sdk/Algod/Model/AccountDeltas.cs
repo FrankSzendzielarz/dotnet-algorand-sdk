@@ -1,11 +1,8 @@
 
 namespace Algorand.Algod.Model
 {
-
-using System = global::System;
-
-
-public partial class AccountDeltas{
+    [MessagePack.MessagePackObject]
+    public partial class AccountDeltas{
    
     
 }

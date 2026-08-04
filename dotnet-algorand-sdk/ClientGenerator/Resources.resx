@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="E000Description" xml:space="preserve">
+    <value>TealSharp smart contracts do not yet support subroutines.</value>
+  </data>
+  <data name="E000MessageFormat" xml:space="preserve">
+    <value>The class {0} declares subroutines, which are not yet supported. {1}</value>
+  </data>
+  <data name="E000Title" xml:space="preserve">
+    <value>Unsupported subroutines.</value>
+  </data>
+  <data name="E001Description" xml:space="preserve">
+    <value>TealSharp programs do not suppport nested types.</value>
+  </data>
+  <data name="E001MessageFormat" xml:space="preserve">
+    <value>Nested {0} type is not supported in smart contracts. {1}</value>
+  </data>
+  <data name="E001Title" xml:space="preserve">
+    <value>Nested types are not supported in smart contracts.</value>
+  </data>
+  <data name="E002Description" xml:space="preserve">
+    <value>TealSharp is a subset of CSharp. Error level diagnostics must first be corrected.</value>
+  </data>
+  <data name="E002MessageFormat" xml:space="preserve">
+    <value>There are base CSharp error level diagnostics, which must be corrected first.{1}</value>
+  </data>
+  <data name="E002Title" xml:space="preserve">
+    <value>Base CSharp compilation must be corrected.</value>
+  </data>
+  <data name="E003Description" xml:space="preserve">
+    <value>Too many fields or local variables: teal is restricted to a scratch space size of 256.</value>
+  </data>
+  <data name="E003MessageFormat" xml:space="preserve">
+    <value>Too many fields or local variables: teal is restricted to a scratch space size of 256.{1}</value>
+  </data>
+  <data name="E003Title" xml:space="preserve">
+    <value>Scratch space size exceeded.</value>
+  </data>
+  <data name="E004Description" xml:space="preserve">
+    <value>Field or local variable was not found in scratch space.</value>
+  </data>
+  <data name="E004MessageFormat" xml:space="preserve">
+    <value>Variable {0} is missing from the symbol table. This could indicate unsupported code structure.{1}</value>
+  </data>
+  <data name="E004Title" xml:space="preserve">
+    <value>Symbol not found.</value>
+  </data>
+  <data name="E006Description" xml:space="preserve">
+    <value>Unsupported syntax for smart contract generation.</value>
+  </data>
+  <data name="E006MessageFormat" xml:space="preserve">
+    <value>This syntax {0} is not currently supported for contract generation.{1}</value>
+  </data>
+  <data name="E006Title" xml:space="preserve">
+    <value>Unsupported syntax.</value>
+  </data>
+  <data name="E007Description" xml:space="preserve">
+    <value>Storage variables must be declared in the class scope.</value>
+  </data>
+  <data name="E007MessageFormat" xml:space="preserve">
+    <value>The variable {0} is declared as a storage variable, which must be declared in the smart contract class scope. {1}</value>
+  </data>
+  <data name="E007Title" xml:space="preserve">
+    <value>Storage variables cannot be local.</value>
+  </data>
+  <data name="E008Description" xml:space="preserve">
+    <value>This type is not supported by this version of the tooling.</value>
+  </data>
+  <data name="E008MessageFormat" xml:space="preserve">
+    <value>The type {0} is is not supported by this version.{1}</value>
+  </data>
+  <data name="E008Title" xml:space="preserve">
+    <value>Unsupported type.</value>
+  </data>
+  <data name="E009Description" xml:space="preserve">
+    <value>Unexpected symbol type. This could indicate an unsupported language feature.</value>
+  </data>
+  <data name="E009MessageFormat" xml:space="preserve">
+    <value>The internal symbol type {0} is not usable here.{1}</value>
+  </data>
+  <data name="E009Title" xml:space="preserve">
+    <value>Unsupported symbol type here.</value>
+  </data>
+  <data name="E010Description" xml:space="preserve">
+    <value>Subroutines must be declared as part of a program.</value>
+  </data>
+  <data name="E010MessageFormat" xml:space="preserve">
+    <value>The {0} subroutine must be declared local to a program.{1}</value>
+  </data>
+  <data name="E010Title" xml:space="preserve">
+    <value>No global subroutines.</value>
+  </data>
+  <data name="E011Description" xml:space="preserve">
+    <value>Variable assignments must occur in the context of a program. </value>
+  </data>
+  <data name="E011MessageFormat" xml:space="preserve">
+    <value>Variable {0} assignment must occur in the context of a program.{1}</value>
+  </data>
+  <data name="E011Title" xml:space="preserve">
+    <value>No global variable assignments.</value>
+  </data>
+  <data name="E012Description" xml:space="preserve">
+    <value>Internal error.</value>
+  </data>
+  <data name="E012MessageFormat" xml:space="preserve">
+    <value>Internal error.{1}</value>
+  </data>
+  <data name="E012Title" xml:space="preserve">
+    <value>Internal error.</value>
+  </data>
+  <data name="E013Description" xml:space="preserve">
+    <value>Unsupported invocation type for smart contracts.</value>
+  </data>
+  <data name="E013MessageFormat" xml:space="preserve">
+    <value>Unsupported invocation type {0} for smart contracts.{1}</value>
+  </data>
+  <data name="E013Title" xml:space="preserve">
+    <value>Unsupported invocation type.</value>
+  </data>
+  <data name="E014Description" xml:space="preserve">
+    <value>A smart contract cannot be called recursively</value>
+  </data>
+  <data name="E014MessageFormat" xml:space="preserve">
+    <value>A smart contract cannot be called recursively.{1}</value>
+  </data>
+  <data name="E014Title" xml:space="preserve">
+    <value>A smart contract cannot be called recursively.</value>
+  </data>
+  <data name="E015Description" xml:space="preserve">
+    <value>The function is not visible.</value>
+  </data>
+  <data name="E015MessageFormat" xml:space="preserve">
+    <value>The function {0} cannot be called as it is not visible.{1}</value>
+  </data>
+  <data name="E015Title" xml:space="preserve">
+    <value>Unsupported function visibility.</value>
+  </data>
+  <data name="E016Description" xml:space="preserve">
+    <value>Checked and unchecked are not supported in this version. Compile time declarations are checked and runtime evaluation is unchecked.</value>
+  </data>
+  <data name="E016MessageFormat" xml:space="preserve">
+    <value>Checked and unchecked are not supported in this version. Compile time declarations are checked and runtime evaluation is unchecked.{1}</value>
+  </data>
+  <data name="E016Title" xml:space="preserve">
+    <value>Checked and unchecked unsupported.</value>
+  </data>
+  <data name="E017Description" xml:space="preserve">
+    <value>Operator unsupported in this context.</value>
+  </data>
+  <data name="E017MessageFormat" xml:space="preserve">
+    <value>Operator unsupported in this context.{1}</value>
+  </data>
+  <data name="E017Title" xml:space="preserve">
+    <value>Unsupported operator usage.</value>
+  </data>
+  <data name="E018Description" xml:space="preserve">
+    <value>Ref and out parameters are not permitted for ABI methods.</value>
+  </data>
+  <data name="E018MessageFormat" xml:space="preserve">
+    <value>Ref and out parameters are not permitted for ABI methods.{1}</value>
+  </data>
+  <data name="E018Title" xml:space="preserve">
+    <value>Illegal ref or out parameter.</value>
+  </data>
+  <data name="E019Description" xml:space="preserve">
+    <value>InvokeSmartContract boilerplate used in incorrect scope.</value>
+  </data>
+  <data name="E019MessageFormat" xml:space="preserve">
+    <value>InvokeSmartContract boilerplate used in incorrect scope.{1}</value>
+  </data>
+  <data name="E019Title" xml:space="preserve">
+    <value>InvokeSmartContract boilerplate used in incorrect scope.</value>
+  </data>
+  <data name="E020Description" xml:space="preserve">
+    <value>Member accesss expressions must be of a Simple kind.</value>
+  </data>
+  <data name="E020MessageFormat" xml:space="preserve">
+    <value>Member accesss expressions must be of a Simple kind: {0}.{1}</value>
+  </data>
+  <data name="E020Title" xml:space="preserve">
+    <value>Member accesss expressions must be of a Simple kind.</value>
+  </data>
+  <data name="E021Description" xml:space="preserve">
+    <value>Scratch space variables for referenced types are not yet supported.</value>
+  </data>
+  <data name="E021MessageFormat" xml:space="preserve">
+    <value>Scratch space variables for referenced types are not yet supported.{1}</value>
+  </data>
+  <data name="E021Title" xml:space="preserve">
+    <value>Scratch space variables for referenced types are not yet supported.</value>
+  </data>
+  <data name="E022Description" xml:space="preserve">
+    <value>Reference smart contract method arguments must be declared as 'in'.</value>
+  </data>
+  <data name="E022MessageFormat" xml:space="preserve">
+    <value>Reference smart contract method arguments must be declared as 'in' : {0}.{1}</value>
+  </data>
+  <data name="E022Title" xml:space="preserve">
+    <value>Reference smart contract method arguments must be declared as 'in'.</value>
+  </data>
+  <data name="E023Description" xml:space="preserve">
+    <value>Algorand external references cannot yet be directly used.</value>
+  </data>
+  <data name="E023MessageFormat" xml:space="preserve">
+    <value>Algorand external references cannot yet be directly used: {0}.{1}</value>
+  </data>
+  <data name="E023Title" xml:space="preserve">
+    <value>Algorand external references cannot yet be directly used.</value>
+  </data>
+  <data name="E024Description" xml:space="preserve">
+    <value>Writes to external references are not permitted.</value>
+  </data>
+  <data name="E024MessageFormat" xml:space="preserve">
+    <value>Writes to external references are not permitted: {0}.{1}</value>
+  </data>
+  <data name="E024Title" xml:space="preserve">
+    <value>External write not permitted.</value>
+  </data>
+  <data name="E025Description" xml:space="preserve">
+    <value>Member access expressions are not permitted in this context.</value>
+  </data>
+  <data name="E025MessageFormat" xml:space="preserve">
+    <value>Member access expressions are not permitted in this context. {0}.{1}</value>
+  </data>
+  <data name="E025Title" xml:space="preserve">
+    <value>Illegal member access.</value>
+  </data>
+  <data name="E026Description" xml:space="preserve">
+    <value>Compound assignment operators are not yet supported.</value>
+  </data>
+  <data name="E026MessageFormat" xml:space="preserve">
+    <value>Compound assignment operators are not yet supported.{1}</value>
+  </data>
+  <data name="E026Title" xml:space="preserve">
+    <value>Compound assignment operators are not yet supported.</value>
+  </data>
+  <data name="E027Description" xml:space="preserve">
+    <value>Null literals are not supported here.</value>
+  </data>
+  <data name="E027MessageFormat" xml:space="preserve">
+    <value>Null literals are not supported here.{1}</value>
+  </data>
+  <data name="E027Title" xml:space="preserve">
+    <value>Null literals are not supported here.</value>
+  </data>
+  <data name="E028Description" xml:space="preserve">
+    <value>Optional parameters are not supported in method or function calls. There was a mismatch between argument count and parameter count.</value>
+  </data>
+  <data name="E028MessageFormat" xml:space="preserve">
+    <value>Optional parameters are not supported in method or function calls. There was a mismatch between argument count and parameter count..{0}</value>
+  </data>
+  <data name="E028Title" xml:space="preserve">
+    <value>Optional parameters are not supported in method or function calls.</value>
+  </data>
+  <data name="E029Description" xml:space="preserve">
+    <value>Named optional parameters are not supported. </value>
+  </data>
+  <data name="E029MessageFormat" xml:space="preserve">
+    <value>Named optional parameters are not supported. {0}</value>
+  </data>
+  <data name="E029Title" xml:space="preserve">
+    <value>Named optional parameters are not supported.</value>
+  </data>
+  <data name="E030Description" xml:space="preserve">
+    <value>Null arguments are only valid for predefined optional parameters.</value>
+  </data>
+  <data name="E030MessageFormat" xml:space="preserve">
+    <value>Null arguments are only valid for predefined optional parameters. {0}</value>
+  </data>
+  <data name="E030Title" xml:space="preserve">
+    <value>Null arguments are only valid for predefined optional parameters.</value>
+  </data>
+  <data name="E031Description" xml:space="preserve">
+    <value>Array creation is not yet supported. Please use {} initialisers.</value>
+  </data>
+  <data name="E031MessageFormat" xml:space="preserve">
+    <value>Array creation is not yet supported. Please use {} initialisers. {0}</value>
+  </data>
+  <data name="E031Title" xml:space="preserve">
+    <value>Unsupported array creation.</value>
+  </data>
+  <data name="E032Description" xml:space="preserve">
+    <value>Array method not yet supported.</value>
+  </data>
+  <data name="E032MessageFormat" xml:space="preserve">
+    <value>Array method not yet supported {0}</value>
+  </data>
+  <data name="E032Title" xml:space="preserve">
+    <value>Unsupported array method.</value>
+  </data>
+  <data name="E033Description" xml:space="preserve">
+    <value>Argument must be literal or constant.</value>
+  </data>
+  <data name="E033MessageFormat" xml:space="preserve">
+    <value>Argument must be literal or constant.</value>
+  </data>
+  <data name="E033Title" xml:space="preserve">
+    <value>Argument must be literal or constant.</value>
+  </data>
+  <data name="E034Description" xml:space="preserve">
+    <value>The last transaction reference must be an AppCallTransactionReference.</value>
+  </data>
+  <data name="E034MessageFormat" xml:space="preserve">
+    <value>The last transaction reference must be an AppCallTransactionReference.</value>
+  </data>
+  <data name="E034Title" xml:space="preserve">
+    <value>The last transaction reference must be an AppCallTransactionReference.</value>
+  </data>
+  <data name="E035Description" xml:space="preserve">
+    <value>Method or function calls are not permitted during an Inner Transaction.</value>
+  </data>
+  <data name="E035MessageFormat" xml:space="preserve">
+    <value>Method or function calls are not permitted during an Inner Transaction. {0}</value>
+  </data>
+  <data name="E035Title" xml:space="preserve">
+    <value>No calls during Inner Transaction.</value>
+  </data>
+  <data name="E036Description" xml:space="preserve">
+    <value>Group transaction must only contain transactions.</value>
+  </data>
+  <data name="E036MessageFormat" xml:space="preserve">
+    <value>Group transaction must only contain transactions.{0}</value>
+  </data>
+  <data name="E036Title" xml:space="preserve">
+    <value>Group transaction must only contain transactions.</value>
+  </data>
+  <data name="E037Description" xml:space="preserve">
+    <value>Inner transaction results cannot be transferred.</value>
+  </data>
+  <data name="E037MessageFormat" xml:space="preserve">
+    <value>Inner transaction results cannot be transferred.</value>
+  </data>
+  <data name="E037Title" xml:space="preserve">
+    <value>Inner transaction results cannot be transferred.</value>
+  </data>
+  <data name="E038Description" xml:space="preserve">
+    <value>Inner transaction cannot be assigned more than once in an Inner Transaction scope.</value>
+  </data>
+  <data name="E038MessageFormat" xml:space="preserve">
+    <value>Inner transaction cannot be assigned more than once in an Inner Transaction scope.</value>
+  </data>
+  <data name="E038Title" xml:space="preserve">
+    <value>Inner transaction cannot be assigned more than once in an Inner Transaction scope.</value>
+  </data>
+  <data name="E039Description" xml:space="preserve">
+    <value>App calls are inner transactions and must be executed in an inner transaction local function.</value>
+  </data>
+  <data name="E039MessageFormat" xml:space="preserve">
+    <value>App calls are inner transactions and must be executed in an inner transaction local function.</value>
+  </data>
+  <data name="E039Title" xml:space="preserve">
+    <value>App calls are inner transactions and must be executed in an inner transaction local function.</value>
+  </data>
+  <data name="E040Description" xml:space="preserve">
+    <value>App reference calls are not permitted to have more than one return value.</value>
+  </data>
+  <data name="E040MessageFormat" xml:space="preserve">
+    <value>App reference calls are not permitted to have more than one return value.</value>
+  </data>
+  <data name="E040Title" xml:space="preserve">
+    <value>App reference calls are not permitted to have more than one return value.</value>
+  </data>
+  <data name="E041Description" xml:space="preserve">
+    <value>SmartContractReference methods must have a SmartContractMethod attribute.</value>
+  </data>
+  <data name="E041MessageFormat" xml:space="preserve">
+    <value>SmartContractReference methods must have a SmartContractMethod attribute.</value>
+  </data>
+  <data name="E041Title" xml:space="preserve">
+    <value>SmartContractReference methods must have a SmartContractMethod attribute.</value>
+  </data>
+  <data name="E042Description" xml:space="preserve">
+    <value>InnerTransactionCalls cannot be nested. Nested inner transaction calls are expressed as nested ValueTuples.</value>
+  </data>
+  <data name="E042MessageFormat" xml:space="preserve">
+    <value>InnerTransactionCalls cannot be nested. Nested inner transaction calls are expressed as nested ValueTuples.</value>
+  </data>
+  <data name="E042Title" xml:space="preserve">
+    <value>InnerTransactionCalls cannot be nested.</value>
+  </data>
+  <data name="E043Description" xml:space="preserve">
+    <value>InnerTransactions cannot be written to.</value>
+  </data>
+  <data name="E043MessageFormat" xml:space="preserve">
+    <value>InnerTransactions cannot be written to.</value>
+  </data>
+  <data name="E043Title" xml:space="preserve">
+    <value>InnerTransactions cannot be written to.</value>
+  </data>
+  <data name="E044Description" xml:space="preserve">
+    <value>Inner transactions cannot be executed after the last assignment.</value>
+  </data>
+  <data name="E044MessageFormat" xml:space="preserve">
+    <value>Inner transactions cannot be executed after the last assignment.</value>
+  </data>
+  <data name="E044Title" xml:space="preserve">
+    <value>Inner transactions cannot be executed after the last assignment.</value>
+  </data>
+  <data name="E045Description" xml:space="preserve">
+    <value>Optimisation step failed.</value>
+  </data>
+  <data name="E045MessageFormat" xml:space="preserve">
+    <value>Optimisation step failed.</value>
+  </data>
+  <data name="E045Title" xml:space="preserve">
+    <value>Optimisation step failed.</value>
+  </data>
+  <data name="E046Description" xml:space="preserve">
+    <value>String method, property or field not supported.</value>
+  </data>
+  <data name="E046MessageFormat" xml:space="preserve">
+    <value>String method, property or field not supported.</value>
+  </data>
+  <data name="E046Title" xml:space="preserve">
+    <value>String method, property or field not supported.</value>
+  </data>
+  <data name="E047Description" xml:space="preserve">
+    <value>Property or field not supported.</value>
+  </data>
+  <data name="E047MessageFormat" xml:space="preserve">
+    <value>Property or field not supported.</value>
+  </data>
+  <data name="E047Title" xml:space="preserve">
+    <value>Property or field not supported.</value>
+  </data>
+  <data name="E048Description" xml:space="preserve">
+    <value>Unsupported invocation {1}</value>
+  </data>
+  <data name="E048MessageFormat" xml:space="preserve">
+    <value>Unsupported invocation {1}</value>
+  </data>
+  <data name="E048Title" xml:space="preserve">
+    <value>Unsupported invocation {1}</value>
+  </data>
+  <data name="E049Description" xml:space="preserve">
+    <value>Conversion to signed integer from decimal is not yet supported.</value>
+  </data>
+  <data name="E049MessageFormat" xml:space="preserve">
+    <value>Conversion to signed integer from decimal is not yet supported.</value>
+  </data>
+  <data name="E049Title" xml:space="preserve">
+    <value>Conversion to signed integer from decimal is not yet supported.</value>
+  </data>
+  <data name="E051Description" xml:space="preserve">
+    <value>Try statements cannot yet be supported.</value>
+  </data>
+  <data name="E051MessageFormat" xml:space="preserve">
+    <value>Try statements cannot yet be supported.</value>
+  </data>
+  <data name="E051Title" xml:space="preserve">
+    <value>Try statements cannot yet be supported.</value>
+  </data>
+  <data name="E052Description" xml:space="preserve">
+    <value>This statement is not permitted in a stateless program.</value>
+  </data>
+  <data name="E052MessageFormat" xml:space="preserve">
+    <value>This statement is not permitted in a stateless program.</value>
+  </data>
+  <data name="E052Title" xml:space="preserve">
+    <value>This statement is not permitted in a stateless program.</value>
+  </data>
+  <data name="E053Description" xml:space="preserve">
+    <value>This statement is not permitted in a smart contract.</value>
+  </data>
+  <data name="E053MessageFormat" xml:space="preserve">
+    <value>This statement is not permitted in a smart contract.</value>
+  </data>
+  <data name="E053Title" xml:space="preserve">
+    <value>This statement is not permitted in a smart contract.</value>
+  </data>
+  <data name="E054Description" xml:space="preserve">
+    <value>InvokeSmartSignatureMethod boilerplate used in incorrect scope.</value>
+  </data>
+  <data name="E054MessageFormat" xml:space="preserve">
+    <value>InvokeSmartSignatureMethod boilerplate used in incorrect scope.{1}</value>
+  </data>
+  <data name="E054Title" xml:space="preserve">
+    <value>InvokeSmartSignatureMethod boilerplate used in incorrect scope.</value>
+  </data>
+  <data name="E055Description" xml:space="preserve">
+    <value>Smart Signature Methods must return an integer.</value>
+  </data>
+  <data name="E055MessageFormat" xml:space="preserve">
+    <value>Smart Signature Methods must return an integer.</value>
+  </data>
+  <data name="E055Title" xml:space="preserve">
+    <value>Smart Signature Methods must return an integer.</value>
+  </data>
+  <data name="E056Description" xml:space="preserve">
+    <value>Smart Signature Methods do not support Smart Contract References.</value>
+  </data>
+  <data name="E056MessageFormat" xml:space="preserve">
+    <value>Smart Signature Methods do not support Smart Contract References.</value>
+  </data>
+  <data name="E056Title" xml:space="preserve">
+    <value>Smart Signature Methods do not support Smart Contract References.</value>
+  </data>
+  <data name="E058Description" xml:space="preserve">
+    <value>ABI Structures cannot inherit in this version.</value>
+  </data>
+  <data name="E058MessageFormat" xml:space="preserve">
+    <value>ABI Structures cannot inherit in this version.</value>
+  </data>
+  <data name="E058Title" xml:space="preserve">
+    <value>ABI Structures cannot inherit in this version.</value>
+  </data>
+  <data name="E059Description" xml:space="preserve">
+    <value>ABI structures may not contain code.</value>
+  </data>
+  <data name="E059MessageFormat" xml:space="preserve">
+    <value>ABI structures may not contain code.</value>
+  </data>
+  <data name="E059Title" xml:space="preserve">
+    <value>ABI structures may not contain code.</value>
+  </data>
+  <data name="E060Description" xml:space="preserve">
+    <value>ABI struct fields must not be decorated.</value>
+  </data>
+  <data name="E060MessageFormat" xml:space="preserve">
+    <value>ABI struct fields must not be decorated.</value>
+  </data>
+  <data name="E060Title" xml:space="preserve">
+    <value>ABI struct fields must not be decorated.</value>
+  </data>
+  <data name="E061Description" xml:space="preserve">
+    <value>Duplicate struct name {0}</value>
+  </data>
+  <data name="E061MessageFormat" xml:space="preserve">
+    <value>Duplicate struct name {0}</value>
+  </data>
+  <data name="E061Title" xml:space="preserve">
+    <value>Duplicate struct name {0}</value>
+  </data>
+  <data name="E062Description" xml:space="preserve">
+    <value>Structs cannot be updated in this version.</value>
+  </data>
+  <data name="E062MessageFormat" xml:space="preserve">
+    <value>Structs cannot be updated in this version.</value>
+  </data>
+  <data name="E062Title" xml:space="preserve">
+    <value>Structs cannot be updated in this version.</value>
+  </data>
+  <data name="E063Description" xml:space="preserve">
+    <value>This version does not yet support application references to be accessed indirectly. Fields, properties and methods must be accessed directly from the declaring variable.</value>
+  </data>
+  <data name="E063MessageFormat" xml:space="preserve">
+    <value>This version does not yet support application references to be accessed indirectly. Fields, properties and methods must be accessed directly from the declaring variable.</value>
+  </data>
+  <data name="E063Title" xml:space="preserve">
+    <value>This version does not yet support application references to be accessed indirectly. Fields, properties and methods must be accessed directly from the declaring variable.</value>
+  </data>
+  <data name="E064Description" xml:space="preserve">
+    <value>Struct not found.</value>
+  </data>
+  <data name="E064MessageFormat" xml:space="preserve">
+    <value>Struct not found {0}</value>
+  </data>
+  <data name="E064Title" xml:space="preserve">
+    <value>Struct not found.</value>
+  </data>
+  <data name="E065Description" xml:space="preserve">
+    <value>Struct field not found</value>
+  </data>
+  <data name="E065MessageFormat1" xml:space="preserve">
+    <value>Struct field not found {0}</value>
+  </data>
+  <data name="E065Title1" xml:space="preserve">
+    <value>Struct field not found.</value>
+  </data>
+  <data name="E066Description" xml:space="preserve">
+    <value>Multidimensional arrays not yet supported.</value>
+  </data>
+  <data name="E066MessageFormat" xml:space="preserve">
+    <value>Multidimensional arrays not yet supported.</value>
+  </data>
+  <data name="E066Title" xml:space="preserve">
+    <value>Multidimensional arrays not yet supported.</value>
+  </data>
+  <data name="E067Description" xml:space="preserve">
+    <value>Array element type not yet supported.</value>
+  </data>
+  <data name="E067MessageFormat" xml:space="preserve">
+    <value>Array element type not yet supported.</value>
+  </data>
+  <data name="E067Title" xml:space="preserve">
+    <value>Array element type not yet supported.</value>
+  </data>
+  <data name="E068Description" xml:space="preserve">
+    <value>ABI return value must be the last parameter.</value>
+  </data>
+  <data name="E068MessageFormat" xml:space="preserve">
+    <value>ABI return value must be the last parameter.</value>
+  </data>
+  <data name="E068Title" xml:space="preserve">
+    <value>ABI return value must be the last parameter.</value>
+  </data>
+  <data name="E069Description" xml:space="preserve">
+    <value>SmartContract Libraries cannot declare storage variables.</value>
+  </data>
+  <data name="E069MessageFormat" xml:space="preserve">
+    <value>SmartContract Libraries cannot declare storage variables.</value>
+  </data>
+  <data name="E069Title" xml:space="preserve">
+    <value>SmartContract Libraries cannot declare storage variables.</value>
+  </data>
+  <data name="E070Description" xml:space="preserve">
+    <value>SmartContract Library methods must be static.</value>
+  </data>
+  <data name="E070MessageFormat" xml:space="preserve">
+    <value>SmartContract Library methods must be static.</value>
+  </data>
+  <data name="E070Title" xml:space="preserve">
+    <value>SmartContract Library methods must be static.</value>
+  </data>
+  <data name="E071Description" xml:space="preserve">
+    <value>Array initializers must be byte arrays in this version.</value>
+  </data>
+  <data name="E071MessageFormat" xml:space="preserve">
+    <value>Array initializers must be byte arrays in this version.</value>
+  </data>
+  <data name="E071Title" xml:space="preserve">
+    <value>Array initializers must be byte arrays in this version.</value>
+  </data>
+  <data name="I000Description" xml:space="preserve">
+    <value>Generate Algorand TEAL.</value>
+    <comment>An optional longer localizable description of the diagnostic.</comment>
+  </data>
+  <data name="I000MessageFormat" xml:space="preserve">
+    <value>Generate '{0}' into Algorand TEAL.{1}</value>
+    <comment>The format-able message the diagnostic displays.</comment>
+  </data>
+  <data name="I000Title" xml:space="preserve">
+    <value>TEAL Generator</value>
+    <comment>The title of the diagnostic.</comment>
+  </data>
+  <data name="I001Description" xml:space="preserve">
+    <value>Declaration opcode size.</value>
+  </data>
+  <data name="I001MessageFormat" xml:space="preserve">
+    <value>Opcode size for program {0}: {1}</value>
+  </data>
+  <data name="I001Title" xml:space="preserve">
+    <value>Delcaration opcode size.</value>
+  </data>
+  <data name="W000Description" xml:space="preserve">
+    <value>This scratch space variable is not shared across programs.</value>
+  </data>
+  <data name="W000MessageFormat" xml:space="preserve">
+    <value>This scratch space variable {0} will not share values across programs.{1}</value>
+  </data>
+  <data name="W000Title" xml:space="preserve">
+    <value>Shared program scratch space variable.</value>
+  </data>
+  <data name="W001Description" xml:space="preserve">
+    <value>Unrecognised syntax element omitted during compilation.</value>
+  </data>
+  <data name="W001MessageFormat" xml:space="preserve">
+    <value>Unrecognised syntax element {0} omitted during compilation.{1}</value>
+  </data>
+  <data name="W001Title" xml:space="preserve">
+    <value>Omitted syntax element.</value>
+  </data>
+  <data name="W002Description" xml:space="preserve">
+    <value>Array initialisers will build arrays dynamically, costing opcodes. Please consider using the predefined array initialisation methods in IAlgorandCommonPredefineds instead.</value>
+  </data>
+  <data name="W002MessageFormat" xml:space="preserve">
+    <value>Array initialisers will build arrays dynamically, costing opcodes. Please consider using the predefined array initialisation methods in IAlgorandCommonPredefineds instead.{1}</value>
+  </data>
+  <data name="W002Title" xml:space="preserve">
+    <value>Array initialisers are expensive.</value>
+  </data>
+  <data name="W003Description" xml:space="preserve">
+    <value>SuppressNullableWarningExpression is ignored.</value>
+  </data>
+  <data name="W003MessageFormat" xml:space="preserve">
+    <value>SuppressNullableWarningExpression is ignored.{1}</value>
+  </data>
+  <data name="W003Title" xml:space="preserve">
+    <value>SuppressNullableWarningExpression is ignored.</value>
+  </data>
+  <data name="W004Description" xml:space="preserve">
+    <value>Inter-contract calls will be implemented in a future version.</value>
+  </data>
+  <data name="W004MessageFormat" xml:space="preserve">
+    <value>Inter-contract calls will be implemented in a future version.{1}</value>
+  </data>
+  <data name="W004Title" xml:space="preserve">
+    <value>Inter-contract calls will be implemented in a future version.</value>
+  </data>
+  <data name="W005Description" xml:space="preserve">
+    <value>No code was generated for this syntax.</value>
+  </data>
+  <data name="W005MessageFormat" xml:space="preserve">
+    <value>No code was generated for this syntax.{0}</value>
+  </data>
+  <data name="W005Title" xml:space="preserve">
+    <value>No code was generated for this syntax.</value>
+  </data>
+  <data name="W006Description" xml:space="preserve">
+    <value>Unsupported cast.</value>
+  </data>
+  <data name="W006MessageFormat" xml:space="preserve">
+    <value>Unsupported cast.{0}</value>
+  </data>
+  <data name="W006Title" xml:space="preserve">
+    <value>Unsupported cast.</value>
+  </data>
+</root>

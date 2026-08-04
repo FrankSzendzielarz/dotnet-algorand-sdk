@@ -27,7 +27,7 @@ namespace algorand_tests.Features.Unit
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private string[] _featureTags = new string[] {
+        private static string[] featureTags = new string[] {
                 "unit.feetest",
                 "unit"};
         
@@ -50,9 +50,7 @@ namespace algorand_tests.Features.Unit
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Transaction fee test", null, ProgrammingLanguage.CSharp, new string[] {
-                        "unit.feetest",
-                        "unit"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Transaction fee test", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,7 +62,7 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Transaction fee test")))
@@ -74,23 +72,23 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -145,21 +143,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("last-valid", last_Valid);
             argumentsOfScenario.Add("genesis-hash", genesis_Hash);
             argumentsOfScenario.Add("extra-pages", extra_Pages);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("App Call Fee Test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("App Call Fee Test", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -215,7 +203,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Create()
+        public void AppCallFeeTest_Create()
         {
 #line 7
   this.AppCallFeeTest("create", "0", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/loccheck.teal.tok", "programs/one.teal.tok", "1", "0", "1", "0", "str:test", "5555,6666", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "0", ((string[])(null)));
@@ -246,7 +234,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Update()
+        public void AppCallFeeTest_Update()
         {
 #line 7
   this.AppCallFeeTest("update", "456", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/zero.teal.tok", "programs/loccheck.teal.tok", "0", "0", "0", "0", "str:test", "", "", "AAZFG7YLUHOQ73J7UR7TPJA634OIDL5GIEURTW2QXN7VBRI7BDZCVN6QTI", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "0", ((string[])(null)));
@@ -278,7 +266,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Call()
+        public void AppCallFeeTest_Call()
         {
 #line 7
   this.AppCallFeeTest("call", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -311,7 +299,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Optin()
+        public void AppCallFeeTest_Optin()
         {
 #line 7
   this.AppCallFeeTest("optin", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -344,7 +332,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Clear()
+        public void AppCallFeeTest_Clear()
         {
 #line 7
   this.AppCallFeeTest("clear", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -377,7 +365,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Closeout()
+        public void AppCallFeeTest_Closeout()
         {
 #line 7
   this.AppCallFeeTest("closeout", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -410,7 +398,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last-valid", "9010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void AppCallFeeTest_Delete()
+        public void AppCallFeeTest_Delete()
         {
 #line 7
   this.AppCallFeeTest("delete", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -433,21 +421,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("note", note);
             argumentsOfScenario.Add("mn", mn);
             argumentsOfScenario.Add("addresses", addresses);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment Txn Fee Test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment Txn Fee Test", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 26
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -518,7 +496,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:addresses", "DN7MBMCL5JQ3PFUQS7TMX5AH4EEKOBJVDUF4TCV6WERATKFLQF4MQUPZTA BFRTECKTOOE7A5LHCF3TTE" +
             "OH2A7BW46IYT2SX5VP6ANKEXHZYJY77SJTVM 47YPQTIGQEO7T4Y4RWDYWEKV6RTR2UNBQXBABEEGM72" +
             "ESWDQNCQ52OPASU")]
-        public virtual void PaymentTxnFeeTest_4()
+        public void PaymentTxnFeeTest_4()
         {
 #line 26
   this.PaymentTxnFeeTest("4", "12466", "13466", "JgsgCaCTqIaLeVhyL6XlRu3n7Rfk2FxMeK+wRSaQ7dI=", "PNWOET7LLOWMBMLE4KOCELCX6X3D3Q4H2Q4QJASYIEOF7YIPPQBG3YQ5YI", "IDUTJEUIEVSMXTU4LGTJWZ2UE2E6TIODUKU6UW3FU3UKIQQ77RLUBBBFLA", "1000", "devnet-v33.0", "X4Bl4wQ9rCo=", "advice pudding treat near rule blouse same whisper inner electric quit surface su" +

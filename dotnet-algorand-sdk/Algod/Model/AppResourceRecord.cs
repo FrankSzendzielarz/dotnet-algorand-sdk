@@ -1,16 +1,14 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class AppResourceRecord
+    {
 
-using System = global::System;
 
 
-public partial class AppResourceRecord{
 
- 
-
-    
-}
+    }
 
 
 }

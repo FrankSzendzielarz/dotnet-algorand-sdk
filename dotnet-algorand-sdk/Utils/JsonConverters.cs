@@ -43,7 +43,7 @@ namespace Algorand.Utils
                                 bytes = Convert.FromBase64String(s);
                                 break;
                             }
-                            catch (Exception e)
+                            catch (Exception)
                             {
                                 return new Address(s);
                             }

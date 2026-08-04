@@ -2,9 +2,6 @@
 namespace Algorand.Algod.Model
 {
     using Algorand.Algod.Model.Transactions;
-#if UNITY
-    using UnityEngine;
-#endif
 
 using System = global::System;
 #if UNITY

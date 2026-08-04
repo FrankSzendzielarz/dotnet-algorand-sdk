@@ -11,9 +11,6 @@
 namespace Algorand.Indexer
 {
     using Algorand.Indexer.Model;
-    using Algorand.Utils;
-    using System.Collections.Generic;
-    using System.IO;
     using System = global::System;
     using Newtonsoft.Msgpack;
 

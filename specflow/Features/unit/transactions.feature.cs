@@ -27,7 +27,7 @@ namespace algorand_tests.Features.Unit
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-        private string[] _featureTags = new string[] {
+        private static string[] featureTags = new string[] {
                 "unit"};
         
 #line 1 "transactions.feature"
@@ -49,8 +49,7 @@ namespace algorand_tests.Features.Unit
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Transaction encoding", null, ProgrammingLanguage.CSharp, new string[] {
-                        "unit"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/unit", "Transaction encoding", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -62,7 +61,7 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Transaction encoding")))
@@ -72,23 +71,23 @@ namespace algorand_tests.Features.Unit
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -151,21 +150,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("genesis-hash", genesis_Hash);
             argumentsOfScenario.Add("golden", golden);
             argumentsOfScenario.Add("extra-pages", extra_Pages);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Application Transaction Tests (<operation>)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Application Transaction Tests (<operation>)", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -213,7 +202,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQLgQe82pAVOJgOJmbckwZr7iAM91EXVO3GHsEJNUmcPLeH3wS3GX7fviNb7VJQF8p5+/GA016E/Uy9itvCxfSwGjdHhujKRhcGFhkcQEdGVzdKRhcGFwxFsCIAIAASYFBWhlbGxvBXdyaXRlBWNoZWNrA2ZvbwNiYXI2GgAoEkAAKDYaACkSQAAXNhoAKhIiIitjIhJAABc2GgESECNAABMiKycEZiNAAAAjI0AABSIjQAAApGFwZmGSzRWzzRoKpGFwZ3OBo25icwGkYXBsc4GjbmJzAaRhcHN1xAUCIAEBIqNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant0()
+        public void ApplicationTransactionTestsOperation_Variant0()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("create", "0", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/loccheck.teal.tok", "programs/one.teal.tok", "1", "0", "1", "0", "str:test", "5555,6666", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQLgQe82pAVOJgOJmbckwZr7iAM91EXVO3GHsEJNUmcPLeH3wS3GX7fviNb7VJQF8p5+/GA016E/Uy9itvCxfSwGjdHhujKRhcGFhkcQEdGVzdKRhcGFwxFsCIAIAASYFBWhlbGxvBXdyaXRlBWNoZWNrA2ZvbwNiYXI2GgAoEkAAKDYaACkSQAAXNhoAKhIiIitjIhJAABc2GgESECNAABMiKycEZiNAAAAjI0AABSIjQAAApGFwZmGSzRWzzRoKpGFwZ3OBo25icwGkYXBsc4GjbmJzAaRhcHN1xAUCIAEBIqNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs", "0", ((string[])(null)));
@@ -245,7 +234,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQFfZoIv5LXF0X7AbFMvKtxXR53whL6KzEQouQSdKG5wIG6XRb97T7yo27IPiTsIyrWtv78UxndtRPe1jYC383QSjdHhujKRhcGFhkcQEdGVzdKRhcGFwxAUCIAEAIqRhcGF0kcQgADJTfwuh3Q/tP6R/N6Qe3xyBr6ZBKRnbULt/UMUfCPKkYXBnc4GjbmJzAaRhcGxzgaNuYnMBpGFwc3XEBQIgAQEio2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant1()
+        public void ApplicationTransactionTestsOperation_Variant1()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("create", "0", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/zero.teal.tok", "programs/one.teal.tok", "1", "0", "1", "0", "str:test", "", "", "AAZFG7YLUHOQ73J7UR7TPJA634OIDL5GIEURTW2QXN7VBRI7BDZCVN6QTI", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQFfZoIv5LXF0X7AbFMvKtxXR53whL6KzEQouQSdKG5wIG6XRb97T7yo27IPiTsIyrWtv78UxndtRPe1jYC383QSjdHhujKRhcGFhkcQEdGVzdKRhcGFwxAUCIAEAIqRhcGF0kcQgADJTfwuh3Q/tP6R/N6Qe3xyBr6ZBKRnbULt/UMUfCPKkYXBnc4GjbmJzAaRhcGxzgaNuYnMBpGFwc3XEBQIgAQEio2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=", "0", ((string[])(null)));
@@ -277,7 +266,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQI3AM7bbt6vSpjCMljzCRKsTdEfs+pCeUjz0s1AvX7ztsGBXOrdh5XlFU/+PRJdsp6YsxX0yTSxNXn9pANVQFwWjdHhujaRhcGFhkcQEdGVzdKRhcGFwxAUCIAEBIqRhcGFzks0D6M0H0KRhcGZhks0Vs80aCqRhcGdzgaNuYnMBpGFwbHOBo25icwGkYXBzdcQFAiABACKjZmVlzQTSomZ2zSMoomdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWkYXBwbA==")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant2()
+        public void ApplicationTransactionTestsOperation_Variant2()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("create", "0", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/one.teal.tok", "programs/zero.teal.tok", "1", "0", "1", "0", "str:test", "5555,6666", "1000,2000", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQI3AM7bbt6vSpjCMljzCRKsTdEfs+pCeUjz0s1AvX7ztsGBXOrdh5XlFU/+PRJdsp6YsxX0yTSxNXn9pANVQFwWjdHhujaRhcGFhkcQEdGVzdKRhcGFwxAUCIAEBIqRhcGFzks0D6M0H0KRhcGZhks0Vs80aCqRhcGdzgaNuYnMBpGFwbHOBo25icwGkYXBzdcQFAiABACKjZmVlzQTSomZ2zSMoomdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWkYXBwbA==", "0", ((string[])(null)));
@@ -309,7 +298,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQCD6/s4HjAOho9LbjAYdqld2rHQfLWC+Cl2HkKcF2scl+JUAPaR9AhisHE3O7Ld5/MtI4Zl2jujHR7IKQNBiPwWjdHhujaRhcGFhkcQEdGVzdKRhcGFwxAUCIAEBIqRhcGFzkc0LuKRhcGZhks0Vs80aCqRhcGdzgaNuYnMBpGFwbHOBo25icwGkYXBzdcQFAiABACKjZmVlzQTSomZ2zSMoomdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWkYXBwbA==")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant3()
+        public void ApplicationTransactionTestsOperation_Variant3()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("create", "0", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/one.teal.tok", "programs/zero.teal.tok", "1", "0", "1", "0", "str:test", "5555,6666", "3000", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQCD6/s4HjAOho9LbjAYdqld2rHQfLWC+Cl2HkKcF2scl+JUAPaR9AhisHE3O7Ld5/MtI4Zl2jujHR7IKQNBiPwWjdHhujaRhcGFhkcQEdGVzdKRhcGFwxAUCIAEBIqRhcGFzkc0LuKRhcGZhks0Vs80aCqRhcGdzgaNuYnMBpGFwbHOBo25icwGkYXBzdcQFAiABACKjZmVlzQTSomZ2zSMoomdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWkYXBwbA==", "0", ((string[])(null)));
@@ -481,7 +470,7 @@ namespace algorand_tests.Features.Unit
             "0gjo2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc" +
             "25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "1")]
-        public virtual void ApplicationTransactionTestsOperation_Variant4()
+        public void ApplicationTransactionTestsOperation_Variant4()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("create", "0", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/big_app_program.teal.tok", "programs/big_app_program.teal.tok", "1", "0", "1", "0", "str:test", "5555,6666", "3000", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "gqNzaWfEQAggbMj70Syth3GMuH+Ju81kydUQT6hITzBgnkCwz+qeDVvz164rQd5gloj7+ciLvGyvX4guI" +
@@ -653,7 +642,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQHNbuCglt4vyeDjPkFRDDpOym0K1GKyHjgr3e8hm+9MzrDIhzHIvUbNVYyU4G4X+UoLhrHHBVWYaIpNVD//VmgejdHhujKRhcGFhkcQEdGVzdKRhcGFuBKRhcGFwxAUCIAEAIqRhcGF0kcQgADJTfwuh3Q/tP6R/N6Qe3xyBr6ZBKRnbULt/UMUfCPKkYXBpZM0ByKRhcHN1xFsCIAIAASYFBWhlbGxvBXdyaXRlBWNoZWNrA2ZvbwNiYXI2GgAoEkAAKDYaACkSQAAXNhoAKhIiIitjIhJAABc2GgESECNAABMiKycEZiNAAAAjI0AABSIjQAAAo2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant5()
+        public void ApplicationTransactionTestsOperation_Variant5()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("update", "456", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/zero.teal.tok", "programs/loccheck.teal.tok", "0", "0", "0", "0", "str:test", "", "", "AAZFG7YLUHOQ73J7UR7TPJA634OIDL5GIEURTW2QXN7VBRI7BDZCVN6QTI", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQHNbuCglt4vyeDjPkFRDDpOym0K1GKyHjgr3e8hm+9MzrDIhzHIvUbNVYyU4G4X+UoLhrHHBVWYaIpNVD//VmgejdHhujKRhcGFhkcQEdGVzdKRhcGFuBKRhcGFwxAUCIAEAIqRhcGF0kcQgADJTfwuh3Q/tP6R/N6Qe3xyBr6ZBKRnbULt/UMUfCPKkYXBpZM0ByKRhcHN1xFsCIAIAASYFBWhlbGxvBXdyaXRlBWNoZWNrA2ZvbwNiYXI2GgAoEkAAKDYaACkSQAAXNhoAKhIiIitjIhJAABc2GgESECNAABMiKycEZiNAAAAjI0AABSIjQAAAo2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=", "0", ((string[])(null)));
@@ -685,7 +674,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQAIwDqqWiU9X64Gs9i3kDjkhaOfH/as8PrRZ8WYniLMmM/OR0bpnS/wQkoCO7LQ7JNVOFO12fyAWqRxUJZf9IgqjdHhujqRhcGFhkcQEdGVzdKRhcGFuBKRhcGFwxAUCIAEAIqRhcGFzks0D6M0H0KRhcGF0kcQgADJTfwuh3Q/tP6R/N6Qe3xyBr6ZBKRnbULt/UMUfCPKkYXBmYZLNFbPNGgqkYXBpZM0ByKRhcHN1xFsCIAIAASYFBWhlbGxvBXdyaXRlBWNoZWNrA2ZvbwNiYXI2GgAoEkAAKDYaACkSQAAXNhoAKhIiIitjIhJAABc2GgESECNAABMiKycEZiNAAAAjI0AABSIjQAAAo2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant6()
+        public void ApplicationTransactionTestsOperation_Variant6()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("update", "456", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/zero.teal.tok", "programs/loccheck.teal.tok", "0", "0", "0", "0", "str:test", "5555,6666", "1000,2000", "AAZFG7YLUHOQ73J7UR7TPJA634OIDL5GIEURTW2QXN7VBRI7BDZCVN6QTI", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQAIwDqqWiU9X64Gs9i3kDjkhaOfH/as8PrRZ8WYniLMmM/OR0bpnS/wQkoCO7LQ7JNVOFO12fyAWqRxUJZf9IgqjdHhujqRhcGFhkcQEdGVzdKRhcGFuBKRhcGFwxAUCIAEAIqRhcGFzks0D6M0H0KRhcGF0kcQgADJTfwuh3Q/tP6R/N6Qe3xyBr6ZBKRnbULt/UMUfCPKkYXBmYZLNFbPNGgqkYXBpZM0ByKRhcHN1xFsCIAIAASYFBWhlbGxvBXdyaXRlBWNoZWNrA2ZvbwNiYXI2GgAoEkAAKDYaACkSQAAXNhoAKhIiIitjIhJAABc2GgESECNAABMiKycEZiNAAAAjI0AABSIjQAAAo2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=", "0", ((string[])(null)));
@@ -717,7 +706,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQNk4/vG1hicylEt2W15yM0Et6VXEG+F3VtCOuOb0WfYWwhXQS6hKxMLBhU5KZBmz3mJUtnTvxFXM+NUr8Id5TwSjdHhujaRhcGFhkcQEdGVzdKRhcGFuBKRhcGFwxAUCIAEAIqRhcGFzkc0LuKRhcGZhks0Vs80aCqRhcGlkzQHIpGFwc3XEWwIgAgABJgUFaGVsbG8Fd3JpdGUFY2hlY2sDZm9vA2JhcjYaACgSQAAoNhoAKRJAABc2GgAqEiIiK2MiEkAAFzYaARIQI0AAEyIrJwRmI0AAACMjQAAFIiNAAACjZmVlzQTSomZ2zSMoomdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWkYXBwbA==")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant7()
+        public void ApplicationTransactionTestsOperation_Variant7()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("update", "456", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "programs/zero.teal.tok", "programs/loccheck.teal.tok", "0", "0", "0", "0", "str:test", "5555,6666", "3000", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQNk4/vG1hicylEt2W15yM0Et6VXEG+F3VtCOuOb0WfYWwhXQS6hKxMLBhU5KZBmz3mJUtnTvxFXM+NUr8Id5TwSjdHhujaRhcGFhkcQEdGVzdKRhcGFuBKRhcGFwxAUCIAEAIqRhcGFzkc0LuKRhcGZhks0Vs80aCqRhcGlkzQHIpGFwc3XEWwIgAgABJgUFaGVsbG8Fd3JpdGUFY2hlY2sDZm9vA2JhcjYaACgSQAAoNhoAKRJAABc2GgAqEiIiK2MiEkAAFzYaARIQI0AAEyIrJwRmI0AAACMjQAAFIiNAAACjZmVlzQTSomZ2zSMoomdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWkYXBwbA==", "0", ((string[])(null)));
@@ -750,7 +739,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQJIHH5XZSlICTW3xOEHpnQfguLb9dhNjnPZay9UGT8FZr+ig6XjnBher3QR4HDZmwg+3Ei5bPySgTb+5yVLRhwOjdHhuiqRhcGFhkcQEdGVzdKRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant8()
+        public void ApplicationTransactionTestsOperation_Variant8()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("call", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -783,7 +772,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQIucoXp/ThFO4/An6dmp4oYVPojvyZZWYqn7nkKNfnm6qd/TXeu3qiPTEwrTEmhtU5qLGF3Ch+iDZeI6RmH24wujdHhuiKRhcGFhkcQEdGVzdKRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant9()
+        public void ApplicationTransactionTestsOperation_Variant9()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("call", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQIucoXp/ThFO4/An6dmp4oYVPojvyZZWYqn7nkKNfnm6qd/TXeu3qiPTEwrTEmhtU5qLGF3Ch+iDZeI6RmH24wujdHhuiKRhcGFhkcQEdGVzdKRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs", "0", ((string[])(null)));
@@ -816,7 +805,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQEbhKgBScIWg4Cq9jLfSIE+LvH4hJSVGfU6ikR75waHFgIOy1Ut2dwdvkumHuiGzvJ0O0/ouMxnycqCyW49rWw6jdHhui6RhcGFhkcQEdGVzdKRhcGFzks0eYc0iuKRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant10()
+        public void ApplicationTransactionTestsOperation_Variant10()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("call", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -850,7 +839,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQMypTBsWPAGF/F+sRjlwu1M2lQt92+5WkXdlI2yJ/0MphvycAl0EwWDD03+qlLV0AC4frbNU69rBa5xHxhDpEAmjdHhui6RhcGFhkcQEdGVzdKRhcGFuAaRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant11()
+        public void ApplicationTransactionTestsOperation_Variant11()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("optin", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -883,7 +872,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQDYJRwaGJQXUptvKniWLWA76S6625uwDALaLCtyC71v3duXeMTRHsUmK66dlz+dDXZqeOzSxSqIpcET76K088AGjdHhuiaRhcGFhkcQEdGVzdKRhcGFuAaRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant12()
+        public void ApplicationTransactionTestsOperation_Variant12()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("optin", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQDYJRwaGJQXUptvKniWLWA76S6625uwDALaLCtyC71v3duXeMTRHsUmK66dlz+dDXZqeOzSxSqIpcET76K088AGjdHhuiaRhcGFhkcQEdGVzdKRhcGFuAaRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs", "0", ((string[])(null)));
@@ -916,7 +905,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQCavYI5oOpW5EXknuiLsxx+/VXQeXaEO8COfnKsvmOQzA8hINpy9IdU0OB8R5mwjb4u6gHCSSyoNz9wQq1fZcQ+jdHhujKRhcGFhkcQEdGVzdKRhcGFuAaRhcGFzks0eYc0iuKRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant13()
+        public void ApplicationTransactionTestsOperation_Variant13()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("optin", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -950,7 +939,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQFLY8ReCu7Fq8Aau17dnrVStv9Kb/klCgGrHVeE+qq+9/QlrxbgcVds7QtGbb8UcJg5ZkLDbGpywgHnEm99vCwKjdHhui6RhcGFhkcQEdGVzdKRhcGFuA6RhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant14()
+        public void ApplicationTransactionTestsOperation_Variant14()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("clear", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -983,7 +972,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQGTdRCNlPyXLg4I5jjR3wINHaEURqNNuFB3yYoLWyjRfDqDClct9wAXvBb5AWRSO9h3GiZpFlyTYEJCE3dG4FwqjdHhuiaRhcGFhkcQEdGVzdKRhcGFuA6RhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant15()
+        public void ApplicationTransactionTestsOperation_Variant15()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("clear", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQGTdRCNlPyXLg4I5jjR3wINHaEURqNNuFB3yYoLWyjRfDqDClct9wAXvBb5AWRSO9h3GiZpFlyTYEJCE3dG4FwqjdHhuiaRhcGFhkcQEdGVzdKRhcGFuA6RhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs", "0", ((string[])(null)));
@@ -1016,7 +1005,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQJG+3VRzlHS7JxGAEqLu8TUAprs/6+P5HHJZZ0JvNYslk8cJs4axUOZ8icZUWcbSNY290gzn4vzCb9+Kfn6sgAujdHhujKRhcGFhkcQEdGVzdKRhcGFuA6RhcGFzks0eYc0iuKRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant16()
+        public void ApplicationTransactionTestsOperation_Variant16()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("clear", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -1050,7 +1039,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQIlMCbGb64YcM/Vz+lnKOhAOF0X9PjnbqFS+6fLlyQQMy2BNRPBlbekH9t2wzkvtKXN+wF6qO7F3HvKRBBFLYgujdHhui6RhcGFhkcQEdGVzdKRhcGFuAqRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant17()
+        public void ApplicationTransactionTestsOperation_Variant17()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("closeout", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -1083,7 +1072,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQIHkUGhYd4FaUdMfbktftMfvG6n51l9MQEW1Atj/eJLGdvKRFeOp6hQjiXsI+YCG2SWifA5XtpGbHpxaJIb4DgKjdHhuiaRhcGFhkcQEdGVzdKRhcGFuAqRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant18()
+        public void ApplicationTransactionTestsOperation_Variant18()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("closeout", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQIHkUGhYd4FaUdMfbktftMfvG6n51l9MQEW1Atj/eJLGdvKRFeOp6hQjiXsI+YCG2SWifA5XtpGbHpxaJIb4DgKjdHhuiaRhcGFhkcQEdGVzdKRhcGFuAqRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs", "0", ((string[])(null)));
@@ -1116,7 +1105,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQCgyXFm+653eOTGcswb0OPkF2NZe0nSZhSKBJzK+woWbo9dcl111qiR2xk3X0m21eTNynztPjvmloDKI10j/kAyjdHhujKRhcGFhkcQEdGVzdKRhcGFuAqRhcGFzks0eYc0iuKRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant19()
+        public void ApplicationTransactionTestsOperation_Variant19()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("closeout", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -1150,7 +1139,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQMwY2l//Y+mOccwFOp4HuK6vZRspq7jpzMkYRQIA16TPCrwBpmdS4JbcV0cbRR5+FwOzZd9aBGxKwSQX4B9dYgujdHhui6RhcGFhkcQEdGVzdKRhcGFuBaRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant20()
+        public void ApplicationTransactionTestsOperation_Variant20()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("delete", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -1183,7 +1172,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQM26fXCfQ8Ay/uwsOya/8iJ9J9DIAfTOus2KXduNgxB195ABBCjniPNramFogzTpkmoK6s+Whj+6gpDzj1ZoFwGjdHhuiaRhcGFhkcQEdGVzdKRhcGFuBaRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant21()
+        public void ApplicationTransactionTestsOperation_Variant21()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("delete", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "", "", "", "1234", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", @"gqNzaWfEQM26fXCfQ8Ay/uwsOya/8iJ9J9DIAfTOus2KXduNgxB195ABBCjniPNramFogzTpkmoK6s+Whj+6gpDzj1ZoFwGjdHhuiaRhcGFhkcQEdGVzdKRhcGFuBaRhcGlkZKNmZWXNBNKiZnbNIyiiZ2jEIDH9Ies45BCBGT7TTN87K4Poh0BUtH2cYYK+8N+SOOuDomx2zSMyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaRhcHBs", "0", ((string[])(null)));
@@ -1216,7 +1205,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:genesis-hash", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQNRuI7jjkY7nVUFd+weVjF9vL80VLDDhOZTZ7Iu6gPpvMzgiaKhRWPw2GdvdggqyqAp6R71B0iNItmTKcS6ZhAmjdHhujKRhcGFhkcQEdGVzdKRhcGFuBaRhcGFzks0eYc0iuKRhcGF0ksQgACoyATtqMON+4ohUJO59fQVV6uCTn7aa/GvfndL+5/7EIAAHBAuPYqMysOAF8ALIwKUWNGgBCjFYJ8bPUnx4aXnnpGFwZmGSzRWzzRoKpGFwaWRko2ZlZc0E0qJmds0jKKJnaMQgMf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464OibHbNIzKjc25kxCAJ+9J2LAj4bFrmv23Xp6kB3mZ111Dgfoxcdphkfbbh/aR0eXBlpGFwcGw=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:extra-pages", "0")]
-        public virtual void ApplicationTransactionTestsOperation_Variant22()
+        public void ApplicationTransactionTestsOperation_Variant22()
         {
 #line 7
   this.ApplicationTransactionTestsOperation("delete", "100", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "", "", "0", "0", "0", "0", "str:test", "5555,6666", "7777,8888", "AAVDEAJ3NIYOG7XCRBKCJ3T5PUCVL2XASOP3NGX4NPPZ3UX6477PBG6E4Q,AADQIC4PMKRTFMHAAXYAFS" +
@@ -1245,21 +1234,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("amount", amount);
             argumentsOfScenario.Add("close_remainder_to", close_Remainder_To);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment Transaction Tests", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment Transaction Tests", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 39
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -1307,7 +1286,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "100001")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:close_remainder_to", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQLnffH3FpaXFGEa2HPT2/ZOKu5W9LXvUvU7qouB4SsET3XAvGzpTjfQZQTY2LsJzpMd4KAtNWrwcsRKbyH1eAgyjdHhuiaNhbXTOAAGGoaNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNyY3bEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9o3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaNwYXk=")]
-        public virtual void PaymentTransactionTests_Variant0()
+        public void PaymentTransactionTests_Variant0()
         {
 #line 39
   this.PaymentTransactionTests("1234", "true", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "cucumbernet", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "100001", "", @"gqNzaWfEQLnffH3FpaXFGEa2HPT2/ZOKu5W9LXvUvU7qouB4SsET3XAvGzpTjfQZQTY2LsJzpMd4KAtNWrwcsRKbyH1eAgyjdHhuiaNhbXTOAAGGoaNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNyY3bEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9o3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaNwYXk=", ((string[])(null)));
@@ -1331,7 +1310,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "100010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:close_remainder_to", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQJ+gd/emU61Q409kvk2ckJ3lmQVEircM4Aff/YKaeCZQcXFC9eiWBgefD4EPyoxr8NUOlwuEH7j76Rb/awrjGAmjdHhuiaNhbXTOAAGGqqNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNyY3bEIAAyU38Lod0P7T+kfzekHt8cga+mQSkZ21C7f1DFHwjyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaNwYXk=")]
-        public virtual void PaymentTransactionTests_Variant1()
+        public void PaymentTransactionTests_Variant1()
         {
 #line 39
   this.PaymentTransactionTests("1234", "true", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "cucumbernet", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "AAZFG7YLUHOQ73J7UR7TPJA634OIDL5GIEURTW2QXN7VBRI7BDZCVN6QTI", "100010", "", @"gqNzaWfEQJ+gd/emU61Q409kvk2ckJ3lmQVEircM4Aff/YKaeCZQcXFC9eiWBgefD4EPyoxr8NUOlwuEH7j76Rb/awrjGAmjdHhuiaNhbXTOAAGGqqNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNyY3bEIAAyU38Lod0P7T+kfzekHt8cga+mQSkZ21C7f1DFHwjyo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaNwYXk=", ((string[])(null)));
@@ -1379,21 +1358,11 @@ namespace algorand_tests.Features.Unit
             argumentsOfScenario.Add("selection-pk", selection_Pk);
             argumentsOfScenario.Add("state-proof-pk", state_Proof_Pk);
             argumentsOfScenario.Add("golden", golden);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Keyreg Transaction Tests", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Keyreg Transaction Tests", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 52
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -1446,7 +1415,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:selection-pk", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state-proof-pk", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQNcqeoXqxTMVK+X7bsNnKPMT9rJl2CYwe24vF1jh7gCTDcoUDNbbF34ltpa5lc5lfHF1eaIO3wJGxW5Jt///UQqjdHhuiKNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqdub25wYXJ0w6NzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWma2V5cmVn")]
-        public virtual void KeyregTransactionTests_Variant0()
+        public void KeyregTransactionTests_Variant0()
         {
 #line 52
   this.KeyregTransactionTests("1234", "true", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "cucumbernet", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "true", "0", "0", "0", "", "", "", @"gqNzaWfEQNcqeoXqxTMVK+X7bsNnKPMT9rJl2CYwe24vF1jh7gCTDcoUDNbbF34ltpa5lc5lfHF1eaIO3wJGxW5Jt///UQqjdHhuiKNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqdub25wYXJ0w6NzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWma2V5cmVn", ((string[])(null)));
@@ -1474,7 +1443,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:selection-pk", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state-proof-pk", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQOethpN+/R1Z8OwY2DUKWRf7i1nOeSU4DK7YmyebV8E8W1iBVW7VbuDvgwJlb75XD98ILrkLpguZvmkKK/J+3AajdHhuh6NmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWma2V5cmVn")]
-        public virtual void KeyregTransactionTests_Variant1()
+        public void KeyregTransactionTests_Variant1()
         {
 #line 52
   this.KeyregTransactionTests("1234", "true", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "cucumbernet", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "false", "0", "0", "0", "", "", "", @"gqNzaWfEQOethpN+/R1Z8OwY2DUKWRf7i1nOeSU4DK7YmyebV8E8W1iBVW7VbuDvgwJlb75XD98ILrkLpguZvmkKK/J+3AajdHhuh6NmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqNzbmTEIAn70nYsCPhsWua/bdenqQHeZnXXUOB+jFx2mGR9tuH9pHR5cGWma2V5cmVn", ((string[])(null)));
@@ -1502,7 +1471,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:selection-pk", "VrA73XxHg00Wek46mWYV0AeaG8e1+flkExmZ1MDBokM=")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state-proof-pk", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQEsW7yCllgTPVT+Egdi/bkyt4PbLBHd4FGoq+dWx/xmFXMyZ0iiI+Nthqzl2oApKVnAGu9Y5/Sb5xTR8UCMBRQ6jdHhujKNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqZzZWxrZXnEIFawO918R4NNFnpOOplmFdAHmhvHtfn5ZBMZmdTAwaJDo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaZrZXlyZWendm90ZWZzdM0nEKZ2b3Rla2TNA+indm90ZWtlecQgfFBFpcUQnDQwq/cUAvQvWmrHrnqiaz0Ev/ZwxfKoAfKndm90ZWxzdM1OIA==")]
-        public virtual void KeyregTransactionTests_Variant2()
+        public void KeyregTransactionTests_Variant2()
         {
 #line 52
   this.KeyregTransactionTests("1234", "true", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "cucumbernet", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "false", "10000", "20000", "1000", "fFBFpcUQnDQwq/cUAvQvWmrHrnqiaz0Ev/ZwxfKoAfI=", "VrA73XxHg00Wek46mWYV0AeaG8e1+flkExmZ1MDBokM=", "", @"gqNzaWfEQEsW7yCllgTPVT+Egdi/bkyt4PbLBHd4FGoq+dWx/xmFXMyZ0iiI+Nthqzl2oApKVnAGu9Y5/Sb5xTR8UCMBRQ6jdHhujKNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqZzZWxrZXnEIFawO918R4NNFnpOOplmFdAHmhvHtfn5ZBMZmdTAwaJDo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2kdHlwZaZrZXlyZWendm90ZWZzdM0nEKZ2b3Rla2TNA+indm90ZWtlecQgfFBFpcUQnDQwq/cUAvQvWmrHrnqiaz0Ev/ZwxfKoAfKndm90ZWxzdM1OIA==", ((string[])(null)));
@@ -1531,7 +1500,7 @@ namespace algorand_tests.Features.Unit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state-proof-pk", "NgGFhUgxI4TEIjw0QcBr6lzdBCtZYxVrN1FP3YFdhbnBOLiimfZu6GgBED52D6mHNN9kcyi+RT6FUF2qZ" +
             "tjOkw==")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:golden", @"gqNzaWfEQIBo7tv1+Dtb3ppCH5oidfLd5BOMr7N6m3YmyYVy7wfDlm/aMfx2Enqa3XfInVNZYRT02vCbMa5bQEuBedjnbwejdHhujaNmZWXNBNKiZnbNIyijZ2Vuq2N1Y3VtYmVybmV0omdoxCAx/SHrOOQQgRk+00zfOyuD6IdAVLR9nGGCvvDfkjjrg6Jsds0jMqZzZWxrZXnEIFawO918R4NNFnpOOplmFdAHmhvHtfn5ZBMZmdTAwaJDo3NuZMQgCfvSdiwI+Gxa5r9t16epAd5mdddQ4H6MXHaYZH224f2nc3ByZmtlecRANgGFhUgxI4TEIjw0QcBr6lzdBCtZYxVrN1FP3YFdhbnBOLiimfZu6GgBED52D6mHNN9kcyi+RT6FUF2qZtjOk6R0eXBlpmtleXJlZ6d2b3RlZnN0zScQpnZvdGVrZM0D6Kd2b3Rla2V5xCB8UEWlxRCcNDCr9xQC9C9aaseueqJrPQS/9nDF8qgB8qd2b3RlbHN0zU4g")]
-        public virtual void KeyregTransactionTests_Variant3()
+        public void KeyregTransactionTests_Variant3()
         {
 #line 52
   this.KeyregTransactionTests("1234", "true", "9000", "9010", "Mf0h6zjkEIEZPtNM3zsrg+iHQFS0fZxhgr7w35I464M=", "cucumbernet", "BH55E5RMBD4GYWXGX5W5PJ5JAHPGM5OXKDQH5DC4O2MGI7NW4H6VOE4CP4", "false", "10000", "20000", "1000", "fFBFpcUQnDQwq/cUAvQvWmrHrnqiaz0Ev/ZwxfKoAfI=", "VrA73XxHg00Wek46mWYV0AeaG8e1+flkExmZ1MDBokM=", "NgGFhUgxI4TEIjw0QcBr6lzdBCtZYxVrN1FP3YFdhbnBOLiimfZu6GgBED52D6mHNN9kcyi+RT6FUF2qZ" +

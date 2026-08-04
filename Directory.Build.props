@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <!-- Surfaces .editorconfig code-style diagnostics (currently just IDE0005, unnecessary
+         using directives) as build warnings across every project in the solution, instead of
+         only as IDE suggestions. Roslyn's own generated-code heuristics (file names ending in
+         .generated.cs/.Generated.cs, .designer.cs, etc.) already exclude generated files from
+         these diagnostics, so this does not flag Algod/Model/*.generated.cs or similar.
+
+         Note: IDE0005 (unused usings) only actually surfaces during `dotnet build` for a project
+         that already generates an XML doc file (a known Roslyn quirk - see
+         https://github.com/dotnet/roslyn/issues/41640); the main dotnet-algorand-sdk project does,
+         so it gets build-time enforcement "for free". Forcing GenerateDocumentationFile on for
+         every other project (test/tool/example projects that don't otherwise want XML docs) was
+         tried and reverted - it turned on thousands of unrelated CS1573/CS1570/CS8669-class
+         doc-comment warnings on the checked-in ARC56-generated test fixtures, which isn't a
+         reasonable trade just to unlock one style rule there. For those projects, running
+         "dotnet format" in verify mode with the IDE0005 diagnostic filter (see
+         .github/workflows/lint.yml) is the enforcement mechanism instead. -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+</Project>

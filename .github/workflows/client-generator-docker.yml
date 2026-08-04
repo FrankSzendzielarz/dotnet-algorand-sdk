@@ -1,0 +1,69 @@
+name: Client Generator Docker Image
+
+# Builds and pushes the scholtz2/dotnet-avm-generated-client Docker image (the ARC56 client
+# generator, see client-generator/Dockerfile and compose-client-generator-docker.sh) to Docker Hub.
+#
+# One-time setup required on this repo before this workflow can push:
+#   Settings -> Secrets and variables -> Actions -> New repository secret
+#     DOCKERHUB_USERNAME  - Docker Hub username/org that owns the scholtz2 namespace
+#     DOCKERHUB_TOKEN     - Docker Hub access token (Account Settings -> Security -> New Access Token)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "client-generator/**"
+      - "dotnet-algorand-sdk/**"
+      - ".github/workflows/client-generator-docker.yml"
+    tags:
+      - "client-generator-v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Image tag (without the '-main' suffix), e.g. 4.7.4"
+        type: string
+        default: "4.7.4"
+      push:
+        description: "Push the built image to Docker Hub (leave unchecked for a build-only dry run)"
+        type: boolean
+        default: true
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine version
+        id: vars
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            ver="${{ inputs.version }}"
+          elif [[ "${GITHUB_REF}" == refs/tags/client-generator-v* ]]; then
+            ver="${GITHUB_REF#refs/tags/client-generator-v}"
+          else
+            ver="4.7.4"
+          fi
+          echo "version=$ver" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        if: github.event_name != 'workflow_dispatch' || inputs.push
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: client-generator/Dockerfile
+          push: ${{ github.event_name != 'workflow_dispatch' || inputs.push }}
+          tags: |
+            scholtz2/dotnet-avm-generated-client:${{ steps.vars.outputs.version }}-main
+            scholtz2/dotnet-avm-generated-client:latest

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using Encoder = Algorand.Utils.Encoder;
 
 namespace test
@@ -21,17 +22,17 @@ namespace test
             {
                 encoded = Encoder.EncodeToJson(obj);
                 decoded = Encoder.DecodeFromJson<T>(encoded);
-                Assert.AreEqual(decoded, obj);
+                Assert.That(decoded, Is.EqualTo(obj));
 
                 encoded2 = Encoder.EncodeToJson(decoded);
-                Assert.AreEqual(encoded2, encoded);
+                Assert.That(encoded2, Is.EqualTo(encoded));
 
                 decoded2 = Encoder.DecodeFromJson<T>(encoded2);
-                Assert.AreEqual(decoded2, decoded);
+                Assert.That(decoded2, Is.EqualTo(decoded));
             }
             catch (Exception e)
             {
-                Assert.Fail("Should not have thrown an exception.", e);
+                Assert.Fail("Should not have thrown an exception. " + e.Message);
             }
         }
 
@@ -43,25 +44,25 @@ namespace test
             {
                 encoded = Convert.ToBase64String(Encoder.EncodeToMsgPackOrdered(obj));
                 decoded = Encoder.DecodeFromMsgPack<T>(Convert.FromBase64String(encoded));
-                Assert.AreEqual(decoded, obj);
+                Assert.That(decoded, Is.EqualTo(obj));
 
                 encoded2 = Convert.ToBase64String(Encoder.EncodeToMsgPackOrdered(decoded));
-                Assert.AreEqual(encoded2, encoded);
+                Assert.That(encoded2, Is.EqualTo(encoded));
 
                 decoded2 = Encoder.DecodeFromMsgPack<T>(Convert.FromBase64String(encoded2));
-                Assert.AreEqual(decoded2, decoded);
+                Assert.That(decoded2, Is.EqualTo(decoded));
             }
             catch (Exception e)
             {
-                Assert.Fail("Should not have thrown an exception.", e);
+                Assert.Fail("Should not have thrown an exception. " + e.Message);
             }
         }
-        
+
         public static void ContainsExactlyElementsOf<T>(List<T> superList, List<T> subList)
         {
             CollectionAssert.IsSubsetOf(subList, superList);
             List<int> orderList = new List<int>();
-            foreach(var item in subList)
+            foreach (var item in subList)
             {
                 orderList.Add(superList.IndexOf(item));
             }

@@ -1,4 +1,4 @@
-﻿using Algorand;
+using Algorand;
 using Algorand.Algod;
 using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
@@ -23,7 +23,7 @@ namespace sdk_examples
             var user = new Account("pole pudding actor purpose spend agree erode account discover chapter adapt supreme excite lamp gospel guilt helmet wrestle meat sustain orphan certain mixture able disease");
 
             var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
-            DefaultApi algodApiInstance = new DefaultApi(httpClient);
+            var algod = new AlgodClient(httpClient);
 
             // declare application state storage (immutable)
             ulong localInts = 1;
@@ -46,35 +46,35 @@ namespace sdk_examples
 
             using (var datams = new MemoryStream(Encoding.UTF8.GetBytes(approvalProgramSourceInitial)))
             {
-                approvalProgram = await algodApiInstance.TealCompileAsync(datams);
+                approvalProgram = await algod.TealCompileAsync(datams);
             }
             using (var datams = new MemoryStream(Encoding.UTF8.GetBytes(clearProgramSource)))
             {
-                clearProgram = await algodApiInstance.TealCompileAsync(datams);
+                clearProgram = await algod.TealCompileAsync(datams);
             }
             using (var datams = new MemoryStream(Encoding.UTF8.GetBytes(approvalProgramSourceRefactored)))
             {
-                approvalProgramRefactored = await algodApiInstance.TealCompileAsync(datams);
+                approvalProgramRefactored = await algod.TealCompileAsync(datams);
             }
 
             try
             {
                 // create new application
-                var appid = await CreateApp(algodApiInstance, creator, new TEALProgram(approvalProgram.Result),
+                var appid = await CreateApp(algod, creator, new TEALProgram(approvalProgram.Result),
                     new TEALProgram(clearProgram.Result), globalInts, globalBytes, localInts, localBytes);
 
                 // opt-in to application
-                await OptIn(algodApiInstance, user, appid);
+                await OptIn(algod, user, appid);
                 // call application without arguments
-                await CallApp(algodApiInstance, user, appid, null);
+                await CallApp(algod, user, appid, null);
                 // read local state of application from user account
-                await ReadLocalState(algodApiInstance, user, appid);
+                await ReadLocalState(algod, user, appid);
 
                 // read global state of application
-                await ReadGlobalState(algodApiInstance, creator, appid);
+                await ReadGlobalState(algod, creator, appid);
 
                 // update application
-                await UpdateApp(algodApiInstance, creator, appid,
+                await UpdateApp(algod, creator, appid,
                     new TEALProgram(approvalProgramRefactored.Result),
                     new TEALProgram(clearProgram.Result));
 
@@ -86,28 +86,28 @@ namespace sdk_examples
                     Encoding.UTF8.GetBytes(date.ToString("yyyy-MM-dd 'at' HH:mm:ss"))
                 };
 
-                await CallApp(algodApiInstance, user, appid, appArgs);
+                await CallApp(algod, user, appid, appArgs);
 
                 // read local state of application from user account
-                await ReadLocalState(algodApiInstance, user, appid);
+                await ReadLocalState(algod, user, appid);
 
                 // close-out from application
-                await CloseOutApp(algodApiInstance, user, (ulong)appid);
+                await CloseOutApp(algod, user, (ulong)appid);
 
                 // opt-in again to application
-                await OptIn(algodApiInstance, user, appid);
+                await OptIn(algod, user, appid);
 
                 // call application with arguments
-                await CallApp(algodApiInstance, user, appid, appArgs);
+                await CallApp(algod, user, appid, appArgs);
 
                 // read local state of application from user account
-                await ReadLocalState(algodApiInstance, user, appid);
+                await ReadLocalState(algod, user, appid);
 
                 // delete application
-                await DeleteApp(algodApiInstance, creator, appid);
+                await DeleteApp(algod, creator, appid);
 
                 // clear application from user account
-                await ClearApp(algodApiInstance, user, appid);
+                await ClearApp(algod, user, appid);
 
                 Console.WriteLine("You have successefully arrived the end of this test, please press and key to exist.");
             }
@@ -404,3 +404,5 @@ namespace sdk_examples
         }
     }
 }
+
+

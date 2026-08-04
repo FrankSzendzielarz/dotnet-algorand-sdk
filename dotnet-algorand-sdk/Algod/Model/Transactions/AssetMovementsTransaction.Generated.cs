@@ -1,8 +1,8 @@
 
 namespace Algorand.Algod.Model.Transactions
 {
-
-using System = global::System;
+    using MessagePack;
+    using System = global::System;
 #if UNITY
 using UnityEngine;
 #endif
@@ -10,22 +10,23 @@ using UnityEngine;
 #if UNITY
 [System.Serializable]
 #endif
-public partial class AssetMovementsTransaction : Transaction{
-
-    [Newtonsoft.Json.JsonProperty("xaid", Required = Newtonsoft.Json.Required.Always)]
-    [System.ComponentModel.DataAnnotations.Required]
+    [MessagePack.MessagePackObject]
+    [Union(0, typeof(AssetAcceptTransaction))]
+    [Union(1, typeof(AssetClawbackTransaction))]
+    [Union(2, typeof(AssetTransferTransaction))]
+    [Union(3, typeof(AssetCloseTransaction))]
+    public partial class AssetMovementsTransaction : Transaction
+    {
+        [Newtonsoft.Json.JsonProperty("xaid", Required = Newtonsoft.Json.Required.Always)]
+        [MessagePack.Key("xaid")]
+        [System.ComponentModel.DataAnnotations.Required]
 #if UNITY
     [field:SerializeField]
     [Tooltip(@"")]
     [field:InspectorName(@"XferAsset")]
     public ulong XferAsset {get;set;}
 #else
-    public ulong XferAsset {get;set;}
+        public ulong XferAsset { get; set; }
 #endif
-
-
-    
-}
-
-
+    }
 }

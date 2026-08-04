@@ -1,0 +1,64 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.Attributes
+  commentId: N:AVM.ClientGenerator.Core.Attributes
+  id: AVM.ClientGenerator.Core.Attributes
+  children:
+  - AVM.ClientGenerator.Core.Attributes.ABIFixedSizeAttribute
+  - AVM.ClientGenerator.Core.Attributes.ABIStructAttribute
+  - AVM.ClientGenerator.Core.Attributes.ABITypeDecoratorAttribute
+  - AVM.ClientGenerator.Core.Attributes.InnerTransactionCallAttribute
+  - AVM.ClientGenerator.Core.Attributes.SmartContractMethodAttribute
+  - AVM.ClientGenerator.Core.Attributes.SmartSignatureMethodAttribute
+  - AVM.ClientGenerator.Core.Attributes.StorageAttribute
+  langs:
+  - csharp
+  - vb
+  name: AVM.ClientGenerator.Core.Attributes
+  nameWithType: AVM.ClientGenerator.Core.Attributes
+  fullName: AVM.ClientGenerator.Core.Attributes
+  type: Namespace
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+references:
+- uid: AVM.ClientGenerator.Core.Attributes.ABIFixedSizeAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.ABIFixedSizeAttribute
+  name: ABIFixedSizeAttribute
+  nameWithType: ABIFixedSizeAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.ABIFixedSizeAttribute
+- uid: AVM.ClientGenerator.Core.Attributes.ABIStructAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.ABIStructAttribute
+  name: ABIStructAttribute
+  nameWithType: ABIStructAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.ABIStructAttribute
+- uid: AVM.ClientGenerator.Core.Attributes.ABITypeDecoratorAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.ABITypeDecoratorAttribute
+  name: ABITypeDecoratorAttribute
+  nameWithType: ABITypeDecoratorAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.ABITypeDecoratorAttribute
+- uid: AVM.ClientGenerator.Core.Attributes.InnerTransactionCallAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.InnerTransactionCallAttribute
+  name: InnerTransactionCallAttribute
+  nameWithType: InnerTransactionCallAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.InnerTransactionCallAttribute
+- uid: AVM.ClientGenerator.Core.Attributes.SmartContractMethodAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.SmartContractMethodAttribute
+  name: SmartContractMethodAttribute
+  nameWithType: SmartContractMethodAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.SmartContractMethodAttribute
+- uid: AVM.ClientGenerator.Core.Attributes.SmartSignatureMethodAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.SmartSignatureMethodAttribute
+  name: SmartSignatureMethodAttribute
+  nameWithType: SmartSignatureMethodAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.SmartSignatureMethodAttribute
+- uid: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+  commentId: T:AVM.ClientGenerator.Core.Attributes.StorageAttribute
+  parent: AVM.ClientGenerator.Core.Attributes
+  name: StorageAttribute
+  nameWithType: StorageAttribute
+  fullName: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+- uid: AVM.ClientGenerator.Core.Attributes
+  commentId: N:AVM.ClientGenerator.Core.Attributes
+  name: AVM.ClientGenerator.Core.Attributes
+  nameWithType: AVM.ClientGenerator.Core.Attributes
+  fullName: AVM.ClientGenerator.Core.Attributes

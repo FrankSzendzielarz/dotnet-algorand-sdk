@@ -1,4 +1,3 @@
-using Algorand.Algod.Model;
 using Algorand.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;

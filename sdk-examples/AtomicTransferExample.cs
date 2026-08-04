@@ -1,4 +1,4 @@
-﻿using Algorand;
+using Algorand;
 using Algorand.Algod;
 using Algorand.Algod.Model;
 using Algorand.Algod.Model.Transactions;
@@ -23,9 +23,9 @@ namespace sdk_examples
 
             // Get a connection to the Sandbox node
             var httpClient = HttpClientConfigurator.ConfigureHttpClient(ALGOD_API_ADDR, ALGOD_API_TOKEN);
-            DefaultApi algodApiInstance = new DefaultApi(httpClient);
+            var algod = new AlgodClient(httpClient);
 
-            var transParams = await algodApiInstance.TransactionParamsAsync();
+            var transParams = await algod.TransactionParamsAsync();
 
             // Create a transaction group
             var amount = Utils.AlgosToMicroalgos(1);
@@ -43,8 +43,8 @@ namespace sdk_examples
 
             try
             {
-                var response = await algodApiInstance.TransactionsAsync(signedTxGroup);
-                var round = Utils.WaitTransactionToComplete(algodApiInstance, response.Txid).Result.ConfirmedRound;
+                var response = await algod.TransactionsAsync(signedTxGroup);
+                var round = Utils.WaitTransactionToComplete(algod, response.Txid).Result.ConfirmedRound;
                 Console.WriteLine($"Transaction ID: {response.Txid}\nConfirmed round: {round}");
             }
             catch (ApiException<ErrorResponse> e)
@@ -54,3 +54,4 @@ namespace sdk_examples
         }
     }
 }
+

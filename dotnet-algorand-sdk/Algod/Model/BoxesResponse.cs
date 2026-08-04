@@ -1,15 +1,13 @@
 
 namespace Algorand.Algod.Model
 {
+    [MessagePack.MessagePackObject]
+    public partial class BoxesResponse
+    {
 
-using System = global::System;
 
 
-public partial class BoxesResponse{
-
- 
-    
-}
+    }
 
 
 }

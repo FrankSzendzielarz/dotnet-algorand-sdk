@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.113</Version>
+	<LangVersion>8.0</LangVersion>
+	<Authors>Frank Szendzielarz</Authors>
+	<Company>Frank Szendzielarz</Company>
+	<Description>Shared library for AVM.ClientGenerator projects</Description>
+	<PackageProjectUrl>https://github.com/FrankSzendzielarz/AlgorandVisualStudio</PackageProjectUrl>
+	<SignAssembly>True</SignAssembly>
+	<AssemblyOriginatorKeyFile>AVM.ClientGenerator.Core.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="docfx.console" Version="2.59.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>-->
+  </ItemGroup>
+
+ 
+</Project>

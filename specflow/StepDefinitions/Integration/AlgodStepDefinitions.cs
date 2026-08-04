@@ -6,7 +6,6 @@ using TechTalk.SpecFlow;
 using FluentAssertions;
 using Algorand.Algod.Model.Transactions;
 using Algorand.Algod.Model;
-using System.Runtime.InteropServices;
 using Algorand;
 using System.Collections.Generic;
 using System.Text;
@@ -27,11 +26,11 @@ namespace algorand_tests.StepDefinitions
         }
 
         [Given(@"an algod client")]
-        public void GivenAnAlgodClient()
+        public async Task GivenAnAlgodClient()
         {
             httpUtilities.setUp();
             httpUtilities.setUpKmd();
-            getDefaultWallet();
+            await getDefaultWalletAsync();
         }
 
         [Then(@"the node should be healthy")]
@@ -43,7 +42,7 @@ namespace algorand_tests.StepDefinitions
 
                 await httpUtilities.algodDefaultApiInstance.HealthCheckAsync();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 error = true;
             }
@@ -55,17 +54,17 @@ namespace algorand_tests.StepDefinitions
         [When(@"I get the status")]
         public async Task WhenIGetTheStatus()
         {
-            
-            var status=await httpUtilities.algodDefaultApiInstance.GetStatusAsync();
+
+            var status = await httpUtilities.algodDefaultApiInstance.GetStatusAsync();
 
             _scenarioContext["status"] = status;
-            
+
         }
 
 
         private async Task selfPayTransaction()
         {
-            var suggestedParms= await httpUtilities.algodDefaultApiInstance.TransactionParamsAsync();
+            var suggestedParms = await httpUtilities.algodDefaultApiInstance.TransactionParamsAsync();
 
             List<string> addresses = (List<string>)_scenarioContext["accounts"];
 
@@ -73,22 +72,22 @@ namespace algorand_tests.StepDefinitions
             {
                 Fee = 1000,
                 FirstValid = suggestedParms.LastRound,
-                LastValid = suggestedParms.LastRound+1000,
+                LastValid = suggestedParms.LastRound + 1000,
                 GenesisHash = new Digest(suggestedParms.GenesisHash),
                 Receiver = new Address(addresses[0]),
                 Amount = 1,
-                GenesisID = suggestedParms.GenesisId,
-                Sender= new Address(addresses[0])
+                GenesisId = suggestedParms.GenesisId,
+                Sender = new Address(addresses[0])
 
             };
 
             _scenarioContext["transaction"] = transaction;
-            string handle = getWalletHandleToken();
-            var resp= httpUtilities.kmdApi.ExportKey(new Algorand.Kmd.Model.ExportKeyRequest(addresses[0], handle, walletPswd));
+            string handle = await getWalletHandleTokenAsync();
+            var resp = await httpUtilities.kmdApi.ExportKeyAsync(new Algorand.KMD.ExportKeyRequest() { Address = addresses[0], Wallet_handle_token = handle, Wallet_password = walletPswd });
+            //Convert.FromBase64String(
+            Account account = new Account(resp.Private_key);
 
-            Account account = new Account(Convert.FromBase64String(resp.PrivateKey));
-
-            SignedTransaction st=transaction.Sign(account);
+            SignedTransaction st = transaction.Sign(account);
 
             await httpUtilities.algodDefaultApiInstance.TransactionsAsync(new List<SignedTransaction> { st });
 
@@ -108,7 +107,7 @@ namespace algorand_tests.StepDefinitions
 
                 await httpUtilities.algodDefaultApiInstance.WaitForBlockAsync(status!.LastRound);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 error = true;
             }
@@ -125,9 +124,9 @@ namespace algorand_tests.StepDefinitions
 
                 status.Should().NotBeNull();
 
-                await httpUtilities.algodDefaultApiInstance.GetBlockAsync(status!.LastRound,null);
+                await httpUtilities.algodDefaultApiInstance.GetBlockAsync(status!.LastRound, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 error = true;
             }
@@ -141,7 +140,8 @@ namespace algorand_tests.StepDefinitions
             try
             {
                 await httpUtilities.algodDefaultApiInstance.GetSupplyAsync();
-            }catch(Exception ex)
+            }
+            catch (Exception)
             {
                 error = true;
             }
@@ -150,38 +150,57 @@ namespace algorand_tests.StepDefinitions
         }
 
         [Given(@"a kmd client")]
-        public void GivenAKmdClient()
+        public async Task GivenAKmdClient()
         {
             httpUtilities.setUpKmd();
-            getDefaultWallet();
+            await getDefaultWalletAsync();
         }
 
         [Given(@"wallet information")]
-        public async Task  GivenWalletInformation()
+        public async Task GivenWalletInformation()
         {
-            getDefaultWallet();
+            await getDefaultWalletAsync();
 
         }
 
 
 
 
-        private void getDefaultWallet()
+        private async Task getDefaultWalletAsync()
         {
-            
-            string handle = getWalletHandleToken();
 
-            var accs = httpUtilities.kmdApi.ListKeysInWallet(new Algorand.Kmd.Model.ListKeysRequest() { WalletHandleToken = handle });
+            string handle = await getWalletHandleTokenAsync();
+
+            var accs = await httpUtilities.kmdApi.ListKeysInWalletAsync(new Algorand.KMD.ListKeysRequest() { Wallet_handle_token = handle });
             accs.Should().NotBeNull();
             accs.Addresses.Should().NotBeNull();
             accs.Addresses.Count.Should().BeGreaterThan(0);
 
-            _scenarioContext["accounts"] = accs.Addresses;
+            // Steps in this fixture (and SendingTransactionsStepDefinitions) always use addresses[0] as the
+            // sender. Wallet addresses vary widely in balance (some are small utility accounts, others hold the
+            // LocalNet genesis funds) and KMD's key order isn't guaranteed, so put whichever candidate currently
+            // has the most ALGO first rather than assuming addresses[0] is well-funded.
+            var addresses = accs.Addresses.ToList();
+            string richestAddress = addresses[0];
+            ulong richestBalance = 0;
+            foreach (var candidate in addresses)
+            {
+                var info = await httpUtilities.algodDefaultApiInstance.AccountInformationAsync(candidate, null, null);
+                if (info.Amount > richestBalance)
+                {
+                    richestBalance = info.Amount;
+                    richestAddress = candidate;
+                }
+            }
+            addresses.Remove(richestAddress);
+            addresses.Insert(0, richestAddress);
+
+            _scenarioContext["accounts"] = addresses;
         }
 
-        private string  getWalletHandleToken()
+        private async Task<string> getWalletHandleTokenAsync()
         {
-            var wallets = httpUtilities.kmdApi.ListWallets();
+            var wallets = await httpUtilities.kmdApi.ListWalletsAsync(new object());
             wallets.Should().NotBeNull();
 
             var wallet = wallets.Wallets.Where(w => w.Name == walletName).FirstOrDefault();
@@ -189,18 +208,18 @@ namespace algorand_tests.StepDefinitions
 
             _scenarioContext["wallet"] = wallet;
 
-            var handle = httpUtilities.kmdApi.InitWalletHandleToken(new Algorand.Kmd.Model.InitWalletHandleTokenRequest() { WalletId = wallet.Id, WalletPassword = walletPswd });
+            var handle = await httpUtilities.kmdApi.InitWalletHandleTokenAsync(new Algorand.KMD.InitWalletHandleTokenRequest() { Wallet_id = wallet.Id, Wallet_password = walletPswd });
             handle.Should().NotBeNull();
 
- 
-            return handle.WalletHandleToken;
+
+            return handle.Wallet_handle_token;
         }
 
         [Then(@"I get transactions by address and round")]
-        public async Task ThenIGetTransactionsByAddressAndRound()
+        public void ThenIGetTransactionsByAddressAndRound()
         {
             //not valid for v2 api
-            return ;
+            return;
         }
 
         [Then(@"I get transactions by address only")]
@@ -234,36 +253,37 @@ namespace algorand_tests.StepDefinitions
                 GenesisHash = new Digest(suggestedParms.GenesisHash),
                 Receiver = new Address(addresses[0]),
                 Amount = (ulong)p0,
-                GenesisID = suggestedParms.GenesisId,
+                GenesisId = suggestedParms.GenesisId,
                 Sender = new Address(addresses[0]),
                 Note = Encoding.UTF8.GetBytes(none)
 
             };
-            
+
             _scenarioContext["transaction"] = transaction;
-           
+
 
         }
 
         [When(@"I get the private key")]
-        public void WhenIGetThePrivateKey()
+        public async Task WhenIGetThePrivateKey()
         {
             List<string> addresses = (List<string>)_scenarioContext["accounts"];
-            string handle = getWalletHandleToken();
-            var resp = httpUtilities.kmdApi.ExportKey(new Algorand.Kmd.Model.ExportKeyRequest(addresses[0], handle, walletPswd));
-            Account account = new Account(Convert.FromBase64String(resp.PrivateKey));
+            string handle = await getWalletHandleTokenAsync();
+            var resp = await httpUtilities.kmdApi.ExportKeyAsync(new Algorand.KMD.ExportKeyRequest() { Address = addresses[0], Wallet_handle_token = handle, Wallet_password = walletPswd });
+            //Convert.FromBase64String
+            Account account = new Account(resp.Private_key);
             _scenarioContext["privateAccount"] = account;
-            
+
         }
 
         [When(@"I sign the transaction with the private key")]
-        public async Task WhenISignTheTransactionWithThePrivateKey()
+        public void WhenISignTheTransactionWithThePrivateKey()
         {
-            var transaction = (Transaction) _scenarioContext["transaction"];
+            var transaction = (Transaction)_scenarioContext["transaction"];
             var account = (Account)_scenarioContext["privateAccount"];
             SignedTransaction st = transaction.Sign(account);
             _scenarioContext["signedTransaction"] = st;
-            
+
         }
 
 
@@ -271,11 +291,11 @@ namespace algorand_tests.StepDefinitions
         public async Task WhenISendTheTransaction()
         {
             _scenarioContext["error"] = false;
-            SignedTransaction st=(SignedTransaction) _scenarioContext["signedTransaction"] ;
-            
+            SignedTransaction st = (SignedTransaction)_scenarioContext["signedTransaction"];
+
             var id = (await Utils.SubmitTransaction(httpUtilities.algodDefaultApiInstance, st)).Txid;
             _scenarioContext["submittedTxnid"] = id;
-          
+
         }
 
         [Then(@"I can get the transaction by ID")]
@@ -289,7 +309,7 @@ namespace algorand_tests.StepDefinitions
         [Then(@"I get pending transactions")]
         public async Task ThenIGetPendingTransactions()
         {
-            await httpUtilities.algodDefaultApiInstance.GetPendingTransactionsAsync(null,null);
+            await httpUtilities.algodDefaultApiInstance.GetPendingTransactionsAsync(null, null);
         }
 
         [When(@"I get recent transactions, limited by (.*) transactions")]
@@ -317,7 +337,7 @@ namespace algorand_tests.StepDefinitions
         {
             //deprecated test
             return;
-            
+
         }
 
         [When(@"I get versions with algod")]
@@ -338,7 +358,7 @@ namespace algorand_tests.StepDefinitions
         public async Task ThenIGetAccountInformation()
         {
             List<string> addresses = (List<string>)_scenarioContext["accounts"];
-            
+
             await httpUtilities.algodDefaultApiInstance.AccountInformationAsync(addresses[0], null, null);
         }
     }

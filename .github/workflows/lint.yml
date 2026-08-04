@@ -1,0 +1,43 @@
+name: Lint
+
+# Enforces the code-style rules declared in .editorconfig (currently just IDE0005, unnecessary
+# using directives) across every project, via `dotnet format` in verify-only mode. This is a
+# separate check from the build/test workflow because most projects here can't get IDE0005
+# enforced as a build warning without turning on XML doc-file generation project-wide, which
+# has unrelated noisy side effects on the checked-in ARC56-generated test fixtures - see the
+# comment in Directory.Build.props.
+#
+# test/Generated/** is excluded: it's ARC56/ARC4 client-generator output that
+# test/GeneratedClientCompiler.cs overwrites wholesale on every relevant test run, so it isn't
+# hand-maintained source (test/Generated/.editorconfig also silences IDE0005 there for IDEs).
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            10.0.x
+
+      - name: Restore
+        run: dotnet restore dotnet-algorand-sdk.sln
+
+      - name: Verify no unused usings (IDE0005)
+        run: >
+          dotnet format dotnet-algorand-sdk.sln style
+          --diagnostics IDE0005
+          --severity warn
+          --exclude test/Generated
+          --no-restore
+          --verify-no-changes

@@ -7,7 +7,7 @@ using Org.BouncyCastle.Crypto.Parameters;
 using System.Text;
 using Algorand.Utils;
 using Algorand.Algod.Model;
-using System.ComponentModel;
+using MessagePack;
 
 
 namespace Algorand
@@ -16,11 +16,12 @@ namespace Algorand
     /// A raw serializable signature class.
     /// </summary>
     [JsonConverter(typeof(BytesConverter))]
+    [MessagePack.MessagePackObject]
     public class Signature
     {
         private static int ED25519_SIG_SIZE = 64;
 
-        
+        [MessagePack.Key(0)]
         public byte[] Bytes { get; private set; }
 
         /// <summary>
@@ -50,9 +51,9 @@ namespace Algorand
             Bytes = new byte[ED25519_SIG_SIZE];
         }
 
-        
 
-        public override bool Equals(object obj)
+
+        public override bool Equals(object? obj)
         {
             if (obj is Signature && Enumerable.SequenceEqual(this.Bytes, (obj as Signature).Bytes))
                 return true;
@@ -69,24 +70,30 @@ namespace Algorand
     /// Signature sig and MultisigSignature msig property are available for modification by it's clients.
     /// </summary>
     [JsonObject]
+    [MessagePack.MessagePackObject]
     public class LogicsigSignature
     {
         [JsonIgnore]
+        [IgnoreMember]
         private static byte[] LOGIC_PREFIX = Encoding.UTF8.GetBytes("Program");//.getBytes(StandardCharsets.UTF_8);
 
         [JsonProperty(PropertyName = "l")]
-        public byte[] Logic;
+        [MessagePack.Key("l")]
+        public byte[] Logic { get; set; }
 
         [JsonProperty(PropertyName = "arg")]
-        public List<byte[]> Args;
+        [MessagePack.Key("arg")]
+        public List<byte[]> Args { get; set; }
 
         public bool ShouldSerializeArgs() => Args?.Count > 0;
 
         [JsonProperty(PropertyName = "sig")]
-        public Signature Sig;
+        [MessagePack.Key("sig")]
+        public Signature Sig { get; set; }
 
         [JsonProperty(PropertyName = "msig")]
-        public MultisigSignature Msig;
+        [MessagePack.Key("msig")]
+        public MultisigSignature Msig { get; set; }
 
         /// <summary>
         /// LogicsigSignature
@@ -137,10 +144,13 @@ namespace Algorand
         /// The address of the LogicsigSignature
         /// </summary>
         [JsonIgnore]
-        public Address Address { 
-            get {
+        [IgnoreMember]
+        public Address Address
+        {
+            get
+            {
                 return new Address(Digester.Digest(BytesToSign()));
-            } 
+            }
         }
         /// <summary>
         /// Return prefixed program as byte array that is ready to sign
@@ -188,8 +198,8 @@ namespace Algorand
                     {
                         return false;
                     }
-                }                
-                
+                }
+
                 if (this.Sig != null)
                 {
                     try
@@ -200,9 +210,8 @@ namespace Algorand
                         signer.BlockUpdate(this.BytesToSign(), 0, this.BytesToSign().Length);
                         return signer.VerifySignature(this.Sig.Bytes);
                     }
-                    catch (Exception err)
+                    catch (Exception)
                     {
-                        Console.WriteLine("Message = " + err.Message);
                         return false;
                     }
                 }
@@ -210,7 +219,7 @@ namespace Algorand
                 {
                     return this.Msig.Verify(this.BytesToSign());
                 }
-                
+
             }
         }
 
@@ -223,8 +232,8 @@ namespace Algorand
         {
             byte[] bytesToSign = BytesToSign();
             this.Sig = signingAccount.SignRawBytes(bytesToSign);
-            
-            
+
+
         }
 
         /// <summary>
@@ -237,7 +246,7 @@ namespace Algorand
             byte[] bytesToSign = BytesToSign();
             Signature sig = signingAccount.SignRawBytes(bytesToSign);
             Sig = sig;
-            
+
         }
 
         public void SignLogicsig(Account signingAccount, MultisigAddress ma)
@@ -273,7 +282,7 @@ namespace Algorand
                 }
             }
             Msig = mSig;
-       
+
         }
 
         /// <summary>
@@ -301,7 +310,7 @@ namespace Algorand
             byte[] bytesToSign = lsig.BytesToSign();
             Signature sig = signingAccount.SignRawBytes(bytesToSign);
             lsig.Msig.Subsigs[pkIndex] = new MultisigSubsig(pk, sig);
- 
+
         }
 
 
@@ -323,15 +332,15 @@ namespace Algorand
             }
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is LogicsigSignature actual)
-                if((this.Logic is null && actual.Logic is null) || (!(this.Logic is null || actual.Logic is null) && Enumerable.SequenceEqual(this.Logic, actual.Logic)))                
+                if ((this.Logic is null && actual.Logic is null) || (!(this.Logic is null || actual.Logic is null) && Enumerable.SequenceEqual(this.Logic, actual.Logic)))
                     if ((this.Sig is null && actual.Sig is null) || this.Sig.Equals(actual.Sig))
                         if ((this.Msig is null && actual.Msig is null) || this.Msig.Equals(actual.Msig))
                             if ((this.Args is null && actual.Args is null) || ArgsEqual(this.Args, actual.Args))
                                 return true;
-            return false;            
+            return false;
         }
 
         public override int GetHashCode()
@@ -362,16 +371,20 @@ namespace Algorand
     /// Serializable raw multisig class.
     /// </summary>
     [JsonObject]
+    [MessagePack.MessagePackObject]
     public class MultisigSignature
     {
         [JsonProperty(PropertyName = "v")]
-        public int Version;
+        [MessagePack.Key("v")]
+        public int Version { get; set; }
 
         [JsonProperty(PropertyName = "thr")]
-        public int Threshold;
+        [MessagePack.Key("thr")]
+        public int Threshold { get; set; }
 
         [JsonProperty(PropertyName = "subsig")]
-        public List<MultisigSubsig> Subsigs;
+        [MessagePack.Key("subsig")]
+        public List<MultisigSubsig> Subsigs { get; set; }
 
         public bool ShouldSerializeSubsigs() => Subsigs?.Count > 0;
 
@@ -383,7 +396,7 @@ namespace Algorand
         /// <param name="subsigs">can be empty or null</param>
         [JsonConstructor]
         public MultisigSignature(
-            [JsonProperty(PropertyName = "v")] int version, 
+            [JsonProperty(PropertyName = "v")] int version,
             [JsonProperty(PropertyName = "thr")] int threshold,
             [JsonProperty(PropertyName = "subsig")] List<MultisigSubsig> subsigs = null)
         {
@@ -457,7 +470,7 @@ namespace Algorand
             }
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is MultisigSignature actual)
             {
@@ -475,18 +488,21 @@ namespace Algorand
     /// Serializable multisig sub-signature
     /// </summary>
     [JsonObject]
+    [MessagePack.MessagePackObject]
     public class MultisigSubsig
     {
         [JsonProperty(PropertyName = "pk")]
         [JsonConverter(typeof(BytesConverter))]
-        public Ed25519PublicKeyParameters key;
+        [MessagePack.Key("pk")]
+        public Ed25519PublicKeyParameters key { get; set; }
 
         [JsonProperty(PropertyName = "s")]
-        public Signature sig;
+        [MessagePack.Key("s")]
+        public Signature sig { get; set; }
 
 
         public bool ShouldSerializesig() => sig.Bytes.Any(b => b != 0);
-
+        
         /// <summary>
         /// workaround wrapped json values
         /// </summary>
@@ -515,7 +531,7 @@ namespace Algorand
                 this.sig = sig;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if ((obj is MultisigSubsig actual))
             {

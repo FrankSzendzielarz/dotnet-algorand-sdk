@@ -1,0 +1,859 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.SmartContractReference
+  commentId: T:AVM.ClientGenerator.Core.SmartContractReference
+  id: SmartContractReference
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.SmartContractReference.Address
+  - AVM.ClientGenerator.Core.SmartContractReference.ApprovalProgram
+  - AVM.ClientGenerator.Core.SmartContractReference.Balance
+  - AVM.ClientGenerator.Core.SmartContractReference.ClearStateProgram
+  - AVM.ClientGenerator.Core.SmartContractReference.Creator
+  - AVM.ClientGenerator.Core.SmartContractReference.ExtraProgramPages
+  - AVM.ClientGenerator.Core.SmartContractReference.GlobalNumByteSlice
+  - AVM.ClientGenerator.Core.SmartContractReference.GlobalNumUint
+  - AVM.ClientGenerator.Core.SmartContractReference.Id
+  - AVM.ClientGenerator.Core.SmartContractReference.LocalNumByteSlice
+  - AVM.ClientGenerator.Core.SmartContractReference.LocalNumUint
+  langs:
+  - csharp
+  - vb
+  name: SmartContractReference
+  nameWithType: SmartContractReference
+  fullName: AVM.ClientGenerator.Core.SmartContractReference
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: SmartContractReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 10
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public class SmartContractReference
+    content.vb: Public Class SmartContractReference
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: AVM.ClientGenerator.Core.SmartContractReference.Id
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.Id
+  id: Id
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: SmartContractReference.Id
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.Id
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Id
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong Id
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Id As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.ApprovalProgram
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.ApprovalProgram
+  id: ApprovalProgram
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: ApprovalProgram
+  nameWithType: SmartContractReference.ApprovalProgram
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.ApprovalProgram
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ApprovalProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 16
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] ApprovalProgram
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ApprovalProgram As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.ClearStateProgram
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.ClearStateProgram
+  id: ClearStateProgram
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: ClearStateProgram
+  nameWithType: SmartContractReference.ClearStateProgram
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.ClearStateProgram
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ClearStateProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 18
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] ClearStateProgram
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ClearStateProgram As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.GlobalNumUint
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.GlobalNumUint
+  id: GlobalNumUint
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: GlobalNumUint
+  nameWithType: SmartContractReference.GlobalNumUint
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.GlobalNumUint
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GlobalNumUint
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 20
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong GlobalNumUint
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public GlobalNumUint As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.GlobalNumByteSlice
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.GlobalNumByteSlice
+  id: GlobalNumByteSlice
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: GlobalNumByteSlice
+  nameWithType: SmartContractReference.GlobalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.GlobalNumByteSlice
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GlobalNumByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 22
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong GlobalNumByteSlice
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public GlobalNumByteSlice As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.LocalNumUint
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.LocalNumUint
+  id: LocalNumUint
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: LocalNumUint
+  nameWithType: SmartContractReference.LocalNumUint
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.LocalNumUint
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LocalNumUint
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 24
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong LocalNumUint
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public LocalNumUint As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.LocalNumByteSlice
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.LocalNumByteSlice
+  id: LocalNumByteSlice
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: LocalNumByteSlice
+  nameWithType: SmartContractReference.LocalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.LocalNumByteSlice
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LocalNumByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 26
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong LocalNumByteSlice
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public LocalNumByteSlice As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.ExtraProgramPages
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.ExtraProgramPages
+  id: ExtraProgramPages
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: ExtraProgramPages
+  nameWithType: SmartContractReference.ExtraProgramPages
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.ExtraProgramPages
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ExtraProgramPages
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 28
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong ExtraProgramPages
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ExtraProgramPages As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.Creator
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.Creator
+  id: Creator
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: Creator
+  nameWithType: SmartContractReference.Creator
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.Creator
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Creator
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 30
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Creator
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Creator As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.Address
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.Address
+  id: Address
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: SmartContractReference.Address
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.Address
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Address
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 32
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Address
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Address As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.SmartContractReference.Balance
+  commentId: F:AVM.ClientGenerator.Core.SmartContractReference.Balance
+  id: Balance
+  parent: AVM.ClientGenerator.Core.SmartContractReference
+  langs:
+  - csharp
+  - vb
+  name: Balance
+  nameWithType: SmartContractReference.Balance
+  fullName: AVM.ClientGenerator.Core.SmartContractReference.Balance
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/SmartContractReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Balance
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/SmartContractReference.cs
+    startLine: 34
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] Balance
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public Balance As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()

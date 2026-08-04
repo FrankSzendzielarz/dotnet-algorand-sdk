@@ -1,0 +1,750 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.AccountReference
+  commentId: T:AVM.ClientGenerator.Core.AccountReference
+  id: AccountReference
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.AccountReference.Address
+  - AVM.ClientGenerator.Core.AccountReference.AssetBalance(AVM.ClientGenerator.Core.AssetReference)
+  - AVM.ClientGenerator.Core.AccountReference.Balance
+  - AVM.ClientGenerator.Core.AccountReference.Clawback(AVM.ClientGenerator.Core.AssetReference,System.UInt64)
+  - AVM.ClientGenerator.Core.AccountReference.Freeze(AVM.ClientGenerator.Core.AssetReference)
+  - AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen(AVM.ClientGenerator.Core.AssetReference)
+  - AVM.ClientGenerator.Core.AccountReference.OptedIn(AVM.ClientGenerator.Core.SmartContractReference)
+  - AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext
+  - AVM.ClientGenerator.Core.AccountReference.UnFreeze(AVM.ClientGenerator.Core.AssetReference)
+  langs:
+  - csharp
+  - vb
+  name: AccountReference
+  nameWithType: AccountReference
+  fullName: AVM.ClientGenerator.Core.AccountReference
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AccountReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 6
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public sealed class AccountReference
+    content.vb: Public NotInheritable Class AccountReference
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: AVM.ClientGenerator.Core.AccountReference.Address
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.Address
+  id: Address
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: Address()
+  nameWithType: AccountReference.Address()
+  fullName: AVM.ClientGenerator.Core.AccountReference.Address()
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Address
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 9
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public byte[] Address()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function Address As Byte()
+  overload: AVM.ClientGenerator.Core.AccountReference.Address*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.Balance
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.Balance
+  id: Balance
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: Balance()
+  nameWithType: AccountReference.Balance()
+  fullName: AVM.ClientGenerator.Core.AccountReference.Balance()
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Balance
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong Balance()
+    return:
+      type: System.UInt64
+    content.vb: Public Function Balance As ULong
+  overload: AVM.ClientGenerator.Core.AccountReference.Balance*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.AssetBalance(AVM.ClientGenerator.Core.AssetReference)
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.AssetBalance(AVM.ClientGenerator.Core.AssetReference)
+  id: AssetBalance(AVM.ClientGenerator.Core.AssetReference)
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: AssetBalance(AssetReference)
+  nameWithType: AccountReference.AssetBalance(AssetReference)
+  fullName: AVM.ClientGenerator.Core.AccountReference.AssetBalance(AVM.ClientGenerator.Core.AssetReference)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AssetBalance
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 13
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public ulong AssetBalance(AssetReference asset)
+    parameters:
+    - id: asset
+      type: AVM.ClientGenerator.Core.AssetReference
+    return:
+      type: System.UInt64
+    content.vb: Public Function AssetBalance(asset As AssetReference) As ULong
+  overload: AVM.ClientGenerator.Core.AccountReference.AssetBalance*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen(AVM.ClientGenerator.Core.AssetReference)
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen(AVM.ClientGenerator.Core.AssetReference)
+  id: IsAssetFrozen(AVM.ClientGenerator.Core.AssetReference)
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: IsAssetFrozen(AssetReference)
+  nameWithType: AccountReference.IsAssetFrozen(AssetReference)
+  fullName: AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen(AVM.ClientGenerator.Core.AssetReference)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: IsAssetFrozen
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 15
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public bool IsAssetFrozen(AssetReference asset)
+    parameters:
+    - id: asset
+      type: AVM.ClientGenerator.Core.AssetReference
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsAssetFrozen(asset As AssetReference) As Boolean
+  overload: AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.OptedIn(AVM.ClientGenerator.Core.SmartContractReference)
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.OptedIn(AVM.ClientGenerator.Core.SmartContractReference)
+  id: OptedIn(AVM.ClientGenerator.Core.SmartContractReference)
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: OptedIn(SmartContractReference)
+  nameWithType: AccountReference.OptedIn(SmartContractReference)
+  fullName: AVM.ClientGenerator.Core.AccountReference.OptedIn(AVM.ClientGenerator.Core.SmartContractReference)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: OptedIn
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 17
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public bool OptedIn(SmartContractReference contract)
+    parameters:
+    - id: contract
+      type: AVM.ClientGenerator.Core.SmartContractReference
+    return:
+      type: System.Boolean
+    content.vb: Public Function OptedIn(contract As SmartContractReference) As Boolean
+  overload: AVM.ClientGenerator.Core.AccountReference.OptedIn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext
+  id: SetAsLocalAccountContext
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: SetAsLocalAccountContext()
+  nameWithType: AccountReference.SetAsLocalAccountContext()
+  fullName: AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext()
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: SetAsLocalAccountContext
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 19
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void SetAsLocalAccountContext()
+    content.vb: Public Sub SetAsLocalAccountContext
+  overload: AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.Freeze(AVM.ClientGenerator.Core.AssetReference)
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.Freeze(AVM.ClientGenerator.Core.AssetReference)
+  id: Freeze(AVM.ClientGenerator.Core.AssetReference)
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: Freeze(AssetReference)
+  nameWithType: AccountReference.Freeze(AssetReference)
+  fullName: AVM.ClientGenerator.Core.AccountReference.Freeze(AVM.ClientGenerator.Core.AssetReference)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Freeze
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 21
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void Freeze(AssetReference asset)
+    parameters:
+    - id: asset
+      type: AVM.ClientGenerator.Core.AssetReference
+    content.vb: Public Sub Freeze(asset As AssetReference)
+  overload: AVM.ClientGenerator.Core.AccountReference.Freeze*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.UnFreeze(AVM.ClientGenerator.Core.AssetReference)
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.UnFreeze(AVM.ClientGenerator.Core.AssetReference)
+  id: UnFreeze(AVM.ClientGenerator.Core.AssetReference)
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: UnFreeze(AssetReference)
+  nameWithType: AccountReference.UnFreeze(AssetReference)
+  fullName: AVM.ClientGenerator.Core.AccountReference.UnFreeze(AVM.ClientGenerator.Core.AssetReference)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: UnFreeze
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 23
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void UnFreeze(AssetReference asset)
+    parameters:
+    - id: asset
+      type: AVM.ClientGenerator.Core.AssetReference
+    content.vb: Public Sub UnFreeze(asset As AssetReference)
+  overload: AVM.ClientGenerator.Core.AccountReference.UnFreeze*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AccountReference.Clawback(AVM.ClientGenerator.Core.AssetReference,System.UInt64)
+  commentId: M:AVM.ClientGenerator.Core.AccountReference.Clawback(AVM.ClientGenerator.Core.AssetReference,System.UInt64)
+  id: Clawback(AVM.ClientGenerator.Core.AssetReference,System.UInt64)
+  parent: AVM.ClientGenerator.Core.AccountReference
+  langs:
+  - csharp
+  - vb
+  name: Clawback(AssetReference, UInt64)
+  nameWithType: AccountReference.Clawback(AssetReference, UInt64)
+  fullName: AVM.ClientGenerator.Core.AccountReference.Clawback(AVM.ClientGenerator.Core.AssetReference, System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/AccountReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: Clawback
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/AccountReference.cs
+    startLine: 25
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: public void Clawback(AssetReference asset, ulong Amount)
+    parameters:
+    - id: asset
+      type: AVM.ClientGenerator.Core.AssetReference
+    - id: Amount
+      type: System.UInt64
+    content.vb: Public Sub Clawback(asset As AssetReference, Amount As ULong)
+  overload: AVM.ClientGenerator.Core.AccountReference.Clawback*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AVM.ClientGenerator.Core.AccountReference.Address*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.Address
+  name: Address
+  nameWithType: AccountReference.Address
+  fullName: AVM.ClientGenerator.Core.AccountReference.Address
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: AVM.ClientGenerator.Core.AccountReference.Balance*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.Balance
+  name: Balance
+  nameWithType: AccountReference.Balance
+  fullName: AVM.ClientGenerator.Core.AccountReference.Balance
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: AVM.ClientGenerator.Core.AccountReference.AssetBalance*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.AssetBalance
+  name: AssetBalance
+  nameWithType: AccountReference.AssetBalance
+  fullName: AVM.ClientGenerator.Core.AccountReference.AssetBalance
+- uid: AVM.ClientGenerator.Core.AssetReference
+  commentId: T:AVM.ClientGenerator.Core.AssetReference
+  parent: AVM.ClientGenerator.Core
+  name: AssetReference
+  nameWithType: AssetReference
+  fullName: AVM.ClientGenerator.Core.AssetReference
+- uid: AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen
+  name: IsAssetFrozen
+  nameWithType: AccountReference.IsAssetFrozen
+  fullName: AVM.ClientGenerator.Core.AccountReference.IsAssetFrozen
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: AVM.ClientGenerator.Core.AccountReference.OptedIn*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.OptedIn
+  name: OptedIn
+  nameWithType: AccountReference.OptedIn
+  fullName: AVM.ClientGenerator.Core.AccountReference.OptedIn
+- uid: AVM.ClientGenerator.Core.SmartContractReference
+  commentId: T:AVM.ClientGenerator.Core.SmartContractReference
+  parent: AVM.ClientGenerator.Core
+  name: SmartContractReference
+  nameWithType: SmartContractReference
+  fullName: AVM.ClientGenerator.Core.SmartContractReference
+- uid: AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext
+  name: SetAsLocalAccountContext
+  nameWithType: AccountReference.SetAsLocalAccountContext
+  fullName: AVM.ClientGenerator.Core.AccountReference.SetAsLocalAccountContext
+- uid: AVM.ClientGenerator.Core.AccountReference.Freeze*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.Freeze
+  name: Freeze
+  nameWithType: AccountReference.Freeze
+  fullName: AVM.ClientGenerator.Core.AccountReference.Freeze
+- uid: AVM.ClientGenerator.Core.AccountReference.UnFreeze*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.UnFreeze
+  name: UnFreeze
+  nameWithType: AccountReference.UnFreeze
+  fullName: AVM.ClientGenerator.Core.AccountReference.UnFreeze
+- uid: AVM.ClientGenerator.Core.AccountReference.Clawback*
+  commentId: Overload:AVM.ClientGenerator.Core.AccountReference.Clawback
+  name: Clawback
+  nameWithType: AccountReference.Clawback
+  fullName: AVM.ClientGenerator.Core.AccountReference.Clawback

@@ -1,0 +1,1027 @@
+### YamlMime:ManagedReference
+items:
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference
+  commentId: T:AVM.ClientGenerator.Core.AppCallTransactionReference
+  id: AppCallTransactionReference
+  parent: AVM.ClientGenerator.Core
+  children:
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.ApplicationID
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.ApprovalProgram
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.ClearStateProgram
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.ExtraProgramPages
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumByteSlice
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumUint
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumByteSlice
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumUint
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.NumAccounts
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.NumAppArgs
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.NumApplications
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.NumAssets
+  - AVM.ClientGenerator.Core.AppCallTransactionReference.OnCompletion
+  langs:
+  - csharp
+  - vb
+  name: AppCallTransactionReference
+  nameWithType: AppCallTransactionReference
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference
+  type: Class
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: AppCallTransactionReference
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 7
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: 'public class AppCallTransactionReference : TransactionReference'
+    content.vb: >-
+      Public Class AppCallTransactionReference
+
+          Inherits TransactionReference
+  inheritance:
+  - System.Object
+  - AVM.ClientGenerator.Core.TransactionReference
+  inheritedMembers:
+  - AVM.ClientGenerator.Core.TransactionReference.Fee
+  - AVM.ClientGenerator.Core.TransactionReference.FirstValid
+  - AVM.ClientGenerator.Core.TransactionReference.LastValid
+  - AVM.ClientGenerator.Core.TransactionReference.Sender
+  - AVM.ClientGenerator.Core.TransactionReference.TxType
+  - AVM.ClientGenerator.Core.TransactionReference.Lease
+  - AVM.ClientGenerator.Core.TransactionReference.Note
+  - AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+  - AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+  - AVM.ClientGenerator.Core.TransactionReference.TxID
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.NumAppArgs
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.NumAppArgs
+  id: NumAppArgs
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: NumAppArgs
+  nameWithType: AppCallTransactionReference.NumAppArgs
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.NumAppArgs
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumAppArgs
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 11
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong NumAppArgs
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public NumAppArgs As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.NumAccounts
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.NumAccounts
+  id: NumAccounts
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: NumAccounts
+  nameWithType: AppCallTransactionReference.NumAccounts
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.NumAccounts
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumAccounts
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 14
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong NumAccounts
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public NumAccounts As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.NumAssets
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.NumAssets
+  id: NumAssets
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: NumAssets
+  nameWithType: AppCallTransactionReference.NumAssets
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.NumAssets
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumAssets
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 17
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong NumAssets
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public NumAssets As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.NumApplications
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.NumApplications
+  id: NumApplications
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: NumApplications
+  nameWithType: AppCallTransactionReference.NumApplications
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.NumApplications
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: NumApplications
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 20
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong NumApplications
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public NumApplications As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumUint
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumUint
+  id: GlobalNumUint
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: GlobalNumUint
+  nameWithType: AppCallTransactionReference.GlobalNumUint
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumUint
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GlobalNumUint
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 23
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong GlobalNumUint
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public GlobalNumUint As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumByteSlice
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumByteSlice
+  id: GlobalNumByteSlice
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: GlobalNumByteSlice
+  nameWithType: AppCallTransactionReference.GlobalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.GlobalNumByteSlice
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: GlobalNumByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 26
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong GlobalNumByteSlice
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public GlobalNumByteSlice As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumUint
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumUint
+  id: LocalNumUint
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: LocalNumUint
+  nameWithType: AppCallTransactionReference.LocalNumUint
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumUint
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LocalNumUint
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 29
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong LocalNumUint
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public LocalNumUint As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumByteSlice
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumByteSlice
+  id: LocalNumByteSlice
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: LocalNumByteSlice
+  nameWithType: AppCallTransactionReference.LocalNumByteSlice
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.LocalNumByteSlice
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: LocalNumByteSlice
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 32
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong LocalNumByteSlice
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public LocalNumByteSlice As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.ApplicationID
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.ApplicationID
+  id: ApplicationID
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: ApplicationID
+  nameWithType: AppCallTransactionReference.ApplicationID
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.ApplicationID
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ApplicationID
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 35
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong ApplicationID
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ApplicationID As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.OnCompletion
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.OnCompletion
+  id: OnCompletion
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: OnCompletion
+  nameWithType: AppCallTransactionReference.OnCompletion
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.OnCompletion
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: OnCompletion
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 38
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong OnCompletion
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public OnCompletion As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.ApprovalProgram
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.ApprovalProgram
+  id: ApprovalProgram
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: ApprovalProgram
+  nameWithType: AppCallTransactionReference.ApprovalProgram
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.ApprovalProgram
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ApprovalProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 41
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] ApprovalProgram
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ApprovalProgram As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.ClearStateProgram
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.ClearStateProgram
+  id: ClearStateProgram
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: ClearStateProgram
+  nameWithType: AppCallTransactionReference.ClearStateProgram
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.ClearStateProgram
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ClearStateProgram
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 44
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public byte[] ClearStateProgram
+    return:
+      type: System.Byte[]
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ClearStateProgram As Byte()
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: AVM.ClientGenerator.Core.AppCallTransactionReference.ExtraProgramPages
+  commentId: F:AVM.ClientGenerator.Core.AppCallTransactionReference.ExtraProgramPages
+  id: ExtraProgramPages
+  parent: AVM.ClientGenerator.Core.AppCallTransactionReference
+  langs:
+  - csharp
+  - vb
+  name: ExtraProgramPages
+  nameWithType: AppCallTransactionReference.ExtraProgramPages
+  fullName: AVM.ClientGenerator.Core.AppCallTransactionReference.ExtraProgramPages
+  type: Field
+  source:
+    remote:
+      path: AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+      branch: MigrateTests
+      repo: https://frankstech@dev.azure.com/frankstech/Algorand%20for%20Visual%20Studio/_git/Algorand%20for%20Visual%20Studio
+    id: ExtraProgramPages
+    path: ../../AVM.ClientGenerator/AVM.ClientGenerator.Core/TransactionReferences/AppCallTransactionReference.cs
+    startLine: 47
+  assemblies:
+  - AVM.ClientGenerator - Backup.Core
+  namespace: AVM.ClientGenerator.Core
+  syntax:
+    content: >-
+      [Storage(StorageType.Protocol)]
+
+      public ulong ExtraProgramPages
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <Storage(StorageType.Protocol)>
+
+      Public ExtraProgramPages As ULong
+  attributes:
+  - type: AVM.ClientGenerator.Core.Attributes.StorageAttribute
+    ctor: AVM.ClientGenerator.Core.Attributes.StorageAttribute.#ctor(AVM.ClientGenerator.Core.StorageType)
+    arguments:
+    - type: AVM.ClientGenerator.Core.StorageType
+      value: 3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: AVM.ClientGenerator.Core
+  commentId: N:AVM.ClientGenerator.Core
+  name: AVM.ClientGenerator.Core
+  nameWithType: AVM.ClientGenerator.Core
+  fullName: AVM.ClientGenerator.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: AVM.ClientGenerator.Core.TransactionReference
+  commentId: T:AVM.ClientGenerator.Core.TransactionReference
+  parent: AVM.ClientGenerator.Core
+  name: TransactionReference
+  nameWithType: TransactionReference
+  fullName: AVM.ClientGenerator.Core.TransactionReference
+- uid: AVM.ClientGenerator.Core.TransactionReference.Fee
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Fee
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Fee
+  nameWithType: TransactionReference.Fee
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Fee
+- uid: AVM.ClientGenerator.Core.TransactionReference.FirstValid
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.FirstValid
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: FirstValid
+  nameWithType: TransactionReference.FirstValid
+  fullName: AVM.ClientGenerator.Core.TransactionReference.FirstValid
+- uid: AVM.ClientGenerator.Core.TransactionReference.LastValid
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.LastValid
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: LastValid
+  nameWithType: TransactionReference.LastValid
+  fullName: AVM.ClientGenerator.Core.TransactionReference.LastValid
+- uid: AVM.ClientGenerator.Core.TransactionReference.Sender
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Sender
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Sender
+  nameWithType: TransactionReference.Sender
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Sender
+- uid: AVM.ClientGenerator.Core.TransactionReference.TxType
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.TxType
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: TxType
+  nameWithType: TransactionReference.TxType
+  fullName: AVM.ClientGenerator.Core.TransactionReference.TxType
+- uid: AVM.ClientGenerator.Core.TransactionReference.Lease
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Lease
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Lease
+  nameWithType: TransactionReference.Lease
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Lease
+- uid: AVM.ClientGenerator.Core.TransactionReference.Note
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.Note
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: Note
+  nameWithType: TransactionReference.Note
+  fullName: AVM.ClientGenerator.Core.TransactionReference.Note
+- uid: AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: RekeyTo
+  nameWithType: TransactionReference.RekeyTo
+  fullName: AVM.ClientGenerator.Core.TransactionReference.RekeyTo
+- uid: AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: GroupIndex
+  nameWithType: TransactionReference.GroupIndex
+  fullName: AVM.ClientGenerator.Core.TransactionReference.GroupIndex
+- uid: AVM.ClientGenerator.Core.TransactionReference.TxID
+  commentId: F:AVM.ClientGenerator.Core.TransactionReference.TxID
+  parent: AVM.ClientGenerator.Core.TransactionReference
+  name: TxID
+  nameWithType: TransactionReference.TxID
+  fullName: AVM.ClientGenerator.Core.TransactionReference.TxID
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
