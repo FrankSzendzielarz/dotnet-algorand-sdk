@@ -4658,10 +4658,18 @@ namespace Algorand.Algod
                 return new ObjectResponseResult<T>(default(T), string.Empty);
             }
 
+            // Non-success responses (other than msgpack) go through the shared tolerant reader: the body may be
+            // plain text or HTML from a proxy/gateway rather than the daemon's JSON error, and must not be lost.
+            if (Algorand.ApiErrorResponseReader.ShouldHandle(response))
+            {
+                var errorResult = await Algorand.ApiErrorResponseReader.ReadAsync<T>(response, headers, JsonSerializerSettings).ConfigureAwait(false);
+                return new ObjectResponseResult<T>(errorResult.Key, errorResult.Value);
+            }
+
             if (ReadResponseAsString)
             {
                 string responseText;
-                if (response.Content.Headers.ContentType.MediaType == "application/msgpack")
+                if (response.Content.Headers.ContentType?.MediaType == "application/msgpack")
                 {
                     using (MessagePackReader reader = new MessagePackReader(await response.Content.ReadAsStreamAsync().ConfigureAwait(false)))
                     {
@@ -4696,7 +4704,7 @@ namespace Algorand.Algod
             {
                 try
                 {
-                    if (response.Content.Headers.ContentType.MediaType == "application/msgpack")
+                    if (response.Content.Headers.ContentType?.MediaType == "application/msgpack")
                     {
                         var bytes = await response.Content.ReadAsByteArrayAsync();
                         var typedBody = Algorand.Utils.Encoder.DecodeFromMsgPack<T>(bytes);
