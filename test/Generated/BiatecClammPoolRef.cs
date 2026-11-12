@@ -102,8 +102,12 @@ namespace BiatecClammPool
 		///<summary>
 		///Only Biatec Pool Provider can deploy and bootsrap this smart contract
 		///</summary>
-		///<param name="assetA">Asset A ID must be lower then Asset B ID, or can be equal to Asset B ID for staking pools</param>
-		///<param name="assetB">Asset B</param>
+		///<param name="assetA">Asset A. Can be equal to Asset B for staking pools. For standard liquidity pools, asset A and
+///asset B are not required to be ordered by asset id - a pair can be created as ALGOUSDC or as USDCALGO.
+///By convention asset B should be the stronger / quote asset that the pair is normally priced against
+///(e.g. USDC in ALGOUSDC, USD in EURUSD or in VOTEUSD), so currentPrice reads as "asset A price in
+///asset B".</param>
+		///<param name="assetB">Asset B, conventionally the quote asset the pair is priced against (see assetA)</param>
 		///<param name="appBiatecConfigProvider">Biatec amm provider</param>
 		///<param name="appBiatecPoolProvider">Pool provider</param>
 		///<param name="fee">Fee in base level (9 decimals). value 1_000_000_000 = 1 = 100%. 10_000_000 = 1%. 1_000_000 = 0.1%</param>
@@ -160,6 +164,27 @@ namespace BiatecClammPool
 		///<param name="result">LP position reduced</param>
 		[SmartContractMethod(OnCompleteType.NoOp)]
 		public abstract ValueTuple<AppCall> RemoveLiquidityAdmin(ulong appBiatecConfigProvider,ulong assetA,ulong assetB,ulong assetLp,AVM.ClientGenerator.ABI.ARC4.Types.UInt256 amount,out AVM.ClientGenerator.ABI.ARC4.Types.UInt256 result);
+
+		///<summary>
+		///Books liquidity which is owned neither by LP token holders nor by the fee accounts
+///(Liquidity - distributedLp - LiquidityUsersFromFees - LiquidityBiatecFromFees).
+///
+///
+///Pools deployed with BIATEC-CLAMM-01-06-04 and earlier could accumulate such liquidity in addLiquidity.
+///While LP tokens are in circulation the amount is credited to the LP holders (LiquidityUsersFromFees).
+///If no LP token is in circulation it is credited to biatec (LiquidityBiatecFromFees) so that it can be
+///withdrawn with removeLiquidityAdmin and returned to the affected liquidity providers.
+///
+///
+///Only addressExecutiveFee is allowed to execute this method.
+		///</summary>
+		///<param name="appBiatecConfigProvider">Biatec config app</param>
+		///<param name="assetA">Asset A</param>
+		///<param name="assetB">Asset B</param>
+		///<param name="assetLp">LP token</param>
+		///<param name="result">Liquidity credited (base scale)</param>
+		[SmartContractMethod(OnCompleteType.NoOp)]
+		public abstract ValueTuple<AppCall> ReconcileLiquidity(ulong appBiatecConfigProvider,ulong assetA,ulong assetB,ulong assetLp,out AVM.ClientGenerator.ABI.ARC4.Types.UInt256 result);
 
 		///<summary>
 		///Swap Asset A to Asset B or Asset B to Asst A

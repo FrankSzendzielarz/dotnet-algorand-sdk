@@ -5,7 +5,7 @@
 	     ILRepack.Targets/Algorand5_Unity.nuspec) must always ship the same version number,
 	     since they wrap identical source at the same commit. Bump the version prefix here only. -->
 	<PropertyGroup>
-		<AlgorandSdkVersion>5.0.3.$([System.DateTime]::UtcNow.ToString(yyyyMMddHH))</AlgorandSdkVersion>
+		<AlgorandSdkVersion>5.0.5.$([System.DateTime]::UtcNow.ToString(yyyyMMddHH))</AlgorandSdkVersion>
 		<!-- ILRepack.Lib.MSBuild's own build/ILRepack.Lib.MSBuild.targets auto-imports
 		     unconditionally (on every configuration) once the package has ever been restored for
 		     this project - restoring under Unity is enough to make it apply to a later Release/Debug

@@ -20,9 +20,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Image tag (without the '-main' suffix), e.g. 5.0.3"
+        description: "Image tag (without the '-main' suffix), e.g. 5.0.5"
         type: string
-        default: "5.0.3"
+        default: "5.0.5"
       push:
         description: "Push the built image to Docker Hub (leave unchecked for a build-only dry run)"
         type: boolean
@@ -44,7 +44,7 @@ jobs:
           elif [[ "${GITHUB_REF}" == refs/tags/client-generator-v* ]]; then
             ver="${GITHUB_REF#refs/tags/client-generator-v}"
           else
-            ver="5.0.3"
+            ver="5.0.5"
           fi
           echo "version=$ver" >> "$GITHUB_OUTPUT"
 

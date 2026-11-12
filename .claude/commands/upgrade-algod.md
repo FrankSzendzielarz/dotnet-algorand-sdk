@@ -1,9 +1,21 @@
 ---
 description: Upgrade the SDK to track a new algod build version end-to-end — spec refresh, model regen, version bump everywhere, tests
-argument-hint: <new version, e.g. 5.0.3>
+argument-hint: <new version, e.g. 5.0.5>
 ---
 
 Full upgrade checklist for moving this SDK from one algod build version to `$ARGUMENTS`. Do not skip steps — this exists because version bumps have previously drifted (see `audits/` for past incidents of independent, out-of-sync version strings). Work through them in order and report what changed at the end.
+
+## 0. Sync with origin first
+
+Before touching anything — including reading the current version or the pinned spec commit — make sure you are on an up-to-date `master`:
+
+```powershell
+git status --short          # must be clean; if not, stop and ask the user what to do with the local changes
+git checkout master
+git pull --ff-only origin master
+```
+
+Do this *first*, every time. The version strings, the pinned go-algorand commit, and the spec file may all have moved on origin since the local checkout was last updated; starting from a stale tree means bumping from the wrong "old" version and then having to resolve conflicts in every file this checklist edits. If the pull is not a fast-forward, stop and ask the user rather than merging or rebasing on your own. Only after the pull, read the current `<AlgorandSdkVersion>` to determine the *old* version for step 2.
 
 ## 1. Refresh the OpenAPI spec and regenerate the model
 

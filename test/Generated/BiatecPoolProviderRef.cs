@@ -303,8 +303,9 @@ namespace BiatecPoolProvider
 		///<summary>
 		///Anybody can call this method to bootstrap new clamm pool
 		///</summary>
-		///<param name="assetA">Asset A ID must be lower then Asset B ID</param>
-		///<param name="assetB">Asset B</param>
+		///<param name="assetA">Asset A. Not required to be ordered by id relative to Asset B (ALGOUSDC and USDCALGO are both valid);
+///by convention Asset B is the stronger / quote asset the pair is normally priced against (e.g. USDC, USD).</param>
+		///<param name="assetB">Asset B, conventionally the quote asset</param>
 		///<param name="appBiatecConfigProvider">Biatec amm provider</param>
 		///<param name="appBiatecPoolProvider">Pool provider</param>
 		///<param name="fee">Fee in base level (9 decimals). value 1_000_000_000 = 1 = 100%. 10_000_000 = 1%. 1_000_000 = 0.1%</param>
@@ -374,7 +375,7 @@ namespace BiatecPoolProvider
 		///<summary>
 		///Retuns the full price info for the asset pair. If app pool is defined, then it returns the pool info.
 		///</summary>
-		///<param name="assetA">Asset A must be less than Asset B</param>
+		///<param name="assetA">Asset A, in the same order the pool was registered with (asset order is not constrained by id)</param>
 		///<param name="assetB">Asset B</param>
 		///<param name="appPoolId">Liquidity pool app id. If zero, then aggregated price info is returned.</param>
 		///<param name="result">AppPoolInfo with the price info for the asset pair</param>
